@@ -25,9 +25,9 @@ Dans cet atelier d’introduction à R, vous apprendrez ce qu’est le logiciel 
 
 # Links
 
-#### [English](https://qcbsrworkshops.github.io/workshop01/workshop02-en/workshop01-en.html)
+#### [English](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.html)
 
-#### [Français](https://qcbsrworkshops.github.io/workshop01//workshop02-fr/workshop01-fr.html)
+#### [Français](https://qcbsrworkshops.github.io/workshop01/workshop01-fr/workshop01-fr.html)
 
 # Developers
 
