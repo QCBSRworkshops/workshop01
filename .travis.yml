@@ -13,9 +13,6 @@ cache:
   directories:
     - $HOME/bin
 
-r_github_packages:
-  - QCBSRworkshops/qcbsRworkshops
-
 script:
   - Rscript --no-init-file -e "qcbsRworkshops::build_workshops()"
 
