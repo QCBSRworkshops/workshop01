@@ -12,9 +12,13 @@ Le contenu de cet atelier a été révisé par plusieurs membres du CSBQ. Si vou
 
 # Workshop 1: Introduction to R
 
+[![Build Status](https://travis-ci.org/QCBSRworkshops/workshop01.svg?branch=dev)](https://travis-ci.org/QCBSRworkshops/workshop01)
+
 In this introductory R Workshop you will learn what R open-source statistical software is, why you should absolutely start using it, and all the first steps to help you get started in R. We will show you how R can act as a calculator, teach you about the various types of objects in R, show you how to use functions and load packages, and find all the resources you need to get help. If any of this sounds obscure, don’t worry! By the end of this workshop you’ll know what all these words mean!
 
 # Atelier 1: Introduction à R
+
+[![Build Status](https://travis-ci.org/QCBSRworkshops/workshop01.svg?branch=dev)](https://travis-ci.org/QCBSRworkshops/workshop01)
 
 Dans cet atelier d’introduction à R, vous apprendrez ce qu’est le logiciel d’analyse statistique R, vous verrez plusieurs raisons pourquoi vous devriez absolument l’utiliser (!), et vous ferez vos premiers pas dans ce logiciel. Vous verrez comment R peut être utilisé comme une calculatrice, vous apprendrez ce qu’est un « objet » dans R, et vous utiliserez des fonctions simples. De plus, vous apprendrez comment télécharger de nouvelles fonctions et comment trouver des ressources d’aide pour utiliser R. Si tout ceci vous semble étrange, ne vous inquiétez pas! À la fin de cet atelier, vous comprendrez tous ces concepts.
 
@@ -23,11 +27,12 @@ Dans cet atelier d’introduction à R, vous apprendrez ce qu’est le logiciel 
 
 #### [English](https://qcbsrworkshops.github.io/workshop01/workshop02-en/workshop01-en.html)
 
-#### [French](https://qcbsrworkshops.github.io/workshop01/workshop02-fr/workshop01-fr.html)
+#### [Français](https://qcbsrworkshops.github.io/workshop01//workshop02-fr/workshop01-fr.html)
 
-# Dev
+# Developers
 
-working directory set to this folder.
+1. Set the working directory set to this folder.
+2. then use:
 
 ``` r
 install.packages("remotes")
