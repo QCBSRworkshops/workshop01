@@ -17,3 +17,15 @@ In this introductory R Workshop you will learn what R open-source statistical so
 # Atelier 1: Introduction à R
 
 Dans cet atelier d’introduction à R, vous apprendrez ce qu’est le logiciel d’analyse statistique R, vous verrez plusieurs raisons pourquoi vous devriez absolument l’utiliser (!), et vous ferez vos premiers pas dans ce logiciel. Vous verrez comment R peut être utilisé comme une calculatrice, vous apprendrez ce qu’est un « objet » dans R, et vous utiliserez des fonctions simples. De plus, vous apprendrez comment télécharger de nouvelles fonctions et comment trouver des ressources d’aide pour utiliser R. Si tout ceci vous semble étrange, ne vous inquiétez pas! À la fin de cet atelier, vous comprendrez tous ces concepts.
+
+
+# Dev
+
+working directory set to this folder.
+
+``` r
+install.packages("remotes")
+remotes::install_github("/QCBSRworkshops/qcbsRworkshops")
+library("qcbsRworkshops")
+build_workshops()
+```
