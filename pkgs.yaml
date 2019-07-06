@@ -1,0 +1,4 @@
+cran_pkgs:
+    - DiagrammeR
+    - widgetframe
+    - tidyverse
