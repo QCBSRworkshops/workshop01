@@ -16,7 +16,7 @@ cache:
 script:
   - Rscript --no-init-file -e "qcbsRworkshops::build_workshops()"
 
-after_script:
+before_deploy:
   - mkdir public
   - cp README.md public
   - cp -r workshop* public/
@@ -25,6 +25,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GH_TOKEN
+  keep_history: true
   target_branch: master
   local_dir: public
   on:
