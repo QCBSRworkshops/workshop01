@@ -6,9 +6,10 @@ assets
 public/
 templateWorkshops-master/
 master.zip
+qcbsR*.css
+qcbsR*.html
+qcbsR*.js
 
-#qcbsR*
-!qcbsR-header.html
 
 # History files
 .Rhistory
