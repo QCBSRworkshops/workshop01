@@ -2,7 +2,7 @@
 title: "Atelier 1: Introduction à R"
 subtitle: "Série d'ateliers R du CSBQ"
 author: "Centre de la Science de la Biodiversité du Québec"
-output:
+output: 
   xaringan::moon_reader:
     includes:
       in_header: qcbsR-header.html
@@ -49,7 +49,7 @@ library(ggplot2)
 
 
 
-Site: http://qcbs.ca/wiki/r/workshop1
+Site: https://wiki.qcbs.ca/r_atelier1
 
 
 ---
@@ -1232,7 +1232,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ![](images/seq_arguments.png)
 
 ---
-## Details
+## Détails
 
 - Une description détaillée du fonctionnement des fonction et de leurs caractéristiques
 
@@ -1246,7 +1246,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ![](images/seq_value.png)
 
 ---
-## See Also
+## Voir aussi
 
 - Autres fonctions connexes pouvant être utiles
 
@@ -1336,7 +1336,9 @@ class: inverse, center, middle
 .center[
 ![](http://dastornews.com/wp-content/uploads/2013/04/cheat.gif)]
 
-De nombreuses .alert[cheat sheets] sont disponibles en ligne [![:faic](external-link)](https://www.rstudio.com/resources/cheatsheets/)
+De nombreuses .alert[cheat sheets] sont disponibles en ligne [![:faic](external-link)](https://www.rstudio.com/resources/cheatsheets/)  
+
+[TEST DE LIEN](https://www.rstudio.com/resources/cheatsheets/)
 
 Ouvrez-les directement depuis **Rstudio**: Help ![:faic](long-arrow-right) Cheatsheets
 
@@ -1359,7 +1361,7 @@ Ouvrez-les directement depuis **Rstudio**: Help ![:faic](long-arrow-right) Cheat
 
 
 ---
-## Quelques sites inteRnets utiles
+## Quelques sites inteRnet utiles
 
 .pull-left[
 ![:scale 50%](http://r4ds.had.co.nz/cover.png) [![:faic](external-link)](http://r4ds.had.co.nz/index.html)
