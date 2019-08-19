@@ -51,11 +51,13 @@ mean.x
 ## Challenge 5 
 # Create an object with a value of 1+1.718282 (Euler's  number) and name it "euler.value"
 
-euler.value <- 1+1.718282
+euler.value <- 1 + 1.718282
 euler.value
 
 ## Challenge 6 
 # Create a second object with a name that starts with a number, What happens? 
+
+#8euler_value <- 8 * (1 + 1.718282)
 
 ## Types of data structures in R 
 
