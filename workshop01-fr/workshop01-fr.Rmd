@@ -212,18 +212,18 @@ Le texte dans la console ressemble typiquement à ceci:
 .comment[Vous devez toujours appuyer sur "enter" pour que le code soit exécutée dans la console.]
 
 ```{r, include = FALSE}
-output <- "Ceci est la sortie"
+sortie <- "Ceci est la sortie"
 ```
 
 ```{r}
-output
+sortie
 ```
 
 ---
 ## Comment lire la console?
 
 ```{r}
-output
+sortie
 ```
 
 Que signifient les crochets `[]` dans la sortie?
@@ -232,7 +232,7 @@ Que signifient les crochets `[]` dans la sortie?
 ## Comment lire la console?
 
 ```{r}
-output
+sortie
 ```
 
 Les crochets vous aident à localiser *où* vous êtes dans la sortie
@@ -305,7 +305,7 @@ class: inverse, center, middle
 ## Défi 2 ![:cube]()
 
 
-Utilisez R pour résoudre l'équation suivante:
+Utilisez R pour effectuer l'opération suivante:
 
 $$
 2+16*24-56
@@ -332,7 +332,7 @@ $$
 ---
 ## Défi 3 ![:cube]()
 
-Utilisez R pour résoudre l'équation suivante:
+Utilisez R pour effectuer l'opération suivante:
 
 $$
 2+16*24-56 / (2+1)-457
@@ -346,7 +346,7 @@ $$
 ---
 ## Défi 3: Solution ![:cube]()
 
-Utilisez R pour résoudre l'équation suivante:
+Utilisez R pour effectuer l'opération suivante:
 
 $$
 2+16*24-56 / (2+1)-457
@@ -459,7 +459,7 @@ moy_x
 
 <br>
 
-Créez un objet avec une valeur de 1+1.718282 (Euler's number) et nommez le `euler_value`.
+Créez un objet avec une valeur de 1+1.718282 (le nombre d'Euler) et nommez le `valeur_euler`.
 
 ---
 ## Défi 5: Solution ![:cube]()
@@ -467,13 +467,13 @@ Créez un objet avec une valeur de 1+1.718282 (Euler's number) et nommez le `eul
 
 <br>
 
-Créez un objet avec une valeur de 1+1.718282 (Euler's number) et nommez le `euler_value`.
+Créez un objet avec une valeur de 1+1.718282 (le nombre d'Euler) et nommez le `valeur_euler`.
 
 
 ```{r}
-euler_value <- 1 + 1.718282
+valeur_euler <- 1 + 1.718282
 
-euler_value
+valeur_euler
 ```
 
 ---
@@ -483,7 +483,6 @@ Créez un deuxième objet avec un nom qui commence par un nombre. Qu'est-ce qui 
 
 ---
 ## Défi 6: Solution ![:cube]()
-
 
 Créez un deuxième objet avec un nom qui commence par un nombre. Qu'est-ce qui se produit?
 
@@ -1137,6 +1136,7 @@ library(ggplot2)
 qplot(1:10, 1:10)
 ```
 
+.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3) !!!]
 ---
 class: inverse, center, middle
 
