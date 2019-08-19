@@ -1124,7 +1124,8 @@ qplot(1:10, 1:10)
 library(ggplot2)
 qplot(1:10, 1:10)
 ```
-
+  
+  .comment[For more details about the `ggplot2` package, see the workshop #3 - [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3) !!!]
 ---
 class: inverse, center, middle
 
