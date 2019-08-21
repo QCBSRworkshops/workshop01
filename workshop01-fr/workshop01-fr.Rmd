@@ -209,7 +209,7 @@ Si la restriction `unable to write on disk` apparaît quand vous ouvrez R Studio
 
 Le texte dans la console ressemble typiquement à ceci:
 
-.comment[Vous devez toujours appuyer sur "enter" pour que le code soit exécutée dans la console.]
+.comment[Vous devez toujours appuyer sur "enter" pour que le code soit exécuté dans la console.]
 
 ```{r, include = FALSE}
 sortie <- "Ceci est la sortie"
@@ -570,7 +570,7 @@ vecteur <- c(valeur1, valeur2, ...)
 ---
 ## Vecteur
 
-- Vecteurs numeriques
+- Vecteur numerique
 
 ```{r}
 num_vecteur <- c(1, 4, 3, 98, 32, -76, -4)
@@ -578,7 +578,7 @@ num_vecteur <- c(1, 4, 3, 98, 32, -76, -4)
 num_vecteur
 ```
 
-- Vecteurs de charactères
+- Vecteur de charactère
 
 ```{r}
 char_vecteur <- c("bleu", "rouge", "vert")
@@ -589,7 +589,7 @@ char_vecteur
 ---
 ## Vecteur
 
-- Vecteurs logiques ou booléens
+- Vecteur logique ou booléen
 
 ```{r}
 bool_vecteur <- c(TRUE, TRUE, FALSE)
@@ -645,7 +645,7 @@ x * y
 - Utilisé pour stocker des tables de données
 - une liste de vecteurs de même longueur
 - Chaque colonne = une variable
-- Chaque ligne = une observation, un site, un réplicat...
+- Chaque ligne = une observation, un site, un réplicat, ...
 - Différentes colonnes peuvent avoir différents modes
 
 ---
@@ -659,8 +659,8 @@ Disons que vous voulez stocker ce tableau dans `R`:
 |---|---|---|---|
 |A1.01|5.6|17|Fert|
 |A1.02|7.3|23|Fert|
-|B1.01|4.1|15|Pas Fert|
-|B1.02|6.0|7|Pas Fert|
+|B1.01|4.1|15|Non_fert|
+|B1.02|6.0|7|Non_fert|
 
 ---
 ## Data frame
@@ -699,7 +699,7 @@ mon_df
 
 
 ---
-## Indexer des objets
+## Indexer des vecteurs
 
 Pour regarder ou extraire une partie de nos données, on peut utiliser des **[crochets]**
 
@@ -723,17 +723,17 @@ impair[c(2, 4)]
 On peut utiliser l'indexation pour supprimer certaines valeurs à des positions particulières:
 
 ```{r}
-impair[-c(1,2)]
+impair[-c(1, 2)]
 ```
 
 ---
-## Indexer des objets
+## Indexer un objet
 
 
 Si on sélectionne une position qui n'existe pas dans le vecteur, on obtient:
 
 ```{r}
-impair[c(1,5)]
+impair[c(1, 5)]
 ```
 
 On peut également utiliser des conditions pour sélectionner des valeurs:
@@ -773,13 +773,13 @@ num_vecteur[4]
 - Extraire les 1ère et 3ème valeurs
 
 ```{r}
-num_vecteur[c(1,3)]
+num_vecteur[c(1, 3)]
 ```
 
 - Extraire toutes les valeurs sauf la 2ème et la 4ème
 
 ```{r}
-num_vecteur[c(-2,-4)]
+num_vecteur[c(-2, -4)]
 ```
 
 ---
@@ -840,23 +840,23 @@ nom_du_data_frame[ligne, colonne]
 
 <br>
 
-`mon_df[1,]` $\rightarrow$ Extrait la 1ère ligne
+`mon_df[1, ]` $\rightarrow$ Extrait la 1ère ligne
 
 <br>
 .comment[Notez qu'un index vide sélectionne **toutes les valeurs**.]
 
 <br>
-`mon_df[,3]` $\rightarrow$ Extrait la 3ème colonne
+`mon_df[, 3]` $\rightarrow$ Extrait la 3ème colonne
 
 <br>
-`mon_df[2,4]` $\rightarrow$ Extrait la 2ème ligne de la 4ème colonne
+`mon_df[2, 4]` $\rightarrow$ Extrait la 2ème ligne de la 4ème colonne
 
 
 ---
 ## Indexer un `data.frame`: exemples
 
 <br>
-`mon_df[c(2,4),]` $\rightarrow$ Extrait les 2ème et 4ème lignes
+`mon_df[c(2, 4), ]` $\rightarrow$ Extrait les 2ème et 4ème lignes
 
 <br>
 
@@ -938,7 +938,7 @@ Les objets stockant ces valeurs et ces instructions peuvent être utilisés dans
 ```{r}
 a <- 3
 b <- 5
-sum(a,b)
+sum(a, b)
 ```
 
 ---
@@ -946,10 +946,10 @@ sum(a,b)
 
 - Créez un vecteur `a` qui contient tous les nombres de 1 à 5
 - Créez un objet b qui a une valeur de 2
-- Additionnez `a` et` b` en utilisant l'opérateur de base `+` et enregistrez le résultat dans un objet appelé `resultat_add`
-- Additionnez `a` et` b` ensemble en utilisant la fonction `sum` et enregistrez le résultat dans un objet appelé` resultat_sum`
-- Comparez `resultat_add` et` resultat_sum`. Sont-ils différents?
-- Additionnez 5 à `resultat_sum` en utilisant la fonction` sum`
+- Additionnez `a` et `b` en utilisant l'opérateur de base `+` et enregistrez le résultat dans un objet appelé `resultat_add`
+- Additionnez `a` et `b` ensemble en utilisant la fonction `sum` et enregistrez le résultat dans un objet appelé `resultat_sum`
+- Comparez `resultat_add` et `resultat_sum`. Sont-ils différents?
+- Additionnez 5 à `resultat_sum` en utilisant la fonction `sum`
 
 
 
@@ -962,7 +962,7 @@ b <- 2
 
 resultat_add <- a + b
 
-resultat_sum <- sum(a,b)
+resultat_sum <- sum(a, b)
 ```
 
 ```{r}
@@ -999,8 +999,8 @@ La fonction `sum` concatène toutes les valeurs fournies puis les somme. C'est l
 ```{r, eval = F}
 a <- 1:100
 b <- a^2
-plot(a,b)
-plot(b,a)
+plot(a, b)
+plot(b, a)
 plot(x = a, y = b)
 plot(y = b, x = a)
 ```
@@ -1011,9 +1011,9 @@ plot(y = b, x = a)
 ```{r, echo = F}
 a <- 1:100
 b <- a^2
-par(mfrow = c(2,2),mar=c(4,4,1,1))
-plot(a,b)
-plot(b,a)
+par(mfrow = c(2, 2),mar=c(4, 4, 1, 1))
+plot(a, b)
+plot(b, a)
 plot(x = a, y = b)
 plot(y = b, x = a)
 ```
@@ -1023,23 +1023,23 @@ plot(y = b, x = a)
 
 .pull-left[
 ```{r,eval=F}
-plot(a,b)
+plot(a, b)
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
-par(mar=c(4,4,1,1))
-plot(a,b)
+par(mar=c(4, 4, 1, 1))
+plot(a, b)
 ```
 ]
 
 .pull-right[
 ```{r,eval=F}
-plot(b,a)
+plot(b, a)
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
-par(mar=c(4,4,1,1))
-plot(b,a)
+par(mar=c(4, 4, 1, 1))
+plot(b, a)
 ```
 ]
 
@@ -1054,7 +1054,7 @@ plot(x = a, y = b)
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
-par(mar=c(4,4,1,1))
+par(mar=c(4, 4, 1, 1))
 plot(x = a, y = b)
 ```
 ]
@@ -1065,7 +1065,7 @@ plot(y = b, x = a)
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
-par(mar=c(4,4,1,1))
+par(mar=c(4, 4, 1, 1))
 plot(y = b, x = a)
 ```
 ]
@@ -1288,8 +1288,8 @@ seq(0, 10, 2)
 2. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
 
 ```{r class="fragment"}
-numbers <- c(2, 4, 22, 6, 26)
-sort(numbers, decreasing = T)
+nombres <- c(2, 4, 22, 6, 26)
+sort(nombres, decreasing = T)
 ```
 
 ---
