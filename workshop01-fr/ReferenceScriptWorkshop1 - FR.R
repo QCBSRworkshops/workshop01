@@ -53,13 +53,13 @@ moy_x <- (2 + 6) / 2
 moy_x 
 
 ## Défi 5 
-# Créer un objet avec une valeur de 1 + 1.718282 (le nombre d'Euler) et nommez-le valeur_euler
+# Créez un objet avec une valeur de 1 + 1.718282 (le nombre d'Euler) et nommez-le "valeur_euler"
 
 valeur_euler <- 1 + 1.718282
 valeur_euler
 
 ## Défi 6 
-# Créer un deuxième objet dont le nom commence par un chiffre. Que se passe-t-il ?
+# Créez un deuxième objet dont le nom commence par un chiffre. Que se passe-t-il ?
 
 #8valeur_euler <- 8 * (1 + 1.718282)
 
@@ -86,151 +86,152 @@ vecteur <- c("valeur1", "valeur2")
 num_vecteur <- c(1, 4, 3, 98, 32, -76, -4)
 num_vecteur 
 
-## Character vectors 
-char.vector <- c("blue", "red", "green")
-char.vector
+## Vecteurs de caractères
+char_vecteur <- c("bleu", "rouge", "vert")
+char_vecteur
 
-## Logical vectors 
-bool.vector <- c(TRUE, TRUE, FALSE)
-bool.vector
+## Vecteurs logiques ou booléens
+bool_vecteur <- c(TRUE, TRUE, FALSE)
+bool_vecteur
 
-bool.vector2 <- c(T,T,F)
-bool.vector2
+bool_vecteur2 <- c(T,T,F)
+bool_vecteur2
 
-## Challenge 7 
-# Create a vector containing the first 5 odd numbers, starting from 1, and name it "odd.n"
-odd.n <- c(1,3,5,7)
+## Défi 7 
+# Créez un vecteur contenant les 5 premiers nombres impairs, à partir de 1 et nommez-le "impair"
+impair <- c(1, 3, 5, 7)
 
-## We can use vectors for calculations 
+## Nous pouvons utiliser des vecteurs pour faire des calculs
 x <- c(1:5)
 y <- 6 
 
-x+y
-x*y 
+x + y
+x * y 
 
-## Data frames 
+## Data frame 
 
-# - Used to store data tables
-# - A list of vectors of the same length
-# - Columns = variables
-# - Rows = observations, sites, cases, replicates, ...
-# - Differents columns can have different modes
+# - Utilisé pour stocker des tables de données
+# - une liste de vecteurs de même longueur
+# - une colonne = une variable
+# - une ligne = une observation, un site, un replicat, ...
+# - Différentes colonnes peuvent avoir différents modes
 
-## One way to create vectors 
-# Start by creating vectors 
+## Une façon de faire pour créer un data frame
+# Créez des vecteurs 
 
-siteID <- c("A1.01", "A1.02", "B1.01", "B1.02")
-soil_pH <- c(5.6, 7.3, 4.1, 6.0)
-num.sp <- c(17, 23, 15, 7)
-treatment <- c("Fert", "Fert", "No_fert", "No_fert")
+site_id <- c("A1.01", "A1.02", "B1.01", "B1.02")
+pH_sol <- c(5.6, 7.3, 4.1, 6.0)
+num_sp <- c(17, 23, 15, 7)
+traitement <- c("Fert", "Fert", "Non_fert", "Non_fert")
 
-# We then combine them using the function data.frame() 
-my.first.df <- data.frame(siteID, soil_pH, num.sp, treatment)
-my.first.df
+# Combinez les vecteurs en utilisant la fonction data.frame
+mon_df <- data.frame(site_id, pH_sol, num_sp, traitement)
+mon_df
 
-## Matrices, Arrays and Lists 
+## Matrice, Array et Listes 
 
-## Indexing vectors 
-# You  can use indexing to chose a particular position, 
-# let's say we want to see the second value of our `odd.n` vector
+## Indexer un vecteur
+# Vous pouvez utiliser l'indexation pour choisir une postion particulière au sein d'un vecteur,
+# Par exemple, nous voulons obtenir la deuxième valeur de notre vecteur "impair"
 
-odd.n[2]
-# It also work with multiple positions: 
-odd.n[c(2,4)]
-# It can be used to remove some values at particular positions 
-odd.n[-c(1,2)]
+impair[2]
+# Nous pouvons sélectionner plusieurs positions 
+impair[c(2, 4)]
+# Nous pouvons utiliser l'indexation pour supprimer certaines valeurs à des positions particulières
+impair[-c(1, 2)]
 
-# If you select a position that is not in the vector: 
-odd.n[c(1,5)]
+# Si nous selectionnons une position qui n'existe pas dans le vecteur
+impair[c(1, 5)]
 
-# You can also use conditions to select values 
-char.vector[char.vector == "blue"]
+# Des conditions peuvent aussi être utilisées pour sélectionner des valeurs 
+char_vecteur[char_vecteur == "bleu"]
 
-## Challenge 8 
+## Défi 8 
 
-# Using the vector "num.vector"
-# - Extract the 4th value
-# - Extract the 1st and 3rd values
-# - Extract all values except for the 2nd and the 4th
+# En utilisant le vecteur "num_vecteur"
+# - Extrayez la 4ème valeur
+# - Extrayez les 1ère et 3ème valeurs
+# - Extrayez toutes les valeurs sauf les 2ème et 4ème
 
-num.vector[4]
-num.vector[c(1,3)]
-num.vector[c(-2,-4)]
+num_vecteur[4]
+num_vecteur[c(1, 3)]
+num_vecteur[c(-2, -4)]
 
-## Challenge 9 
-# Explore the difference between these 2 lines of code:
-char.vector == "blue"
-char.vector[char.vector == "blue"]
+## Défi 9 
+# Explorez les différences entre ces deux lignes de code
+char_vecteur == "bleu"
+char_vecteur[char_vecteur == "bleu"]
 
-## Indexing data frames
-## Challenge 10 
+## Indexer un data frame
+## Défi 10 
 
-# 1. Extract the `num.sp` column from `my.first.df` and multiply its value by  the first four values of `num.vec`.
+# 1. Extrayez la colonne "num_sp" de "mon_df" et multipliez ses valeurs par les premières quatre valeurs de "num_vecteur"
 
-my.first.df$num.sp * num.vector[c(1:4)]
+mon_df$num_sp * num.vecteur[c(1:4)]
 # or
-my.first.df[,3] * num.vector[c(1:4)]
+mon_df[, 3] * num.vecteur[c(1:4)]
 
-# 2. After that, write a statement that checks if the values you obtained are greater than 25.
-(my.first.df$num.sp * num.vector[c(1:4)]) > 25
+# 2. Ensuite, écrivez une déclaration logique qui vérifie si les valeurs obtenurs sont supérieures à 25
+(mon_df$num.sp * num.vecteur[c(1:4)]) > 25
 
-## Functions 
+## Fonction 
 
-# A function is a tool to simplify your life.
+# Une fonction est un outil pour vous simplifier la vie.
 # 
-# It allows you to quickly execute operations on objects without having to write every mathematical step.
+# Il vous permet d'exécuter rapidement des opérations sur des objets sans avoir à écrire toutes les étapes mathématiques.
 # 
-# A function needs entry values called **arguments** (or parameters). It then performs hidden operations using these arguments and gives a **return value**.
-# To use (call) a function, the command must be structured properly, following the "grammar rules" of the `R` language: the syntax.
-# function_name(argument 1, argument 2)
+# Une fonction nécessite des valeurs d'entrée appelées arguments (ou paramètres). Elle effectue ensuite des opérations cachées en utilisant ces arguments et donne une valeur de retour.
+# Pour utiliser (appeler) une fonction, la commande doit être structurée correctement, en suivant les règles de grammaire du langage R, i.e. la syntaxe.
+# nom_fonction(argument 1, argument 2)
 
 ## Arguments
 
-# Arguments are **values** and **instructions** the function needs to run.
-# Objects storing these values and instructions can be used in functions:
+# Les arguments sont des valeurs et des instructions nécessaires à la fonction pour être exécutée.
+# Les objets stockant ces valeurs et ces instructions peuvent être utilisés dans des fonctions.
 
 a <- 3
 b <- 5
-sum(a,b)
+sum(a, b)
 
-## Challenge 11
-# - Create a vector `a` that contains all the numbers from 1 to 5
-# - Create an object `b` with a value of 2
-# - Add `a` and `b` together using the basic `+` operator and save the result in an object called `result_add`
-# - Add `a` and `b` together using the `sum` function and save the result in an object called `result_sum`
-# - Compare `result_add` and `result_sum`. Are they different?
-# - Add 5 to `result_sum` function using the `sum` function
+## Défi 11
+
+
+# Créez un vecteur "a" qui contient tous les nombres de 1 à 5
+# Créez un objet "b" qui a une valeur de 2
+# Additionnez "a" et "b" en utilisant l'opérateur de base + et enregistrez le résultat dans un objet appelé "resultat_add"
+# Additionnez "a" et "b" ensemble en utilisant la fonction sum et enregistrez le résultat dans un objet appelé "resultat_sum"
+# Comparez "resultat_add" et "resultat_sum". Sont-ils différents?
+# Additionnez 5 à "resultat_sum" en utilisant la fonction sum
 
 a <- c(1:5)
 b <- 2
 
-result_add <- a + b
-result_sum <- sum(a,b)
+resultat_add <- a + b
+resultat_sum <- sum(a, b)
 
-result_add
-result_sum
-sum(result_sum, 5)
+resultat_add
+resultat_sum
+sum(resultat_sum, 5)
 
 ## Arguments
 
-# Arguments each have a **name** that can be provided during a function call.
-# If the name is not present, the order of the arguments does matter.
-# If the name is present, the order does not matter.
+# Les arguments ont chacun un **nom** pouvant être spécifié lors d'un appel de fonction.
+# Si le nom n'est pas spécifié, l'ordre des arguments est important.
+# Si le nom est spécifié, l'ordre n'a pas d'importance.
 
 a <- 1:100
 b <- a^2
-plot(a,b)
-plot(b,a)
+plot(a, b)
+plot(b, a)
 plot(x = a, y = b)
 plot(y = b, x = a)
 
-## Packages 
+## Package
 
-#To install packages on your computer, use the function `install.packages`.
-# install.packages("packageName")
+# Pour installer des packages sur votre ordinateur, utilisez la fonction install.packages.
+# install.packages("nom_du_package")
 
-#Installing a package is not enough to use it. You need to load it into your workspace 
-# Use the library() function 
+# L'installation d'un package ne suffit pas pour l'utiliser. Vous devez aussi le charger dans votre espace de travail à l'aide de la fonction library.
 
 install.packages("ggplot2")
 
@@ -241,58 +242,59 @@ library(ggplot2)
 qplot(1:10, 1:10)
 
 
-## Getting help 
-# Searching for functions
+## Obtenir de l'aide
+# Recherche de fonctions
 # 
-# To find a function that does something specific in your installed packages, you can use `??` followed by a search term.
+# Pour trouver une fonction qui fait une action spécifique dans vos packages installés, vous pouvez utiliser "??" suivi d'un terme de recherche.
 # 
-# Let's say we want to create a *sequence* of odd numers between 0 and 10 as we did earlier. We can search in our packages all the functions with the word "sequence" in them:
+# Disons que nous voulons créer une séquence de nombres impairs compris entre 0 et 10, comme nous l'avons fait précédemment. Nous pouvons rechercher dans nos packages toutes les fonctions qui contiennent le mot séquence dans leur description:
 
 ??sequence 
 
-# OK! SO let's use the `seq` function!!
+# OK! Utilisons le fonction seq!!
 # 
-# But wait... how does it work? What arguments does it need?
+# Mais attendez... Comment fonctionne_t_elle ? De quels arguments a_t_elle besoin ?
 # 
-# To find information about a function in particular, use `?`
+# Pour trouver des informations sur une fonction en particulier, utilisez "?"
 # 
 
 ?seq
 
-## Challenge 13 
+## Défi 13 
 
-# 1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
-  seq(from=0, to=10, by=2)
-  seq(0,10,2)
+# 1. Créez une séquence de nombres pairs entre 0 et 10 en utilisant la fonction seq
+seq(from = 0, to = 10, by = 2)
+seq(0, 10, 2)
 
-#  2. Create a unsorted vector of your favourite numbers, then sort your vector in reverse order.
+#  2. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse
 
-numbers <- c(2,4,22,6,26)
-sort(numbers, decreasing = T)
+nombres <- c(2, 4, 22, 6, 26)
+sort(nombres, decreasing = T)
 
-## Challenge 14
+## Défi 14
 # 
-# Find the appropriate functions to perform the following operations:
+# Recherchez les fonctions appropriées pour effectuer les opérations suivantes:
 #   
-# - Square root
-# - Calculate the mean of numbers
-# - Combine two data frames by columns
-# - List availables objects in your workspace
+# - Racine carrée
+# - Moyenne de plusieurs nombres
+# - Combiner deux data frames par colonnes
+# - Lister des objets disponibles dans votre espace de travail
+
 
 ?sqrt 
 ?mean
 ?cbind
 ?ls 
 
-## Some useful R websites
+## Quelques sites internet utiles
 
 # - http://stats.stackexchange.com
 # - https://www.zoology.ubc.ca/~schulter/R/
-#   - http://statmethods.net/
-#   - http://rseek.org/
-#   - http://cookbook-r.com/
-#   - http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf
+# - http://statmethods.net/
+# - http://rseek.org/
+# - http://cookbook-r.com/
+# - http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf
 
 
-## Thank you for attending!
-########################### END OF SCRIPT ################################
+## Merci d'avoir participé !
+########################### FIN DU SCRIPT ################################
