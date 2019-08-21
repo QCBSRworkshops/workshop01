@@ -833,7 +833,7 @@ You need to use logical operators for that.
 To index a data frame you must specify two dimensions: row and column number, using the following syntax:
 
 ```r
-data.frame.name[row, column]
+data_frame_name[row, column]
 ```
 
 ---
@@ -893,10 +893,10 @@ my_df[, 3] * num_vector[c(1:4)]
 ---
 class: inverse, center, middle
 
-# Functions
+# Function
 
 ---
-## Functions
+## Function
 
 .pull-left2[
 A function is a tool to simplify your life.

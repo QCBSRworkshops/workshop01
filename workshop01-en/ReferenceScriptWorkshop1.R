@@ -115,13 +115,13 @@ x * y
 ## One way to create vectors 
 # Start by creating vectors 
 
-siteID <- c("A1.01", "A1.02", "B1.01", "B1.02")
+site_id <- c("A1.01", "A1.02", "B1.01", "B1.02")
 soil_pH <- c(5.6, 7.3, 4.1, 6.0)
 num_sp <- c(17, 23, 15, 7)
 treatment <- c("Fert", "Fert", "No_fert", "No_fert")
 
 # We then combine them using the data.frame() function 
-my_df <- data.frame(siteID, soil_pH, num_sp, treatment)
+my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
 my_df
 
 ## Matrices, Arrays and Lists 

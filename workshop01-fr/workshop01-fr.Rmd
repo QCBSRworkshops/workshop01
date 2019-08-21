@@ -655,7 +655,7 @@ Disons que vous voulez stocker ce tableau dans `R`:
 
 <br>
 
-|ID du site|pH sol|# espece|traitement|
+|ID du site|pH sol|# espece|essai|
 |---|---|---|---|
 |A1.01|5.6|17|Fert|
 |A1.02|7.3|23|Fert|
