@@ -624,6 +624,21 @@ impair <- c(1, 3, 5, 7)
 ---
 ## Vecteur
 
+
+.comment[**Astuce**: Utilisez la fonction `dput` pour obtenir la structure d'un objet.]
+````{r}
+dput(impair)
+````
+
+.comment[Le résultat que R donne dans la console peut être copié et collé pour créer un nouvel objet en utilisant la fonction `structure`.]
+````{r}
+structure(c(1, 3, 5, 7))
+````
+
+.comment[Ces commandes sont particulièrement utiles pour fournir un exemple reproductible dans le cas d'une question sur **stackoverflow** par exemple (voir application d'ici quelques diapos) !]
+---
+## Vecteur
+
 On peut utiliser des vecteurs pour faire des calculs:
 
 ```{r}
@@ -690,6 +705,10 @@ mon_df <- data.frame(site_id, pH_sol, num_sp, traitement)
 mon_df
 ```
 
+.comment[Voici la fonction `dput` dans un exemple plus concret.]
+````{r}
+dput(mon_df)
+````
 ---
 ## Matrice, Array et Liste
 
