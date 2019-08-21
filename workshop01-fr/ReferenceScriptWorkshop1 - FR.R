@@ -124,7 +124,7 @@ pH_sol <- c(5.6, 7.3, 4.1, 6.0)
 num_sp <- c(17, 23, 15, 7)
 traitement <- c("Fert", "Fert", "Non_fert", "Non_fert")
 
-# Combinez les vecteurs en utilisant la fonction data.frame
+# Combinez les vecteurs en utilisant la fonction data.frame()
 mon_df <- data.frame(site_id, pH_sol, num_sp, traitement)
 mon_df
 
@@ -199,9 +199,9 @@ sum(a, b)
 # Créez un vecteur "a" qui contient tous les nombres de 1 à 5
 # Créez un objet "b" qui a une valeur de 2
 # Additionnez "a" et "b" en utilisant l'opérateur de base + et enregistrez le résultat dans un objet appelé "resultat_add"
-# Additionnez "a" et "b" ensemble en utilisant la fonction sum et enregistrez le résultat dans un objet appelé "resultat_sum"
+# Additionnez "a" et "b" ensemble en utilisant la fonction sum() et enregistrez le résultat dans un objet appelé "resultat_sum"
 # Comparez "resultat_add" et "resultat_sum". Sont-ils différents?
-# Additionnez 5 à "resultat_sum" en utilisant la fonction sum
+# Additionnez 5 à "resultat_sum" en utilisant la fonction sum()
 
 a <- c(1:5)
 b <- 2
@@ -228,10 +228,10 @@ plot(y = b, x = a)
 
 ## Package
 
-# Pour installer des packages sur votre ordinateur, utilisez la fonction install.packages.
+# Pour installer des packages sur votre ordinateur, utilisez la fonction install.packages().
 # install.packages("nom_du_package")
 
-# L'installation d'un package ne suffit pas pour l'utiliser. Vous devez aussi le charger dans votre espace de travail à l'aide de la fonction library.
+# L'installation d'un package ne suffit pas pour l'utiliser. Vous devez aussi le charger dans votre espace de travail à l'aide de la fonction library().
 
 install.packages("ggplot2")
 
@@ -251,7 +251,7 @@ qplot(1:10, 1:10)
 
 ??sequence 
 
-# OK! Utilisons le fonction seq!!
+# OK! Utilisons le fonction seq() !!
 # 
 # Mais attendez... Comment fonctionne_t_elle ? De quels arguments a_t_elle besoin ?
 # 
@@ -262,7 +262,7 @@ qplot(1:10, 1:10)
 
 ## Défi 13 
 
-# 1. Créez une séquence de nombres pairs entre 0 et 10 en utilisant la fonction seq
+# 1. Créez une séquence de nombres pairs entre 0 et 10 en utilisant la fonction seq()
 seq(from = 0, to = 10, by = 2)
 seq(0, 10, 2)
 
