@@ -101,6 +101,12 @@ bool_vecteur2
 # Créez un vecteur contenant les 5 premiers nombres impairs, à partir de 1 et nommez-le "impair"
 impair <- c(1, 3, 5, 7)
 
+## La structure d'un objet en utilisant la fonction dput()
+dput(impair)
+
+# Création d'un nouvel objet, identique au précédent
+structure(c(1, 3, 5, 7))
+
 ## Nous pouvons utiliser des vecteurs pour faire des calculs
 x <- c(1:5)
 y <- 6 
@@ -128,6 +134,15 @@ traitement <- c("Fert", "Fert", "Non_fert", "Non_fert")
 mon_df <- data.frame(site_id, pH_sol, num_sp, traitement)
 mon_df
 
+# Structure du data frame avec la fonction dput()
+dput(mon_df)
+
+# Création d'un nouveau data frame identique au précédent à l'aide de la fonction structure()
+structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02","B1.01", "B1.02"), class = "factor"),
+               pH_sol = c(5.6, 7.3, 4.1,6),
+               num_sp = c(17, 23, 15, 7),
+               traitement = structure(c(1L, 1L, 2L, 2L), .Label = c("Fert", "Non_fert"), class = "factor")),
+          class = "data.frame", row.names = c(NA, -4L))
 ## Matrice, Array et Listes 
 
 ## Indexer un vecteur
