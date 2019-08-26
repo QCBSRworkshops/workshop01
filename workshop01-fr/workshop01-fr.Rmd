@@ -507,7 +507,7 @@ Essayons!
 ---
 ## Astuce sur la ligne de commande R
 
-- Tapez `eu`
+- Tapez `val`
 - Appuyez sur tab
 - utilisez les flêches et la touche enter pour sélectionner la bonne saisie semi-automatique
 
@@ -578,12 +578,12 @@ num_vecteur <- c(1, 4, 3, 98, 32, -76, -4)
 num_vecteur
 ```
 
-- Vecteur de charactère
+- Vecteur de caractère
 
 ```{r}
-char_vecteur <- c("bleu", "rouge", "vert")
+car_vecteur <- c("bleu", "rouge", "vert")
 
-char_vecteur
+car_vecteur
 ```
 
 ---
@@ -618,7 +618,7 @@ bool_vecteur2
 - Nommez-le `impair`.
 
 ```{r}
-impair <- c(1, 3, 5, 7)
+impair <- c(1, 3, 5, 7, 9)
 ```
 
 ---
@@ -632,7 +632,7 @@ dput(impair)
 
 .comment[Le résultat que R donne dans la console peut être copié et collé pour créer un nouvel objet en utilisant la fonction `structure`.]
 ````{r}
-structure(c(1, 3, 5, 7))
+structure(c(1, 3, 5, 7, 9))
 ````
 
 .comment[Ces fonctions sont particulièrement utiles pour fournir un exemple reproductible dans le cas d'une question sur **stackoverflow** par exemple (voir application dans la partie sur les data frames) !]
@@ -670,12 +670,12 @@ Disons que vous voulez stocker ce tableau dans `R`:
 
 <br>
 
-|ID du site|pH sol|# espece|essai|
+|ID du site|pH sol|# espece|traitement|
 |---|---|---|---|
-|A1.01|5.6|17|Fert|
-|A1.02|7.3|23|Fert|
-|B1.01|4.1|15|Non_fert|
-|B1.02|6.0|7|Non_fert|
+|A1.01|5.6|17|Fertilisé|
+|A1.02|7.3|23|Fertilisé|
+|B1.01|4.1|15|Non fertilisé|
+|B1.02|6.0|7|Non fertilisé|
 
 ---
 ## Data frame
@@ -764,7 +764,7 @@ impair[-c(1, 2)]
 Si on sélectionne une position qui n'existe pas dans le vecteur, on obtient:
 
 ```{r}
-impair[c(1, 5)]
+impair[c(1, 6)]
 ```
 
 On peut également utiliser des conditions pour sélectionner des valeurs:
@@ -775,8 +775,8 @@ impair[impair > 4]
 
 
 ```{r}
-char_vecteur
-char_vecteur[char_vecteur == "bleu"]
+car_vecteur
+car_vecteur[car_vecteur == "bleu"]
 ```
 
 
@@ -819,43 +819,25 @@ num_vecteur[c(-2, -4)]
 Explorez la différence entre ces 2 lignes de code:
 
 ```{r, eval = F}
-char_vecteur == "bleu"
+car_vecteur == "bleu"
 
-char_vecteur[char_vecteur == "bleu"]
+car_vecteur[car_vecteur == "bleu"]
 ```
 
 ---
 ## Défi 9: Solution ![:cube]()
 
 ```{r}
-char_vecteur == "bleu"
+car_vecteur == "bleu"
 ```
 
-Dans cette ligne de code, vous **testez une déclaration logique**. Pour chaque entrée dans le `char_vecteur`, `R` vérifie si l'entrée est égale à `bleu` ou non.
+Dans cette ligne de code, vous **testez une déclaration logique**. Pour chaque entrée dans le `car_vecteur`, `R` vérifie si l'entrée est égale à `bleu` ou non.
 
 ```{r}
-char_vecteur[char_vecteur == "bleu"]
+car_vecteur[car_vecteur == "bleu"]
 ```
 
-Dans cette ligne de code, vous demandez à `R` d'extraire toutes les valeurs du vecteur `char_vecteur` qui sont exactement égales à `bleu`.
-
----
-## Note sur les déclarations logiques
-
-`R` permet de tester les déclarations logiques, *i.e.* tester si une déclaration est vraie ou fausse.
-
-Vous devez utiliser des opérateurs logiques pour cela.
-
-<br>
-
-|Opérateur     |Description              |Exemple|
-|-------------|-------------------------|-------------------------------|
-|`<` et `>`  |inférieur ou supérieur à|`impair > 3`                    |
-|`<=` et `>=`|inférieur/supérieur ou égale à |`impair >= 3`                   |
-|`==`         |égale à         |`impair == 3`                   |
-|`!=`         |non égale à            |`impair != 3`                   |
-|`x`&#124;`y` |x OU y                   |`impair[impair >= 5` &#124; `impair < 3]`|
-|`x & y`      |x ET y                  |`impair[impair >=3 & impair < 7]` |
+Dans cette ligne de code, vous demandez à `R` d'extraire toutes les valeurs du vecteur `car_vecteur` qui sont exactement égales à `bleu`.
 
 ---
 ## Indexer un `data.frame`
@@ -905,6 +887,24 @@ nom_du_data_frame[ligne, colonne]
 
 `mon_df[c(, "site_id", "pH_sol")]` $\rightarrow$ Extrait les variables `site_id` et `pH_sol` du data frame.
 
+---
+## Note sur les déclarations logiques
+
+`R` permet de tester les déclarations logiques, *i.e.* tester si une déclaration est vraie ou fausse.
+
+Vous devez utiliser des opérateurs logiques pour cela.
+
+<br>
+
+|Opérateur     |Description              |Exemple|
+|-------------|-------------------------|-------------------------------|
+|`<` et `>`  |inférieur ou supérieur à|`impair > 3`                    |
+|`<=` et `>=`|inférieur/supérieur ou égale à |`impair >= 3`                   |
+|`==`         |égale à         |`impair == 3`                   |
+|`!=`         |non égale à            |`impair != 3`                   |
+|`x`&#124;`y` |x OU y                   |`impair[impair >= 5` &#124; `impair < 3]`|
+|`x & y`      |x ET y                  |`impair[impair >=3 & impair < 7]` |
+
 
 ---
 ## Défi 10 ![:cube]()
@@ -920,8 +920,8 @@ nom_du_data_frame[ligne, colonne]
 
 ```{r}
 mon_df$num_sp * num_vecteur[c(1:4)]
-# or
-mon_df[,3] * num_vecteur[c(1:4)]
+# ou encore
+mon_df[, 3] * num_vecteur[c(1:4)]
 ```
 
 2. Ensuite, écrivez une déclaration logique qui vérifie si les valeurs obtenues sont supérieures à 25.
@@ -929,6 +929,7 @@ mon_df[,3] * num_vecteur[c(1:4)]
 ```{r}
 (mon_df$num_sp * num_vecteur[c(1:4)]) > 25
 ```
+
 
 ---
 class: inverse, center, middle
