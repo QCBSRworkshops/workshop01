@@ -5,13 +5,13 @@
 
 # Using R as a calculator
 
-## Addition, substraction
-1+1
-10-1 
+## Additions and Substractions
+1 + 1
+10 - 1 
 
 ## Multiplications and Divisions
-2*2
-8/2
+2 * 2
+8 / 2
 
 ## Exponents 
 2^3
@@ -19,20 +19,20 @@
 ## Challenge 2 
 # Use R to calculate the following testing question.
 
-2+16*24-56 
+2 + 16 * 24 - 56 
 
 ## Challenge 3
 # Use R to calculate the following testing question.
-2+16*24-56/(2+1)-457
+2 + 16 * 24 - 56 / (2 + 1) - 457
 
 ## Challenge 4
 
 # What is the area of a circle, with a radius of 5cm?
-3.1416*5^2
+3.1416 * 5^2
 # Note that R has some built-in constants such as pi,therefore: 
-pi*5^2
+pi * 5^2
 
-## Objects 
+## Object
 
 # Objects are one of the most useful concepts in R. 
 # You can store values as named objects using the assigment operator "<-"
@@ -45,17 +45,19 @@ objectName <- "assignedValue"
 # Adding spaces before the "<-" is recommended 
 # When typing the object names, R will return its value 
 
-mean.x <- (2+6)/2
-mean.x 
+mean_x <- (2 + 6) / 2
+mean_x 
 
 ## Challenge 5 
 # Create an object with a value of 1+1.718282 (Euler's  number) and name it "euler.value"
 
-euler.value <- 1+1.718282
-euler.value
+euler_value <- 1 + 1.718282
+euler_value
 
 ## Challenge 6 
 # Create a second object with a name that starts with a number, What happens? 
+
+#8euler_value <- 8 * (1 + 1.718282)
 
 ## Types of data structures in R 
 
@@ -63,7 +65,7 @@ euler.value
 # - Data frames
 # - Matrices, arrays and lists
 
-## Vectors
+## Vector
 
 # - An entity consisting of a list of related values
 # - A single value is called an *atomic value*
@@ -77,30 +79,30 @@ euler.value
 vector <- c("value1", "value2")
 
 ## Numeric vectors 
-num.vector <- c(1,4,3,98,32,-76, -4)
-num.vector 
+num_vector <- c(1, 4, 3, 98, 32, -76, -4)
+num_vector 
 
 ## Character vectors 
-char.vector <- c("blue", "red", "green")
-char.vector
+char_vector <- c("blue", "red", "green")
+char_vector
 
 ## Logical vectors 
-bool.vector <- c(TRUE, TRUE, FALSE)
-bool.vector
+bool_vector <- c(TRUE, TRUE, FALSE)
+bool_vector
 
-bool.vector2 <- c(T,T,F)
-bool.vector2
+bool_vector2 <- c(T, T, F)
+bool_vector2
 
 ## Challenge 7 
-# Create a vector containing the first 5 odd numbers, starting from 1, and name it "odd.n"
-odd.n <- c(1,3,5,7)
+# Create a vector containing the first 5 odd numbers, starting from 1, and name it "odd_n"
+odd_n <- c(1, 3, 5, 7)
 
 ## We can use vectors for calculations 
 x <- c(1:5)
 y <- 6 
 
-x+y
-x*y 
+x + y
+x * y 
 
 ## Data frames 
 
@@ -113,60 +115,60 @@ x*y
 ## One way to create vectors 
 # Start by creating vectors 
 
-siteID <- c("A1.01", "A1.02", "B1.01", "B1.02")
+site_id <- c("A1.01", "A1.02", "B1.01", "B1.02")
 soil_pH <- c(5.6, 7.3, 4.1, 6.0)
-num.sp <- c(17, 23, 15, 7)
+num_sp <- c(17, 23, 15, 7)
 treatment <- c("Fert", "Fert", "No_fert", "No_fert")
 
-# We then combine them using the function data.frame() 
-my.first.df <- data.frame(siteID, soil_pH, num.sp, treatment)
-my.first.df
+# We then combine them using the data.frame() function 
+my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
+my_df
 
 ## Matrices, Arrays and Lists 
 
 ## Indexing vectors 
 # You  can use indexing to chose a particular position, 
-# let's say we want to see the second value of our `odd.n` vector
+# let's say we want to see the second value of our `odd_n` vector
 
-odd.n[2]
+odd_n[2]
 # It also work with multiple positions: 
-odd.n[c(2,4)]
+odd_n[c(2, 4)]
 # It can be used to remove some values at particular positions 
-odd.n[-c(1,2)]
+odd_n[-c(1, 2)]
 
 # If you select a position that is not in the vector: 
-odd.n[c(1,5)]
+odd_n[c(1, 5)]
 
 # You can also use conditions to select values 
-char.vector[char.vector == "blue"]
+char_vector[char_vector == "blue"]
 
 ## Challenge 8 
 
-# Using the vector "num.vector"
+# Using the vector "num_vector"
 # - Extract the 4th value
 # - Extract the 1st and 3rd values
 # - Extract all values except for the 2nd and the 4th
 
-num.vector[4]
-num.vector[c(1,3)]
-num.vector[c(-2,-4)]
+num_vector[4]
+num_vector[c(1, 3)]
+num_vector[c(-2, -4)]
 
 ## Challenge 9 
 # Explore the difference between these 2 lines of code:
-char.vector == "blue"
-char.vector[char.vector == "blue"]
+char_vector == "blue"
+char_vector[char_vector == "blue"]
 
 ## Indexing data frames
 ## Challenge 10 
 
-# 1. Extract the `num.sp` column from `my.first.df` and multiply its value by  the first four values of `num.vec`.
+# 1. Extract the `num.sp` column from `my_df` and multiply its value by  the first four values of `num.vec`.
 
-my.first.df$num.sp * num.vector[c(1:4)]
+my_df$num_sp * num_vector[c(1:4)]
 # or
-my.first.df[,3] * num.vector[c(1:4)]
+my_df[, 3] * num.vector[c(1:4)]
 
 # 2. After that, write a statement that checks if the values you obtained are greater than 25.
-(my.first.df$num.sp * num.vector[c(1:4)]) > 25
+(my_df$num.sp * num.vector[c(1:4)]) > 25
 
 ## Functions 
 
@@ -185,21 +187,21 @@ my.first.df[,3] * num.vector[c(1:4)]
 
 a <- 3
 b <- 5
-sum(a,b)
+sum(a, b)
 
 ## Challenge 11
 # - Create a vector `a` that contains all the numbers from 1 to 5
 # - Create an object `b` with a value of 2
 # - Add `a` and `b` together using the basic `+` operator and save the result in an object called `result_add`
-# - Add `a` and `b` together using the `sum` function and save the result in an object called `result_sum`
+# - Add `a` and `b` together using the sum() function and save the result in an object called `result_sum`
 # - Compare `result_add` and `result_sum`. Are they different?
-# - Add 5 to `result_sum` function using the `sum` function
+# - Add 5 to `result_sum` function using the sum() function
 
 a <- c(1:5)
 b <- 2
 
 result_add <- a + b
-result_sum <- sum(a,b)
+result_sum <- sum(a, b)
 
 result_add
 result_sum
@@ -213,14 +215,14 @@ sum(result_sum, 5)
 
 a <- 1:100
 b <- a^2
-plot(a,b)
-plot(b,a)
+plot(a, b)
+plot(b, a)
 plot(x = a, y = b)
 plot(y = b, x = a)
 
 ## Packages 
 
-#To install packages on your computer, use the function `install.packages`.
+#To install packages on your computer, use the install.packages() function.
 # install.packages("packageName")
 
 #Installing a package is not enough to use it. You need to load it into your workspace 
@@ -244,7 +246,7 @@ qplot(1:10, 1:10)
 
 ??sequence 
 
-# OK! SO let's use the `seq` function!!
+# OK! SO let's use the seq() function!!
 # 
 # But wait... how does it work? What arguments does it need?
 # 
@@ -255,13 +257,13 @@ qplot(1:10, 1:10)
 
 ## Challenge 13 
 
-# 1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
-  seq(from=0, to=10, by=2)
-  seq(0,10,2)
+# 1. Create a sequence of even numbers from 0 to 10 using the seq() function.
+  seq(from = 0, to = 10, by = 2)
+  seq(0, 10, 2)
 
 #  2. Create a unsorted vector of your favourite numbers, then sort your vector in reverse order.
 
-numbers <- c(2,4,22,6,26)
+numbers <- c(2, 4, 22, 6, 26)
 sort(numbers, decreasing = T)
 
 ## Challenge 14
@@ -282,10 +284,10 @@ sort(numbers, decreasing = T)
 
 # - http://stats.stackexchange.com
 # - https://www.zoology.ubc.ca/~schulter/R/
-#   - http://statmethods.net/
-#   - http://rseek.org/
-#   - http://cookbook-r.com/
-#   - http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf
+# - http://statmethods.net/
+# - http://rseek.org/
+# - http://cookbook-r.com/
+# - http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf
 
 
 ## Thank you for attending!

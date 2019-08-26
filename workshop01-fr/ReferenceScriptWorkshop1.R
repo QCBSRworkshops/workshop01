@@ -2,16 +2,20 @@
 #### R reference script 
 ## September 2018 
 
+## Challenge 1
+## How to read the console
+output <- "This is the output"
+#output <- "Ceci est la sortie"
+output
 
 # Using R as a calculator
-
 ## Addition, substraction
-1+1
-10-1 
+1 + 1
+10 - 1 
 
 ## Multiplications and Divisions
-2*2
-8/2
+2 * 2
+8 / 2
 
 ## Exponents 
 2^3
@@ -19,25 +23,26 @@
 ## Challenge 2 
 # Use R to calculate the following testing question.
 
-2+16*24-56 
+2 + 16 * 24 - 56 
 
 ## Challenge 3
 # Use R to calculate the following testing question.
-2+16*24-56/(2+1)-457
+2 + 16 * 24 - 56 / (2 + 1) - 457
 
 ## Challenge 4
 
 # What is the area of a circle, with a radius of 5cm?
-3.1416*5^2
+3.1416 * 5^2
 # Note that R has some built-in constants such as pi,therefore: 
-pi*5^2
+pi * 5^2
 
 ## Objects 
 
 # Objects are one of the most useful concepts in R. 
 # You can store values as named objects using the assigment operator "<-"
 
-objectName <- "assignedValue" 
+object_name <- "assigned Value" 
+# nom_objet <- "valeurs"
 
 ## Objects naming: good practices 
 
@@ -45,17 +50,17 @@ objectName <- "assignedValue"
 # Adding spaces before the "<-" is recommended 
 # When typing the object names, R will return its value 
 
-mean.x <- (2+6)/2
+mean.x <- (2 + 6) / 2
 mean.x 
 
 ## Challenge 5 
 # Create an object with a value of 1+1.718282 (Euler's  number) and name it "euler.value"
 
-euler.value <- 1+1.718282
-euler.value
+euler_value <- 1 + 1.718282
+euler_value
 
 ## Challenge 6 
-# Create a second object with a name that starts with a number, What happens? 
+# Create a second object with a name that starts with a number, What happens?
 
 ## Types of data structures in R 
 
