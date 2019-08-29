@@ -97,6 +97,12 @@ bool_vector2
 # Create a vector containing the first 5 odd numbers, starting from 1, and name it "odd_n"
 odd_n <- c(1, 3, 5, 7)
 
+## Object structure with the dput() function
+dput(odd_n)
+
+# Creation of a new object, identical to the previous one
+structure(c(1, 3, 5, 7))
+
 ## We can use vectors for calculations 
 x <- c(1:5)
 y <- 6 
@@ -123,6 +129,16 @@ treatment <- c("Fert", "Fert", "No_fert", "No_fert")
 # We then combine them using the data.frame() function 
 my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
 my_df
+
+# Data frame structure with the dput() function
+dput(my_df)
+
+# Creation of a new data frame, identical to the previous one with the structure() function
+structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02", "B1.01", "B1.02"), class = "factor"),
+                         soil_pH = c(5.6, 7.3, 4.1, 6),
+                         num_sp = c(17, 23, 15, 7), treatment = structure(c(1L, 1L, 2L, 2L), .Label = c("Fert", "No_fert"), class = "factor")),
+                    class = "data.frame", row.names = c(NA, -4L))
+
 
 ## Matrices, Arrays and Lists 
 
