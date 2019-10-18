@@ -712,9 +712,9 @@ dput(my_df)
 .comment[It's possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output:]
 
 ````{r}
-structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02", 
-"B1.01", "B1.02"), class = "factor"), soil_pH = c(5.6, 7.3, 4.1, 
-6), num_sp = c(17, 23, 15, 7), treatment = structure(c(1L, 1L, 
+structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
+"B1.01", "B1.02"), class = "factor"), soil_pH = c(5.6, 7.3, 4.1,
+6), num_sp = c(17, 23, 15, 7), treatment = structure(c(1L, 1L,
 2L, 2L), .Label = c("Fert", "No_fert"), class = "factor")),
 class = "data.frame", row.names = c(NA, -4L))
 ````
@@ -876,7 +876,7 @@ data_frame_name[row, column]
 `my_df$site_id[2]` $\rightarrow$ Extracts the second value of the variable `siteID` from the data frame
 
 
-`my_df[, c("site_id", "soil_pH")]` $\rightarrow$ Extracts the `site_id` and `soil_pH` variables from the data frame.
+`my_df[c("site_id", "soil_pH")]` $\rightarrow$ Extracts the `site_id` and `soil_pH` variables from the data frame.
 
 
 ---
@@ -1157,7 +1157,7 @@ qplot(1:10, 1:10)
 library(ggplot2)
 qplot(1:10, 1:10)
 ```
-  
+
   .comment[For more details about the `ggplot2` package, see the workshop #3 - [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3) !!!]
 ---
 class: inverse, center, middle

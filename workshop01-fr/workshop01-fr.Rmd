@@ -2,7 +2,7 @@
 title: "Atelier 1: Introduction à R"
 subtitle: "Série d'ateliers R du CSBQ"
 author: "Centre de la Science de la Biodiversité du Québec"
-output: 
+output:
   xaringan::moon_reader:
     includes:
       in_header: qcbsR-header.html
@@ -715,9 +715,9 @@ dput(mon_df)
 ## Data frame
 .comment[Il est possible de reconstruire le data frame initial (avec certaines métadonnées associées, telles que la classe des variables par exemple) en copiant-collant la sortie précédente:]
 ````{r}
-structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02", 
- "B1.01", "B1.02"), class = "factor"), pH_sol = c(5.6, 7.3, 4.1, 
- 6), num_sp = c(17, 23, 15, 7), traitement = structure(c(1L, 1L, 
+structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
+ "B1.01", "B1.02"), class = "factor"), pH_sol = c(5.6, 7.3, 4.1,
+ 6), num_sp = c(17, 23, 15, 7), traitement = structure(c(1L, 1L,
  2L, 2L), .Label = c("Fert", "Non_fert"), class = "factor")),
  class = "data.frame", row.names = c(NA, -4L))
 ````
@@ -885,7 +885,7 @@ nom_du_data_frame[ligne, colonne]
 
 <br>
 
-`mon_df[c(, "site_id", "pH_sol")]` $\rightarrow$ Extrait les variables `site_id` et `pH_sol` du data frame.
+`mon_df[c("site_id", "pH_sol")]` $\rightarrow$ Extrait les variables `site_id` et `pH_sol` du data frame.
 
 ---
 ## Note sur les déclarations logiques
