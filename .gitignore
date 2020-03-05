@@ -9,6 +9,7 @@ master.zip
 qcbsR*.css
 qcbsR*.html
 qcbsR*.js
+*.Rproj
 
 
 # History files

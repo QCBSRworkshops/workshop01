@@ -13,7 +13,7 @@ output:
       beforeInit: "qcbsR-macros.js"
 ---
 
-```{r setup, echo = F}
+```{r setup, echo = FALSE}
 knitr::opts_chunk$set(
   comment = "#",
   collapse = TRUE,
@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r, echo =F}
+```{r, echo = FALSE}
 options(repos=structure(c(CRAN="http://cran.r-project.org")))
 ```
 
@@ -1112,7 +1112,7 @@ Many packages available through the *Comprehensive R Archive Network* [CRAN](htt
 
 ---
 
-<iframe height=100% width=100% src="images/R Package Documentation.htm" style="border:none;"></iframe>
+<iframe height=100% width=100% src="images/R_Package_Documentation.htm" style="border:none;"></iframe>
 
 ---
 ## Package
