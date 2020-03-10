@@ -13,7 +13,7 @@ output:
       beforeInit: "qcbsR-macros.js"
 ---
 
-```{r setup, echo = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   comment = "#",
   collapse = TRUE,
@@ -22,33 +22,28 @@ knitr::opts_chunk$set(
   fig.width=5, fig.height=5, fig.retina=3,
   fig.align = 'center'
 )
-```
-
-```{r, echo = FALSE}
 options(repos=structure(c(CRAN="http://cran.r-project.org")))
 ```
 
-```{r, include = FALSE}
-if (!require(DiagrammeR)) install.packages("DiagrammeR")
-library(DiagrammeR)
-if (!require(widgetframe)) install.packages("widgetframe")
-library(widgetframe)
-if (!require(ggplot2)) install.packages("ggplot2")
-library(ggplot2)
+class: inverse, center, middle
+
+# About this workshop
+
+```{R echo = FALSE, results = "asis"}
+qcbsRworkshops::get_badges(1, style = "for-the-badge", clip = FALSE)
 ```
 
-
-## Workshop 1: Introduction to R
-
+---
+# Learning Objectives
 <br>
 
-.center[
-![](images/QCBS_logo_text.png)
-]
+##### Understand what R and RStudio are
 
+##### Use R as a calculator
 
+##### Manipulate basic R objects
 
-Website: http://qcbs.ca/wiki/r/workshop1
+##### Install and use an R package
 
 
 ---
@@ -57,7 +52,7 @@ class: inverse, center, middle
 # Introduction
 
 ---
-## What is R?
+# What is R?
 
 .pull-left[
 R is an open source programming language designed for statistical analysis, data mining, and data visualization.
@@ -68,7 +63,7 @@ R is an open source programming language designed for statistical analysis, data
 ]
 
 ---
-## Why use R?
+# Why use R?
 
 **It's open source**
 
@@ -83,7 +78,7 @@ R is an open source programming language designed for statistical analysis, data
 
 
 ---
-## Why use R?
+# Why use R?
 
 .center[
 ![:scale 60%](images/operating_stm.png)
@@ -95,11 +90,12 @@ R is an open source programming language designed for statistical analysis, data
 R works on most existing operating systems
 
 ---
-## Why use R?
+# Why use R?
 
 What people have traditionally done to analyze their data:
 
 ```{r, echo = FALSE}
+library(DiagrammeR)
   grViz("
       digraph {
 
@@ -121,7 +117,7 @@ What people have traditionally done to analyze their data:
 ```
 
 ---
-## Why use R?
+# Why use R?
 
 R allows you to do everything with one program, which is nice!
 ```{r, echo = FALSE}
@@ -148,7 +144,7 @@ grViz("
 
 
 ---
-## Why use R?
+# Why use R?
 
 - More and more scientists use it every year!
 - Increasing capacities
@@ -158,7 +154,7 @@ grViz("
 
 
 ---
-## Challenge
+# Challenge
 
 .pull-left2[
 - Throughout these workshops you will be presented with a series of challenges that will be indicated by these rubik's cubes
@@ -172,7 +168,7 @@ grViz("
 
 
 ---
-## Challenge 1  ![:cube]()
+# Challenge 1  ![:cube]()
 
 .center[Open Rstudio]
 
@@ -184,7 +180,7 @@ grViz("
 
 
 ---
-## The Rstudio console
+# The Rstudio console
 
 ![](images/Rstudioconsole_fleche.png)
 
@@ -203,7 +199,7 @@ If the restriction `unable to write on disk` appears when you try to open R-Stud
 - Right-click on your R-Studio icon and chose: "Execute as administrator" to open the program.
 
 ---
-## How to read the console
+# How to read the console
 
 Text in the console typically looks like this:
 
@@ -218,7 +214,7 @@ output
 ```
 
 ---
-## How to read the console
+# How to read the console
 
 ```{r}
 output
@@ -227,7 +223,7 @@ output
 What does this bracket `[]` in the output means?
 
 ---
-## How to read the console
+# How to read the console
 
 ```{r}
 output
@@ -240,7 +236,7 @@ c(1:40)
 ```
 
 ---
-## Error and Warning
+# Error and Warning
 
 - .alert[Warning message] cautions users without halting the execution of a function. Although the function can and will give you an answer, there might be a problem with your inputs. Thus, the computation could be flawed.
 
@@ -258,7 +254,7 @@ class: inverse, center, middle
 # Using R as a calculator &nbsp; ![:faic](calculator)
 
 ---
-## Arithmetic Operators
+# Arithmetic Operators
 
 - Additions and Substractions
 
@@ -269,7 +265,7 @@ class: inverse, center, middle
 ```
 
 ---
-## Arithmetic Operators
+# Arithmetic Operators
 
 - Multiplications and Divisions
 
@@ -280,7 +276,7 @@ class: inverse, center, middle
 ```
 
 ---
-## Arithmetic Operators
+# Arithmetic Operators
 
 - Exponents
 
@@ -289,7 +285,7 @@ class: inverse, center, middle
 ```
 
 ---
-## Challenge 2 ![:cube]()
+# Challenge 2 ![:cube]()
 
 
 Use R to calculate the following skill testing question:
@@ -304,7 +300,7 @@ $$
 .comment[**Hint**: The `*` symbol is used to multiply]
 
 ---
-## Challenge 2: Solution ![:cube]()
+# Challenge 2: Solution ![:cube]()
 
 
 $$
@@ -318,7 +314,7 @@ $$
 ```
 
 ---
-## Challenge 3 ![:cube]()
+# Challenge 3 ![:cube]()
 
 Use R to calculate the following skill testing question:
 
@@ -332,7 +328,7 @@ $$
 .comment[**Hint**: Think about the order of the operation.]
 
 ---
-## Challenge 3: Solution ![:cube]()
+# Challenge 3: Solution ![:cube]()
 
 Use R to calculate the following skill testing question:
 
@@ -351,7 +347,7 @@ $$
 .comment[Note that R respects the order of the operations]
 
 ---
-## R command line tip
+# R command line tip
 
 
 Use the $\uparrow$ and $\downarrow$ arrow keys to reproduce previous commands.
@@ -367,7 +363,7 @@ Give it a try!
 
 
 ---
-## Challenge 4 ![:cube]()
+# Challenge 4 ![:cube]()
 
 What is the area of this circle which has a radius of $5\ cm$?
 
@@ -381,7 +377,7 @@ text(.5, .1, "radius = 5 cm", cex = 1)
 ```
 
 ---
-## Challenge 4: Solution ![:cube]()
+# Challenge 4: Solution ![:cube]()
 
 
 What is the area of this circle which has a radius of $5\ cm$?
@@ -403,12 +399,12 @@ class: inverse, center, middle
 # Object
 
 ---
-## Object
+# Object
 
 - One of the most useful concept in `R`!
 - You can store values as named objects using the assignment operator `<-`
 
-```{r, eval = F}
+```{r, eval = FALSE}
 object_name <- assigned value
 ```
 
@@ -417,7 +413,7 @@ The value on the **right** is assigned to the name on the **left** with the assi
 .comment[It is also possible to use the `=` sign, but it is better to **avoid it** as it is also used for other purposes.]
 
 ---
-## Object name
+# Object name
 
 - Objects names can only include:
 
@@ -433,7 +429,7 @@ The value on the **right** is assigned to the name on the **left** with the assi
 - You can **not** use special characters! (@, /, etc.)
 
 ---
-## Good practices in R code
+# Good practices in R code
 
 **Name**
 - Try having short and explicit names for your variables. Naming a variable `var`  is not very informative.
@@ -451,14 +447,14 @@ mean_x
 ```
 
 ---
-## Challenge 5 ![:cube]()
+# Challenge 5 ![:cube]()
 
 <br>
 
 Create an object with a value of 1+1.718282 (Euler's number) and name it `euler_value`.
 
 ---
-## Challenge 5: Solution ![:cube]()
+# Challenge 5: Solution ![:cube]()
 
 
 <br>
@@ -473,12 +469,12 @@ euler_value
 ```
 
 ---
-## Challenge 6 ![:cube]()
+# Challenge 6 ![:cube]()
 
 Create a second object (you decide the name) with a name that starts with a number. What happens?
 
 ---
-## Challenge 6: Solution ![:cube]()
+# Challenge 6: Solution ![:cube]()
 
 
 Create a second object (you decide the name) with a name that starts with a number. What happens?
@@ -487,12 +483,12 @@ Create a second object (you decide the name) with a name that starts with a numb
 
 Creating an object name that starts with a number returns the following error:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 Error: unexpected symbol in "[your object name]"
 ```
 
 ---
-## R command line tip
+# R command line tip
 
 - Use the tab key to autocomplete scripts
 - This helps avoid spelling errors and speeds up command entering
@@ -502,7 +498,7 @@ Error: unexpected symbol in "[your object name]"
 Let's try it!
 
 ---
-## R command line tip
+# R command line tip
 
 - Enter `eu`
 - Push tab
@@ -514,12 +510,12 @@ class: inverse, center, middle
 # Types of data structures in R
 
 ---
-## Types of data structures in R
+# Types of data structures in R
 
-![](images/matrix.png)
+![:scale 90%](images/matrix.png)
 
 ---
-## Types of data structures in R
+# Types of data structures in R
 
 `vector` $\rightarrow$ A combination of elements of the same data type. Basic data structure of R; all other objects consist of one or more vectors.
 
@@ -540,7 +536,7 @@ class: inverse, center, middle
 `list` $\rightarrow$ A list store collections of objects of any types.
 
 ---
-## Vector
+# Vector
 
 - An entity consisting of a sequence of elements of the same basic type
 - A single value is called an *atomic value*
@@ -550,7 +546,7 @@ class: inverse, center, middle
       * Character: Text, or a mix of text and other modes
 
 ---
-## Vector
+# Vector
 
 - Creating vectors usually require the `c` function
 
@@ -558,12 +554,12 @@ class: inverse, center, middle
 
 - The syntax is:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 vector <- c(value1, value2, ...)
 ```
 
 ---
-## Vector
+# Vector
 
 - Numeric vector
 
@@ -582,7 +578,7 @@ char_vector
 ```
 
 ---
-## Vector
+# Vector
 
 - Logical vector
 
@@ -600,13 +596,13 @@ bool_vector2
 ```
 
 ---
-## Challenge 7 ![:cube]()
+# Challenge 7 ![:cube]()
 
 - Create a vector containing the first 5 odd numbers, starting from 1
 - Name it `odd_n`
 
 ---
-## Challenge 7: Solution ![:cube]()
+# Challenge 7: Solution ![:cube]()
 
 
 - Create a vector containing the first 5 odd numbers, starting from 1
@@ -618,7 +614,7 @@ bool_vector2
 ```
 
 ---
-## Vector
+# Vector
 
 
 .comment[**Hint**: Use the `dput` function to obtain the structure of an object.]
@@ -633,7 +629,7 @@ structure(c(1, 3, 5, 7, 9))
 
 .comment[These functions are really useful to provide a reproductible example for a question on **stackoverflow** for instance (see one more application in the part about data frames) !]
 ---
-## Vector
+# Vector
 
 We can use vectors for calculations
 
@@ -651,16 +647,16 @@ x * y
 ```
 
 ---
-## Data frame
+# Data frame
 
 - Used to store data tables
 - A list of vectors of the same length
 - Columns = variables
 - Rows = observations, sites, cases, replicates, ...
-- Differents columns can have different modes
+- Different columns can have different modes
 
 ---
-## Data frame
+# Data frame
 
 Let's say you want to store this table in `R`:
 
@@ -674,7 +670,7 @@ Let's say you want to store this table in `R`:
 |B1.02|6.0|7|Not Fertilised|
 
 ---
-## Data frame
+# Data frame
 
 One way of doing it is:
 - Start by creating vectors
@@ -695,20 +691,20 @@ my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
 .comment[We will come back to the `data.frame` function later.]
 
 ---
-## Data frame
+# Data frame
 
 ```{r}
 my_df
 ```
 
 ---
-## Data frame
+# Data frame
 .comment[Hint: Here the `dput` function in another example.]
 ````{r}
 dput(my_df)
 ````
 ---
-## Data frame
+# Data frame
 .comment[It's possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output:]
 
 ````{r}
@@ -719,7 +715,7 @@ structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
 class = "data.frame", row.names = c(NA, -4L))
 ````
 ---
-## Matrice, Array and List
+# Matrice, Array and List
 
 .center[
 ![:scale 90%](images/matrix.png)
@@ -727,14 +723,14 @@ class = "data.frame", row.names = c(NA, -4L))
 
 
 ---
-## Indexing objects
+# Indexing objects
 
 To look at or extract part of our data, you can use **brackets** `[]`
 
 We indicate the **position** of the values we want to see between the brackets. It's called *indexing*.
 
 ---
-## Indexing vectors
+# Indexing vectors
 
 
 You can use indexing to chose a particular position, let's say we want to see the second value of our `odd_n` vector
@@ -759,7 +755,7 @@ odd_n[-c(1, 2)]
 ```
 
 ---
-## Indexing vectors
+# Indexing vectors
 
 
 If you select a position that is not in the vector it will return:
@@ -786,7 +782,7 @@ char_vector[char_vector == "blue"]
 
 
 ---
-## Challenge 8 ![:cube]()
+# Challenge 8 ![:cube]()
 
 Using the vector `num_vector`
 
@@ -795,7 +791,7 @@ Using the vector `num_vector`
 - Extract all values except for the 2nd and the 4th
 
 ---
-## Challenge 8: Solution ![:cube]()
+# Challenge 8: Solution ![:cube]()
 
 - Extract the 4th value
 
@@ -816,18 +812,18 @@ num_vector[c(-2, -4)]
 ```
 
 ---
-## Challenge 9 ![:cube]()
+# Challenge 9 ![:cube]()
 
 Explore the difference between these 2 lines of code:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 char_vector == "blue"
 
 char_vector[char_vector == "blue"]
 ```
 
 ---
-## Challenge 9: Solution ![:cube]()
+# Challenge 9: Solution ![:cube]()
 
 ```{r}
 char_vector == "blue"
@@ -842,7 +838,7 @@ char_vector[char_vector == "blue"]
 In this line of code, you ask `R` to extract all values within the `char_vector` vector that are exactly equal to `blue`.
 
 ---
-## Indexing data frames
+# Indexing data frames
 
 To index a data frame you must specify two dimensions: row and column number, using the following syntax:
 
@@ -851,7 +847,7 @@ data_frame_name[row, column]
 ```
 
 ---
-## Indexing data frames: examples
+# Indexing data frames: examples
 
 `my_df[1, ]` $\rightarrow$ Extracts the first row
 
@@ -865,7 +861,7 @@ data_frame_name[row, column]
 
 
 ---
-## Indexing data frames: examples
+# Indexing data frames: examples
 `my_df[c(2, 4), ]` $\rightarrow$ Extracts rows 2 and 4
 
 .comment[The examples given so far are also valid for indexing matrices, this is not the case for the following examples.]
@@ -880,7 +876,7 @@ data_frame_name[row, column]
 
 
 ---
-## A quick note on logical statements
+# A quick note on logical statements
 
 `R` allows testing of logical statements, *i.e.* testing whether a statement is true or false.
 
@@ -898,14 +894,14 @@ You need to use logical operators for that.
 |`x & y`      |x AND y                  |`odd_n[odd_n >=3 & odd_n < 7]` |
 
 ---
-## Challenge 10 ![:cube]()
+# Challenge 10 ![:cube]()
 
 1. Extract the `num_sp` column from `my_df` and multiply its value by  the first four values of `num_vec`.
 
 2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 ---
-## Challenge 10: Solution ![:cube]()
+# Challenge 10: Solution ![:cube]()
 
 1. Extract the `num_sp` column from `my_df` and multiply its value by  the first four values of `num_vec`.
 
@@ -929,7 +925,7 @@ class: inverse, center, middle
 # Function
 
 ---
-## Function
+# Function
 
 .pull-left2[
 A function is a tool to simplify your life.
@@ -944,16 +940,16 @@ A function needs entry values called **arguments** (or parameters). It then perf
 ]
 
 ---
-## Function
+# Function
 
 To use (call) a function, the command must be structured properly, following the "grammar rules" of the `R` language: the syntax.
 
-```{r, eval = F}
+```{r, eval = FALSE}
 function_name(argument 1, argument 2)
 ```
 
 ---
-## Arguments
+# Arguments
 
 Arguments are **values** and **instructions** the function needs to run.
 
@@ -966,7 +962,7 @@ sum(a, b)
 ```
 
 ---
-## Challenge 11 ![:cube]()
+# Challenge 11 ![:cube]()
 
 - Create a vector `a` that contains all the numbers from 1 to 5
 - Create an object `b` with a value of 2
@@ -976,7 +972,7 @@ sum(a, b)
 - Add 5 to `result_sum` using the `sum` function
 
 ---
-## Challenge 11: Solution  ![:cube]()
+# Challenge 11: Solution  ![:cube]()
 
 ```{r}
 a <- c(1:5)
@@ -996,14 +992,14 @@ sum(result_sum, 5)
 ```
 
 ---
-## Challenge 11: Solution  ![:cube]()
+# Challenge 11: Solution  ![:cube]()
 
 The operation `+` on the vector `a` adds 2 to each element. The result is a vector.
 
 The function `sum` concatenates all the values provided and then sum them. It is the same as doing 1+2+3+4+5+2.
 
 ---
-## Arguments
+# Arguments
 
 - Arguments each have a **name** that can be provided during a function call.
 
@@ -1012,11 +1008,11 @@ The function `sum` concatenates all the values provided and then sum them. It is
 - If the name is present, the order does not matter.
 
 ---
-## Challenge 12 ![:cube]()
+# Challenge 12 ![:cube]()
 
 `plot` is a function that draws a graph of y as a function of x. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
-```{r, eval = F}
+```{r, eval = FALSE}
 a <- 1:100
 b <- a^2
 plot(a, b)
@@ -1026,7 +1022,7 @@ plot(y = b, x = a)
 ```
 
 ---
-## Challenge 12: Solution ![:cube]()
+# Challenge 12: Solution ![:cube]()
 
 ```{r, echo = F}
 a <- 1:100
@@ -1039,7 +1035,7 @@ plot(y = b, x = a)
 ```
 
 ---
-## Challenge 12: Solution
+# Challenge 12: Solution
 
 .pull-left[
 ```{r,eval=F}
@@ -1053,7 +1049,7 @@ plot(a, b)
 ]
 
 .pull-right[
-```{r,eval = F}
+```{r,eval = FALSE}
 plot(b, a)
 ```
 
@@ -1066,10 +1062,10 @@ plot(b, a)
 The shape of the plot changes, as we did not provided the arguments names, the order is important.
 
 ---
-## Challenge 12: Solution
+# Challenge 12: Solution
 
 .pull-left[
-```{r,eval = F}
+```{r,eval = FALSE}
 plot(x = a, y = b)
 ```
 
@@ -1080,7 +1076,7 @@ plot(x = a, y = b)
 ]
 
 .pull-right[
-```{r,eval = F}
+```{r,eval = FALSE}
 plot(y = b, x = a)
 ```
 
@@ -1098,7 +1094,7 @@ class: inverse, center, middle
 # Package
 
 ---
-## Package
+# Package
 
 Packages are a **grouping of functions** and/or **datasets** that share a similar **theme**, e.g. statistics, spatial analysis, plotting, etc.
 
@@ -1111,11 +1107,14 @@ Many packages available through the *Comprehensive R Archive Network* [CRAN](htt
 .alert[Guess how many packages are available?]
 
 ---
+# How many packages
 
-<iframe height=100% width=100% src="images/R_Package_Documentation.htm" style="border:none;"></iframe>
+![](images/rdrr_10-03-20.png)
+
+*[rdrr.io](https://rdrr.io/) visited on March, 10th 2020*
 
 ---
-## Package
+# Package
 
 To install packages on your computer, use the function `install.packages`.
 
@@ -1130,27 +1129,27 @@ library(package name)
 ```
 
 ---
-## Package: an example
+# Package: an example
 
-```{r, eval = F}
+```{r, eval = FALSE}
 install.packages("ggplot2")
 ```
 
-```{r, eval = F}
+```{r, eval = FALSE}
 Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
 (as 'lib' is unspecified)
 ```
 
-```{r, eval = F}
+```{r, eval = FALSE}
 qplot(1:10, 1:10)
 ```
 
-```{r, eval = F}
+```{r, eval = FALSE}
 ## Error: could not find function "qplot"
 ```
 
 ---
-## Package: an example
+# Package: an example
 
 
 ```{r, fig.width = 4, fig.height = 4}
@@ -1165,40 +1164,40 @@ class: inverse, center, middle
 # Getting help
 
 ---
-## Searching for functions
+# Searching for functions
 
 WOW! `R` is so great! So many functions to do what I want!
 
 But... how do I find them?
 
 ---
-## Searching for functions
+# Searching for functions
 
 To find a function that does something specific in your installed packages, you can use `??` followed by a search term.
 
 Let's say we want to create a *sequence* of odd numbers between 0 and 10 as we did earlier. We can search in our packages all the functions with the word "sequence" in them:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 ??sequence
 ```
 
 ---
-## Search results
+# Search results
 
 ![](images/searchseq1.svg)
 
 ---
-## Search results
+# Search results
 
 ![](images/searchseq2.svg)
 
 ---
-## Search results
+# Search results
 
 ![](images/searchseq3.svg)
 
 ---
-## Getting help with functions
+# Getting help with functions
 
 OK! SO let's use the `seq` function!!
 
@@ -1206,17 +1205,17 @@ But wait... how does it work? What arguments does it need?
 
 To find information about a function in particular, use `?`
 
-```{r, eval = F}
+```{r, eval = FALSE}
   ?seq
 ```
 
 ---
-## Help pages
+# Help pages
 
 ![](images/print-1.png)
 
 ---
-## Description
+# Description
 
 - `function_name {package_name}`
 - `Description`: a short description of what the function does.
@@ -1224,7 +1223,7 @@ To find information about a function in particular, use `?`
 ![](images/seq_description.png)
 
 ---
-## Usage
+# Usage
 
 - How to call the function
 - If `name = value` is present, a default value is provided if the argument is missing. The argument becomes optional.
@@ -1234,49 +1233,49 @@ To find information about a function in particular, use `?`
 
 
 ---
-## Arguments
+# Arguments
 
 - Description of all the arguments and what they are used for
 
 ![](images/seq_arguments.png)
 
 ---
-## Details
+# Details
 
 - A detailed description of how the functions work and their characteristics
 
 ![](images/seq_details.png)
 
 ---
-## Value
+# Value
 
 - A description of the return value
 
 ![](images/seq_value.png)
 
 ---
-## See Also
+# See Also
 
 - Other related functions that can be useful
 
 ![](images/seq_see_also.png)
 
 ---
-## Examples
+# Examples
 
 - Reproducibles examples
 
 ![](images/seq_examples.png)
 
 ---
-## Challenge 13 ![:cube]()
+# Challenge 13 ![:cube]()
 
 1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
 2. Create a unsorted vector of your favourite numbers, then sort your vector in reverse order.
 
 ---
-## Challenge 13: Solutions ![:cube]()
+# Challenge 13: Solutions ![:cube]()
 
 1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
@@ -1293,15 +1292,15 @@ seq(0, 10, 2)
 ]
 
 
-2. Create a unsorted vector of your favourite numbers, then sort your vector in reverse order.
+2. Create a unsorted vector of your favorite numbers, then sort your vector in reverse order.
 
 ```{r class = "fragment"}
 numbers <- c(2, 4, 22, 6, 26)
-sort(numbers, decreasing = T)
+sort(numbers, decreasing = TRUE)
 ```
 
 ---
-## Other ways to get help
+# Other ways to get help
 
 Usually, your best source of information will be your favorite search engine!
 
@@ -1313,17 +1312,17 @@ Here are some tips on how to use them efficiently:
 - Don't hesitate to search again using different keywords!
 
 ---
-## Challenge 14 ![:cube]()
+# Challenge 14 ![:cube]()
 
 Find the appropriate functions to perform the following operations:
 
 - Square root
 - Calculate the mean of numbers
 - Combine two data frames by columns
-- List availables objects in your workspace
+- List available objects in your workspace
 
 ---
-## Challenge 14: Solutions ![:cube]()
+# Challenge 14: Solutions ![:cube]()
 
 - Square root
   - `sqrt`
@@ -1331,7 +1330,7 @@ Find the appropriate functions to perform the following operations:
   - `mean`
 - Combine two data frames by columns
   - `cbind`
-- List availables objects in your workspace
+- List available objects in your workspace
   - `ls`
 
 ---
@@ -1340,7 +1339,7 @@ class: inverse, center, middle
 # Additional resources
 
 ---
-## Cheat 4ever
+# Cheat 4ever
 
 .center[
 ![](http://dastornews.com/wp-content/uploads/2013/04/cheat.gif)
@@ -1353,12 +1352,12 @@ Open it directly from **Rstudio**: Help $\rightarrow$ Cheatsheets
 
 
 ---
-## Cheat 4ever
+# Cheat 4ever
 
 ![](images/base-r.png)
 
 ---
-## Some useful R books
+# Some useful R books
 
 .center[
 ![](images/Book6.jpg) ![](images/Book5.jpg) ![](images/Book4.jpg)
@@ -1368,7 +1367,7 @@ Open it directly from **Rstudio**: Help $\rightarrow$ Cheatsheets
 ]
 
 ---
-## Some useful R websites
+# Some useful R websites
 
 .pull-left[
 [![:scale 50%](http://r4ds.had.co.nz/cover.png)](http://r4ds.had.co.nz/index.html)
@@ -1382,7 +1381,7 @@ Open it directly from **Rstudio**: Help $\rightarrow$ Cheatsheets
 .pull-right[
 [![](http://www.lapk.org/images/QuickR.png)](http://statmethods.net/)
 
-[![:scale 50%](https://www.rstudio.com/wp-content/uploads/2014/07/RStudio-Logo-Blue-Gradient.png)](https://support.rstudio.com/hc/en-us/categories/200035113-Documentation)
+[![:scale 50%](https://d33wubrfki0l68.cloudfront.net/1ac3f0e3753f18c7e2a8893957d1841fba1e3d08/48a33/wp-content/uploads/2018/10/rstudio-logo-flat.png)](https://support.rstudio.com/hc/en-us/categories/200035113-Documentation)
 
 [**Cookbook for R**](http://cookbook-r.com/)
 ]

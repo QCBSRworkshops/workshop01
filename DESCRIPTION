@@ -1,12 +1,11 @@
 Package: placeholder
 Type: Tutorial
-Title: Workshop 01
-Version: 0.0.1.9000
+Title: QCBS R Workshop 01
+Version: 0.1.0
 Authors@R: c(
   person("Team", "QCBS", role = c("aut", "cre"), email = "kevin.cazelles@gmail.com")
   )
 Imports:
-  devtools,
   DiagrammeR,
   ggplot2,
   qcbsRworkshops,

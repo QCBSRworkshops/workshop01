@@ -23,33 +23,29 @@ knitr::opts_chunk$set(
   fig.width=5, fig.height=5, fig.retina=3,
   fig.align = 'center'
 )
-```
-
-```{r, echo = FALSE}
 options(repos=structure(c(CRAN="http://cran.r-project.org")))
 ```
 
-```{r, include = FALSE}
-if (!require(DiagrammeR)) install.packages("DiagrammeR")
-library(DiagrammeR)
-if (!require(widgetframe)) install.packages("widgetframe")
-library(widgetframe)
-if (!require(ggplot2)) install.packages("ggplot2")
-library(ggplot2)
+
+class: inverse, center, middle
+
+# À propos de cet atelier
+
+```{R echo = FALSE, results = "asis"}
+qcbsRworkshops::get_badges(1, style = "for-the-badge", clip = FALSE, lang = "fr")
 ```
 
-
-## Atelier 1: Introduction à R
-
+---
+# Learning Objectifs d'apprentissage
 <br>
 
-.center[
-![](images/QCBS_logo_text.png)
-]
+#### 1. Understand what R and RStudio are
 
+#### 2. Use R as a calculator
 
+#### 3. Manipulate basic R objects
 
-Site: https://wiki.qcbs.ca/r_atelier1
+#### 4. Install and use an R package
 
 
 ---
@@ -73,7 +69,7 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 **R est en source libre, open source**
 
- Amélioré **par** le public, **pour** le public!
+ Amélioré **par** la communauté d’utilisateur, **pour** la communauté!
 
  **Gratuit!**
 
@@ -412,7 +408,7 @@ class: inverse, center, middle
 - Un concept très important en `R`!
 - Vous pouvez stocker des valeurs dans un objet nommé à l'aide de l'opérateur d'assignation `<-`
 
-```{r, eval = F}
+```{r, eval = FALSE}
 nom_objet <- valeurs
 ```
 
@@ -490,7 +486,7 @@ Créez un deuxième objet avec un nom qui commence par un nombre. Qu'est-ce qui 
 
 La création d'un nom d'objet commençant par un nombre renvoie l'erreur suivante:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 Error: unexpected symbol in "[nom de votre objet]"
 ```
 
@@ -519,7 +515,7 @@ class: inverse, center, middle
 ---
 # Types de structures de données en R
 
-![](images/matrix.png)
+![:scale 90%](images/matrix.png)
 
 ---
 # Types de structures de données en R
@@ -563,14 +559,14 @@ class: inverse, center, middle
 
 - La syntaxe est:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 vecteur <- c(valeur1, valeur2, ...)
 ```
 
 ---
 # Vecteur
 
-- Vecteur numerique
+- Vecteur numérique
 
 ```{r}
 num_vecteur <- c(1, 4, 3, 98, 32, -76, -4)
@@ -818,7 +814,7 @@ num_vecteur[c(-2, -4)]
 
 Explorez la différence entre ces 2 lignes de code:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 car_vecteur == "bleu"
 
 car_vecteur[car_vecteur == "bleu"]
@@ -956,7 +952,7 @@ Une fonction nécessite des valeurs d'entrée appelées **arguments** (ou param�
 
 Pour utiliser (appeler) une fonction, la commande doit être structurée correctement, en suivant les **règles de grammaire** du langage `R`, *i.e.* la syntaxe.
 
-```{r, eval = F}
+```{r, eval = FALSE}
 nom_fonction(argument1, argument2)
 ```
 
@@ -1028,7 +1024,7 @@ La fonction `sum` concatène toutes les valeurs fournies puis les somme. C'est l
 
 `plot` est une fonction qui dessine un graphe de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
 
-```{r, eval = F}
+```{r, eval = FALSE}
 a <- 1:100
 b <- a^2
 plot(a, b)
@@ -1120,10 +1116,13 @@ Les *packages* sont un **regroupement de fonctions** et/ou **de données** parta
 Beaucoup de packages disponibles via le *Comprehensive R Archive Network* ou [CRAN](http://cran.r-project.org/web/packages/) et maintenant encore plus via GitHub [GitHub](https://github.com/).
 
 <br>
-.alert[Devinez combien de *packages* sont disponibles jusqu'à aujourd'hui?]
----
+.alert[Devinez combien de *packages* sont disponibles aujourd'hui?]
 
-<iframe height = 100% width = 100% src="images/R_Package_Documentation.htm" style="border:none;"></iframe>
+---
+# Combien de packages
+
+![](images/rdrr_10-03-20.png)
+*[rdrr.io](https://rdrr.io/) consulté le 20 mars 2020*
 
 ---
 # Package
@@ -1143,20 +1142,20 @@ library(nom du package)
 ---
 # Package: exemple
 
-```{r, eval = F}
+```{r, eval = FALSE}
 install.packages("ggplot2")
 ```
 
-```{r, eval = F}
+```{r, eval = FALSE}
 Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
 (as 'lib' is unspecified)
 ```
 
-```{r, eval = F}
+```{r, eval = FALSE}
 qplot(1:10, 1:10)
 ```
 
-```{r, eval = F}
+```{r, eval = FALSE}
 ## Error: could not find function "qplot"
 ```
 
@@ -1188,7 +1187,7 @@ Pour trouver une fonction qui fait une action spécifique dans vos *packages* in
 
 Disons que nous voulons créer une **séquence** de nombres impairs compris entre 0 et 10, comme nous l'avons fait précédemment. Nous pouvons rechercher dans nos *packages* toutes les fonctions qui contiennent le mot **séquence** dans leur description:
 
-```{r, eval = F}
+```{r, eval = FALSE}
 ??sequence
 ```
 
@@ -1225,7 +1224,7 @@ Mais attendez ... comment ça marche? De quels arguments la fonction a-t-elle be
 
 Pour trouver des informations sur une fonction en particulier, utilisez `?`
 
-```{r, eval = F}
+```{r, eval = FALSE}
 ?seq
 ```
 
