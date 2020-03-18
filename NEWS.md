@@ -1,3 +1,7 @@
+# development version
+
+* Update README. 
+
 # version 0.1.0
 
 * Add first slides.
