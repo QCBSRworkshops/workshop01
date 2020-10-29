@@ -430,13 +430,13 @@ plot(c(-1, 1), c(-1, 1),
 # Add circle
 lines(x = radius * cos(theta), 
       y = radius * sin(theta), lwd =4)
-arrows(0, 0, x1 = 1, length = 0, lwd = 4)
+arrows(0, 0, x1 = 1, length = 0, lwd = 4, col = "red")
 
 # Center of the circle 
 points(0,0, pch = 20)
 
 # Add text to indicate the radius 
-text(0, .1, "radius = 5 cm", cex = 2)
+text(x = 0.05, y = .2, "radius = 5 cm", cex = 2)
 ```
 
 ---
