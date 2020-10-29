@@ -1,7 +1,6 @@
 language: r
 pandoc_version: 2.2.1
 dist: bionic
-sudo: required
 os: linux
 
 branches:
@@ -24,9 +23,9 @@ before_deploy:
 
 deploy:
   provider: pages
-  cleanup: true
+  skip_cleanup: true
+  keep_history: false
   github_token: $GH_TOKEN
-  keep_history: true
   target_branch: master
   local_dir: public
   on:
