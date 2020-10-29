@@ -2,6 +2,7 @@ language: r
 pandoc_version: 2.2.1
 dist: trusty
 sudo: required
+os: linux
 
 branches:
   only:
@@ -23,7 +24,7 @@ before_deploy:
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  cleanup: true
   github_token: $GH_TOKEN
   keep_history: true
   target_branch: master
