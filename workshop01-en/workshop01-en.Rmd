@@ -30,32 +30,40 @@ class: inverse, center, middle
 # About this workshop
 
 ```{R echo = FALSE, results = "asis"}
-qcbsRworkshops::get_badges(1, style = "for-the-badge", clip = FALSE)
+qcbsRworkshops::get_badges(workshop_id = 1, style = "for-the-badge", clip = FALSE)
 ```
 
 ---
 # Learning Objectives
 <br>
 
-##### Understand what R and RStudio are
+##### 1. Understand what R and RStudio are;
 
-##### Use R as a calculator
+##### 2. Use R as a calculator;
 
-##### Manipulate basic R objects
+##### 3. Manipulate objects in R;
 
-##### Install and use an R package
+##### 4. Install, use an R package and get help.
 
 
 ---
 class: inverse, center, middle
 
-# Introduction
+# 1. Understand what R and RStudio are
+
+<hr>
+
+## Introduction
 
 ---
+
 # What is R?
 
 .pull-left[
-R is an open source programming language designed for statistical analysis, data mining, and data visualization.
+* R is an open source programming language and environment. 
+* It is designed for data analysis, graphical display and data simulations. 
+* It is one of the world's leading statistical programming environment
+
 ]
 
 .pull-right[
@@ -65,49 +73,42 @@ R is an open source programming language designed for statistical analysis, data
 ---
 # Why use R?
 
-**It's open source**
+* **It's open source**
+  - Improved **by** the public, **for** the public!
+* **Free!**
+* **It's compatible**
+  - R works on most existing operating systems
 
- Improved **by** the public, **for** the public!
-
- **Free!**
-
-.right[
-![:scale 60%](images/Opensource.png)
-]
-
-
-
----
-# Why use R?
+<!-- .right[ ![:scale 40%](images/Opensource.png) ] -->
 
 .center[
 ![:scale 60%](images/operating_stm.png)
 ]
 
 
-**It's compatible**
-
-R works on most existing operating systems
-
 ---
 # Why use R?
 
-What people have traditionally done to analyze their data:
+.pull-left[
+
+An example of a workflow to analyze data without R.
+<br>
+<br>
 
 ```{r, echo = FALSE}
 library(DiagrammeR)
   grViz("
       digraph {
 
-      node [shape = oval, fillcolor = PaleTuruoise]
-      Data; Graphs; Tables; Statistics
+      node [shape = oval, fillcolor = PaleTurquoise]
+      'Data \n (Excel, SQL)'; Graphs; Tables; Statistics
 
       node [shape = box]
       Sigmaplot; Excel; SAS
 
       ##add arrows
       edge [arrowhead = none]
-      Data -> Sigmaplot; Data -> Excel; Data -> SAS;
+      'Data \n (Excel, SQL)' -> Sigmaplot; 'Data \n (Excel, SQL)' -> Excel; 'Data \n (Excel, SQL)' -> SAS;
 
       edge [arrowhead = normal]
       Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics;
@@ -115,24 +116,25 @@ library(DiagrammeR)
       }")
 
 ```
+]
 
----
-# Why use R?
+.pull-right[
 
-R allows you to do everything with one program, which is nice!
+R allows you to do almost everything and can interface with multiple other programs.
+
 ```{r, echo = FALSE}
 grViz("
       digraph {
 
-      node [shape = oval, fillcolor = PaleTuruoise]
-      Data; Graphs; Tables; Statistics
+      node [shape = oval, fillcolor = PaleTurquoise]
+      'Data \n (Excel, SQL)'; Graphs; Tables; Statistics
 
       node [shape = box]
       R
 
       ##add arrows
       edge [arrowhead = none]
-      Data -> R;
+      'Data \n (Excel, SQL)' -> R;
 
       edge [arrowhead = normal]
       R -> Graphs; R -> Tables; R -> Statistics;
@@ -141,24 +143,58 @@ grViz("
 
 ```
 
-
+]
 
 ---
 # Why use R?
 
 - More and more scientists use it every year!
-- Increasing capacities
+- As of October 2020, only from the CRAN, there are more than 16000 packages!
 
-.center[![:scale 70%](images/Rpackages.png)]
+```{r, echo = FALSE,   fig.width=10, fig.height=6}
+# Data from https://gist.github.com/daroczig/3cf06d6db4be2bbe3368#file-results-csv
 
+# Load the data 
+pkgs  = read.csv(file = "../data/results.csv")
+
+# Load ggplot 
+library(ggplot2)
+
+# Graph 
+ggplot(pkgs, aes(as.Date(first_release), index)) +
+    geom_line(size = 2) +
+    scale_x_date(date_breaks = '1 year', date_labels = '%Y') +
+    scale_y_continuous(breaks = seq(0, 16000, 1000)) +
+    xlab('') + ylab('') + theme_bw() +
+    ggtitle('Number of R packages published on CRAN') + 
+  theme(axis.ticks = element_line(colour = "black"), 
+    panel.grid.minor = element_line(linetype = "blank"), 
+    plot.title = element_text(size = 25, face = "bold"),
+    axis.text = element_text(size = 18, colour = "black", vjust = 0), 
+    axis.text.x = element_text(size = 18, colour = "black", vjust = 0.5, angle = 90), 
+    axis.text.y = element_text(size = 18, vjust = 0.5, colour = "black"), 
+    panel.background = element_rect(fill = NA)) +
+  labs(x = NULL, y = NULL)
+```
+
+
+<!-- .center[![:scale 70%](images/Rpackages.png)] -->
+
+---
+# Cool graphs in R 
+
+All of these graphs were made in R!
+
+.center[![:scale 80%](images/graph3.png)]
 
 
 ---
 # Challenge
 
 .pull-left2[
-- Throughout these workshops you will be presented with a series of challenges that will be indicated by these rubik's cubes
+- Throughout these workshops, challenges will be indicated by a rubik's cubes in the corner of the screen. 
 - During challenges, collaborate with your neighbours!
+- Don't hesitate to ask questions. 
 ]
 
 
@@ -167,26 +203,19 @@ grViz("
 ]
 
 
+
 ---
 # Challenge 1  ![:cube]()
 
-.center[Open Rstudio]
+Open RStudio
 
 <br>
 
 .center[
-![](images/Rstudio.png)
+![:scale 40%](images/Rstudio.png)
 ]
 
-
 ---
-# The Rstudio console
-
-![](images/Rstudioconsole_fleche.png)
-
-
----
-
 ## Note for Windows user
 
 If the restriction `unable to write on disk` appears when you try to open R-Studio or to install a package,
@@ -197,6 +226,21 @@ If the restriction `unable to write on disk` appears when you try to open R-Stud
 
 - Close the application.
 - Right-click on your R-Studio icon and chose: "Execute as administrator" to open the program.
+
+
+---
+# The RStudio console
+
+- The first thing the console shows is the R version you are using. 
+- When you open RStudio, there are 3 panes.
+- Each panes have a series of tabs. For the moment focus on the `Console`. 
+  * This is where code will be typed and run. 
+  * If you opened the [workshop R script](https://github.com/QCBSRworkshops/workshop01/blob/dev/workshop01-en/ReferenceScriptWorkshop1.R), the script pane will appear 
+
+.center[
+![:scale 80%](images/Rstudioconsole_fleche_big.png)
+]
+
 
 ---
 # How to read the console
@@ -213,21 +257,24 @@ output <- "This is the output"
 output
 ```
 
----
-# How to read the console
-
-```{r}
-output
-```
-
 What does this bracket `[]` in the output means?
 
 ---
 # How to read the console
 
+
+Text in the console typically looks like this:
+
+.comment[You always have to push "enter" for the input to run in the console.]
+
+```{r, include = FALSE}
+output <- "This is the output"
+```
+
 ```{r}
 output
 ```
+What does this bracket `[]` in the output means?
 
 The bracket help you to locate *where* you are in the output
 
@@ -238,20 +285,28 @@ c(1:40)
 ---
 # Error and Warning
 
-- .alert[Warning message] cautions users without halting the execution of a function. Although the function can and will give you an answer, there might be a problem with your inputs. Thus, the computation could be flawed.
+- .alert[Warning message] 
+  * Cautions users without halting the execution of a function. 
+  * Although the function can and will give you an answer, there might be a problem with your inputs. 
+  * Thus, the computation could be flawed.
 
-- .alert[Error message] will stop the current execution because R can’t carry it out. It indicates a problem in your code
+- .alert[Error message] 
+  * Will stop the current execution because R can’t carry it out. 
+  * It indicates a problem in your code
 
 .center[
 **To solve *error*, google is your bestfriend!**
 ]
 
 
-
 ---
 class: inverse, center, middle
 
-# Using R as a calculator &nbsp; ![:faic](calculator)
+# 2. Using R as a calculator &nbsp; ![:faic](calculator)
+
+<hr>
+
+## Basic operations
 
 ---
 # Arithmetic Operators
@@ -264,9 +319,6 @@ class: inverse, center, middle
 10 - 1
 ```
 
----
-# Arithmetic Operators
-
 - Multiplications and Divisions
 
 ```{r}
@@ -274,9 +326,6 @@ class: inverse, center, middle
 
 8 / 2
 ```
-
----
-# Arithmetic Operators
 
 - Exponents
 
@@ -302,6 +351,7 @@ $$
 ---
 # Challenge 2: Solution ![:cube]()
 
+Use R to calculate the following skill testing question:
 
 $$
 2+16*24-56
@@ -367,13 +417,26 @@ Give it a try!
 
 What is the area of this circle which has a radius of $5\ cm$?
 
+.comment[**Hint**: $$Area_{circle} = \pi \times r^2$$]
+
 ```{r echo = F}
 radius <- 1
 theta <- seq(0, 2 * pi, length = 200)
-plot(c(-1, 1), c(-1, 1), type = "n", ann = F, axes = F, asp = 1)
-lines(x = radius * cos(theta), y = radius * sin(theta))
-arrows(0, 0, x1 = 1, length = 0)
-text(.5, .1, "radius = 5 cm", cex = 1)
+
+# Plot canvas
+plot(c(-1, 1), c(-1, 1), 
+     type = "n", ann = F, axes = F, asp = 1)
+
+# Add circle
+lines(x = radius * cos(theta), 
+      y = radius * sin(theta), lwd =4)
+arrows(0, 0, x1 = 1, length = 0, lwd = 4)
+
+# Center of the circle 
+points(0,0, pch = 20)
+
+# Add text to indicate the radius 
+text(0, .1, "radius = 5 cm", cex = 2)
 ```
 
 ---
@@ -396,7 +459,11 @@ pi * 5^2
 ---
 class: inverse, center, middle
 
-# Object
+# 3. Manipulate objects in R
+
+<hr>
+
+## Object
 
 ---
 # Object
@@ -507,7 +574,11 @@ Let's try it!
 ---
 class: inverse, center, middle
 
-# Types of data structures in R
+# 3. Manipulate objects in R
+
+<hr>
+
+## Types of data structures in R
 
 ---
 # Types of data structures in R
@@ -922,7 +993,11 @@ my_df[, 3] * num_vector[c(1:4)]
 ---
 class: inverse, center, middle
 
-# Function
+# 3. Manipulate objects in R
+
+<hr>
+
+## Function
 
 ---
 # Function
@@ -1091,7 +1166,7 @@ Same as `plot(a,b)`. The argument names are provided, the order is not important
 ---
 class: inverse, center, middle
 
-# Package
+# 4. Install, use an R package and get help
 
 ---
 # Package
@@ -1161,7 +1236,11 @@ qplot(1:10, 1:10)
 ---
 class: inverse, center, middle
 
-# Getting help
+# 4. Install, use an R package and get help
+
+<hr>
+
+## Getting help
 
 ---
 # Searching for functions
@@ -1348,7 +1427,7 @@ class: inverse, center, middle
 
 Lot of [cheat sheets](https://www.rstudio.com/resources/cheatsheets/) are available online.
 
-Open it directly from **Rstudio**: Help $\rightarrow$ Cheatsheets
+Open it directly from **RStudio**: Help $\rightarrow$ Cheatsheets
 
 
 ---
