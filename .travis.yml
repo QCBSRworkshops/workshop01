@@ -1,7 +1,7 @@
 language: r
-pandoc_version: 2.2.1
-dist: focal
+pandoc_version: 2.9.2
 os: linux
+dist: focal
 
 branches:
   only:
@@ -9,7 +9,7 @@ branches:
     - master
 
 cache:
-  packages: yes
+  packages: true
   directories:
     - $HOME/bin
 
