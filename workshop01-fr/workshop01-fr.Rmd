@@ -276,7 +276,7 @@ class: inverse, center, middle
 10 - 1
 ```
 
----
+--
 # Opérateurs arithmétiques
 
 - Multiplications et divisions
@@ -287,7 +287,7 @@ class: inverse, center, middle
 8 / 2
 ```
 
----
+--
 # Opérateurs arithmétiques
 
 - Exposants
@@ -295,6 +295,13 @@ class: inverse, center, middle
 ```{r}
 2^3
 ```
+
+---
+# Opérateurs arithmétiques
+
+![](images/arithmetic_operators.png)
+
+---
 
 ---
 # Défi 2 ![:cube]()
@@ -377,7 +384,7 @@ theta <- seq(0, 2 * pi, length = 200)
 plot(c(-1, 1), c(-1, 1), type = "n", ann = F, axes = F, asp = 1)
 lines(x = radius * cos(theta), y = radius * sin(theta))
 arrows(0, 0, x1 = 1, length = 0)
-text(.5, .1, "radius = 5 cm", cex = 1)
+text(.5, .1, "rayon = 5 cm", cex = 1)
 ```
 
 ---
@@ -413,7 +420,7 @@ nom_objet <- valeurs
 
 Les valeurs à **droite** sont assignées à l'objet à **gauche** grâce à l'opérateur d'assignement `<-`
 
-.comment[Bien qu'il soit aussi possible d'utiliser le signe `=`, il est préférable de l'éviter puisque sa signification est différente.]
+.comment[Bien qu'il soit aussi possible d'utiliser le signe `=`, l'opérateur `<-` est généralement la méthode standard pour l'assignation d'information à un objet.]
 
 ---
 # Nom d'objet
@@ -454,7 +461,7 @@ moy_x
 
 <br>
 
-Créez un objet avec une valeur de 1+1.718282 (le nombre d'Euler) et nommez le `valeur_euler`.
+Créez un objet avec une valeur de 1+1.718282 ([_e_ ou le nombre d'Euler](https://fr.wikipedia.org/wiki/E_(nombre)) et nommez le `valeur_euler`.
 
 ---
 # Défi 5: Solution ![:cube]()
@@ -519,25 +526,33 @@ class: inverse, center, middle
 ---
 # Types de structures de données en R
 
-`vecteur` $\rightarrow$ Combinaison d'éléments du même type de données. Structure de base en R; tous les autres objets sont formés à partir d'un ou plusieurs vecteurs.
+`vecteur` 
+- Combinaison d'éléments du même type de données. 
+- Structure de base en R; tous les autres objets sont formés à partir d'un ou plusieurs vecteurs.
 
 --
 
-`matrice` $\rightarrow$ Objet 2D généré en combinant plusieurs vecteurs du même type. On peut faire des opérations sur des matrices en R (+, -, *, ...).
+`matrice` 
+- Objet 2D généré en combinant plusieurs vecteurs du même type. 
+- On peut faire des opérations sur des matrices en R (+, -, *, ...).
 
 --
 
-`array` $\rightarrow$ Objet 3D généré en combinant plusieurs matrices de même type. Vecteur = array 1D. Matrice = array 2D.
+`array` 
+- Objet 3D généré en combinant plusieurs matrices de même type. 
+- Vecteur = array 1D. Matrice = array 2D.
 
 --
 
-`data.frame` $\rightarrow$ Objet 2D généré en combinant plusieurs vecteurs de n'importe quel type. Chaque colonne doit être du même type, mais un dataframe peut contenir des colonnes de différents types. Plusieurs fonctions statistiques (e.g. régression) utilisent des dataframes.
+`data.frame` 
+- Objet 2D généré en combinant plusieurs vecteurs de n'importe quel type. 
+- Chaque colonne doit être du même type, mais un dataframe peut contenir des colonnes de différents types. 
+- Plusieurs fonctions statistiques (e.g. régression) utilisent des dataframes.
 
 --
 
-`liste` $\rightarrow$ Une liste stocke des collections d'objets de tous types.
-
-
+`liste` 
+- Une liste stocke des collections d'objets de tous types.
 
 ---
 # Vecteur
@@ -545,9 +560,9 @@ class: inverse, center, middle
 - Entité consistant en une séquence d'éléments du même type de base
 - Une valeur seule est appelée une *atomic value*
 - Toutes les valeurs d'un vecteur doivent avoir le **même mode** (ou classe).
-      * `numeric`: seulement des nombres
-      * `logical`: entrées True/False
-      * `character`: Texte, ou un mélange de texte et d'autres modes
+      * `numeric`: seulement des nombres (e.g. `c(2, 3, 5, 3.1416)`)
+      * `logical`: entrées True/False (e.g `c(TRUE, FALSE, TRUE)`)
+      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("QCBS", "J'adore cet atelier")`)
 
 ---
 # Vecteur
@@ -689,18 +704,13 @@ traitement <- c("Fert", "Fert", "Non_fert", "Non_fert")
 
 ```{r}
 mon_df <- data.frame(site_id, pH_sol, num_sp, traitement)
+mon_df
 ```
 
 .comment[Nous reviendrons plus tard sur la fonction `data.frame`.]
 
 ---
-# Data frame
 
-```{r}
-mon_df
-```
-
----
 # Data frame
 .comment[Voici la fonction `dput` dans un exemple plus concret.]
 ````{r}
@@ -716,14 +726,6 @@ structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
  2L, 2L), .Label = c("Fert", "Non_fert"), class = "factor")),
  class = "data.frame", row.names = c(NA, -4L))
 ````
----
-# Matrice, Array et Liste
-
-.center[
-![:scale 90%](images/matrix.png)
-]
-
-
 ---
 # Indexer des vecteurs
 
@@ -924,7 +926,16 @@ mon_df[, 3] * num_vecteur[c(1:4)]
 ```{r}
 (mon_df$num_sp * num_vecteur[c(1:4)]) > 25
 ```
+---
+# Matrice, Array et Liste
 
+- Dans cet atelier, nous nous sommes principalement attardés aux `vecteurs` et aux `data frames`.
+- Dans le futur, il est fort possible que vous ayez à travailler avec des `matrices`, des `listes` ou des `arrays`.
+- La façon d'accéder à l'information diffère selon la dimension et le type de l'objet.
+
+.center[
+![:scale 90%](images/matrix.png)
+]
 
 ---
 class: inverse, center, middle
@@ -1000,10 +1011,7 @@ resultat_sum
 sum(resultat_sum, 5)
 ```
 
----
-# Défi 11: Solution  ![:cube]()
-
-<br>
+--
 
 L'opération `+` sur le vecteur `a` ajoute 2 à chaque élément. Le résultat est un vecteur.
 
@@ -1026,10 +1034,10 @@ La fonction `sum` concatène toutes les valeurs fournies puis les somme. C'est l
 ```{r, eval = FALSE}
 a <- 1:100
 b <- a^2
-plot(a, b)
-plot(b, a)
-plot(x = a, y = b)
-plot(y = b, x = a)
+plot(a, b, type = "l")
+plot(b, a, type = "l")
+plot(x = a, y = b, type = "l")
+plot(y = b, x = a, type = "l")
 ```
 
 ---
@@ -1039,10 +1047,10 @@ plot(y = b, x = a)
 a <- 1:100
 b <- a^2
 par(mfrow = c(2, 2),mar=c(4, 4, 1, 1))
-plot(a, b)
-plot(b, a)
-plot(x = a, y = b)
-plot(y = b, x = a)
+plot(a, b, type = "l")
+plot(b, a, type = "l")
+plot(x = a, y = b, type = "l")
+plot(y = b, x = a, type = "l")
 ```
 
 ---
@@ -1050,23 +1058,23 @@ plot(y = b, x = a)
 
 .pull-left[
 ```{r,eval=F}
-plot(a, b)
+plot(a, b, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(a, b)
+plot(a, b, type = "l")
 ```
 ]
 
 .pull-right[
 ```{r,eval=F}
-plot(b, a)
+plot(b, a, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(b, a)
+plot(b, a, type = "l")
 ```
 ]
 
@@ -1077,23 +1085,23 @@ plot(b, a)
 
 .pull-left[
 ```{r,eval=F}
-plot(x = a, y = b)
+plot(x = a, y = b, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(x = a, y = b)
+plot(x = a, y = b, type = "l")
 ```
 ]
 
 .pull-right[
 ```{r,eval=F}
-plot(y = b, x = a)
+plot(y = b, x = a, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(y = b, x = a)
+plot(y = b, x = a, type = "l")
 ```
 ]
 
@@ -1270,21 +1278,21 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ![](images/seq_details.png)
 
 ---
-# Valeur de retour
+# Valeur de retour, Voir aussi, Exemples
 
 - Une description de la valeur de retour
 
 ![](images/seq_value.png)
 
----
+--
+
 # Voir aussi
 
 - Autres fonctions connexes pouvant être utiles
 
 ![](images/seq_see_also.png)
 
----
-# Exemples
+--
 
 - Exemples reproductibles
 

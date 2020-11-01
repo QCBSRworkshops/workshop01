@@ -356,6 +356,14 @@ class: inverse, center, middle
 ```
 
 ---
+---
+# Arithmetic Operators
+
+![](images/arithmetic_operators.png)
+
+---
+
+
 # Challenge 2 ![:cube]()
 
 
@@ -824,13 +832,10 @@ treatment <- c("Fert", "Fert", "No_fert", "No_fert")
 
 ```{r}
 my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
+my_df
 ```
 
 .comment[We will come back to the `data.frame` function later.]
-
-```{r}
-my_df
-```
 
 ---
 # Data frame
@@ -861,18 +866,6 @@ structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
 2L, 2L), .Label = c("Fert", "No_fert"), class = "factor")),
 class = "data.frame", row.names = c(NA, -4L))
 ````
----
-# Matrix, Array and List
-
-- In this course, we focus mainly on vector and data frames.
-- But in the future, you might need to use a matrix, an array or a list.
-- Note that the way to access the information in the type of data structure will differ depending on the dimension of the object.
-
-.center[
-![:scale 70%](images/matrix.png)
-]
-
-
 ---
 # Indexing objects
 
@@ -1116,6 +1109,16 @@ my_df[, 3] * num_vector[c(1:4)]
 (my_df$num_sp * num_vector[c(1:4)]) > 25
 ```
 
+---
+# Matrix, Array and List
+
+- In this course, we focus mainly on `vectors` and `data frames`.
+- But in the future, you might need to use a matrix, an array or a list.
+- Note that the way to access the information in the type of data structure will differ depending on the dimension of the object.
+
+.center[
+![:scale 70%](images/matrix.png)
+]
 
 ---
 class: inverse, center, middle
@@ -1221,6 +1224,8 @@ plot(b, a, type = "l")
 plot(x = a, y = b, type = "l")
 plot(y = b, x = a, type = "l")
 ```
+
+.comment[The argument `type` of the function `plot` let you choose the type of graph you want. Try it without this argument.]
 
 ---
 # Challenge 12: Solution ![:cube]()
@@ -1489,14 +1494,14 @@ To find information about a function in particular, use `?`
 ---
 # Challenge 13 ![:cube]()
 
-1- Create a sequence of even numbers from 0 to 10 using the `seq` function.
+1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
-2- Create an unsorted vector of your favourite numbers, then sort your vector in reverse order.
+2. Create an unsorted vector of your favourite numbers, then sort your vector in reverse order.
 
 ---
 # Challenge 13: Solutions ![:cube]()
 
-1- Create a sequence of even numbers from 0 to 10 using the `seq` function.
+1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
 .pull-left[
 ```{r class = "fragment"}
@@ -1511,7 +1516,7 @@ seq(0, 10, 2)
 ]
 
 
-2- Create an unsorted vector of your favorite numbers, then sort your vector in reverse order.
+2. Create an unsorted vector of your favorite numbers, then sort your vector in reverse order.
 
 ```{r class = "fragment"}
 numbers <- c(2, 4, 22, 6, 26)
