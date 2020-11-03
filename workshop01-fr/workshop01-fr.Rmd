@@ -70,34 +70,26 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 ---
 # Pourquoi utiliser R?
 
-**R est en source libre, open source**
+* **R est en source libre, open source**
+  - Amélioré **par** la communauté d’utilisateur, **pour** la communauté!
+* **Gratuit!**
+* **Compatible!**
+  - R fonctionne avec la majorité des systèmes d'exploitation
 
- Amélioré **par** la communauté d’utilisateur, **pour** la communauté!
-
- **Gratuit!**
-
-.right[
-![:scale 60%](images/Opensource.png)
-]
-
-
-
----
-# Pourquoi utiliser R?
+<!-- .right[ ![:scale 40%](images/Opensource.png) ] -->
 
 .center[
 ![:scale 60%](images/operating_stm.png)
 ]
 
-
-**C'est compatible**
-
-R fonctionne avec la majorité des systèmes d'exploitation
-
 ---
 # Pourquoi utiliser R?
 
-Ce que les gens faisaient traditionnellement pour analyser leurs données:
+.pull-left[
+
+- Ce que les gens faisaient traditionnellement pour analyser leurs données:
+
+<br>
 
 ```{r, echo = FALSE}
   grViz("
@@ -119,11 +111,11 @@ Ce que les gens faisaient traditionnellement pour analyser leurs données:
       }")
 
 ```
+]
 
----
-# Pourquoi utiliser R?
+.pull-right[
 
-R permet de tout (ou presque) faire avec un seul programme!
+- R permet de tout (ou presque) faire avec un seul programme!
 ```{r, echo = FALSE}
 grViz("
       digraph {
@@ -144,8 +136,7 @@ grViz("
       }")
 
 ```
-
-
+]
 
 ---
 # Pourquoi utiliser R?
@@ -155,9 +146,8 @@ grViz("
 
 .center[![:scale 70%](images/Rpackages.png)]
 
-
-
 ---
+
 # Défi
 
 .pull-left2[
@@ -303,11 +293,7 @@ class: inverse, center, middle
 ```
 
 ---
-# Opérateurs arithmétiques
 
-![](images/arithmetic_operators.png)
-
----
 # Défi 2 ![:cube]()
 
 
@@ -538,13 +524,13 @@ class: inverse, center, middle
 ## Types de structures de données en R
 
 <!-- ![:scale 90%](images/matrix.png) -->
-![:scale 90%](images/Type_of_data_structure_in_R.pdf)
+![:scale 90%](images/Type_of_data_structure_in_R.png)
 ---
 # Types de structures de données en R
 
 `vecteur` 
 - Combinaison d'éléments du même type de données. 
-- Structure de base en R; tous les objets sont formés à partir d'un ou plusieurs vecteurs.
+- Structure de base en R; tous les objets sont formés d'un ou plusieurs vecteurs.
 
 --
 
@@ -656,7 +642,8 @@ x <- c(1:5)
 y <- 6
 ```
 
-.comment[Le symbole de deux-points `:` est utilisé pour combiner toutes les valeurs entre le premier et le deuxième nombre fournis. `c(1:5)` est équivalent à `c(1, 2, 3, 4, 5)`]
+.comment[Le symbole de deux-points `:` est utilisé pour combiner toutes les valeurs entre le premier et le deuxième nombre fournis. `c(1:5)` est équivalent à 
+`c(1, 2, 3, 4, 5)`]
 
 ```{r}
 x + y
@@ -1340,7 +1327,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 
 1. Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq`.
 
-2. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
+1. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
 ---
 # Défi 13: Solutions ![:cube]()
 

@@ -356,12 +356,6 @@ class: inverse, center, middle
 ```
 
 ---
-# Arithmetic Operators
-
-![](images/arithmetic_operators.png)
-
----
-
 
 # Challenge 2 ![:cube]()
 
