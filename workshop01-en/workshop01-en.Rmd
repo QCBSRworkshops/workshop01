@@ -356,6 +356,7 @@ class: inverse, center, middle
 ```
 
 ---
+
 # Challenge 2 ![:cube]()
 
 
@@ -494,21 +495,17 @@ class: inverse, center, middle
 - You can store values as named objects using the assignment operator `<-`
 
 ```{r, eval = FALSE}
-object_name <- "assigned value"
+object_name <- assigned value
 ```
 
 - Basically the `<-`, represents an arrow pointing where to store the information. 
-- The value on the **right** (_"assigned value"_) is assigned to the name on the **left** (_object_name_) with the assignment operator `<-`.
+- The value on the **right** (`assigned value`) is assigned to the name on the **left** (`object_name`) with the assignment operator `<-`.
 - Careful! There is no space between the less than (`<`) and minus (`-`) signs. 
 
 
 --
 
-
-<br> 
-
-**A note on the `=` sign:**
-.comment[* It is also possible to use the `=` sign, but be aware that the assignment operator `<-` is generally the standardized way to store information in an object.]
+.comment[It is also possible to use the `=` sign, but be aware that the assignment operator `<-` is generally the standardized way to store information in an object.]
 
 ---
 # Object name
@@ -760,11 +757,11 @@ dput(odd_n)
 We can use vectors for calculations
 
 ```{r}
-  x <- c(1:5)
-  y <- 6
+x <- c(1:5)
+y <- 6
 ```
 
-.comment[The colon symbol `:` is used to combine all values between the first and the second provided numbers. `c(1:5)` returns `1, 2, 3, 4, 5`]
+.comment[The colon symbol `:` is used to combine all values between the first and the second provided numbers. `c(1:5)` is equivalent to  `c(1, 2, 3, 4, 5)`]
 
 --
 
@@ -799,11 +796,11 @@ Let us say you want to store this table in `R`:
 |B1.01|4.1|15|Not Fertilised|
 |B1.02|6.0|7|Not Fertilised|
 
-Where 
-- "site_id" is the ID of the site, 
-- "soil_pH" is the soil pH, 
-- "num_sp" is the number of species and 
-- the last column is the treatment applied. 
+where 
+- "site_id" is the ID of the site 
+- "soil_pH" is the soil pH 
+- "num_sp" is the number of species 
+- the last column is the treatment applied 
 
 ---
 # Data frame
@@ -824,13 +821,10 @@ treatment <- c("Fert", "Fert", "No_fert", "No_fert")
 
 ```{r}
 my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
+my_df
 ```
 
 .comment[We will come back to the `data.frame` function later.]
-
-```{r}
-my_df
-```
 
 ---
 # Data frame
@@ -842,10 +836,9 @@ dput(my_df)
 Will return: 
 
 ```{r eval = FALSE}
-structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
-"B1.01", "B1.02"), class = "factor"), soil_pH = c(5.6, 7.3, 4.1,
-6), num_sp = c(17, 23, 15, 7), treatment = structure(c(1L, 1L,
-2L, 2L), .Label = c("Fert", "No_fert"), class = "factor")),
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), 
+treatment = c("Fert", "Fert", "No_fert", "No_fert")), 
 class = "data.frame", row.names = c(NA, -4L))
 ```
 
@@ -855,24 +848,11 @@ class = "data.frame", row.names = c(NA, -4L))
 .comment[It is possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output shown here:]
 
 ````{r}
-structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
-"B1.01", "B1.02"), class = "factor"), soil_pH = c(5.6, 7.3, 4.1,
-6), num_sp = c(17, 23, 15, 7), treatment = structure(c(1L, 1L,
-2L, 2L), .Label = c("Fert", "No_fert"), class = "factor")),
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), 
+treatment = c("Fert", "Fert", "No_fert", "No_fert")), 
 class = "data.frame", row.names = c(NA, -4L))
 ````
----
-# Matrix, Array and List
-
-- In this course, we focus mainly on vector and data frames.
-- But in the future, you might need to use a matrix, an array or a list.
-- Note that the way to access the information in the type of data structure will differ depending on the dimension of the object.
-
-.center[
-![:scale 70%](images/matrix.png)
-]
-
-
 ---
 # Indexing objects
 
@@ -1029,7 +1009,7 @@ In this line of code, you ask `R` to extract all values within the `char_vector`
 ---
 # Indexing data frames
 
-To index a data frame you must specify two dimensions: row and column numbers, using the following syntax:
+To index a `data frame` you must specify two dimensions: row and column numbers, using the following syntax:
 
 ```r
 data_frame_name[row, column]
@@ -1094,14 +1074,14 @@ You need to use logical operators for that.
 ---
 # Challenge 10 ![:cube]()
 
-1- Extract the `num_sp` column from `my_df` and multiply its value by  the first four values of `num_vec`.
+1. Extract the `num_sp` column from `my_df` and multiply its value by the first four values of `num_vec`.
 
-2- After that, write a statement that checks if the values you obtained are greater than 25.
+2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 ---
 # Challenge 10: Solution ![:cube]()
 
-1- Extract the `num_sp` column from `my_df` and multiply its value by  the first four values of `num_vec`.
+1. Extract the `num_sp` column from `my_df` and multiply its value by  the first four values of `num_vec`.
 
 ```{r}
 my_df$num_sp * num_vector[c(1:4)]
@@ -1109,13 +1089,23 @@ my_df$num_sp * num_vector[c(1:4)]
 my_df[, 3] * num_vector[c(1:4)]
 ```
 
-2- After that, write a statement that checks if the values you obtained are greater than 25.
+2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 
 ```{r}
 (my_df$num_sp * num_vector[c(1:4)]) > 25
 ```
 
+---
+# Matrix, Array and List
+
+- In this course, we focus mainly on `vectors` and `data frames`.
+- But in the future, you might need to use a matrix, an array or a list.
+- Note that the way to access the information in the type of data structure will differ depending on the dimension of the object.
+
+.center[
+![:scale 60%](images/matrix.png)
+]
 
 ---
 class: inverse, center, middle
@@ -1222,6 +1212,8 @@ plot(x = a, y = b, type = "l")
 plot(y = b, x = a, type = "l")
 ```
 
+.comment[The argument `type` of the function `plot` let you choose the type of graph you want. Try it without this argument.]
+
 ---
 # Challenge 12: Solution ![:cube]()
 
@@ -1295,6 +1287,8 @@ Same as `plot(a, b, type = "l")`. The argument names are provided, the order is 
 class: inverse, center, middle
 
 # 4. Install, use an R package and get help
+
+## Package
 
 ---
 # Package
@@ -1489,14 +1483,14 @@ To find information about a function in particular, use `?`
 ---
 # Challenge 13 ![:cube]()
 
-1- Create a sequence of even numbers from 0 to 10 using the `seq` function.
+1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
-2- Create an unsorted vector of your favourite numbers, then sort your vector in reverse order.
+2. Create an unsorted vector of your favourite numbers, then sort your vector in reverse order.
 
 ---
 # Challenge 13: Solutions ![:cube]()
 
-1- Create a sequence of even numbers from 0 to 10 using the `seq` function.
+1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
 .pull-left[
 ```{r class = "fragment"}
@@ -1511,7 +1505,7 @@ seq(0, 10, 2)
 ]
 
 
-2- Create an unsorted vector of your favorite numbers, then sort your vector in reverse order.
+2. Create an unsorted vector of your favorite numbers, then sort your vector in reverse order.
 
 ```{r class = "fragment"}
 numbers <- c(2, 4, 22, 6, 26)
@@ -1616,4 +1610,7 @@ class: inverse, center, bottom
 
 # Thank you for attending!
 
+<hr>
+
 ![:scale 50%](images/qcbs_logo.png)
+<br><br><br><br>

@@ -25,7 +25,6 @@ knitr::opts_chunk$set(
 options(repos=structure(c(CRAN="http://cran.r-project.org")))
 ```
 
-
 class: inverse, center, middle
 
 # À propos de cet atelier
@@ -35,24 +34,29 @@ qcbsRworkshops::get_badges(1, style = "for-the-badge", clip = FALSE, lang = "fr"
 ```
 
 ---
-# Learning Objectifs d'apprentissage
+# Objectifs d'apprentissage
 <br>
 
-#### 1. Understand what R and RStudio are
+#### 1. Comprendre ce que R et RStudio sont 
 
-#### 2. Use R as a calculator
+#### 2. Utiliser R comme une calculatrice 
 
-#### 3. Manipulate basic R objects
+#### 3. Manipuler les objets dans R 
 
-#### 4. Install and use an R package
+#### 4. Installer et utiliser les packages R 
 
 
 ---
 class: inverse, center, middle
 
-# Introduction
+# 1. Comprendre ce que R et RStudio sont
+
+<hr>
+
+## Introduction
 
 ---
+
 # Qu'est-ce que R?
 
 .pull-left[
@@ -66,34 +70,26 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 ---
 # Pourquoi utiliser R?
 
-**R est en source libre, open source**
+* **R est en source libre, open source**
+  - Amélioré **par** la communauté d’utilisateur, **pour** la communauté!
+* **Gratuit!**
+* **Compatible!**
+  - R fonctionne avec la majorité des systèmes d'exploitation
 
- Amélioré **par** la communauté d’utilisateur, **pour** la communauté!
-
- **Gratuit!**
-
-.right[
-![:scale 60%](images/Opensource.png)
-]
-
-
-
----
-# Pourquoi utiliser R?
+<!-- .right[ ![:scale 40%](images/Opensource.png) ] -->
 
 .center[
 ![:scale 60%](images/operating_stm.png)
 ]
 
-
-**C'est compatible**
-
-R fonctionne avec la majorité des systèmes d'exploitation
-
 ---
 # Pourquoi utiliser R?
 
-Ce que les gens faisaient traditionnellement pour analyser leurs données:
+.pull-left[
+
+- Ce que les gens faisaient traditionnellement pour analyser leurs données:
+
+<br>
 
 ```{r, echo = FALSE}
   grViz("
@@ -115,11 +111,13 @@ Ce que les gens faisaient traditionnellement pour analyser leurs données:
       }")
 
 ```
+]
 
----
-# Pourquoi utiliser R?
+.pull-right[
 
-R permet de tout (ou presque) faire avec un seul programme!
+- R permet de tout (ou presque) faire avec un seul programme!
+<br>
+<br>
 ```{r, echo = FALSE}
 grViz("
       digraph {
@@ -140,8 +138,7 @@ grViz("
       }")
 
 ```
-
-
+]
 
 ---
 # Pourquoi utiliser R?
@@ -151,7 +148,12 @@ grViz("
 
 .center[![:scale 70%](images/Rpackages.png)]
 
+---
+# Visualisation de données!
 
+Tous ces graphiques ont été faits avec R!
+
+.center[![:scale 80%](images/graph3.png)]
 
 ---
 # Défi
@@ -263,7 +265,11 @@ Il indique un problème dans votre code.
 ---
 class: inverse, center, middle
 
-# Utiliser R comme une calculatrice
+# 2. Utiliser R comme une calculatrice &nbsp; ![:faic](calculator)
+
+<hr>
+
+## Opérations de base
 
 ---
 # Opérateurs arithmétiques
@@ -276,8 +282,7 @@ class: inverse, center, middle
 10 - 1
 ```
 
----
-# Opérateurs arithmétiques
+--
 
 - Multiplications et divisions
 
@@ -287,8 +292,7 @@ class: inverse, center, middle
 8 / 2
 ```
 
----
-# Opérateurs arithmétiques
+--
 
 - Exposants
 
@@ -297,6 +301,7 @@ class: inverse, center, middle
 ```
 
 ---
+
 # Défi 2 ![:cube]()
 
 
@@ -362,7 +367,7 @@ Utilisez les touches fléchées $\uparrow$ et $\downarrow$ pour copier et reprod
 
 
 .center[
-![:scale 50%](images/keyboard_arrows.png)
+![:scale 30%](images/keyboard_arrows.png)
 ]
 
 
@@ -377,7 +382,7 @@ theta <- seq(0, 2 * pi, length = 200)
 plot(c(-1, 1), c(-1, 1), type = "n", ann = F, axes = F, asp = 1)
 lines(x = radius * cos(theta), y = radius * sin(theta))
 arrows(0, 0, x1 = 1, length = 0)
-text(.5, .1, "radius = 5 cm", cex = 1)
+text(.5, .1, "rayon = 5 cm", cex = 1)
 ```
 
 ---
@@ -399,7 +404,11 @@ pi * 5^2
 ---
 class: inverse, center, middle
 
-# Objet
+# 3. Manipuler les objets dans R 
+
+<hr>
+
+## Objet
 
 ---
 # Objet
@@ -411,9 +420,13 @@ class: inverse, center, middle
 nom_objet <- valeurs
 ```
 
-Les valeurs à **droite** sont assignées à l'objet à **gauche** grâce à l'opérateur d'assignement `<-`
+- L'opérateur `<-` représente une flèche vers l'endroit où stocker l'information.
+- Les valeurs à **droite** (`valeurs`) sont assignées à l'objet à **gauche** (`nom_objet`) grâce à l'opérateur d'assignement `<-`.
+- Faites attention de ne pas laisser d'espace entre le symbole `<` et `-`.
 
-.comment[Bien qu'il soit aussi possible d'utiliser le signe `=`, il est préférable de l'éviter puisque sa signification est différente.]
+--
+
+.comment[Bien qu'il soit aussi possible d'utiliser le signe `=`, l'opérateur `<-` est généralement la méthode standard pour l'assignation d'information à un objet.]
 
 ---
 # Nom d'objet
@@ -454,7 +467,7 @@ moy_x
 
 <br>
 
-Créez un objet avec une valeur de 1+1.718282 (le nombre d'Euler) et nommez le `valeur_euler`.
+Créez un objet avec une valeur de 1+1.718282 ([_e_ ou le nombre d'Euler](https://fr.wikipedia.org/wiki/E_(nombre)) et nommez le `valeur_euler`.
 
 ---
 # Défi 5: Solution ![:cube]()
@@ -509,35 +522,46 @@ Essayons!
 ---
 class: inverse, center, middle
 
-# Types de structures de données en R
+# 3. Manipulate objects in R
 
+<hr>
+
+## Types de structures de données en R
+
+---
+## Types de structures de données en R
+
+<!-- ![:scale 90%](images/matrix.png) -->
+![:scale 90%](images/Type_of_data_structure_in_R.png)
 ---
 # Types de structures de données en R
 
-![:scale 90%](images/matrix.png)
-
----
-# Types de structures de données en R
-
-`vecteur` $\rightarrow$ Combinaison d'éléments du même type de données. Structure de base en R; tous les autres objets sont formés à partir d'un ou plusieurs vecteurs.
+`vecteur` 
+- Combinaison d'éléments du même type de données. 
+- Structure de base; tous les objets sont formés d'un ou plusieurs vecteurs.
 
 --
 
-`matrice` $\rightarrow$ Objet 2D généré en combinant plusieurs vecteurs du même type. On peut faire des opérations sur des matrices en R (+, -, *, ...).
+`matrice` 
+- Objet 2D généré en combinant plusieurs vecteurs du même type. 
+- On peut faire des opérations sur des matrices en R (+, -, *, ...).
 
 --
 
-`array` $\rightarrow$ Objet 3D généré en combinant plusieurs matrices de même type. Vecteur = array 1D. Matrice = array 2D.
+`array` 
+- Objet 3D généré en combinant plusieurs matrices de même type. 
+- Vecteur = array 1D. Matrice = array 2D.
 
 --
 
-`data.frame` $\rightarrow$ Objet 2D généré en combinant plusieurs vecteurs de n'importe quel type. Chaque colonne doit être du même type, mais un dataframe peut contenir des colonnes de différents types. Plusieurs fonctions statistiques (e.g. régression) utilisent des dataframes.
+`data.frame` 
+- Objet 2D généré en combinant plusieurs vecteurs de n'importe quel type. 
+- Chaque colonne doit être du même type, mais un dataframe peut contenir des colonnes de différents types. 
 
 --
 
-`liste` $\rightarrow$ Une liste stocke des collections d'objets de tous types.
-
-
+`liste` 
+- Une liste stocke des collections d'objets de tous types.
 
 ---
 # Vecteur
@@ -545,16 +569,16 @@ class: inverse, center, middle
 - Entité consistant en une séquence d'éléments du même type de base
 - Une valeur seule est appelée une *atomic value*
 - Toutes les valeurs d'un vecteur doivent avoir le **même mode** (ou classe).
-      * `numeric`: seulement des nombres
-      * `logical`: entrées True/False
-      * `character`: Texte, ou un mélange de texte et d'autres modes
+      * `numeric`: seulement des nombres (e.g. `c(2, 3, 5, 3.1416)`)
+      * `logical`: entrées True/False (e.g `c(TRUE, FALSE, TRUE)`)
+      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("QCBS", "J'adore cet atelier")`)
 
 ---
 # Vecteur
 
 - La création de vecteurs nécessite généralement la fonction `c`
 
-> `c` signifie *combiner* ou *concaténer*
+.comment[`c` signifie *combiner* ou *concaténer*]
 
 - La syntaxe est:
 
@@ -581,22 +605,12 @@ car_vecteur <- c("bleu", "rouge", "vert")
 car_vecteur
 ```
 
----
-# Vecteur
-
 - Vecteur logique ou booléen
 
 ```{r}
-bool_vecteur <- c(TRUE, TRUE, FALSE)
+bool_vecteur <- c(TRUE, TRUE, FALSE) # ou c(T, T, F)
 
 bool_vecteur
-```
-
-Vous pouvez écrire `T` pour `TRUE` et `F` pour `FALSE`, c'est équivalent.
-```{r}
-bool_vecteur2 <- c(T, T, F)
-
-bool_vecteur2
 ```
 
 ---
@@ -625,11 +639,6 @@ impair <- c(1, 3, 5, 7, 9)
 dput(impair)
 ````
 
-.comment[Le résultat que R donne dans la console peut être copié et collé pour créer un nouvel objet en utilisant la fonction `structure`.]
-````{r}
-structure(c(1, 3, 5, 7, 9))
-````
-
 .comment[Ces fonctions sont particulièrement utiles pour fournir un exemple reproductible dans le cas d'une question sur **stackoverflow** par exemple (voir application dans la partie sur les data frames) !]
 ---
 # Vecteur
@@ -641,7 +650,8 @@ x <- c(1:5)
 y <- 6
 ```
 
-.comment[Le symbole de deux-points `:` est utilisé pour combiner toutes les valeurs entre le premier et le deuxième nombre fournis. `c(1:5)` retourne `1, 2, 3, 4, 5`]
+.comment[Le symbole de deux-points `:` est utilisé pour combiner toutes les valeurs entre le premier et le deuxième nombre fournis. `c(1:5)` est équivalent à 
+`c(1, 2, 3, 4, 5)`]
 
 ```{r}
 x + y
@@ -665,13 +675,18 @@ Disons que vous voulez stocker ce tableau dans `R`:
 
 <br>
 
-|ID du site|pH sol|# espece|traitement|
+|site_id|pH_sol|num_sp|traitement|
 |---|---|---|---|
 |A1.01|5.6|17|Fertilisé|
 |A1.02|7.3|23|Fertilisé|
 |B1.01|4.1|15|Non fertilisé|
 |B1.02|6.0|7|Non fertilisé|
 
+où
+- "site_id" est l'identifiant du site
+- "pH_sol" est la mesure du pH du sol à chaque site
+- "num_sp" est le nombre d'espèces observées
+- "traitement" est le traitement appliqué
 ---
 # Data frame
 
@@ -689,64 +704,68 @@ traitement <- c("Fert", "Fert", "Non_fert", "Non_fert")
 
 ```{r}
 mon_df <- data.frame(site_id, pH_sol, num_sp, traitement)
+mon_df
 ```
 
 .comment[Nous reviendrons plus tard sur la fonction `data.frame`.]
 
 ---
-# Data frame
 
-```{r}
-mon_df
-```
-
----
 # Data frame
 .comment[Voici la fonction `dput` dans un exemple plus concret.]
-````{r}
+````{r comment=NA, eval = FALSE}
 dput(mon_df)
 ````
+
+Retourne la sortie suivante:
+
+```{r eval = FALSE}
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), pH_sol = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), traitement = c("Fert", 
+"Fert", "Non_fert", "Non_fert")), class = "data.frame", row.names = c(NA, -4L))
+```
+
 ---
 # Data frame
 .comment[Il est possible de reconstruire le data frame initial (avec certaines métadonnées associées, telles que la classe des variables par exemple) en copiant-collant la sortie précédente:]
 ````{r}
-structure(list(site_id = structure(1:4, .Label = c("A1.01", "A1.02",
- "B1.01", "B1.02"), class = "factor"), pH_sol = c(5.6, 7.3, 4.1,
- 6), num_sp = c(17, 23, 15, 7), traitement = structure(c(1L, 1L,
- 2L, 2L), .Label = c("Fert", "Non_fert"), class = "factor")),
- class = "data.frame", row.names = c(NA, -4L))
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), pH_sol = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), traitement = c("Fert", 
+"Fert", "Non_fert", "Non_fert")), class = "data.frame", row.names = c(NA, -4L))
 ````
 ---
-# Matrice, Array et Liste
+# Indexer un objet
 
-.center[
-![:scale 90%](images/matrix.png)
-]
+- Pour regarder ou extraire une partie de nos données, on peut utiliser des **crochets** `[]` 
 
+- Nous indiquons la ou les **position(s)** des valeurs que nous voulons voir entre crochets. Il s'agit d'*indexation*.
+
+- La façon d'indexer un objet dépend de son nombre de dimensions. 
+  * Pour un vecteur, il n'y a qu'une dimension: `["position"]`
+  * Pour un data frame, la première position sont les "lignes" et la seconde, les "colonnes", séparé par une virgule:  `["lignes","colonnes"]`
+  * Pour indiquer la position de plusieurs éléments, nous devons placer les valeurs dans un vecteur en utilisant `c()` : `[c("ligne1":"ligne10", c("colonne1":"colonne10")]`.
+
+Voyons quelques exemples! 
 
 ---
-# Indexer des vecteurs
+# Indexer un vecteur
 
-Pour regarder ou extraire une partie de nos données, on peut utiliser des **[crochets]**
-
-Nous indiquons la ou les **position(s)** des valeurs que nous voulons voir entre crochets. Il s'agit d'*indexation*.
-
-Par exemple, si on veut voir la 2ième valeur de notre vecteur `impair`
-
+On peut sélectionner une position:
 ```{r}
 impair[2]
 ```
 
----
-# Indexer des objets
+--
 
-On peut sélectionner plusieurs positions:
+On peut sélectionner plusieurs positions avec `c()`:
 
 ```{r}
 impair[c(2, 4)]
 ```
 
-On peut utiliser l'indexation pour supprimer certaines valeurs à des positions particulières:
+--
+
+On peut aussi supprimer certaines valeurs à des positions particulières avec `-`:
 
 ```{r}
 impair[-c(1, 2)]
@@ -762,21 +781,24 @@ Si on sélectionne une position qui n'existe pas dans le vecteur, on obtient:
 impair[c(1, 6)]
 ```
 
+--
+
 On peut également utiliser des conditions pour sélectionner des valeurs:
 
 ```{r}
 impair[impair > 4]
 ```
 
+--
+
+On peut faire la même chose avec un vecteur de texte
 
 ```{r}
 car_vecteur
 car_vecteur[car_vecteur == "bleu"]
 ```
 
-
 .comment[Les déclarations logiques telles que `>` seront décrites en détail plus loin]
-
 
 ---
 # Défi 8 ![:cube]()
@@ -835,16 +857,16 @@ car_vecteur[car_vecteur == "bleu"]
 Dans cette ligne de code, vous demandez à `R` d'extraire toutes les valeurs du vecteur `car_vecteur` qui sont exactement égales à `bleu`.
 
 ---
-# Indexer un `data.frame`
+# Indexer un data frame
 
-Pour indexer un `data.frame`, vous devez spécifier deux dimensions: numéro de ligne et de colonne, en utilisant la syntaxe suivante:
+Pour indexer un `data frame`, vous devez spécifier deux dimensions: numéro de ligne et de colonne, en utilisant la syntaxe suivante:
 
 ```r
 nom_du_data_frame[ligne, colonne]
 ```
 
 ---
-# Indexer un `data.frame`: exemples
+# Indexer un data frame: exemples
 
 <br>
 
@@ -861,7 +883,7 @@ nom_du_data_frame[ligne, colonne]
 
 
 ---
-# Indexer un `data.frame`: exemples
+# Indexer un data.frame: exemples
 
 <br>
 `mon_df[c(2, 4), ]` $\rightarrow$ Extrait les 2ème et 4ème lignes
@@ -924,12 +946,25 @@ mon_df[, 3] * num_vecteur[c(1:4)]
 ```{r}
 (mon_df$num_sp * num_vecteur[c(1:4)]) > 25
 ```
+---
+# Matrice, Array et Liste
 
+- Dans cet atelier, nous nous sommes principalement attardés aux `vecteurs` et aux `data frames`.
+- Dans le futur, il est fort possible que vous ayez à travailler avec des `matrices`, des `listes` ou des `arrays`.
+- La façon d'accéder à l'information diffère selon la dimension et le type de l'objet.
+
+.center[
+![:scale 60%](images/matrix.png)
+]
 
 ---
 class: inverse, center, middle
 
-# Fonction
+# 3. Manipuler les objets dans R
+
+<hr>
+
+## Fonction
 
 ---
 # Fonction
@@ -937,7 +972,7 @@ class: inverse, center, middle
 .pull-left2[
 Une fonction est un outil pour simplifier votre vie.
 
-Il vous permet d'exécuter rapidement des opérations sur des objets sans avoir à écrire toutes les étapes mathématiques.
+Elle vous permet d'exécuter rapidement des opérations sur des objets sans avoir à écrire toutes les étapes mathématiques.
 
 Une fonction nécessite des valeurs d'entrée appelées **arguments** (ou paramètres). Elle effectue ensuite des opérations cachées en utilisant ces arguments et donne une **valeur de retour**.
 ]
@@ -1000,10 +1035,7 @@ resultat_sum
 sum(resultat_sum, 5)
 ```
 
----
-# Défi 11: Solution  ![:cube]()
-
-<br>
+--
 
 L'opération `+` sur le vecteur `a` ajoute 2 à chaque élément. Le résultat est un vecteur.
 
@@ -1021,28 +1053,32 @@ La fonction `sum` concatène toutes les valeurs fournies puis les somme. C'est l
 ---
 # Défi 12 ![:cube]()
 
-`plot` est une fonction qui dessine un graphe de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
+`plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
 
 ```{r, eval = FALSE}
 a <- 1:100
 b <- a^2
-plot(a, b)
-plot(b, a)
-plot(x = a, y = b)
-plot(y = b, x = a)
+plot(a, b, type = "l")
+plot(b, a, type = "l")
+plot(x = a, y = b, type = "l")
+plot(y = b, x = a, type = "l")
 ```
+
+.comment[L'argument `type` de la fonction `plot` permet de choisir le type de graphique. Essayez la même fonction sans cet argument.]
 
 ---
 # Défi 12: Solution
+
+`plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
 
 ```{r, echo = F}
 a <- 1:100
 b <- a^2
 par(mfrow = c(2, 2),mar=c(4, 4, 1, 1))
-plot(a, b)
-plot(b, a)
-plot(x = a, y = b)
-plot(y = b, x = a)
+plot(a, b, type = "l")
+plot(b, a, type = "l")
+plot(x = a, y = b, type = "l")
+plot(y = b, x = a, type = "l")
 ```
 
 ---
@@ -1050,23 +1086,23 @@ plot(y = b, x = a)
 
 .pull-left[
 ```{r,eval=F}
-plot(a, b)
+plot(a, b, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(a, b)
+plot(a, b, type = "l")
 ```
 ]
 
 .pull-right[
 ```{r,eval=F}
-plot(b, a)
+plot(b, a, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(b, a)
+plot(b, a, type = "l")
 ```
 ]
 
@@ -1077,23 +1113,23 @@ plot(b, a)
 
 .pull-left[
 ```{r,eval=F}
-plot(x = a, y = b)
+plot(x = a, y = b, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(x = a, y = b)
+plot(x = a, y = b, type = "l")
 ```
 ]
 
 .pull-right[
 ```{r,eval=F}
-plot(y = b, x = a)
+plot(y = b, x = a, type = "l")
 ```
 
 ```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
 par(mar=c(4, 4, 1, 1))
-plot(y = b, x = a)
+plot(y = b, x = a, type = "l")
 ```
 ]
 
@@ -1102,9 +1138,12 @@ plot(y = b, x = a)
 ---
 class: inverse, center, middle
 
-# Package
+# 4. Installer et utiliser les packages R 
+
+## Package
 
 ---
+
 # Package
 
 Les *packages* sont un **regroupement de fonctions** et/ou **de données** partageant un thème **similaire**, par ex. statistiques, analyse spatiale, graphique, etc.
@@ -1170,7 +1209,11 @@ qplot(1:10, 1:10)
 ---
 class: inverse, center, middle
 
-# Obtenir de l'aide
+# 4. Installer et utiliser les packages R
+
+<hr>
+
+## Obtenir de l'aide
 
 ---
 # Recherche de fonctions
@@ -1179,8 +1222,7 @@ WOW! `R` est tellement génial! Tellement de fonctions incroyablement utiles!
 
 Mais... comment puis-je les trouver?
 
----
-# Recherche de fonctions
+--
 
 Pour trouver une fonction qui fait une action spécifique dans vos *packages* installés, vous pouvez utiliser `??` suivi d'un terme de recherche.
 
@@ -1270,21 +1312,19 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ![](images/seq_details.png)
 
 ---
-# Valeur de retour
+# Valeur de retour, Voir aussi, Exemples
 
 - Une description de la valeur de retour
 
 ![](images/seq_value.png)
 
----
-# Voir aussi
+--
 
 - Autres fonctions connexes pouvant être utiles
 
 ![](images/seq_see_also.png)
 
----
-# Exemples
+--
 
 - Exemples reproductibles
 
@@ -1295,7 +1335,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 
 1. Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq`.
 
-2. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
+1. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
 ---
 # Défi 13: Solutions ![:cube]()
 
