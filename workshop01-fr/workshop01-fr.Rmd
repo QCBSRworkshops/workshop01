@@ -116,6 +116,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 .pull-right[
 
 - R permet de tout (ou presque) faire avec un seul programme!
+<br>
+<br>
 ```{r, echo = FALSE}
 grViz("
       digraph {
@@ -147,7 +149,13 @@ grViz("
 .center[![:scale 70%](images/Rpackages.png)]
 
 ---
+# Visualisation de données!
 
+Tous ces graphiques ont été faits avec R!
+
+.center[![:scale 80%](images/graph3.png)]
+
+---
 # Défi
 
 .pull-left2[
@@ -530,7 +538,7 @@ class: inverse, center, middle
 
 `vecteur` 
 - Combinaison d'éléments du même type de données. 
-- Structure de base en R; tous les objets sont formés d'un ou plusieurs vecteurs.
+- Structure de base; tous les objets sont formés d'un ou plusieurs vecteurs.
 
 --
 
