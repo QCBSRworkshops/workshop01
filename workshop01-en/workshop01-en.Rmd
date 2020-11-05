@@ -323,9 +323,7 @@ Most of the action happens here!
 ---
 # Reading the **Console**
 
-Text in the console typically looks like this:
-
-.comment[You must push "Enter" for the input to run in the console.]
+.pull-left[Text in the console typically looks like this:
 
 ```{r, include = FALSE}
 output <- "This is the output"
@@ -334,16 +332,29 @@ output <- "This is the output"
 ```{r}
 output
 ```
+]
+.pull-right[
+<br>
+.comment[Remember that one must write the command in front of the `>` prompt and then press "Return" it to run.]
+]
 
-What does the square brackets `[ ]` within the output mean?
+<br>
+
+.center[What does the square brackets `[ ]` within the output mean?]
 
 --
 
+<br>
+
 The numbers within the brackets help you to locate the position of elements within the output.
 
-```{r, echo = FALSE}
-c(1:40)
+```{r, echo = TRUE}
+seq(1, 100, by = 2)
 ```
+
+???
+
+Show the participants how the number between the square brackets indicates position of the elements.
 
 ---
 # Error and Warning
@@ -433,7 +444,7 @@ $$
 <br>
 <br>
 
-.comment[**Hint**: The `*` symbol is used to multiply]
+.comment[**Hint**: The `*` symbol is used to multiply.]
 
 ---
 # Challenge 2: Solution ![:cube]()
@@ -453,7 +464,7 @@ It would look like this in `R`:
 ---
 # Challenge 3 ![:cube]()
 
-Use R to calculate the following skill testing question:
+Use `R` to calculate the following skill testing question:
 
 $$
 2+16*24-56 / (2+1)-457
@@ -481,17 +492,15 @@ It would look like this in `R`:
 
 <br>
 
-.comment[Note that R respects the order of the operations]
+.comment[Note that `R` respects the order of the operations]
 
 ---
-# R command line tip
+# Still within the `R` **Console**: a command line tip
 
 
-Use the $\uparrow$ and $\downarrow$ arrow keys to reproduce previous commands.
+Use the $\uparrow$ and $\downarrow$ arrow keys to retrieve commands previously run.
 
 Give it a try!
-
-
 
 
 .center[
@@ -506,7 +515,7 @@ What is the area of this circle which has a radius of $5\ cm$?
 
 .comment[**Hint**: $$Area_{circle} = \pi \times r^2$$]
 
-```{r echo = F}
+```{r echo = FALSE}
 radius <- 1
 theta <- seq(0, 2 * pi, length = 200)
 
@@ -537,11 +546,24 @@ What is the area of this circle which has a radius of $5\ cm$?
 3.1416 * 5^2
 ```
 
-.comment[**Hint**: Note that `R` has some built-in constant (type `Constants` in the help to see which one is present) such as &pi; so you can write:]
+But...
+
+--
+<br>
+`R` has built-in constants! 
+
+If you type `?` and `Constants` (as in `?Constants`) and execute it, you will find them, including the one for $\pi$. 
+
+We can then write and execute the following code:
 
 ```{r}
 pi * 5^2
 ```
+
+<br>
+.center[You might have realized what happens when you run commands preceeded by `?`.
+
+We will get into more details about that in a few minutes!]
 
 ---
 class: inverse, center, middle
