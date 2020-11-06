@@ -19,10 +19,17 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   warning = FALSE,
   message = FALSE,
+  cache = TRUE, # turn into FALSE before pushing
   fig.width=5, fig.height=5, fig.retina=3,
   fig.align = 'center'
 )
 options(repos=structure(c(CRAN="http://cran.r-project.org")))
+
+if (!require("waffle")) install.packages("waffle")
+if (!require("ggpubr")) install.packages("ggpubr")
+
+library(waffle)
+library(ggpubr)
 ```
 
 class: inverse, center, middle
@@ -37,7 +44,7 @@ qcbsRworkshops::get_badges(workshop_id = 1, style = "for-the-badge", clip = FALS
 # Learning Objectives
 <br>
 
-##### 1. Recognize and use `R` and RStudio;
+##### 1. Recognize and use `R` and **RStudio**;
 
 ##### 2. Use `R` as a calculator;
 
@@ -49,7 +56,7 @@ qcbsRworkshops::get_badges(workshop_id = 1, style = "for-the-badge", clip = FALS
 ---
 class: inverse, center, middle
 
-# 1. Recognize and use `R` and RStudio
+# 1. Recognize and use `R` and **RStudio**
 
 <hr>
 
@@ -57,10 +64,10 @@ class: inverse, center, middle
 
 ---
 
-# What is R?
+# What is `R`?
 
 .pull-left[
-* R is a free an open-source programming language and environment.
+* `R` is a free an open-source programming language and environment.
 
 <br>
 
@@ -97,7 +104,7 @@ class: inverse, center, middle
 
 
 ---
-# Why use R?
+# Why should I become an use`R`?
 
 .pull-left[
 
@@ -118,10 +125,10 @@ library(DiagrammeR)
 
       ##add arrows
       edge [arrowhead = none]
-      'Data \n (Excel, SQL)' -> Sigmaplot; 'Data \n (Excel, SQL)' -> Excel; 'Data \n (Excel, SQL)' -> SAS;
+      'Data \n (Excel, SQL)' -> Sigmaplot; 'Data \n (Excel, SQL)' -> Excel; 'Data \n (Excel, SQL)' -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint
 
       edge [arrowhead = normal]
-      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics;
+      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report
 
       }")
 
@@ -129,7 +136,7 @@ library(DiagrammeR)
 ]
 
 ---
-# Why use R?
+# Why use `R`?
 
 .pull-left[
 
@@ -150,10 +157,10 @@ library(DiagrammeR)
 
       ##add arrows
       edge [arrowhead = none]
-      'Data \n (Excel, SQL)' -> Sigmaplot; 'Data \n (Excel, SQL)' -> Excel; 'Data \n (Excel, SQL)' -> SAS;
+      'Data \n (Excel, SQL)' -> Sigmaplot; 'Data \n (Excel, SQL)' -> Excel; 'Data \n (Excel, SQL)' -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint
 
       edge [arrowhead = normal]
-      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics;
+      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report
 
       }")
 
@@ -164,6 +171,8 @@ library(DiagrammeR)
 .pull-right[
 
 .center[`R` allows you to do a lot without needing to use other programs.]
+
+<br>
 
 ```{r, echo = FALSE}
 grViz("
@@ -180,7 +189,7 @@ grViz("
       'Data \n (Excel, SQL)' -> R;
 
       edge [arrowhead = normal]
-      R -> Graphs; R -> Tables; R -> Statistics;
+      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report
 
       }")
 
@@ -189,7 +198,7 @@ grViz("
 ]
 
 ---
-# Why use R?
+# Why use `R`?
 
 - More and more scientists use it every year!
 - As of October 2020, there are more than 16000 packages registered within the **Comprehensive R Archive Network (CRAN)** (and thousands more within Github repositories)!
@@ -224,12 +233,61 @@ ggplot(pkgs, aes(as.Date(first_release), index)) +
 <!-- .center[![:scale 70%](images/Rpackages.png)] -->
 
 ---
-# Cool graphs in `R` 
+# A lot of features: customizable graphs 
 
 All of these graphs were made in `R`!
 
 .center[![:scale 80%](images/graph3.png)]
 
+---
+# And what about **RStudio**?
+
+**RStudio** is the most used Integrated Development Environment (**IDE**) for `R`.
+
+It includes a **console**, a **syntax-highlighting editor** that supports direct code execution with tools for plotting, history, debugging and workspace management.
+
+It integrates with `R` (and other programming languages) to provide a lot of useful features:
+
+.pull-left[
+.center[
+RStudio supports authoring HTML, PDF, Word and presentation documents
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/ab33d47d7af857b2ea3649b064428cf9105e35be/02031/wp-content/uploads/2014/12/rmarkdown-3.png)
+]
+]
+
+.pull-right[
+.center[
+RStudio supports version control with Git (directly to Github) and Subversion
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/e6d91915c45650e7d2496a5a61e9b7300e410f86/8ad9a/wp-content/uploads/2014/04/rstudio-vcs_diff.png)
+]
+]
+
+---
+# And what about **RStudio**?
+
+**RStudio** is the most used Integrated Development Environment (**IDE**) for `R`.
+
+It includes a **console**, a **syntax-highlighting editor** that supports direct code execution with tools for plotting, history, debugging and workspace management.
+
+It integrates with `R` (and other programming languages) to provide a lot of useful features:
+
+.pull-left[
+.center[
+RStudio make it easy to start new or find existing projects
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/ae9f47a6c38f433102a2f906c26ecbc6f8146391/3e4c6/wp-content/uploads/2014/04/rstudio-projects_new.png)
+]
+]
+
+.pull-right[
+.center[
+RStudio supports interactive graphics with Shiny and ggvis
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/9dd376b8a25543fb6d62d6c51b0a5c65642cca24/407ec/wp-content/uploads/2014/12/shiny4.png)
+]
+]
+--
+<br>
+
+There are other IDE for `R`: **Atom**, **Visual Studio**, **Jupyter notebook** and **Jupyter lab**!
 
 ---
 # Challenge
@@ -276,33 +334,40 @@ Be sure to adjust the font size and scale of the window according to the present
 ---
 ## Note for Windows users
 
-If the restriction `unable to write on disk` appears when you attempt to open **R Studio** or to install a package.
+If the restriction `unable to write on disk` appears when you attempt to open **RStudio** or to install a package.
 
 .center[.alert[Do not worry!]]
 
 .large[We have the solution!]
 
 - Close the application.
-- Right-click on your **R Studio** icon and click on "Execute as Administrator". This will provide file and directory writing rights to **R Studio**.
+- Right-click on your **RStudio** icon and click on "Execute as Administrator". This will provide file and directory writing rights to **RStudio**.
 
 ---
 # The RStudio **Interface**
-
+.pull-left[
 When you open **RStudio** for the first time, the screen will be divided across three main **Pane** groups: 
 1. **Console, Terminal, Job** group;
-2. **Environment, History, Connections** group; and,
-3. **Files, Plot, Packages, Help, Viewer** panels.
+2. **Environment, History, Connections** group; 
+3. **Files, Plot, Packages, Help, Viewer** panes; and,
+4. **Script** pane group.
 
 <br>
-Once you *Open a Script* or *Create a New Script* (*File > New File > R Script* or `Ctrl/Cmd + Shit + N`), a fourth panel will appear.
+Once you *Open a Script* or *Create a New Script* (*File > New File > R Script* or `Ctrl/Cmd + Shit + N`), the fourth panel will appear!
 
 <br>
+]
 
-.center[Insert figure of the RStudio interface]
+.pull-right[
+<br>
+![:scale 100%](https://user-images.githubusercontent.com/833642/65641024-56348a00-dfb1-11e9-9b58-2421d25406e3.gif)
+]
+
 
 ???
 
 Most of the action happens here!
+
 
 ---
 # The RStudio **Console**
@@ -435,7 +500,7 @@ class: inverse, center, middle
 # Challenge 2 ![:cube]()
 
 
-Use `R` to calculate the following skill testing question:
+Use `R` to calculate the following equation:
 
 $$
 2+16*24-56
@@ -449,7 +514,7 @@ $$
 ---
 # Challenge 2: Solution ![:cube]()
 
-Use `R` to calculate the following skill testing question:
+Use `R` to calculate the following equation:
 
 $$
 2+16*24-56
@@ -464,7 +529,7 @@ It would look like this in `R`:
 ---
 # Challenge 3 ![:cube]()
 
-Use `R` to calculate the following skill testing question:
+Use `R` to calculate the following equation:
 
 $$
 2+16*24-56 / (2+1)-457
@@ -478,7 +543,7 @@ $$
 ---
 # Challenge 3: Solution ![:cube]()
 
-Use R to calculate the following skill testing question:
+Use R to calculate the following equation:
 
 $$
 2+16*24-56 / (2+1)-457
@@ -494,34 +559,23 @@ It would look like this in `R`:
 
 .comment[Note that `R` respects the order of the operations]
 
----
-# Still within the `R` **Console**: a command line tip
-
-
-Use the $\uparrow$ and $\downarrow$ arrow keys to retrieve commands previously run.
-
-Give it a try!
-
-
-.center[
-![:scale 30%](images/keyboard_arrows.png)
-]
-
 
 ---
-# Challenge 4 ![:cube]()
+# Still using `R` for arithmetic operations
 
-What is the area of this circle which has a radius of $5\ cm$?
-
-.comment[**Hint**: $$Area_{circle} = \pi \times r^2$$]
-
-```{r echo = FALSE}
+What is the area of a circle with a radius of $5\ cm$?
+.pull-left[
+```{r echo = FALSE, fig.height = 4, fig.width = 4}
 radius <- 1
 theta <- seq(0, 2 * pi, length = 200)
 
+par(pty="s") # create a square plot instead of a rectangle
+
 # Plot canvas
 plot(c(-1, 1), c(-1, 1), 
-     type = "n", ann = F, axes = F, asp = 1)
+     type = "n", ann = F, axes = F, asp = 0,
+     title = NULL,
+     xaxs="i", yaxs =  "i") #remove padding
 
 # Add circle
 lines(x = radius * cos(theta), 
@@ -532,69 +586,125 @@ arrows(0, 0, x1 = 1, length = 0, lwd = 4, col = "red")
 points(0,0, pch = 20)
 
 # Add text to indicate the radius 
-text(x = 0.05, y = .2, "radius = 5 cm", cex = 2)
+text(x = 0.05, y = .2, "radius = 5 cm", cex = 1.5)
 ```
+]
+.pull-right[
+<br> 
+.comment[$$Area_{circle} = \pi \times r^2$$]
+]
 
 ---
-# Challenge 4: Solution ![:cube]()
+# Still using `R` for arithmetic operations
 
+What is the area of a circle with a radius of $5\ cm$?
+.pull-left[
+```{r echo = FALSE, fig.height = 4, fig.width = 4}
+radius <- 1
+theta <- seq(0, 2 * pi, length = 200)
 
-What is the area of this circle which has a radius of $5\ cm$?
+par(pty="s") # create a square plot instead of a rectangle
 
+# Plot canvas
+plot(c(-1, 1), c(-1, 1), 
+     type = "n", ann = F, axes = F, asp = 0,
+     title = NULL,
+     xaxs="i", yaxs =  "i") #remove padding
 
+# Add circle
+lines(x = radius * cos(theta), 
+      y = radius * sin(theta), lwd =4)
+arrows(0, 0, x1 = 1, length = 0, lwd = 4, col = "red")
+
+# Center of the circle 
+points(0,0, pch = 20)
+
+# Add text to indicate the radius 
+text(x = 0.05, y = .2, "radius = 5 cm", cex = 1.5)
+```
+]
+.pull-right[
+<br> 
+$$Area_{circle} = \pi \times r^2$$
 ```{r}
 3.1416 * 5^2
 ```
-
-But...
-
+]
 --
-<br>
-`R` has built-in constants! 
 
-If you type `?` and `Constants` (as in `?Constants`) and execute it, you will find them, including the one for $\pi$. 
+.pull-left[
+But... `R` has built-in constants! 
 
-We can then write and execute the following code:
+You can find them by typing `?` and `Constants` (as in `?Constants`) and executing it! What is the one for $\pi$? 
+
+]
+.pull-right[
+We can then write and execute this:
 
 ```{r}
 pi * 5^2
 ```
+]
 
-<br>
-.center[You might have realized what happens when you run commands preceeded by `?`.
+.small[
+.center[You have just ran a command preceeded by `?`. What happened?]
+]
 
-We will get into more details about that in a few minutes!]
+---
+# Still within the `R` **console**: a  tip
+
+We can use the $\uparrow$ and $\downarrow$ arrow keys to retrieve commands previously run.
+
+Make sure your cursor is blinking in front of the `>` prompt and give it a try!
+
+
+.center[
+![:scale 30%](images/keyboard_arrows.png)
+]
+
 
 ---
 class: inverse, center, middle
 
-# 3. Manipulate objects in R
+# 3. Manipulating objects in `R`
 
 <hr>
 
-## Object
-
 ---
-# Object
+# `R`: an object-oriented environment
 
-- One of the most useful concepts in `R`!
-- You can store values as named objects using the assignment operator `<-`
+You can **assign** information to named **objects** using the assignment operator `<-`.
 
-```{r, eval = FALSE}
-object_name <- assigned value
+The information is assigned to the name that is pointed by the assignment operator `<-`.
+
+See the examples below:
+
+.pull-left[
+```{r, eval = TRUE, echo = TRUE}
+money_talks <- "ACDC"
+money_talks
 ```
+]
+.pull-right[
+```{r, eval = TRUE, echo = TRUE}
+9 -> my_birthday_month
+my_birthday_month
+```
+]
 
-- Basically the `<-`, represents an arrow pointing where to store the information. 
-- The value on the **right** (`assigned value`) is assigned to the name on the **left** (`object_name`) with the assignment operator `<-`.
-- Careful! There is no space between the less than (`<`) and minus (`-`) signs. 
+<br>
 
+.center[.alert[Careful! There is no space between the less than (`<`) and minus (`-`) signs.]]
+
+<br>
 
 --
 
-.comment[It is also possible to use the `=` sign, but be aware that the assignment operator `<-` is generally the standardized way to store information in an object.]
+One can assign values using `=` instead of the `<-` operator. We caution against using `=` to assign values to objects because the `=` is allowed at the top level only and also determines subexpressions.
 
 ---
-# Object name
+
+# Naming **objects**: a few rules
 
 - Objects names can only include:
 
@@ -605,26 +715,31 @@ object_name <- assigned value
 | Period     |       . |
 | Underscore |       _ |
 
-- Objects names should **always** begin with a letter.
-- `R` is **case sensitive**, the names `Data1` and `data1` are not the same.
-- You can **not** use special characters! (`@`, `/`, `#`, etc.)
-
+- Objects names must **always** begin with a letter.
+- `R` is **case-sensitive**: `Data_1` is different than `data_1`.
+- You **cannot** use special characters (`@`, `/`, `#`, etc.).
+- Object names must be **unique**: `data_1 <- 1` will overwrite any previously objects named `data_1`
 ---
-# Good practices in R code
 
-**Name**
-- Try having short and explicit names for your variables. Naming a variable `var`  is not very informative.
-- Use an underscore (`_`), or a dot (`.`) to separate words within a name and try to be consistent!
-- Avoid using names of existing functions and variables (e.g., `c`, `table`, `T`, etc.)
+#.small[Good practice when naming objects and writing code]
 
---
 
-**Space**
-- Add spaces around all operators (`=`, `+`, `-`, `<-`, etc.) to make the code more readable.
-- Always put a space after a comma, and never before (like in regular English).
+**Short and explicit names are preferred**. 
+- Naming a variable `var`  is not very informative.
+
+**You can separate words within a name using underscores ( `_` ) or dots ( `.` )**.
+- `avg_richness` or `avg.richness` are easier to read than `avgrichness`.
+
+**Avoid using names of existing functions or constants (e.g., `c`, `table`, `T`, `matrix`)**
 
 <br>
+--
 
+**Add spaces around operators** (`=`, `+`, `-`, `<-`, etc.) **to make the code more readable.**
+
+**Always put a space after a comma**, and never before (like in regular English).
+
+<br>
 .pull-left[
 **Preferred**
 ```{r}
@@ -638,39 +753,20 @@ mean_x
 **Not preferred**
 ```{r}
 meanx<-(2+6)/2
-mean_x
+meanx
 ```
 ]
 
-
 ---
-# Challenge 5 ![:cube]()
 
-Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
+# Challenge 4 ![:cube]()
+
+Create an object with a name (of your choice) that starts with a number. What happens?
 
 ---
 # Challenge 5: Solution ![:cube]()
 
-
-Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
-
-
-```{r}
-euler_value <- 1 + 1.718282
-
-euler_value
-```
-
----
-# Challenge 6 ![:cube]()
-
-Create a second object (you decide the name) with a name that starts with a number. What happens?
-
----
-# Challenge 6: Solution ![:cube]()
-
-
-Create a second object (you decide the name) with a name that starts with a number. What happens?
+Create an object with a name (of your choice) that starts with a number. What happens?
 
 <br>
 
@@ -681,145 +777,333 @@ Error: unexpected symbol in "your object name"
 ```
 
 ---
-# R command line tip
+# Challenge 5 ![:cube]()
 
-- Use the tab key to autocomplete scripts
-- This helps avoid spelling errors and speeds up command entering
+Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
 
-<br>
+---
+# Challenge 5: Solution ![:cube]()
 
-Let us try it!
+Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
+
+
+```{r}
+euler_value <- 1 + 1.718282
+
+euler_value
+```
 
 --
 
 <br>
 
-- Enter `eu`
-- Push the "tab" key on your keyboard 
-- Use the arrow keys ( $\uparrow$ ) and push "enter" or "return"
-- If multiple elements show up, select the correct autocomplete.
+<br>
+
+.center[What has happened in your **RStudio** window when you created this object?]
+
+<br>
+
+---
+# The **RStudio** Environment
+
+The **Environment** panel shows you all the objects you have defined in your current workspace.
+
+.center[![:scale 40%](https://bookdown.org/ndphillips/YaRrr/images/environmentss.png) ]
+
+---
+# Another tip
+
+You can use the `Tab` key to auto-complete commands. 
+
+This helps preventing spelling errors
+
+<br>
+
+.center[Let us try it!]
+
+<br>
+
+Try writing `eul` or `abb` in front of the `>` prompt and press `Tab`.
+
+If more than one element appears, you can use the arrow keys ( $\uparrow$  $\downarrow$ ) and press "Return" or use your mouse to select the correct one.
 
 ---
 class: inverse, center, middle
 
-# 3. Manipulate objects in R
+# 3. Manipulating objects in `R`
 
 <hr>
 
-## Types of data structures in R
+## Data types and structure
 
 ---
-# Types of data structures in R
 
-<!-- ![:scale 90%](images/matrix.png) -->
-![:scale 90%](images/Type_of_data_structure_in_R.png)
+# Core data types in `R`
+
+**Data types** define how the values are stored in `R`.
+
+We can obtain the type and mode of an object using the functions `typeof()`. The core data types are:
+
+**Numeric**-type with **integer** and **double** values
+
+.pull-left[
+```{r}
+(x <- 1.1)
+typeof(x)
+```
+]
+
+.pull-right[
+```{r}
+(y <- 2L)
+typeof(y)
+```
+]
+
+**Character**-type (**always** between `" "`)
+
+```{r}
+z <- "You are becoming very good in this!"
+typeof(z)
+```
+
+**Logical**-type
+
+.pull-left[
+```{r}
+t <- TRUE
+typeof(t)
+```
+]
+
+.pull-right[
+```{r}
+f <- FALSE
+typeof(f)
+```
+] 
 
 ---
-# Types of data structures in R
 
-`vector` 
-- A combination of elements of the same data type. 
-- Basic data structure of R; all other objects consist of one or more vectors.
+# Data structure in `R`: **scalars**
+
+Until this moment, we have create objects that had just **one element** inside them:
+
+.pull-left[
+```{r}
+x <- 1.1
+x
+```
+]
+
+.pull-right[
+```{r}
+euler_value <- 1 + 1.718282
+euler_value
+```
+]
+
+An object that has just a signle value or unit like a number or a text string is called a **scalar**.
+
+.pull-left[
+```{r}
+a <- 100
+b <- 3 / 100
+c <- (a + b) / b
+```
+]
+
+.pull-right[
+```{r}
+d <- "species"
+e <- "genus"
+f <- "When is the next pause again?"
+```
+]
 
 --
 
-`matrix`
-- 2D object generated by combining multiple vectors of the same type. 
-- We can do operations on matrices in R (`+`, `-`, `*`, ...).
+<br> 
 
---
+<br> 
 
-`array`
-- 3D object generated by combining multiple matrices of the same type. 
-- Vector = 1D array. Matrix = 2D array.
-
---
-
-`data.frame`
-- 2D object generated by combining several vectors of any type. 
-- Each column must be of the same type, but two columns can differ in type. 
-- Several statistical functions (e.g., regression) use data frames.
-
---
-
-`list` 
-- A list store collections of objects of any types.
+.center[By creating combinations of **scalars**, we can create data with different structures in `R`. We are getting there!]
 
 ---
-# Vector
+# Data structure in `R`: **vectors**
 
-- An entity consisting of a sequence of elements of the same basic type
-- A single value is called an *atomic value* (because it can't be divided)
-- All values of a vector must have the **same mode** (or class).
-      * Numeric: only numbers (e.g., `c(1,0.3,42)`)
-      * Logical: True/False entries (e.g., `c(TRUE, TRUE, FALSE)`)
-      * Character: Text, or a mix of text and other modes (e.g., `c("QCBS","GRIL","CEF")`)
+A **vector object** is just a combination of several scalars stored as a single object.
+
+<br>
+Like scalars, vectors can be of `numeric`-, `logical`-, `character`-types, but **never** a mix of them!
+
+```{r echo = FALSE}
+library(waffle)
+library(ggpubr)
+
+scalar.parts <- c('TRUE' = 1, 'FALSE' = 19)
+
+scalar.waffle <- waffle(scalar.parts, 
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Scalar")
+
+vector.parts <- c('TRUE' = 4, 'FALSE' = 16)
+
+vector.waffle <- waffle(vector.parts, 
+            rows = 4, 
+            colors = c("black", "white"),
+            legend_pos = "none",
+            title = "Vector")
+
+ggarrange(
+  scalar.waffle, vector.waffle,
+  ncol = 2, nrow = 1
+)
+```
 
 ---
-# Vector
+# Data structure in `R`: **vectors**
 
-- Creating vectors usually requires the `c()` function
+A **vector object** is just a combination of several scalars stored as a single object.
 
-.comment[`c` stands for *combine* or *concatenate*.]
+<br>
+Like scalars, vectors can be of `numeric`-, `logical`-, `character`-types, but never a mix of them!
 
-- The syntax is:
+<br>
+There are many ways to create vectors in `R`. Here are some we are going to see:
+
+<br>
+
+|           Function           |             Example              |     Result   |
+|:----------------------------:|:--------------------------------:|:------------:|
+| `c(a, b, ...)` |  `c(1, 3, 5, 7, 9)`  | 1, 3, 5, 7, 9 |
+| `a:b`          |     `1:5`             |  1, 2, 3, 4, 5  |
+|`seq(from, to, by, length.out)` |	`seq(from = 0, to = 6, by = 2)` |	0, 2, 4, 6 |
+|`rep(x, times, each, length.out)` |	`rep(c(7, 8), times = 2, each = 2)` |	7, 7, 8, 8, 7, 7, 8, 8 |
+<br>
+
+
+---
+# Creating vectors with `c()`
+
+The `c()` function (`c` stands for *concatenate*, meaning *bring them together*) combines several scalars as *arguments*, which are separated by commas, and returns a **vector** containing them:
 
 ```{r, eval = FALSE}
 vector <- c(value1, value2, ...)
 ```
 
-Now we will look at different types of vectors in `R`.
+Let us use the `c()` function to create vectors of different types:
 
----
-# Vector
-
-- Numeric vector
+.pull-left[
+**Numeric vector**
 
 ```{r}
-num_vector <- c(1, 4, 3, 98, 32, -76, -4)
-
+num_vector <- c(1, 4, 32, -76, -4)
 num_vector
 ```
-
---
-
-- Character vector
+]
+.pull-right[
+**Character vector**
 
 ```{r}
-char_vector <- c("blue", "red", "green")
-
+char_vector <- c("blue", 
+                 "red", 
+                 "green")
 char_vector
 ```
+]
 
---
-
-- Logical vector
+**Logical vector**
 
 ```{r}
 bool_vector <- c(TRUE, TRUE, FALSE) # or c(T, T, F)
-
 bool_vector
 ```
 
 ---
+
+# .small[Creating vectors of sequential values: `a:b`, `seq()`, `rep()`]
+
+The `a:b` takes two numeric scalars `a` and `b` as *arguments*, and returns a vector of numbers from the starting point `a` to the ending point `b`, in steps of `1` unit:
+
+.pull-left[
+```{r}
+1:8
+```
+]
+
+.pull-right[
+```{r}
+7.5:1.5
+```
+]
+
+--
+
+`seq()` allows us to create a sequence, like `a:b`, but also allows us to specify either the size of the steps (the `by` *argument*), or the total length of the sequence (the `length.out` argument):
+
+.pull-left[
+```{r}
+seq(from = 1, to = 10, by = 2)
+```
+]
+
+.pull-right[
+```{r}
+seq(from = 20, to = 2, by = -2)
+```
+]
+
+--
+
+`rep()` allows you to repeat a scalar (or vector) a specified number of times, or to a desired length:
+
+.pull-left[
+```{r}
+rep(x = 1:3, each = 2, times = 2)
+```
+]
+
+.pull-right[
+```{r}
+rep(x = c(1, 2), each = 3)
+```
+]
+
+???
+
+The presenter should point out the differences between the rep example 1 and example 2, where a vector can be used inside the argument.
+
+---
+
 # Challenge 7 ![:cube]()
 
-- Create a vector containing the first 5 odd numbers, starting from 1
-- Name it `odd_n`
+
+Let's practice:
+
+1. Create a vector containing the first 5 odd numbers, starting from 1
+2. Name it `odd_n`
+3. You can use any of the previous functions we have previously learned!
 
 ---
 # Challenge 7: Solution ![:cube]()
 
+Let's practice:
 
-- Create a vector containing the first 5 odd numbers, starting from 1
-- Name it `odd_n`
+1. Create a vector containing the first 5 odd numbers, starting from 1
+2. Name it `odd_n`
+3. You can use any of the previous functions we have previously learned!
 
+<br>
+Solution:
 
 ```{r}
 odd_n <- c(1, 3, 5, 7, 9)
 ```
 
-Or 
+or 
 
 ```{r}
 odd_n <- seq(from = 1, to = 9, by = 2)
@@ -828,8 +1112,9 @@ odd_n
 ```
 
 ---
-# Vector
+exclude: true
 
+# Vector
 
 .comment[**Note**: Use the `dput` function to obtain the structure of an object.]
 ````{r}
@@ -838,85 +1123,378 @@ dput(odd_n)
 
 .comment[These functions are really useful to provide a reproducible example for a question on [**stackoverflow**](https://stackoverflow.com) for instance (see one more application in the part about data frames) !]
 ---
-# Vector
+# Operations using vectors
 
-We can use vectors for calculations
+Let us begin with the following objects:
 
 ```{r}
 x <- c(1:5)
 y <- 6
 ```
 
-.comment[The colon symbol `:` is used to combine all values between the first and the second provided numbers. `c(1:5)` is equivalent to  `c(1, 2, 3, 4, 5)`]
+<br>
+.comment[Remember that the colon symbol `:` combines all values between the first and the second number in steps of `1`. `c(1:5)` or `1:5` is equivalent to `c(1, 2, 3, 4, 5)`]
+<br>
 
 --
 
-Let us find see what happens when we add and multiply the two objects together:
+What happens when we add and multiply the two objects together?
 
-```{r}
+.pull-left[
+```{r, echo = TRUE}
 x + y
+```
+]
 
+.pull-right[
+```{r, echo = TRUE}
 x * y
+```
+]
+
+--
+
+<br>
+<br>
+
+.center[**Excellent! We have learned a lot! How about a short break?**]
+
+---
+class: center, inverse, middle
+background-image: url("https://i.pinimg.com/originals/c5/9a/d2/c59ad2bd4ad2fbacd04017debc679ddb.gif")
+
+**Can you guess what are we going to discuss next?**
+
+---
+# Data structure in `R`: **matrices**
+
+We have learned that **scalars** contain one element, and that **vectors** contain more than one scalar of the same type!
+
+Matrices are nothing but a bunch of vectors stacked together! 
+
+While vectors have *one* dimension, matrices have *two* dimensions, determined by **rows** and **columns**.
+
+Finally, like **vectors** and **scalars** matrices can contain only one type of data: `numeric`, `character`, or `logical`.
+
+```{r echo = FALSE}
+library(waffle)
+library(ggpubr)
+
+scalar.parts <- c('TRUE' = 1, 'FALSE' = 19)
+
+scalar.waffle <- waffle(scalar.parts, 
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Scalar")
+
+vector.parts <- c('TRUE' = 4, 'FALSE' = 16)
+
+vector.waffle <- waffle(vector.parts, 
+            rows = 4, 
+            colors = c("black", "white"),
+            legend_pos = "none",
+            title = "Vector")
+
+matrix.parts <- c('TRUE' = 16, 'FALSE' = 4)
+
+matrix.waffle <- waffle(matrix.parts, 
+            rows = 4, 
+            colors = c("black", "white"),
+            legend_pos = "none",
+            title = "Matrix")
+
+ggarrange(
+  scalar.waffle, vector.waffle, matrix.waffle,  
+  ncol = 3,
+  nrow = 1
+)
 ```
 
 ---
-# Data frame
+# .small[Creating **matrices** using `matrix()`, `cbind()`, `rbind()`]
 
-- Used to store data tables
-- A list of vectors of the same length
-- Columns = variables
-- Rows = observations, sites, cases, replicates, ...
-- Different columns can have different modes
+There are many ways to create your own matrix. Let us start with a simple one:
+
+.pull-left[
+```{r}
+matrix(data = 1:10,
+       nrow = 5,
+       ncol = 2)
+```
+]
+
+.pull-right[
+```{r}
+matrix(data = 1:10,
+       nrow = 2,
+       ncol = 5)
+```
+]
+--
+
+We can also combine multiple vectors using `cbind()` and `rbind()`:
+```{r}
+nickname <- c("kat", "gab", "lo")
+animal <- c("dog", "mouse", "cat")
+```
+
+.pull-left[
+```{r}
+rbind(nickname, 
+      animal)
+```
+]
+
+.pull-right[
+```{r}
+cbind(nickname, animal)
+```
+]
+---
+# Operations with **matrices**
+
+Similarly as in the case of vectors, operations with matrices work just fine:
+
+.pull-left[
+```{r}
+(mat_1 <- matrix(data = 1:9,
+       nrow = 3,
+       ncol = 3))
+```
+]
+
+.pull-right[
+```{r}
+(mat_2 <- matrix(data = 9:1,
+       nrow = 3,
+       ncol = 3))
+```
+]
+
+The product of the matrices is:
+
+```{r}
+mat_1 * mat_2
+```
 
 ---
-# Data frame
+# Challenge ![:cube]()
 
-Let us say you want to store this table in `R`:
+It is your time to **get your hands dirty**!
+
+1. Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.
+2. Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like.
+3. Create a third object with 4 rows and 2 columns: 
+ - in the first column, include the numbers from 2 to 5; and,
+ - in the second column, include the first name of participants in this workshop.
+4. Compare them and tell us what differences have you detected (despite their values). 
 
 <br>
 
-|site_id|soil_pH|num_sp|treatment|
-|---|---|---|---|
-|A1.01|5.6|17|Fertilised|
-|A1.02|7.3|23|Fertilised|
-|B1.01|4.1|15|Not Fertilised|
-|B1.02|6.0|7|Not Fertilised|
+**Remember** that text strings must always be surrounded by quote marks (`" "`).
 
-where 
-- "site_id" is the ID of the site 
-- "soil_pH" is the soil pH 
-- "num_sp" is the number of species 
-- the last column is the treatment applied 
+**Remember** that values or arguments must be separated by commas if they are inside a function, _e.g._ `c("one", "two", "three")`.
 
 ---
-# Data frame
+# Challenge ![:cube]()
 
-One way of doing it is:
-- Start by creating vectors
+It is your time to **get your hands dirty**!
+
+1. Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.
+2. Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like.
+
+.pull-left[
+```{r}
+(step_1 <- matrix(data = 1:6,
+       nrow = 2,
+       ncol = 3))
+```
+]
+
+.pull-right[
+```{r}
+(step_2 <- matrix(
+  data = c("cheetah", 
+           "tiger", 
+           "ladybug",
+           "deer",
+           "monkey",
+           "crocodile"),
+  nrow = 2,
+  ncol = 3))
+```
+]
+---# Challenge ![:cube]()
+
+It is your time to **get your hands dirty**!
+
+3. Create a third object with 4 rows and 2 columns: 
+ - in the first column, include the numbers from 2 to 5; and,
+ - in the second column, include the first name of participants in this workshop.
+4. Compare them and tell us what differences have you detected (despite their values). 
+
+.pull-left[
+```{r}
+step_1
+```
+]
+
+.pull-right[
+```{r}
+step_2
+```
+]
+
+.pull-left[
+```{r}
+step_3 <- cbind(c(2:5), 
+                c("linley", 
+                  "jessica", 
+                  "joe",
+                  "emma"))
+```
+]
+
+.pull-right[
+```{r}
+step_3
+```
+]
+
+???
+
+The presenter here should mention that matrices being formed by vectors or scalars with multiple data types become characters. This will be a window to introduce data frames to the participants.
+
+---
+# Data structure in `R`: **data frames**
+
+Differently than a matrix, a data frame can contain `numeric`, `character`, *and* `logical` columns (or vectors).
+
+```{r echo = FALSE}
+library(waffle)
+library(ggpubr)
+
+scalar.parts <- c('TRUE' = 1, 'FALSE' = 19)
+
+scalar.waffle <- waffle(scalar.parts, 
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Scalar")
+
+vector.parts <- c('TRUE' = 4, 'FALSE' = 16)
+
+vector.waffle <- waffle(vector.parts, 
+            rows = 4, 
+            colors = c("black", "white"),
+            legend_pos = "none",
+            title = "Vector")
+
+matrix.parts <- c('TRUE' = 16, 'FALSE' = 4)
+
+matrix.waffle <- waffle(matrix.parts, 
+            rows = 4, 
+            colors = c("black", "white"),
+            legend_pos = "none",
+            title = "Matrix")
+
+data.frame.parts <- c('blue' = 4, 'red' = 4, 'purple' = 4, 'green' = 4, 'yellow' = 4)
+
+data.frame.waffle <- waffle(data.frame.parts, 
+            rows = 4, 
+            colors = c("blue", "red", "purple", "red", "blue"),
+            legend_pos = "none",
+            title = "Data frame")
+
+ggarrange(
+  scalar.waffle, vector.waffle, matrix.waffle, data.frame.waffle, 
+  ncol = 4,
+  nrow = 1
+)
+```
+
+---
+# Data structure in `R`: **data frames**
+
+Data frames resemble a lot the usual Excel tables that we use in our research!
+
+.pull-left[
+
+<br>
+
+|site_id|soil_pH|num_sp|fertilised|
+|---|---|---|---|
+|A1.01|5.6|17|yes|
+|A1.02|7.3|23|yes|
+|B1.01|4.1|15|no|
+|B1.02|6.0|7|no|
+]
+.pull-right[
+.small[
+1. `site_id` identifies the sampling site, 
+2. `soil_pH` is the soil pH,
+3. `num_sp` is the number of species, and
+4. `fertilised` identifies the treatment applied.
+]
+]
+
+One of the ways of representing this table in R, is to create vectors:
 
 ```{r}
 site_id <- c("A1.01", "A1.02", "B1.01", "B1.02")
 soil_pH <- c(5.6, 7.3, 4.1, 6.0)
 num_sp <- c(17, 23, 15, 7)
-treatment <- c("Fert", "Fert", "No_fert", "No_fert")
+fertilised <- c("yes", "yes", "no", "no")
 ```
 
 --
-
-- We then combine them using the function `data.frame`
+We then combine them using `data.frame()`:
 
 ```{r}
-my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
-my_df
+soil_fertilisation_data <- data.frame(site_id, soil_pH, num_sp, fertilised)
 ```
 
-.comment[We will come back to the `data.frame` function later.]
-
 ---
-# Data frame
+# Data structure in `R`: **data frames**
+
+Data frames resemble a lot the usual Excel tables that we use in our research!
+
+.pull-left[
+
+<br>
+
+|site_id|soil_pH|num_sp|fertilised|
+|---|---|---|---|
+|A1.01|5.6|17|yes|
+|A1.02|7.3|23|yes|
+|B1.01|4.1|15|no|
+|B1.02|6.0|7|no|
+]
+.pull-right[
+.small[
+1. `site_id` identifies the sampling site, 
+2. `soil_pH` is the soil pH,
+3. `num_sp` is the number of species, and
+4. `fertilised` identifies the treatment applied.
+]
+]
+
+<br>
+`soil_fertilisation_data` looks like this!
+<br>
+```{r}
+soil_fertilisation_data
+```
+
+Note how the data frame integrated the name of the objects as column names! 
+---
+exclude: true
+
+# Data structure in `R`: **data frames**
 .comment[Hint: Here the `dput` function in another example.]
-````{r comment=NA, eval = FALSE}
-dput(my_df)
+````{r comment = NA, eval = FALSE}
+dput(soil_fertilisation_data)
 ````
 
 Will return: 
@@ -930,7 +1508,9 @@ class = "data.frame", row.names = c(NA, -4L))
 
 
 ---
-# Data frame
+exclude: true
+
+# Data structure in `R`: **data frames**
 .comment[It is possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output shown here:]
 
 ````{r}
@@ -939,42 +1519,57 @@ structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
 treatment = c("Fert", "Fert", "No_fert", "No_fert")), 
 class = "data.frame", row.names = c(NA, -4L))
 ````
+
 ---
-# Indexing objects
+class: inverse, center, middle
 
-- To look at or extract part of our data, you can use **brackets** `[]`
+# 3. Manipulating objects in `R`
 
-- We indicate the **position** of the values we want to see between the brackets. It is called *indexing*.
+<hr>
+
+## Indexing
+
+---
+# Indexing objects in `R`
+
+We have our information stored as a vector, a matrix, or a dataframe in `R`.
+
+We will probably be interested in *accessing* and even *subsetting* the data based on some criteria.
+
+Let's start with a pretty basic one: the square brackets `[ ]` and `[, ]`
+
+We can indicate the **position** of the values we want to see between the brackets. This is often called *indexing* or **slicing**.
+
+
 
 - Note that the way we index will depend on the dimensions of the object. 
   * For vectors, there is only one dimension: `["location"]`
   * For data frames, the first position is "rows", and the second is "columns", separated by a comma:  `["rows","columns"]`
   * To indicate the position of multiple elements, we place the values in a vector using `c()`: `[c("rows1":"rows10"),c("columns5","columns7")]`
 
-Let us see how to index a vector object in R. 
+Let us see how to index a vector object in `R`. 
 
 ---
 # Indexing vectors
 
+To index an element within a vector using `[]`, we need to write position number of the element within the brackets `[]`. 
 
-You can use indexing to choose a particular position, let us say we want to see the second value of our `odd_n` vector.
+For instance, here is our `odd_n` object:
 
-.comment[Recall that 
 ```{r}
-odd_n <- seq(1,9, by = 2)
+(odd_n <- seq(1,9, by = 2))
 ```
-]
 
 --
 
-Let us index the second position:
+To obtain the value in the second position, we do as follows:
 ```{r}
 odd_n[2]
 ```
 
 --
 
-Multiple positions within a vector can be attained with `c()`:
+We can also obtain values for multiple positions within a vector with `c()`:
 
 ```{r}
 odd_n[c(2, 4)]
@@ -982,25 +1577,152 @@ odd_n[c(2, 4)]
 
 --
 
-We can remove some values at particular positions using the minus (`-`) sign: 
-
+And, we can remove values pertaining to particular positions from a vector using the minus (`-`) sign before the position value: 
+.pull-left[
 ```{r}
 odd_n[-c(1, 2)]
 ```
+]
+.pull-right[
+```{r}
+odd_n[-4]
+```
+]
 
 ---
-# Indexing vectors
+# Challenge 8 ![:cube]()
 
+Using the vector `num_vector` and our indexing abilities:
 
-If you select a position that is not in the vector, it will return:
+1. Extract the 4th value;
+2. Extract the 1st and 3rd values;
+3. Extract all values except for the 2nd and the 4th;
+4. Extract from the 6th to the 10th value.
 
 ```{r}
-odd_n[c(1, 6)]
+num_vector <- c(1, 4, 3, 98, 32, -76, -4)
 ```
+
+---
+# Challenge 8: Solution ![:cube]()
+
+Using the vector `num_vector` and our indexing abilities:
+
+1. Extract the 4th value
+
+```{r}
+num_vector[4]
+```
+
+2. Extract the 1st and 3rd values
+
+```{r}
+num_vector[c(1, 3)]
+```
+
+3. Extract all values except for the 2nd and the 4th
+
+```{r}
+num_vector[c(-2, -4)]
+```
+
+4. Extract from the 6th to the 10th value.
+
+```{r}
+num_vector[6:10]
+```
+
+.center[What happened there? What is that `r NA`?]
+
+---
+# Indexing from matrices and data frames
+
+To index a **data frame** you must specify the position of values within two dimensions: within the row and columns, as in:
+
+```r
+data_frame_name[row_number, column_number]
+```
+
+.pull-left[
+In this way, to extract the first row:
+
+```r
+my_df[1, ]
+```
+To extract the third column:
+
+```r
+my_df[, 3]
+```
+
+And, to extract the element within the second row and the fourth column:
+
+```r
+my_df[2, 4]
+``` 
+]
+
+.pull-right[
+
+.center[![:scale 70%](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Battleship_game_board.svg/1200px-Battleship_game_board.svg.png)]
+
+.center[Battleship (game) feelings!]
+]
+
+---
+# .small[Indexing matrices and data frames by variable names]
+
+Remember that our `soil_fertilisation_data` data frame had column names?
+
+```{r}
+soil_fertilisation_data
+```
+
+<br>
+We can subset columns from it using the column names:
+
+```{r}
+soil_fertilisation_data[ , c("site_id", "soil_pH")]
+```
+
+And, also subset columns from it using `$`:
+
+```{r}
+soil_fertilisation_data$site_id
+```
+
+_Note: `$` only works for data frames!_
+
+---
+class: middle, center
+
+What if I want to subset columns based on a condition?
 
 --
 
-You can also use conditions to select values:
+We can do that! But first, you need to learn about **logical operators**.
+
+---
+# Logical statements
+
+You might remember about the `logical` data types, which contains only `r TRUE` and `r FALSE` values.
+
+We can use **operators** to obtain `r TRUE` or `r FALSE` values for a type of testing. See examples below:
+
+|Operator|Description|Example|Result|
+|-------------|-------------------------|-------------------------------|-------------|
+|`<` and `>`  |less than or greater than|`odd_n > 3`                    |`r odd_n > 3`|
+|`<=` and `>=`|less/greater or equal to |`odd_n >= 3`                   |`r odd_n >= 3`|
+|`==`         |exactly equal to         |`odd_n == 3`                   |`r odd_n == 3`|
+|`!=`         |not equal to             |`odd_n != 3`                   |`r odd_n != 3`|
+|`x` &#124; `y`| x OR y                 |`odd_n[odd_n >= 5` &#124; `odd_n < 3]` | `r odd_n[odd_n >= 5|odd_n < 3 ]` |
+|`x & y`      |x AND y                  |`odd_n[odd_n >=3 & odd_n < 7]` | `r odd_n[odd_n >=3 & odd_n < 7]` |
+|`x %in% y `  |x match y                |`odd_n[odd_n %in% c(3,7)]` | `r odd_n[odd_n %in% c(3,7)]` |
+
+---
+# Indexing with logical statements
+
+We can use conditions to select values:
 
 ```{r}
 odd_n[odd_n > 4]
@@ -1010,64 +1732,20 @@ odd_n[odd_n > 4]
 
 It is also possible to match a character string. 
 
-.comment[Recall that
+
 ```{r}
 char_vector <- c("blue", "red", "green")
 ```
 
-]
 
 ```{r}
 char_vector[char_vector == "blue"]
 ```
 
-.comment[Logical statements such as `>` will be described in more details later.]
-
-
----
-# Challenge 8 ![:cube]()
-
-Using the vector `num_vector` and our indexing abilities
-
-
-- Extract the 4th value
-- Extract the 1st and 3rd values
-- Extract all values except for the 2nd and the 4th
-
-.comment[ Recall that
-```{r}
-num_vector <- c(1, 4, 3, 98, 32, -76, -4)
-```
-]
-
----
-# Challenge 8: Solution ![:cube]()
-
-Using the vector `num_vector` and our indexing abilities
-
-
-- Extract the 4th value
-
-```{r}
-num_vector[4]
-```
-
-- Extract the 1st and 3rd values
-
-```{r}
-num_vector[c(1, 3)]
-```
-
-- Extract all values except for the 2nd and the 4th
-
-```{r}
-num_vector[c(-2, -4)]
-```
-
 ---
 # Challenge 9 ![:cube]()
 
-Explore the difference between these 2 lines of code:
+Explore the difference between these two lines of code:
 
 ```{r, eval = FALSE}
 char_vector == "blue"
@@ -1093,165 +1771,127 @@ char_vector[char_vector == "blue"]
 In this line of code, you ask `R` to extract all values within the `char_vector` vector that are exactly equal to `blue`.
 
 ---
-# Indexing data frames
-
-To index a `data frame` you must specify two dimensions: row and column numbers, using the following syntax:
-
-```r
-data_frame_name[row, column]
-```
-
----
-# Indexing data frames: examples
-
-`my_df[1, ]`
-- Extracts the first row
-
-.comment[Note that an empty index select **all** the values.]
-
-`my_df[, 3]` 
-- Extracts the third column
-
-`my_df[2, 4]` 
-- Extracts the second element of the fourth column
-
-
----
-# Indexing data frames: examples
-`my_df[c(2, 4), ]`  
-- Extracts rows 2 and 4
-
-.comment[The examples given so far are also valid for indexing matrices, this is not the case for the following examples.]
-
-<br>
-
-The `$` calls a specific column name in the data frame
-
-`my_df$site_id`  
-- Extracts the variable `site_id` from the data frame
-
-`my_df$site_id[2]` 
-- Extracts the second value of the variable `siteID` from the data frame
-
-
-`my_df[c("site_id", "soil_pH")]`  
-- Extracts the `site_id` and `soil_pH` variables from the data frame.
-
-
----
-# A quick note on logical statements
-
-`R` allows testing of logical statements, *i.e.* testing whether a statement is true or false.
-
-You need to use logical operators for that.
-
-<br>
-
-|Operator|Description|Example|
-|-------------|-------------------------|-------------------------------|
-|`<` and `>`  |less than or greater than|`odd_n > 3`                    |
-|`<=` and `>=`|less/greater or equal to |`odd_n >= 3`                   |
-|`==`         |exactly equal to         |`odd_n == 3`                   |
-|`!=`         |not equal to             |`odd_n != 3`                   |
-|`x`&#124;`y` |x OR y                   |`odd_n[odd_n >= 5` &#124; `odd_n < 3]`|
-|`x & y`      |x AND y                  |`odd_n[odd_n >=3 & odd_n < 7]` |
-|`x %in% y `  |x match y                |`odd_n[odd_n %in% c(3,7)]` |
-
----
 # Challenge 10 ![:cube]()
 
-1. Extract the `num_sp` column from `my_df` and multiply its value by the first four values of `num_vec`.
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by the first four values of `num_vec`.
 
 2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 ---
 # Challenge 10: Solution ![:cube]()
 
-1. Extract the `num_sp` column from `my_df` and multiply its value by  the first four values of `num_vec`.
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by  the first four values of `num_vec`.
 
 ```{r}
-my_df$num_sp * num_vector[c(1:4)]
-# or
-my_df[, 3] * num_vector[c(1:4)]
+soil_fertilisation_data$num_sp * num_vector[c(1:4)]
+```
+
+or
+
+```{r}
+soil_fertilisation_data[, 3] * num_vector[c(1:4)]
 ```
 
 2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 
 ```{r}
-(my_df$num_sp * num_vector[c(1:4)]) > 25
+(soil_fertilisation_data$num_sp * num_vector[c(1:4)]) > 25
 ```
 
 ---
-# Matrix, Array and List
+# Other kinds of data structure: arrays and lists
 
-- In this course, we focus mainly on `vectors` and `data frames`.
-- But in the future, you might need to use a matrix, an array or a list.
-- Note that the way to access the information in the type of data structure will differ depending on the dimension of the object.
+We focused here mainly on `vectors` and `data frames`.
 
+While we will discuss discuss about **arrays** and **lists** in other workshops, you can already have an idea what these types of object structure are. 
+
+_Any wild guesses?_
 .center[
 ![:scale 60%](images/matrix.png)
 ]
 
 ---
+
+# Short review about data structure in `R`
+
+<!-- ![:scale 90%](images/matrix.png) -->
+![:scale 90%](images/Type_of_data_structure_in_R.png)
+
+
+---
 class: inverse, center, middle
 
-# 3. Manipulate objects in R
+# 3. Manipulating objects in R
 
 <hr>
 
-## Function
+## Built-in functions
 
 ---
-# Function
+# Functions
 
 .pull-left2[
 - A function is a tool to simplify your life.
 
 - It allows you to quickly execute operations on objects without having to write every mathematical step.
 
-- A function needs entry values called **arguments** (or parameters). It then performs hidden operations using these arguments and gives a **return value**.
+- A function needs entry values called **arguments** (or parameters). 
+
+- It then performs (hidden) actions using these arguments and  **returns** an output.
+
+- Today, we will look only into `R`'s _built-in_ functions, but you will learn how to make your own functions during Workshop #5!
 ]
+
 
 .pull.right2[
 ![:scale 20%](images/function_V2_en.png)
 ]
 
 ---
-# Function
+# Using functions
 
 To use (or to call) a function, the command must be structured properly, following the "grammar rules" of the `R` language: the syntax.
 
 ```{r, eval = FALSE}
-function_name(argument1, argument2, etc.)
+function_name(argument1 = value, argument2 = value, ..., argument4 = value)
 ```
 
 ---
-# Arguments
+# Using functions: arguments
 
 Arguments are **values** and **instructions** the function needs to run.
 
 Objects storing these values and instructions can be used in functions:
-
+.pull-left[
 ```{r}
 a <- 3
 b <- 5
+
 sum(a, b)
 ```
+]
+
+.pull-right[
+```{r}
+mean(soil_fertilisation_data$num_sp)
+```
+]
 
 ---
 # Challenge 11 ![:cube]()
 
-- Create a vector `a` that contains all the numbers from 1 to 5
-- Create an object `b` that has a value of 2
-- Add `a` and `b` together using the basic `+` operator and save the result in an object called `result_add`
-- Add `a` and `b` together using the `sum` function and save the result in an object called `result_sum`
-- Are `result_add` and `result_sum` different? 
-- Add `5` to `result_sum` using the `sum` function
+1. Create a vector `a` that contains all the numbers from 1 to 5.
+2. Create an object `b` that has a value of 2.
+3. Add `a` and `b` together using the basic `+` operator and save the result in an object called `result_add`.
+4. Add `a` and `b` together using the `sum` function and save the result in an object called `result_sum`.
+5. Are `result_add` and `result_sum` different?
+6. Add `5` to `result_sum` using the `sum()` function.
 
 ---
 # Challenge 11: Solution  ![:cube]()
 
+5. Are `result_add` and `result_sum` different?
 ```{r}
 a <- c(1:5)
 b <- 2
@@ -1261,6 +1901,7 @@ result_add <- a + b
 result_sum <- sum(a, b)
 ```
 
+6. Add `5` to `result_sum` using the `sum()` function.
 ```{r}
 result_add
 
@@ -1273,25 +1914,45 @@ sum(result_sum, 5)
 
 The operation `+` on the vector `a` adds 2 to each element. The result is a vector.
 
-The function `sum` concatenates all the values provided and then sum them. It is the same as doing `1+2+3+4+5+2`.
+The function `sum()` concatenates all the values provided and then sum them. It is the same as doing `1 + 2 + 3 + 4 + 5 + 2`.
 
 ---
 # Arguments
 
-- Arguments each have a **name** that can be provided during a function call.
+Each argument has a **name**, which may be used during a function call.
 
-- If the name is not present, the order of the arguments does matter.
+For instance, the first arguments of the `matrix()` function are:
 
-- If the name is present, the order does not matter.
+```{r eval = FALSE}
+matrix(data, nrow, ncol)
+```
 
+We can create a matrix using: 
+
+```{r}
+matrix(data = 1:12, nrow = 3, ncol = 4)
+```
+
+We can also execute a function when omitting argument names, however the order of the values will matter:
+.pull-left[
+```{r}
+matrix(data = 1:12, 3, 4)
+```
+]
+.pull-right[
+```{r}
+matrix(1:12, 4, 3)
+```
+]
 ---
 # Challenge 12 ![:cube]()
 
-`plot` is a function that draws a graph of y as a function of x. It requires two arguments names `x` and `y`. What are the differences between the following lines?
+`plot` is a function that draws a graph of `y` as a function of `x`. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
 ```{r, eval = FALSE}
 a <- 1:100
 b <- a^2
+
 plot(a, b, type = "l")
 plot(b, a, type = "l")
 plot(x = a, y = b, type = "l")
@@ -1372,55 +2033,55 @@ Same as `plot(a, b, type = "l")`. The argument names are provided, the order is 
 ---
 class: inverse, center, middle
 
-# 4. Install, use an R package and get help
-
-## Package
+# 4. Installing and using R packages
 
 ---
-# Package
+# `R` Packages
 
-Packages are a **grouping of functions** and/or **datasets** that share a similar **theme**, e.g. statistics, spatial analysis, plotting, etc.
+Packages **group functions** and/or **datasets** that share a similar **theme**, _e.g._ statistics, spatial analysis, plotting.
 
-**Everyone** can develop packages and make them available to others.
+**Anyone** can develop packages and make them available to others.
 
-Many packages available through the *Comprehensive R Archive Network* [CRAN](http://cran.r-project.org/web/packages/) and now many more on GitHub [GitHub](https://github.com/).
+Many packages available through the *Comprehensive R Archive Network* ([CRAN](http://cran.r-project.org/web/packages/)) and now many more on [GitHub](https://github.com/).
 
 <br>
 
-.alert[Guess how many packages are available (not only on the CRAN)?]
+.center[.alert[Guess how many packages are available (not only within the CRAN)?]]
 
 ---
-# How many packages
+# How many `R` packages?
 
 ![](images/rdrr_10-03-20.png)
 
 *[rdrr.io](https://rdrr.io/) visited on March, 10th 2020*
 
 ---
-# Package
+# Installing `R` packages
 
-To install packages on your computer, use the function `install.packages`.
+To install packages in your Computer, use the function `install.packages()`.
 
 ```r
-install.packages("package name")
+install.packages("package_name")
 ```
 
-Installing a package is not enough to use it. You need to load it into your workspace before using it using the `library` function.
+Installing a package is essential to use it, but there is one more step: loading it. 
+
+You can load a package into your workspace using the `library()` function.
 
 ```r
-library(package name)
+library(package_name)
 ```
 
 ---
-# Package: an example
+# Installing your first `R` package: `ggplot2`
 
-Let us install a popular visualization package called ggplot (grammar of graphics plot)
+Let us install a popular visualization package called `ggplot`.
 
 ```{r, eval = FALSE}
 install.packages("ggplot2")
 ```
 
-```{r, eval = FALSE, echo = FALSE}
+```{r, eval = FALSE}
 Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
 (as 'lib' is unspecified)
 ```
@@ -1442,9 +2103,9 @@ Did you get this error?
 ```
 
 ---
-# Package: an example
+# Loading your first `R` package: `ggplot2`
 
-We need to gain access the functions that are available in the installed package. To do this, load `ggplot2` using the `library()` function.
+We need to gain access the functions that are available within the installed package. To do this, load `ggplot2` using the `library()` function.
 
 ```{r}
 library(ggplot2)
@@ -1455,18 +2116,11 @@ Now we can draw the graph
 qplot(1:10, 1:10)
 ```
 
-  .comment[The `ggplot2` package, will be covered in workshop #3 - [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
----
-class: inverse, center, middle
-
-# 4. Install, use an R package and get help
-
-<hr>
-
-## Getting help
+.comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
 
 ---
-# Searching for functions
+
+# Finding functions within packages
 
 WOW! `R` is so great! So many functions to do what I want!
 
@@ -1604,11 +2258,11 @@ sort(numbers, decreasing = TRUE)
 Usually, your best source of information will be your favorite search engine!
 
 Here are some tips on how to use them efficiently:
-- Search in English
-- Use the keyword "R" at the beginning of your search
-- Define precisely what you are looking for
-- Learn to read discussion forums, such as [StackOverflow](https://stackoverflow.com/). Chances are other people already had your problem and asked about it.
-- Don't hesitate to search again using different keywords!
+- Search in English;
+- Use the keyword `R` at the beginning of your search;
+- Define precisely what you are looking for;
+- Learn to read discussion forums, such as [StackOverflow](https://stackoverflow.com/). Chances are other people already had your problem and asked about it!
+- Do not hesitate to search again using different keywords!
 
 ---
 # Challenge 14 ![:cube]()
@@ -1626,13 +2280,13 @@ Find the appropriate functions to perform the following operations:
 Find the appropriate functions to perform the following operations:
 
 - Square root
-  - `sqrt`
+  - `sqrt()`
 - Calculate the mean of numbers
-  - `mean`
+  - `mean()`
 - Combine two data frames by columns
-  - `cbind`
+  - `cbind()`
 - List available objects in your workspace
-  - `ls`
+  - `ls()`
 
 ---
 class: inverse, center, middle
@@ -1684,11 +2338,8 @@ Open it directly from **RStudio**: Help $\rightarrow$ Cheatsheets
 
 [![:scale 50%](https://d33wubrfki0l68.cloudfront.net/1ac3f0e3753f18c7e2a8893957d1841fba1e3d08/48a33/wp-content/uploads/2018/10/rstudio-logo-flat.png)](https://support.rstudio.com/hc/en-us/categories/200035113-Documentation)
 
-[**Cookbook for R**](http://cookbook-r.com/)
+[**Cookbook for `R`**](http://cookbook-r.com/)
 ]
-
-
-
 
 
 ---
