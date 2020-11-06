@@ -2042,7 +2042,7 @@ plot(y = b, x = a, type = "l")
 .comment[The argument `type` of the function `plot` let you choose the type of graph you want. Try it without this argument.]
 
 ---
-# Challenge 12: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 `plot` is a function that draws a graph of y as a function of x. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
@@ -2301,14 +2301,14 @@ To find information about a function in particular, use `?`
 ![](images/seq_examples.png)
 
 ---
-# Challenge 13 ![:cube]()
+# Challenge ![:cube]()
 
 1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
 2. Create an unsorted vector of your favourite numbers, then sort your vector in reverse order.
 
 ---
-# Challenge 13: Solutions ![:cube]()
+# Challenge: Solutions ![:cube]()
 
 1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
 
@@ -2345,7 +2345,7 @@ Here are some tips on how to use them efficiently:
 - Do not hesitate to search again using different keywords!
 
 ---
-# Challenge 14 ![:cube]()
+# Challenge ![:cube]()
 
 Find the appropriate functions to perform the following operations:
 
@@ -2355,7 +2355,7 @@ Find the appropriate functions to perform the following operations:
 - List available objects in your workspace
 
 ---
-# Challenge 14: Solutions ![:cube]()
+# Challenge: Solutions ![:cube]()
 
 Find the appropriate functions to perform the following operations:
 
@@ -2387,9 +2387,9 @@ Open it directly from **RStudio**: Help $\rightarrow$ Cheatsheets
 
 
 ---
-# Cheat 4ever
+# Cheatsheet 4ever
 
-![:scale 90%](images/base-r.png)
+.center[![:scale 90%](images/base-r.png)]
 
 ---
 # Some useful R books
