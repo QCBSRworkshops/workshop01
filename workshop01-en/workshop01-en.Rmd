@@ -50,13 +50,14 @@ qcbsRworkshops::get_badges(workshop_id = 1, style = "for-the-badge", clip = FALS
 
 ##### 3. Manipulate objects in `R`;
 
-##### 4. Install, use `R` package, functions and get help.
+##### 4. Install and use `R` packages and functions;
 
+##### 5. Get help.
 
 ---
 class: inverse, center, middle
 
-# 1. Recognize and use `R` and **RStudio**
+# 1. Recognizing and using `R` and **RStudio**
 
 <hr>
 
@@ -424,7 +425,7 @@ Show the participants how the number between the square brackets indicates posit
 ---
 # Error and Warning
 
-Often, the Console will output **Errors** and **Warning** messages.
+Often, the **Console** will output **Errors** and **Warning** messages.
 
 .pull-left[
 .alert[Warning message] 
@@ -497,7 +498,7 @@ class: inverse, center, middle
 
 ---
 
-# Challenge 2 ![:cube]()
+# Challenge ![:cube]()
 
 
 Use `R` to calculate the following equation:
@@ -512,7 +513,7 @@ $$
 .comment[**Hint**: The `*` symbol is used to multiply.]
 
 ---
-# Challenge 2: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 Use `R` to calculate the following equation:
 
@@ -527,7 +528,7 @@ It would look like this in `R`:
 ```
 
 ---
-# Challenge 3 ![:cube]()
+# Challenge ![:cube]()
 
 Use `R` to calculate the following equation:
 
@@ -647,16 +648,17 @@ pi * 5^2
 ]
 
 .small[
-.center[You have just ran a command preceeded by `?`. What happened?]
+.center[You have just ran a command preceeded by `?`. _What happened?_]
 ]
 
 ---
-# Still within the `R` **console**: a  tip
+class: middle, center
+
+## A tip
 
 We can use the $\uparrow$ and $\downarrow$ arrow keys to retrieve commands previously run.
 
 Make sure your cursor is blinking in front of the `>` prompt and give it a try!
-
 
 .center[
 ![:scale 30%](images/keyboard_arrows.png)
@@ -706,7 +708,9 @@ One can assign values using `=` instead of the `<-` operator. We caution against
 
 # Naming **objects**: a few rules
 
-- Objects names can only include:
+Objects names can only include:
+
+<br>
 
 |  Type      |  Symbol |
 |------------|:-------:|
@@ -715,10 +719,13 @@ One can assign values using `=` instead of the `<-` operator. We caution against
 | Period     |       . |
 | Underscore |       _ |
 
-- Objects names must **always** begin with a letter.
-- `R` is **case-sensitive**: `Data_1` is different than `data_1`.
-- You **cannot** use special characters (`@`, `/`, `#`, etc.).
-- Object names must be **unique**: `data_1 <- 1` will overwrite any previously objects named `data_1`
+<br>
+
+1. Objects names must **always** begin with a letter.
+2. `R` is **case-sensitive**: `Data_1` is different than `data_1`.
+3. You **cannot** use special characters (`@`, `/`, `#`, etc.).
+4. Object names must be **unique**: `data_1 <- 1` will overwrite any previously objects named `data_1`
+
 ---
 
 #.small[Good practice when naming objects and writing code]
@@ -759,14 +766,18 @@ meanx
 
 ---
 
-# Challenge 4 ![:cube]()
+# Challenge ![:cube]()
 
 Create an object with a name (of your choice) that starts with a number. What happens?
 
 ---
-# Challenge 5: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 Create an object with a name (of your choice) that starts with a number. What happens?
+
+<br>
+<br>
+<br>
 
 <br>
 
@@ -777,15 +788,16 @@ Error: unexpected symbol in "your object name"
 ```
 
 ---
-# Challenge 5 ![:cube]()
+# Challenge ![:cube]()
 
 Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
 
 ---
-# Challenge 5: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
 
+<br>
 
 ```{r}
 euler_value <- 1 + 1.718282
@@ -799,19 +811,27 @@ euler_value
 
 <br>
 
+<br>
+
 .center[What has happened in your **RStudio** window when you created this object?]
 
 <br>
+
+???
+
+The presenter should not here that the object will appear in the RStudio Environment.
 
 ---
 # The **RStudio** Environment
 
 The **Environment** panel shows you all the objects you have defined in your current workspace.
 
-.center[![:scale 40%](https://bookdown.org/ndphillips/YaRrr/images/environmentss.png) ]
+.center[![:scale 60%](https://bookdown.org/ndphillips/YaRrr/images/environmentss.png) ]
 
 ---
-# Another tip
+class: middle, center
+
+## Tip
 
 You can use the `Tab` key to auto-complete commands. 
 
@@ -819,7 +839,7 @@ This helps preventing spelling errors
 
 <br>
 
-.center[Let us try it!]
+.center[**Let us try it!**]
 
 <br>
 
@@ -860,12 +880,16 @@ typeof(y)
 ```
 ]
 
+--
+
 **Character**-type (**always** between `" "`)
 
 ```{r}
 z <- "You are becoming very good in this!"
 typeof(z)
 ```
+
+--
 
 **Logical**-type
 
@@ -882,6 +906,10 @@ f <- FALSE
 typeof(f)
 ```
 ] 
+
+???
+
+The presenter might be asked about running the entire line within `()`. This is the same as `x <-2; x`. We have done that so it fits.
 
 ---
 
@@ -1231,6 +1259,7 @@ matrix(data = 1:10,
        ncol = 5)
 ```
 ]
+
 --
 
 We can also combine multiple vectors using `cbind()` and `rbind()`:
@@ -1251,7 +1280,9 @@ rbind(nickname,
 cbind(nickname, animal)
 ```
 ]
+
 ---
+
 # Operations with **matrices**
 
 Similarly as in the case of vectors, operations with matrices work just fine:
@@ -1279,6 +1310,7 @@ mat_1 * mat_2
 ```
 
 ---
+
 # Challenge ![:cube]()
 
 It is your time to **get your hands dirty**!
@@ -1297,6 +1329,7 @@ It is your time to **get your hands dirty**!
 **Remember** that values or arguments must be separated by commas if they are inside a function, _e.g._ `c("one", "two", "three")`.
 
 ---
+
 # Challenge ![:cube]()
 
 It is your time to **get your hands dirty**!
@@ -1325,7 +1358,10 @@ It is your time to **get your hands dirty**!
   ncol = 3))
 ```
 ]
----# Challenge ![:cube]()
+
+---
+
+# Challenge ![:cube]()
 
 It is your time to **get your hands dirty**!
 
@@ -1532,21 +1568,18 @@ class: inverse, center, middle
 ---
 # Indexing objects in `R`
 
-We have our information stored as a vector, a matrix, or a dataframe in `R`.
+We have our information stored as a `vector`, a `matrix`, or a `data.frame` in `R`.
 
+<br>
 We will probably be interested in *accessing* and even *subsetting* the data based on some criteria.
 
+<br>
 Let's start with a pretty basic one: the square brackets `[ ]` and `[, ]`
 
+<br>
 We can indicate the **position** of the values we want to see between the brackets. This is often called *indexing* or **slicing**.
 
-
-
-- Note that the way we index will depend on the dimensions of the object. 
-  * For vectors, there is only one dimension: `["location"]`
-  * For data frames, the first position is "rows", and the second is "columns", separated by a comma:  `["rows","columns"]`
-  * To indicate the position of multiple elements, we place the values in a vector using `c()`: `[c("rows1":"rows10"),c("columns5","columns7")]`
-
+<br>
 Let us see how to index a vector object in `R`. 
 
 ---
@@ -1590,7 +1623,7 @@ odd_n[-4]
 ]
 
 ---
-# Challenge 8 ![:cube]()
+# Challenge ![:cube]()
 
 Using the vector `num_vector` and our indexing abilities:
 
@@ -1604,7 +1637,7 @@ num_vector <- c(1, 4, 3, 98, 32, -76, -4)
 ```
 
 ---
-# Challenge 8: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 Using the vector `num_vector` and our indexing abilities:
 
@@ -1631,8 +1664,8 @@ num_vector[c(-2, -4)]
 ```{r}
 num_vector[6:10]
 ```
-
-.center[What happened there? What is that `r NA`?]
+<br>
+.center[_What happened there? What is that `r NA`?_]
 
 ---
 # Indexing from matrices and data frames
@@ -1700,10 +1733,10 @@ What if I want to subset columns based on a condition?
 
 --
 
-We can do that! But first, you need to learn about **logical operators**.
+We can do that! But first, you need to learn about **logical operators** and **logical testing**.
 
 ---
-# Logical statements
+# Statement testing with logical operators 
 
 You might remember about the `logical` data types, which contains only `r TRUE` and `r FALSE` values.
 
@@ -1720,7 +1753,7 @@ We can use **operators** to obtain `r TRUE` or `r FALSE` values for a type of te
 |`x %in% y `  |x match y                |`odd_n[odd_n %in% c(3,7)]` | `r odd_n[odd_n %in% c(3,7)]` |
 
 ---
-# Indexing with logical statements
+# Indexing with logical operators
 
 We can use conditions to select values:
 
@@ -1743,7 +1776,54 @@ char_vector[char_vector == "blue"]
 ```
 
 ---
-# Challenge 9 ![:cube]()
+# Statement testing with logical functions
+
+There are also ways in `R` that allows us to test conditions!
+
+We can for, instance, test if values within a vector or a matrix are `numeric`:
+
+.pull-left[
+```{r}
+char_vector
+is.numeric(char_vector)
+```
+]
+
+.pull-right[
+```{r}
+odd_n
+is.numeric(odd_n)
+```
+]
+
+--
+
+Or, whether they are of the `character` type:
+.pull-left[
+```{r}
+char_vector
+is.character(char_vector)
+```
+]
+
+.pull-right[
+```{r}
+odd_n
+is.character(odd_n)
+```
+]
+
+--
+
+And, also, if they are vectors:
+
+```{r}
+char_vector
+is.vector(char_vector)
+```
+
+---
+# Challenge ![:cube]()
 
 Explore the difference between these two lines of code:
 
@@ -1754,7 +1834,7 @@ char_vector[char_vector == "blue"]
 ```
 
 ---
-# Challenge 9: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 Explore the difference between these 2 lines of code:
 
@@ -1768,17 +1848,17 @@ In this line of code, you **test a logical statement**. For each entry in the `c
 char_vector[char_vector == "blue"]
 ```
 
-In this line of code, you ask `R` to extract all values within the `char_vector` vector that are exactly equal to `blue`.
+In this above line, we asked `R` to extract all values within the `char_vector` vector that are exactly equal to `blue`.
 
 ---
-# Challenge 10 ![:cube]()
+# Challenge ![:cube]()
 
 1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by the first four values of `num_vec`.
 
 2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 ---
-# Challenge 10: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by  the first four values of `num_vec`.
 
@@ -1832,7 +1912,7 @@ class: inverse, center, middle
 # Functions
 
 .pull-left2[
-- A function is a tool to simplify your life.
+- A function is a tool that simplifies our lives!
 
 - It allows you to quickly execute operations on objects without having to write every mathematical step.
 
@@ -1879,7 +1959,7 @@ mean(soil_fertilisation_data$num_sp)
 ]
 
 ---
-# Challenge 11 ![:cube]()
+# Challenge ![:cube]()
 
 1. Create a vector `a` that contains all the numbers from 1 to 5.
 2. Create an object `b` that has a value of 2.
@@ -1889,7 +1969,7 @@ mean(soil_fertilisation_data$num_sp)
 6. Add `5` to `result_sum` using the `sum()` function.
 
 ---
-# Challenge 11: Solution  ![:cube]()
+# Challenge: Solution  ![:cube]()
 
 5. Are `result_add` and `result_sum` different?
 ```{r}
@@ -1945,7 +2025,7 @@ matrix(1:12, 4, 3)
 ```
 ]
 ---
-# Challenge 12 ![:cube]()
+# Challenge ![:cube]()
 
 `plot` is a function that draws a graph of `y` as a function of `x`. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
@@ -1977,7 +2057,7 @@ plot(y = b, x = a, type = "l")
 ```
 
 ---
-# Challenge 12: Solution
+# Challenge: Solution
 
 .pull-left[
 ```{r,eval=F}
@@ -2004,7 +2084,7 @@ plot(b, a, type = "l")
 The shape of the plot changes, as we did not provide the argument's names, the order is important.
 
 ---
-# Challenge 12: Solution
+# Challenge: Solution
 
 .pull-left[
 ```{r,eval = FALSE}
