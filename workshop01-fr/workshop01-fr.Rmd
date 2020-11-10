@@ -1,0 +1,1464 @@
+---
+title: "Atelier 1: Introduction à R"
+subtitle: "Série d'ateliers R du CSBQ"
+author: "Centre de la Science de la Biodiversité du Québec"
+output:
+  xaringan::moon_reader:
+    includes:
+      in_header: qcbsR-header.html
+    lib_dir: assets
+    seal: true
+    css: ["default", "qcbsR.css", "qcbsR-fonts.css"]
+    nature:
+      beforeInit: "qcbsR-macros.js"
+---
+
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  comment = "#",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width=5, fig.height=5, fig.retina=3,
+  fig.align = 'center'
+)
+options(repos=structure(c(CRAN="http://cran.r-project.org")))
+```
+
+class: inverse, center, middle
+
+# À propos de cet atelier
+
+```{R echo = FALSE, results = "asis"}
+qcbsRworkshops::get_badges(1, style = "for-the-badge", clip = FALSE, lang = "fr")
+```
+
+---
+# Objectifs d'apprentissage
+<br>
+
+#### 1. Comprendre ce que R et RStudio sont 
+
+#### 2. Utiliser R comme une calculatrice 
+
+#### 3. Manipuler les objets dans R 
+
+#### 4. Installer et utiliser les packages R 
+
+
+---
+class: inverse, center, middle
+
+# 1. Comprendre ce que R et RStudio sont
+
+<hr>
+
+## Introduction
+
+---
+
+# Qu'est-ce que R?
+
+.pull-left[
+R est un langage de programmation open source conçu pour l'analyse statistique, l'exploration de données et la visualisation de données.
+]
+
+.pull-right[
+![:scale 50%](images/R_logo.png)
+]
+
+---
+# Pourquoi utiliser R?
+
+* **R est en source libre, open source**
+  - Amélioré **par** la communauté d’utilisateur, **pour** la communauté!
+* **Gratuit!**
+* **Compatible!**
+  - R fonctionne avec la majorité des systèmes d'exploitation
+
+<!-- .right[ ![:scale 40%](images/Opensource.png) ] -->
+
+.center[
+![:scale 60%](images/operating_stm.png)
+]
+
+---
+# Pourquoi utiliser R?
+
+.pull-left[
+
+- Ce que les gens faisaient traditionnellement pour analyser leurs données:
+
+<br>
+
+```{r, echo = FALSE}
+  grViz("
+      digraph {
+
+      node [shape = oval, fillcolor = PaleTurquoise]
+      Données; Graphiques; Tableaux; Statistiques
+
+      node [shape = box]
+      Sigmaplot; Excel; SAS
+
+      ##add arrows
+      edge [arrowhead = none]
+      Données -> Sigmaplot; Données -> Excel; Données -> SAS;
+
+      edge [arrowhead = normal]
+      Sigmaplot -> Graphiques; Excel -> Tableaux; SAS -> Statistiques;
+
+      }")
+
+```
+]
+
+.pull-right[
+
+- R permet de tout (ou presque) faire avec un seul programme!
+<br>
+<br>
+```{r, echo = FALSE}
+grViz("
+      digraph {
+
+      node [shape = oval, fillcolor = PaleTurquoise]
+      Données; Graphiques; Tableaux; Statistiques
+
+      node [shape = box]
+      R
+
+      ##add arrows
+      edge [arrowhead = none]
+      Données -> R;
+
+      edge [arrowhead = normal]
+      R -> Graphiques; R -> Tableaux; R -> Statistiques;
+
+      }")
+
+```
+]
+
+---
+# Pourquoi utiliser R?
+
+- De plus en plus de scientifiques l'utilisent chaque année!
+- Des possibilités qui augmentent chaque année
+
+.center[![:scale 70%](images/Rpackages.png)]
+
+---
+# Visualisation de données!
+
+Tous ces graphiques ont été faits avec R!
+
+.center[![:scale 80%](images/graph3.png)]
+
+---
+# Défi
+
+.pull-left2[
+- Tout au long de ces ateliers, vous aurez à compléter plusieurs défis qui sont indiqués par des Rubik's Cube
+- Pendant les  défis, collaborez avec vos voisins!
+]
+
+
+.pull-right2[
+![](images/rubicub.png)
+]
+
+
+---
+# Défi 1  ![:cube]()
+
+.center[Ouvrez Rstudio]
+
+<br>
+
+.center[
+![](images/Rstudio.png)
+]
+
+
+---
+# La console Rstudio
+
+![](images/Rstudioconsole_fleche.png)
+
+
+---
+
+## Note pour les utilisateurs Windows
+
+Si la restriction `unable to write on disk` apparaît quand vous ouvrez R Studio ou que vous installez une bibliothèque,
+
+.center[.alert[Pas de panique!]]
+
+.large[On a la solution!]
+
+- Fermez l'application.
+- Faites un clic-droit sur l'icône RStudio et choissisez: "Execute as administrator" pour ouvrir le programme.
+
+
+---
+# Comment lire la console?
+
+Le texte dans la console ressemble typiquement à ceci:
+
+.comment[Vous devez toujours appuyer sur "enter" pour que le code soit exécuté dans la console.]
+
+```{r, include = FALSE}
+sortie <- "Ceci est la sortie"
+```
+
+```{r}
+sortie
+```
+
+---
+# Comment lire la console?
+
+```{r}
+sortie
+```
+
+Que signifient les crochets `[]` dans la sortie?
+
+---
+# Comment lire la console?
+
+```{r}
+sortie
+```
+
+Les crochets vous aident à localiser *où* vous êtes dans la sortie
+
+```{r, echo = FALSE}
+c(1:40)
+```
+
+---
+# Erreur et avertissement
+
+
+.alert[Warning message]
+
+Met en garde l'utilisateur sans arrêter l'exécution d'une fonction.
+
+Bien que la fonction puisse vous donner une réponse, il pourrait y avoir un problème avec vos entrées. Ainsi, le calcul pourrait être erroné.
+
+
+.alert[Error message]
+
+Arrête l'exécution en cours car R est incapable de réaliser le calcul.
+
+Il indique un problème dans votre code.
+
+<br>
+.center[
+**Pour résoudre une *erreur*, les internets sont votre meilleur ami!**
+]
+
+
+
+---
+class: inverse, center, middle
+
+# 2. Utiliser R comme une calculatrice &nbsp; ![:faic](calculator)
+
+<hr>
+
+## Opérations de base
+
+---
+# Opérateurs arithmétiques
+
+- Additions et soustractions
+
+```{r}
+1 + 1
+
+10 - 1
+```
+
+--
+
+- Multiplications et divisions
+
+```{r}
+2 * 2
+
+8 / 2
+```
+
+--
+
+- Exposants
+
+```{r}
+2^3
+```
+
+---
+
+# Défi 2 ![:cube]()
+
+
+Utilisez R pour effectuer l'opération suivante:
+
+$$
+2+16*24-56
+$$
+
+<br>
+
+.comment[**Astuce**: Le symbole `*` est utilisé pour multiplier]
+
+---
+# Défi 2: Solution ![:cube]()
+
+
+$$
+2+16*24-56
+$$
+
+
+
+```{r}
+2 + 16 * 24 - 56
+```
+
+---
+# Défi 3 ![:cube]()
+
+Utilisez R pour effectuer l'opération suivante:
+
+$$
+2+16*24-56 / (2+1)-457
+$$
+
+<br>
+<br>
+
+.comment[**Astuce**: Pensez à l'ordre des opérations]
+
+---
+# Défi 3: Solution ![:cube]()
+
+Utilisez R pour effectuer l'opération suivante:
+
+$$
+2+16*24-56 / (2+1)-457
+$$
+
+
+```{r}
+2 + 16 * 24 - 56 / (2 + 1) - 457
+```
+
+.comment[Notez que R respecte l'ordre des opérations]
+
+---
+# Astuce sur la ligne de commande R
+
+
+Utilisez les touches fléchées $\uparrow$ et $\downarrow$ pour copier et reproduire les commandes précédentes.
+
+
+.center[
+![:scale 30%](images/keyboard_arrows.png)
+]
+
+
+---
+# Défi 4 ![:cube]()
+
+Quel est l'aire de ce cercle dont le rayon est de $5\ cm$?
+
+```{r echo = F}
+radius <- 1
+theta <- seq(0, 2 * pi, length = 200)
+plot(c(-1, 1), c(-1, 1), type = "n", ann = F, axes = F, asp = 1)
+lines(x = radius * cos(theta), y = radius * sin(theta))
+arrows(0, 0, x1 = 1, length = 0)
+text(.5, .1, "rayon = 5 cm", cex = 1)
+```
+
+---
+# Défi 4: Solution ![:cube]()
+
+
+Quel est l'aire de ce cercle dont le rayon est de $5\ cm$?
+
+```{r}
+3.1416 * 5^2
+```
+
+.comment[**Astuce**: Notez que `R` a des constantes intégrées, telle que &pi;, vous pouvez donc écrire:]
+
+```{r}
+pi * 5^2
+```
+
+---
+class: inverse, center, middle
+
+# 3. Manipuler les objets dans R 
+
+<hr>
+
+## Objet
+
+---
+# Objet
+
+- Un concept très important en `R`!
+- Vous pouvez stocker des valeurs dans un objet nommé à l'aide de l'opérateur d'assignation `<-`
+
+```{r, eval = FALSE}
+nom_objet <- valeurs
+```
+
+- L'opérateur `<-` représente une flèche vers l'endroit où stocker l'information.
+- Les valeurs à **droite** (`valeurs`) sont assignées à l'objet à **gauche** (`nom_objet`) grâce à l'opérateur d'assignement `<-`.
+- Faites attention de ne pas laisser d'espace entre le symbole `<` et `-`.
+
+--
+
+.comment[Bien qu'il soit aussi possible d'utiliser le signe `=`, l'opérateur `<-` est généralement la méthode standard pour l'assignation d'information à un objet.]
+
+---
+# Nom d'objet
+
+- Les noms d'objets peuvent inclure :
+
+|  Type      |  Symbol |
+|------------|:-------:|
+| Lettres    | a-z A-Z |
+| Nombres    |     0-9 |
+| Point      |       . |
+| Tiret bas  |       _ |
+
+- Les noms d'objets doivent **toujours commencer par une lettre**.
+- `R` est **sensible à la casse**, les noms `Data1` et `data1` ne sont pas équivalents.
+- Les **caractères spéciaux sont interdits**! (@, /, etc.)
+
+---
+# Bonnes pratiques du code R
+
+**Nom**:
+- Essayez d'avoir des noms courts et explicites pour vos variables. Nommer une variable `var` n'est pas très instructif.
+- Utilisez un trait de soulignement `_` pour séparer les mots d'un nom ou essayez d'être constant!
+- Évitez les noms d'objets de fonction qui existe dans R (e.g. `c` ou `table`)
+
+**Espace**:
+- Ajoutez des espaces autour de tous les opérateurs (`=`, `+`, `-`, `<-`, etc.) pour rendre le code plus lisible
+- Mettez un espace après une virgule, mais jamais avant (comme en français).
+
+```{r}
+moy_x <- (2 + 6) / 2
+
+moy_x
+```
+
+---
+# Défi 5 ![:cube]()
+
+<br>
+
+Créez un objet avec une valeur de 1+1.718282 ([_e_ ou le nombre d'Euler](https://fr.wikipedia.org/wiki/E_(nombre)) et nommez le `valeur_euler`.
+
+---
+# Défi 5: Solution ![:cube]()
+
+
+<br>
+
+Créez un objet avec une valeur de 1+1.718282 (le nombre d'Euler) et nommez le `valeur_euler`.
+
+
+```{r}
+valeur_euler <- 1 + 1.718282
+
+valeur_euler
+```
+
+---
+# Défi 6 ![:cube]()
+
+Créez un deuxième objet avec un nom qui commence par un nombre. Qu'est-ce qui se produit?
+
+---
+# Défi 6: Solution ![:cube]()
+
+Créez un deuxième objet avec un nom qui commence par un nombre. Qu'est-ce qui se produit?
+
+<br>
+
+La création d'un nom d'objet commençant par un nombre renvoie l'erreur suivante:
+
+```{r, eval = FALSE}
+Error: unexpected symbol in "[nom de votre objet]"
+```
+
+---
+# Astuce sur la ligne de commande R
+
+- Utilisez la touche de tabulation pour effectuer une saisie semi-automatique
+- Cela permet d'éviter les fautes d'orthographe et accélère la saisie des commandes
+
+<br>
+
+Essayons!
+
+---
+# Astuce sur la ligne de commande R
+
+- Tapez `val`
+- Appuyez sur tab
+- utilisez les flêches et la touche enter pour sélectionner la bonne saisie semi-automatique
+
+---
+class: inverse, center, middle
+
+# 3. Manipulate objects in R
+
+<hr>
+
+## Types de structures de données en R
+
+---
+## Types de structures de données en R
+
+<!-- ![:scale 90%](images/matrix.png) -->
+![:scale 90%](images/Type_of_data_structure_in_R.png)
+---
+# Types de structures de données en R
+
+`vecteur` 
+- Combinaison d'éléments du même type de données. 
+- Structure de base; tous les objets sont formés d'un ou plusieurs vecteurs.
+
+--
+
+`matrice` 
+- Objet 2D généré en combinant plusieurs vecteurs du même type. 
+- On peut faire des opérations sur des matrices en R (+, -, *, ...).
+
+--
+
+`array` 
+- Objet 3D généré en combinant plusieurs matrices de même type. 
+- Vecteur = array 1D. Matrice = array 2D.
+
+--
+
+`data.frame` 
+- Objet 2D généré en combinant plusieurs vecteurs de n'importe quel type. 
+- Chaque colonne doit être du même type, mais un dataframe peut contenir des colonnes de différents types. 
+
+--
+
+`liste` 
+- Une liste stocke des collections d'objets de tous types.
+
+---
+# Vecteur
+
+- Entité consistant en une séquence d'éléments du même type de base
+- Une valeur seule est appelée une *atomic value*
+- Toutes les valeurs d'un vecteur doivent avoir le **même mode** (ou classe).
+      * `numeric`: seulement des nombres (e.g. `c(2, 3, 5, 3.1416)`)
+      * `logical`: entrées True/False (e.g `c(TRUE, FALSE, TRUE)`)
+      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("QCBS", "J'adore cet atelier")`)
+
+---
+# Vecteur
+
+- La création de vecteurs nécessite généralement la fonction `c`
+
+.comment[`c` signifie *combiner* ou *concaténer*]
+
+- La syntaxe est:
+
+```{r, eval = FALSE}
+vecteur <- c(valeur1, valeur2, ...)
+```
+
+---
+# Vecteur
+
+- Vecteur numérique
+
+```{r}
+num_vecteur <- c(1, 4, 3, 98, 32, -76, -4)
+
+num_vecteur
+```
+
+- Vecteur de caractère
+
+```{r}
+car_vecteur <- c("bleu", "rouge", "vert")
+
+car_vecteur
+```
+
+- Vecteur logique ou booléen
+
+```{r}
+bool_vecteur <- c(TRUE, TRUE, FALSE) # ou c(T, T, F)
+
+bool_vecteur
+```
+
+---
+# Défi 7 ![:cube]()
+
+- Créez un vecteur contenant les 5 premiers nombres impairs, à partir de 1
+- Nommez-le `impair`.
+
+---
+# Défi 7: Solution ![:cube]()
+
+
+- Créez un vecteur contenant les 5 premiers nombres impairs, à partir de 1
+- Nommez-le `impair`.
+
+```{r}
+impair <- c(1, 3, 5, 7, 9)
+```
+
+---
+# Vecteur
+
+
+.comment[**Astuce**: Utilisez la fonction `dput` pour obtenir la structure d'un objet.]
+````{r}
+dput(impair)
+````
+
+.comment[Ces fonctions sont particulièrement utiles pour fournir un exemple reproductible dans le cas d'une question sur **stackoverflow** par exemple (voir application dans la partie sur les data frames) !]
+---
+# Vecteur
+
+On peut utiliser des vecteurs pour faire des calculs:
+
+```{r}
+x <- c(1:5)
+y <- 6
+```
+
+.comment[Le symbole de deux-points `:` est utilisé pour combiner toutes les valeurs entre le premier et le deuxième nombre fournis. `c(1:5)` est équivalent à 
+`c(1, 2, 3, 4, 5)`]
+
+```{r}
+x + y
+
+x * y
+```
+
+---
+# Data frame
+
+- Utilisé pour stocker des tables de données
+- une liste de vecteurs de même longueur
+- Chaque colonne = une variable
+- Chaque ligne = une observation, un site, un réplicat, ...
+- Différentes colonnes peuvent avoir différents modes
+
+---
+# Data frame
+
+Disons que vous voulez stocker ce tableau dans `R`:
+
+<br>
+
+|site_id|pH_sol|num_sp|traitement|
+|---|---|---|---|
+|A1.01|5.6|17|Fertilisé|
+|A1.02|7.3|23|Fertilisé|
+|B1.01|4.1|15|Non fertilisé|
+|B1.02|6.0|7|Non fertilisé|
+
+où
+- "site_id" est l'identifiant du site
+- "pH_sol" est la mesure du pH du sol à chaque site
+- "num_sp" est le nombre d'espèces observées
+- "traitement" est le traitement appliqué
+---
+# Data frame
+
+Une façon de faire est de:
+- Créer des vecteurs
+
+```{r}
+site_id <- c("A1.01", "A1.02", "B1.01", "B1.02")
+pH_sol <- c(5.6, 7.3, 4.1, 6.0)
+num_sp <- c(17, 23, 15, 7)
+traitement <- c("Fert", "Fert", "Non_fert", "Non_fert")
+```
+
+- Puis les combiner en utilisant la fonction `data.frame`
+
+```{r}
+mon_df <- data.frame(site_id, pH_sol, num_sp, traitement)
+mon_df
+```
+
+.comment[Nous reviendrons plus tard sur la fonction `data.frame`.]
+
+---
+
+# Data frame
+.comment[Voici la fonction `dput` dans un exemple plus concret.]
+````{r comment=NA, eval = FALSE}
+dput(mon_df)
+````
+
+Retourne la sortie suivante:
+
+```{r eval = FALSE}
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), pH_sol = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), traitement = c("Fert", 
+"Fert", "Non_fert", "Non_fert")), class = "data.frame", row.names = c(NA, -4L))
+```
+
+---
+# Data frame
+.comment[Il est possible de reconstruire le data frame initial (avec certaines métadonnées associées, telles que la classe des variables par exemple) en copiant-collant la sortie précédente:]
+````{r}
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), pH_sol = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), traitement = c("Fert", 
+"Fert", "Non_fert", "Non_fert")), class = "data.frame", row.names = c(NA, -4L))
+````
+---
+# Indexer un objet
+
+- Pour regarder ou extraire une partie de nos données, on peut utiliser des **crochets** `[]` 
+
+- Nous indiquons la ou les **position(s)** des valeurs que nous voulons voir entre crochets. Il s'agit d'*indexation*.
+
+- La façon d'indexer un objet dépend de son nombre de dimensions. 
+  * Pour un vecteur, il n'y a qu'une dimension: `["position"]`
+  * Pour un data frame, la première position sont les "lignes" et la seconde, les "colonnes", séparé par une virgule:  `["lignes","colonnes"]`
+  * Pour indiquer la position de plusieurs éléments, nous devons placer les valeurs dans un vecteur en utilisant `c()` : `[c("ligne1":"ligne10", c("colonne1":"colonne10")]`.
+
+Voyons quelques exemples! 
+
+---
+# Indexer un vecteur
+
+On peut sélectionner une position:
+```{r}
+impair[2]
+```
+
+--
+
+On peut sélectionner plusieurs positions avec `c()`:
+
+```{r}
+impair[c(2, 4)]
+```
+
+--
+
+On peut aussi supprimer certaines valeurs à des positions particulières avec `-`:
+
+```{r}
+impair[-c(1, 2)]
+```
+
+---
+# Indexer un objet
+
+
+Si on sélectionne une position qui n'existe pas dans le vecteur, on obtient:
+
+```{r}
+impair[c(1, 6)]
+```
+
+--
+
+On peut également utiliser des conditions pour sélectionner des valeurs:
+
+```{r}
+impair[impair > 4]
+```
+
+--
+
+On peut faire la même chose avec un vecteur de texte
+
+```{r}
+car_vecteur
+car_vecteur[car_vecteur == "bleu"]
+```
+
+.comment[Les déclarations logiques telles que `>` seront décrites en détail plus loin]
+
+---
+# Défi 8 ![:cube]()
+
+À l'aide du vecteur `num_vecteur`
+
+- Extraire la 4ème valeur
+- Extraire les 1ère et 3ème valeurs
+- Extraire toutes les valeurs sauf la 2ème et la 4ème
+
+---
+# Défi 8: Solution ![:cube]()
+
+- Extraire la 4ème valeur
+
+```{r}
+num_vecteur[4]
+```
+
+- Extraire les 1ère et 3ème valeurs
+
+```{r}
+num_vecteur[c(1, 3)]
+```
+
+- Extraire toutes les valeurs sauf la 2ème et la 4ème
+
+```{r}
+num_vecteur[c(-2, -4)]
+```
+
+---
+# Défi 9 ![:cube]()
+
+Explorez la différence entre ces 2 lignes de code:
+
+```{r, eval = FALSE}
+car_vecteur == "bleu"
+
+car_vecteur[car_vecteur == "bleu"]
+```
+
+---
+# Défi 9: Solution ![:cube]()
+
+```{r}
+car_vecteur == "bleu"
+```
+
+Dans cette ligne de code, vous **testez une déclaration logique**. Pour chaque entrée dans le `car_vecteur`, `R` vérifie si l'entrée est égale à `bleu` ou non.
+
+```{r}
+car_vecteur[car_vecteur == "bleu"]
+```
+
+Dans cette ligne de code, vous demandez à `R` d'extraire toutes les valeurs du vecteur `car_vecteur` qui sont exactement égales à `bleu`.
+
+---
+# Indexer un data frame
+
+Pour indexer un `data frame`, vous devez spécifier deux dimensions: numéro de ligne et de colonne, en utilisant la syntaxe suivante:
+
+```r
+nom_du_data_frame[ligne, colonne]
+```
+
+---
+# Indexer un data frame: exemples
+
+<br>
+
+`mon_df[1, ]` $\rightarrow$ Extrait la 1ère ligne
+
+<br>
+.comment[Notez qu'un index vide sélectionne **toutes les valeurs**.]
+
+<br>
+`mon_df[, 3]` $\rightarrow$ Extrait la 3ème colonne
+
+<br>
+`mon_df[2, 4]` $\rightarrow$ Extrait la 2ème ligne de la 4ème colonne
+
+
+---
+# Indexer un data.frame: exemples
+
+<br>
+`mon_df[c(2, 4), ]` $\rightarrow$ Extrait les 2ème et 4ème lignes
+
+<br>
+
+.comment[Les exemples donnés jusqu'ici sont également valables pour indexer les matrices, ce n'est pas le cas pour les exemples suivants.]
+
+<br>
+
+`mon_df$site_id` $\rightarrow$ Extrait la variable `site_id` du data frame
+
+<br>
+
+`mon_df$site_id[2]` $\rightarrow$ Extrait la 2ème valeur de la variable `site_id` du data frame
+
+<br>
+
+`mon_df[c("site_id", "pH_sol")]` $\rightarrow$ Extrait les variables `site_id` et `pH_sol` du data frame.
+
+---
+# Note sur les déclarations logiques
+
+`R` permet de tester les déclarations logiques, *i.e.* tester si une déclaration est vraie ou fausse.
+
+Vous devez utiliser des opérateurs logiques pour cela.
+
+<br>
+
+|Opérateur     |Description              |Exemple|
+|-------------|-------------------------|-------------------------------|
+|`<` et `>`  |inférieur ou supérieur à|`impair > 3`                    |
+|`<=` et `>=`|inférieur/supérieur ou égale à |`impair >= 3`                   |
+|`==`         |égale à         |`impair == 3`                   |
+|`!=`         |non égale à            |`impair != 3`                   |
+|`x`&#124;`y` |x OU y                   |`impair[impair >= 5` &#124; `impair < 3]`|
+|`x & y`      |x ET y                  |`impair[impair >=3 & impair < 7]` |
+
+
+---
+# Défi 10 ![:cube]()
+
+1. Extrayez la colonne `num_sp` de `mon_df` et multipliez ses valeurs par les premières quatre valeurs de `num_vecteur`.
+
+2. Ensuite, écrivez une déclaration logique qui vérifie si les valeurs obtenues sont supérieures à 25.
+
+---
+# Défi 10: Solution ![:cube]()
+
+1. Extrayez la colonne `num_sp` de `mon_df` et multipliez ses valeurs par les premières quatre valeurs de `num_vecteur`.
+
+```{r}
+mon_df$num_sp * num_vecteur[c(1:4)]
+# ou encore
+mon_df[, 3] * num_vecteur[c(1:4)]
+```
+
+2. Ensuite, écrivez une déclaration logique qui vérifie si les valeurs obtenues sont supérieures à 25.
+
+```{r}
+(mon_df$num_sp * num_vecteur[c(1:4)]) > 25
+```
+---
+# Matrice, Array et Liste
+
+- Dans cet atelier, nous nous sommes principalement attardés aux `vecteurs` et aux `data frames`.
+- Dans le futur, il est fort possible que vous ayez à travailler avec des `matrices`, des `listes` ou des `arrays`.
+- La façon d'accéder à l'information diffère selon la dimension et le type de l'objet.
+
+.center[
+![:scale 60%](images/matrix.png)
+]
+
+---
+class: inverse, center, middle
+
+# 3. Manipuler les objets dans R
+
+<hr>
+
+## Fonction
+
+---
+# Fonction
+
+.pull-left2[
+Une fonction est un outil pour simplifier votre vie.
+
+Elle vous permet d'exécuter rapidement des opérations sur des objets sans avoir à écrire toutes les étapes mathématiques.
+
+Une fonction nécessite des valeurs d'entrée appelées **arguments** (ou paramètres). Elle effectue ensuite des opérations cachées en utilisant ces arguments et donne une **valeur de retour**.
+]
+
+.pull.right2[
+![:scale 20%](images/function_V2_fr.png)
+]
+
+---
+# Fonction
+
+Pour utiliser (appeler) une fonction, la commande doit être structurée correctement, en suivant les **règles de grammaire** du langage `R`, *i.e.* la syntaxe.
+
+```{r, eval = FALSE}
+nom_fonction(argument1, argument2)
+```
+
+---
+# Argument
+
+Les arguments sont des **valeurs** et des **instructions** nécessaires à la fonction pour être exécutée.
+
+Les objets stockant ces valeurs et ces instructions peuvent être utilisés dans des fonctions. Par exemple:
+
+```{r}
+a <- 3
+b <- 5
+sum(a, b)
+```
+
+---
+# Défi 11 ![:cube]()
+
+- Créez un vecteur `a` qui contient tous les nombres de 1 à 5
+- Créez un objet b qui a une valeur de 2
+- Additionnez `a` et `b` en utilisant l'opérateur de base `+` et enregistrez le résultat dans un objet appelé `resultat_add`
+- Additionnez `a` et `b` ensemble en utilisant la fonction `sum` et enregistrez le résultat dans un objet appelé `resultat_sum`
+- Comparez `resultat_add` et `resultat_sum`. Sont-ils différents?
+- Additionnez 5 à `resultat_sum` en utilisant la fonction `sum`
+
+
+
+---
+# Défi 11: Solution  ![:cube]()
+
+```{r}
+a <- c(1:5)
+b <- 2
+
+resultat_add <- a + b
+
+resultat_sum <- sum(a, b)
+```
+
+```{r}
+resultat_add
+
+resultat_sum
+
+sum(resultat_sum, 5)
+```
+
+--
+
+L'opération `+` sur le vecteur `a` ajoute 2 à chaque élément. Le résultat est un vecteur.
+
+La fonction `sum` concatène toutes les valeurs fournies puis les somme. C'est la même chose que de faire 1+2+3+4+5+2.
+
+---
+# Argument
+
+- Les arguments ont chacun un **nom** pouvant être spécifié lors d'un appel de fonction.
+
+- Si le nom n'est pas spécifié, l'ordre des arguments est important.
+
+- Si le nom est spécifié, l'ordre n'a pas d'importance.
+
+---
+# Défi 12 ![:cube]()
+
+`plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
+
+```{r, eval = FALSE}
+a <- 1:100
+b <- a^2
+plot(a, b, type = "l")
+plot(b, a, type = "l")
+plot(x = a, y = b, type = "l")
+plot(y = b, x = a, type = "l")
+```
+
+.comment[L'argument `type` de la fonction `plot` permet de choisir le type de graphique. Essayez la même fonction sans cet argument.]
+
+---
+# Défi 12: Solution
+
+`plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
+
+```{r, echo = F}
+a <- 1:100
+b <- a^2
+par(mfrow = c(2, 2),mar=c(4, 4, 1, 1))
+plot(a, b, type = "l")
+plot(b, a, type = "l")
+plot(x = a, y = b, type = "l")
+plot(y = b, x = a, type = "l")
+```
+
+---
+# Défi 12: Solution
+
+.pull-left[
+```{r,eval=F}
+plot(a, b, type = "l")
+```
+
+```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
+par(mar=c(4, 4, 1, 1))
+plot(a, b, type = "l")
+```
+]
+
+.pull-right[
+```{r,eval=F}
+plot(b, a, type = "l")
+```
+
+```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
+par(mar=c(4, 4, 1, 1))
+plot(b, a, type = "l")
+```
+]
+
+.comment[La forme du graphe change, car nous n'avons pas spécifié le nom des arguments, alors l'ordre devient important.]
+
+---
+# Défi 12: Solution
+
+.pull-left[
+```{r,eval=F}
+plot(x = a, y = b, type = "l")
+```
+
+```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
+par(mar=c(4, 4, 1, 1))
+plot(x = a, y = b, type = "l")
+```
+]
+
+.pull-right[
+```{r,eval=F}
+plot(y = b, x = a, type = "l")
+```
+
+```{r, echo = FALSE, fig.width=3.6, fig.height=3.6}
+par(mar=c(4, 4, 1, 1))
+plot(y = b, x = a, type = "l")
+```
+]
+
+.comment[Idem que `plot(a,b)`. Le nom des arguments est spécifié, l'ordre n'est pas important.]
+
+---
+class: inverse, center, middle
+
+# 4. Installer et utiliser les packages R 
+
+## Package
+
+---
+
+# Package
+
+Les *packages* sont un **regroupement de fonctions** et/ou **de données** partageant un thème **similaire**, par ex. statistiques, analyse spatiale, graphique, etc.
+
+** Tout le monde ** peut développer des *packages* et les mettre à la disposition des autres.
+
+
+Beaucoup de packages disponibles via le *Comprehensive R Archive Network* ou [CRAN](http://cran.r-project.org/web/packages/) et maintenant encore plus via GitHub [GitHub](https://github.com/).
+
+<br>
+.alert[Devinez combien de *packages* sont disponibles aujourd'hui?]
+
+---
+# Combien de packages
+
+![](images/rdrr_10-03-20.png)
+*[rdrr.io](https://rdrr.io/) consulté le 20 mars 2020*
+
+---
+# Package
+
+Pour installer des *packages* sur votre ordinateur, utilisez la fonction `install.packages`.
+
+```r
+install.packages("nom du package")
+```
+
+L'installation d'un *package* ne suffit pas pour l'utiliser. Vous devez aussi le charger dans votre espace de travail à l'aide de la fonction `library` pour pouvoir l'utiliser.
+
+```r
+library(nom du package)
+```
+
+---
+# Package: exemple
+
+```{r, eval = FALSE}
+install.packages("ggplot2")
+```
+
+```{r, eval = FALSE}
+Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
+(as 'lib' is unspecified)
+```
+
+```{r, eval = FALSE}
+qplot(1:10, 1:10)
+```
+
+```{r, eval = FALSE}
+## Error: could not find function "qplot"
+```
+
+---
+# Package: exemple
+
+```{r, fig.width=4, fig.height=4}
+library(ggplot2)
+qplot(1:10, 1:10)
+```
+
+.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3) !!!]
+---
+class: inverse, center, middle
+
+# 4. Installer et utiliser les packages R
+
+<hr>
+
+## Obtenir de l'aide
+
+---
+# Recherche de fonctions
+
+WOW! `R` est tellement génial! Tellement de fonctions incroyablement utiles!
+
+Mais... comment puis-je les trouver?
+
+--
+
+Pour trouver une fonction qui fait une action spécifique dans vos *packages* installés, vous pouvez utiliser `??` suivi d'un terme de recherche.
+
+Disons que nous voulons créer une **séquence** de nombres impairs compris entre 0 et 10, comme nous l'avons fait précédemment. Nous pouvons rechercher dans nos *packages* toutes les fonctions qui contiennent le mot **séquence** dans leur description:
+
+```{r, eval = FALSE}
+??sequence
+```
+
+<br>
+.comment[Notez que toutes les recherches doivent se faire en anglais]
+
+---
+# Résultats de la recherche
+
+.center[
+![](images/searchseq1.svg)
+]
+
+---
+# Résultats de la recherche
+
+.center[
+![](images/searchseq2.svg)
+]
+
+---
+#  Résultats de la recherche
+
+.center[
+![](images/searchseq3.svg)
+]
+
+---
+# Aide pour les fonctions
+
+OK! Alors utilisons la fonction `seq` !
+
+Mais attendez ... comment ça marche? De quels arguments la fonction a-t-elle besoin?
+
+Pour trouver des informations sur une fonction en particulier, utilisez `?`
+
+```{r, eval = FALSE}
+?seq
+```
+
+---
+# Page d'aide
+
+.center[
+![](images/print-1.png)
+]
+
+
+---
+# Description
+
+- `nom_fonction {nom_packa}`
+- `Description`: une courte description de ce que peut faire la fonction.
+
+.center[
+![](images/seq_description.png)
+]
+
+---
+# Usage
+
+- Comment appeler la fonction
+- Si `name = value` est présent, une valeur par défaut est fournie si l'argument est manquant. L'argument devient facultatif.
+- Autres fonctions connexes décrites dans la page d'aide
+
+![](images/seq_usage.png)
+
+
+---
+# Arguments
+
+- Description de tous les arguments et de leur utilisation
+
+![](images/seq_arguments.png)
+
+---
+# Détails
+
+- Une description détaillée du fonctionnement des fonction et de leurs caractéristiques
+
+![](images/seq_details.png)
+
+---
+# Valeur de retour, Voir aussi, Exemples
+
+- Une description de la valeur de retour
+
+![](images/seq_value.png)
+
+--
+
+- Autres fonctions connexes pouvant être utiles
+
+![](images/seq_see_also.png)
+
+--
+
+- Exemples reproductibles
+
+![](images/seq_examples.png)
+
+---
+# Défi 13 ![:cube]()
+
+1. Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq`.
+
+1. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
+---
+# Défi 13: Solutions ![:cube]()
+
+1. Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq`.
+
+
+.pull-left[
+```{r class="fragment"}
+seq(from = 0, to = 10, by = 2)
+```
+]
+
+.pull-right[
+```{r class="fragment"}
+seq(0, 10, 2)
+```
+]
+
+
+2. Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
+
+```{r class="fragment"}
+nombres <- c(2, 4, 22, 6, 26)
+sort(nombres, decreasing = T)
+```
+
+---
+# Autres façons d'obtenir de l'aide
+
+Généralement, votre meilleure source d'information sera votre moteur de recherche préféré!
+
+Voici quelques conseils pour l'utiliser efficacement:
+- Faites vos recherches en anglais
+- Utilisez le mot-clé **R** au début de votre recherche
+- Définissez précisément ce que vous recherchez
+- Apprenez à lire les forums de discussion, par exemple [StackOverflow](https://stackoverflow.com/). Il est fort probable que d'autres personnes aient déjà eu le même problème que vous et aient posé la question à ce sujet.
+- N'hésitez pas à chercher à nouveau en utilisant différents mots-clés!
+
+---
+# Défi 14 ![:cube]()
+
+Recherchez les fonctions appropriées pour effectuer les opérations suivantes:
+
+- Racine carrée
+- Moyenne de plusieurs nombres
+- Combiner deux data frames par colonnes
+- Lister des objets disponibles dans votre espace de travail
+
+---
+# Défi 14: Solutions ![:cube]()
+
+- Racine carrée
+  - `sqrt`
+- Moyenne de plusieurs nombres
+  - `mean`
+- Combiner deux data frames par colonnes
+  - `cbind`
+- Lister des objets disponibles dans votre espace de travail
+  - `ls`
+
+---
+class: inverse, center, middle
+
+# Ressources additionnelles
+
+---
+# Cheat 4ever
+
+.center[
+![](http://dastornews.com/wp-content/uploads/2013/04/cheat.gif)]
+
+De nombreuses [cheat sheets](https://www.rstudio.com/resources/cheatsheets/)  sont disponibles en ligne.
+
+Ouvrez-les directement depuis **Rstudio**: Help $\rightarrow$ Cheatsheets
+
+
+
+---
+# Cheat 4ever
+
+![](images/base-r.png)
+
+---
+# Quelques livRes utiles
+
+.center[
+![](images/Book6.jpg) ![](images/Book5.jpg) ![](images/Book4.jpg)
+]
+.center[
+![](images/Book1.jpg) ![](images/Book2.jpg) ![](images/Book3.jpg)
+]
+
+
+---
+# Quelques sites inteRnet utiles
+
+.pull-left[
+[![:scale 50%](http://r4ds.had.co.nz/cover.png)](http://r4ds.had.co.nz/index.html)
+
+[**An Introduction to R**](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
+
+[**R Reference card 2.0**](http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf)
+
+]
+
+.pull-right[
+[![](http://www.lapk.org/images/QuickR.png)](http://statmethods.net/)
+
+[![:scale 50%](https://d33wubrfki0l68.cloudfront.net/1ac3f0e3753f18c7e2a8893957d1841fba1e3d08/48a33/wp-content/uploads/2018/10/rstudio-logo-flat.png)](https://support.rstudio.com/hc/en-us/categories/200035113-Documentation)
+
+[**Cookbook for R**](http://cookbook-r.com/)
+
+]
+
+
+
+---
+class: inverse, center, bottom
+
+# Merci d'avoir participé!
+
+<hr>
+
+![:scale 50%](images/qcbs_logo.png)
+
+<br><br><br><br>
