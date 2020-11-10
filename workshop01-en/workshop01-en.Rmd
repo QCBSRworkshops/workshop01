@@ -307,7 +307,7 @@ There are other IDE for `R`: **Atom**, **Visual Studio**, **Jupyter notebook** a
 
 
 ---
-# Challenge 1 ![:cube]()
+# First Challenge![:cube]()
 
 Open **RStudio**.
 
@@ -542,7 +542,7 @@ $$
 .comment[**Hint**: Think about the order of the operation.]
 
 ---
-# Challenge 3: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 Use R to calculate the following equation:
 
@@ -931,7 +931,7 @@ euler_value
 ```
 ]
 
-An object that has just a signle value or unit like a number or a text string is called a **scalar**.
+An object that has just a single value or unit like a number or a text string is called a **scalar**.
 
 .pull-left[
 ```{r}
@@ -1106,7 +1106,7 @@ The presenter should point out the differences between the rep example 1 and exa
 
 ---
 
-# Challenge 7 ![:cube]()
+# Challenge ![:cube]()
 
 
 Let's practice:
@@ -1116,7 +1116,7 @@ Let's practice:
 3. You can use any of the previous functions we have previously learned!
 
 ---
-# Challenge 7: Solution ![:cube]()
+# Challenge: Solution ![:cube]()
 
 Let's practice:
 
