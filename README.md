@@ -21,7 +21,7 @@ ou ouvrez un pull request (voir les instructions https://qcbsrworkshops.github.i
 [![badge](https://img.shields.io/static/v1?style=flat-square&label=Slides&message=01&color=red&logo=adobe-acrobat-reader)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.pdf)
 [![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R)
 
-In this introductory R Workshop you will learn what R open-source statistical software is, why you should absolutely start using it, and all the first steps to help you get started in R. We will show you how R can act as a calculator, teach you about the various types of objects in R, show you how to use functions and load packages, and find all the resources you need to get help. If any of this sounds obscure, don’t worry! By the end of this workshop you’ll know what all these words mean!
+In this introductory R Workshop, you will learn what R open-source statistical software is, why you should absolutely start using it, and all the first steps to help you get started in R. We will show you how R can act as a calculator, teach you about the various types of objects in R, show you how to use functions and load packages, and find all the resources you need to get help. If any of this sounds obscure, don’t worry! By the end of this workshop you’ll know what all these words mean!
 
 # Atelier 1: Introduction à R
 [![Build Status](https://img.shields.io/travis/QCBSRworkshops/workshop01/dev?style=flat-square&logo=travis)](https://travis-ci.org/QCBSRworkshops/workshop01)
