@@ -8,22 +8,31 @@ assets
 public/
 templateWorkshops-master/
 master.zip
-qcbsR*.css
-qcbsR*.html
-qcbsR*.js
-*.Rproj
 
+# Bookdown files
+**/_book/
+**/_bookdown_files/
+**/libs/
 
-# History files
-.Rhistory
-.Rapp.history
-*_cache/
+# qcbsR*
+!qcbsR-header.html
+!**/mathjax_header.html
 
-# mac files
+## Apple OS generated files
 .DS_Store
 
-# Session Data files
+# R and RStudio specific files
+## History files
+.Rhistory
+.Rapp.history
+.Ruserdata
+*_cache/
+
+# R Session files
 .RData
+
+# RStudio files
+.Rproj.user/
 
 # Example code in package build process
 *-Ex.R
@@ -33,9 +42,6 @@ qcbsR*.js
 
 # Output files from R CMD check
 /*.Rcheck/
-
-# RStudio files
-.Rproj.user/
 
 # produced vignettes
 vignettes/*.html
