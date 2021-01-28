@@ -11,6 +11,8 @@ output:
     css: ["default", "qcbsR.css", "qcbsR-fonts.css"]
     nature:
       beforeInit: "qcbsR-macros.js"
+      highlightLines: true
+      highlightStyle: github
 ---
 
 ```{r setup, echo = FALSE}
@@ -25,14 +27,25 @@ knitr::opts_chunk$set(
   fig.align = 'center'
 )
 options(repos=structure(c(CRAN="http://cran.r-project.org")))
-
-list.of.packages <- c("waffle", "ggpubr", "here")
-
-library(waffle)
-library(ggpubr)
 ```
 
 class: inverse, center, middle
+
+```{r install_pkgs, message=FALSE, warning=FALSE, include=FALSE, results=0}
+# Standard procedure to check and install packages and their dependencies, if needed.
+
+list.of.packages <- c("waffle", "ggpubr", "here")
+
+new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
+
+if(length(new.packages) > 0) {
+  install.packages(new.packages, dependencies = TRUE) 
+  print(paste0("The following package was installed:", new.packages)) 
+} else if(length(new.packages) == 0) {
+    print("All packages were already installed previously")
+  }
+```
+
 
 # About this workshop
 
