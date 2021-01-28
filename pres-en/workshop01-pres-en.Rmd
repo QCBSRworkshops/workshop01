@@ -34,7 +34,7 @@ class: inverse, center, middle
 ```{r install_pkgs, message=FALSE, warning=FALSE, include=FALSE, results=0}
 # Standard procedure to check and install packages and their dependencies, if needed.
 
-list.of.packages <- c("waffle", "ggpubr", "here")
+list.of.packages <- c("waffle", "ggpubr", "here", "DiagrammeR")
 
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 
@@ -45,7 +45,6 @@ if(length(new.packages) > 0) {
     print("All packages were already installed previously")
   }
 ```
-
 
 # About this workshop
 
@@ -62,11 +61,12 @@ if(length(new.packages) > 0) {
 * [waffle](https://cran.r-project.org/package=waffle)
 * [ggpubr](https://cran.r-project.org/package=ggpubr)
 * [here](https://cran.r-project.org/package=here)
+* [DiagrammeR](https://cran.r-project.org/package=DiagrammeR)
 
 <br>
 
 ```R
-install.packages(c('waffle', 'ggpubr', 'here'))
+install.packages(c('waffle', 'ggpubr', 'here', 'DiagrammeR'))
 ```
 
 ---
