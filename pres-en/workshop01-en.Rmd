@@ -15,14 +15,15 @@ output:
       highlightStyle: github
 ---
 
-```{r setup, include = FALSE}
+```{r setup, echo = FALSE}
 knitr::opts_chunk$set(
   comment = "#",
   collapse = TRUE,
   warning = FALSE,
   message = FALSE,
   cache = TRUE, # turn into FALSE before pushing
-  fig.width=5, fig.height=5, fig.retina=3,
+  fig.width=5, fig.height=5, 
+  fig.retina=3,
   fig.align = 'center'
 )
 options(repos=structure(c(CRAN="http://cran.r-project.org")))
@@ -33,7 +34,7 @@ class: inverse, center, middle
 ```{r install_pkgs, message=FALSE, warning=FALSE, include=FALSE, results=0}
 # Standard procedure to check and install packages and their dependencies, if needed.
 
-list.of.packages <- c("waffle", "ggpubr")
+list.of.packages <- c("waffle", "ggpubr", "here")
 
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 
@@ -60,6 +61,7 @@ if(length(new.packages) > 0) {
 
 * [waffle](https://cran.r-project.org/package=waffle)
 * [ggpubr](https://cran.r-project.org/package=ggpubr)
+* [here](https://cran.r-project.org/package=here)
 
 <br>
 
@@ -234,8 +236,9 @@ grViz("
 ```{r, echo = FALSE,   fig.width=10, fig.height=6}
 # Data from https://gist.github.com/daroczig/3cf06d6db4be2bbe3368#file-results-csv
 
-# Load the data 
-pkgs  = read.csv(file = "../data/results.csv")
+# Load the data
+pkgs <- read.csv(file=here::here("data","results.csv"))
+
 
 # Load ggplot 
 library(ggplot2)
