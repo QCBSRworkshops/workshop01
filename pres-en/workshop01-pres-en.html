@@ -1,0 +1,2589 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Workshop 1: Introduction to R</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Québec Centre for Biodiversity Science" />
+    <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <script src="assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+    <script src="assets/viz-1.8.2/viz.js"></script>
+    <link href="assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+    <script src="assets/grViz-binding-1.0.6.1/grViz.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+    <link rel="stylesheet" href="qcbsR.css" type="text/css" />
+    <link rel="stylesheet" href="qcbsR-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Workshop 1: Introduction to R
+## QCBS R Workshop Series
+### Québec Centre for Biodiversity Science
+
+---
+
+
+
+
+class: inverse, center, middle
+
+
+
+# About this workshop
+
+[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=repo&amp;message=dev&amp;color=6f42c1&amp;logo=github)](https://github.com/QCBSRworkshops/workshop01)
+[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=wiki&amp;message=01&amp;logo=wikipedia)](https://wiki.qcbs.ca/r_workshop1)
+[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=Slides&amp;message=01&amp;color=red&amp;logo=html5)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.html)
+[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=Slides&amp;message=01&amp;color=red&amp;logo=adobe-acrobat-reader)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.pdf)
+[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=script&amp;message=01&amp;color=2a50b8&amp;logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
+
+---
+# Learning Objectives
+&lt;br&gt;
+
+##### 1. Recognize and use `R` and **RStudio**;
+
+##### 2. Use `R` as a calculator;
+
+##### 3. Manipulate objects in `R`;
+
+##### 4. Install and use `R` packages and functions;
+
+##### 5. Get help.
+
+---
+class: inverse, center, middle
+
+# 1. Recognizing and using `R` and **RStudio**
+
+&lt;hr&gt;
+
+## Introduction
+
+---
+
+# What is `R`?
+
+.pull-left[
+* `R` is a free an open-source programming language and environment.
+
+&lt;br&gt;
+
+* It is designed for data analysis, graphical display and data simulations.
+
+&lt;br&gt;
+
+* It is one of the world's leading statistical programming environments.
+
+]
+
+.pull-right[.center[
+![:scale 50%](images/R_logo.png)
+]
+]
+
+---
+# Why should I become an use`R`?
+
+* `R` is **free**, **open source**: built for you and for everyone;
+* `R` is **popular**: a large enganged user-base fosters the continued development and the maintainance of statistical tools;
+* `R` is **powerful**
+  - You can program complex simulations
+  - Use it on high performance clusters
+* `R` supports extensions
+* `R` runs on most operating systems
+* `R` connects with other languages: `C++`, `Java`, `Python`, `Julia`, `Stan` and more!
+
+&lt;!-- .right[ ![:scale 40%](images/Opensource.png) ] --&gt;
+
+.center[
+![:scale 60%](images/operating_stm.png)
+]
+
+
+---
+# Why should I become an use`R`?
+
+.pull-left[
+
+.center[An example of a workflow to analyze data _without_ `R`.]
+
+&lt;br&gt;
+
+
+```{=html}
+&lt;div id="htmlwidget-e750a097e3c286c2e8ce" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-e750a097e3c286c2e8ce"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+```
+]
+
+---
+# Why use `R`?
+
+.pull-left[
+
+.center[An example of a workflow to analyze data _without_ `R`.]
+
+&lt;br&gt;
+
+
+```{=html}
+&lt;div id="htmlwidget-33929eecf7b5d6c848a0" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-33929eecf7b5d6c848a0"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+```
+]
+
+
+.pull-right[
+
+.center[`R` allows you to do a lot without needing to use other programs.]
+
+&lt;br&gt;
+
+
+```{=html}
+&lt;div id="htmlwidget-313442847924be321a77" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-313442847924be321a77"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; R;\n\n      edge [arrowhead = normal]\n      R -&gt; Graphs; R -&gt; Tables; R -&gt; Statistics; Graphs -&gt; Report; Tables -&gt; Report; Statistics -&gt; Report; R -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+```
+
+]
+
+---
+# Why use `R`?
+
+- More and more scientists use it every year!
+- As of October 2020, there are more than 16000 packages registered within the **Comprehensive R Archive Network (CRAN)** (and thousands more within Github repositories)!
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-4-1.png" width="720" style="display: block; margin: auto;" /&gt;
+
+
+&lt;!-- .center[![:scale 70%](images/Rpackages.png)] --&gt;
+
+---
+# A lot of features: customizable graphs 
+
+All of these graphs were made in `R`!
+
+.center[![:scale 80%](images/graph3.png)]
+
+---
+# And what about **RStudio**?
+
+**RStudio** is the most used Integrated Development Environment (**IDE**) for `R`.
+
+It includes a **console**, a **syntax-highlighting editor** that supports direct code execution with tools for plotting, history, debugging and workspace management.
+
+It integrates with `R` (and other programming languages) to provide a lot of useful features:
+
+.pull-left[
+.center[
+RStudio supports authoring HTML, PDF, Word and presentation documents
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/ab33d47d7af857b2ea3649b064428cf9105e35be/02031/wp-content/uploads/2014/12/rmarkdown-3.png)
+]
+]
+
+.pull-right[
+.center[
+RStudio supports version control with Git (directly to Github) and Subversion
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/e6d91915c45650e7d2496a5a61e9b7300e410f86/8ad9a/wp-content/uploads/2014/04/rstudio-vcs_diff.png)
+]
+]
+
+---
+# And what about **RStudio**?
+
+**RStudio** is the most used Integrated Development Environment (**IDE**) for `R`.
+
+It includes a **console**, a **syntax-highlighting editor** that supports direct code execution with tools for plotting, history, debugging and workspace management.
+
+It integrates with `R` (and other programming languages) to provide a lot of useful features:
+
+.pull-left[
+.center[
+RStudio make it easy to start new or find existing projects
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/ae9f47a6c38f433102a2f906c26ecbc6f8146391/3e4c6/wp-content/uploads/2014/04/rstudio-projects_new.png)
+]
+]
+
+.pull-right[
+.center[
+RStudio supports interactive graphics with Shiny and ggvis
+![:scale 80%](https://d33wubrfki0l68.cloudfront.net/9dd376b8a25543fb6d62d6c51b0a5c65642cca24/407ec/wp-content/uploads/2014/12/shiny4.png)
+]
+]
+--
+&lt;br&gt;
+
+There are other IDE for `R`: **Atom**, **Visual Studio**, **Jupyter notebook** and **Jupyter lab**!
+
+---
+# Challenge
+
+.pull-left2[
+- Throughout these workshops, **challenges** will be indicated by Rubik cubes. 
+- Sometimes, you will be expected to collaborate with other participants!
+- Do not hesitate to ask questions! 
+]
+
+
+.pull-right2[
+![](images/rubicub.png)
+]
+
+
+
+---
+# First Challenge![:cube]()
+
+Open **RStudio**.
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+.center[Let us do this one together!]
+
+&lt;br&gt; 
+
+&lt;br&gt;
+.center[
+![:scale 40%](images/Rstudio.png)
+]
+
+???
+
+Here, the workshop instructor may minimize the presentation and show his RStudio window and point out all View panes being displayed, briefly explaining each one of them.
+
+Be sure to adjust the font size and scale of the window according to the presentation being given (remote presentations allow for smaller font size).
+
+---
+## Note for Windows users
+
+If the restriction `unable to write on disk` appears when you attempt to open **RStudio** or to install a package.
+
+.center[.alert[Do not worry!]]
+
+.large[We have the solution!]
+
+- Close the application.
+- Right-click on your **RStudio** icon and click on "Execute as Administrator". This will provide file and directory writing rights to **RStudio**.
+
+---
+# The RStudio **Interface**
+.pull-left[
+When you open **RStudio** for the first time, the screen will be divided across three main **Pane** groups: 
+1. **Console, Terminal, Job** group;
+2. **Environment, History, Connections** group; 
+3. **Files, Plot, Packages, Help, Viewer** panes; and,
+4. **Script** pane group.
+
+&lt;br&gt;
+Once you *Open a Script* or *Create a New Script* (*File &gt; New File &gt; R Script* or `Ctrl/Cmd + Shit + N`), the fourth panel will appear!
+
+&lt;br&gt;
+]
+
+.pull-right[
+&lt;br&gt;
+![:scale 100%](https://user-images.githubusercontent.com/833642/65641024-56348a00-dfb1-11e9-9b58-2421d25406e3.gif)
+]
+
+
+???
+
+Most of the action happens here!
+
+
+---
+# The RStudio **Console**
+
+- Usually, the first text you see within the **Console** pane is the `R` version **RStudio** is using.
+&lt;br&gt;
+
+- The **Console** is the place where `R` is waiting for you to tell it what to do, and is where it will communicate with you, showing the outcome of your command.
+&lt;br&gt;
+
+- Whenever `R` is ready to accept commands, it will show a `&gt;` prompt.
+
+.center[
+![:scale 80%](images/Rstudioconsole_fleche_big.png)
+]
+
+
+---
+# Reading the **Console**
+
+.pull-left[Text in the console typically looks like this:
+
+
+
+
+```r
+output
+# [1] "This is the output"
+```
+]
+.pull-right[
+&lt;br&gt;
+.comment[Remember that one must write the command in front of the `&gt;` prompt and then press "Return" it to run.]
+]
+
+&lt;br&gt;
+
+.center[What does the square brackets `[ ]` within the output mean?]
+
+--
+
+&lt;br&gt;
+
+The numbers within the brackets help you to locate the position of elements within the output.
+
+
+```r
+seq(1, 100, by = 2)
+#  [1]  1  3  5  7  9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49
+# [26] 51 53 55 57 59 61 63 65 67 69 71 73 75 77 79 81 83 85 87 89 91 93 95 97 99
+```
+
+???
+
+Show the participants how the number between the square brackets indicates position of the elements.
+
+---
+# Error and Warning
+
+Often, the **Console** will output **Errors** and **Warning** messages.
+
+.pull-left[
+.alert[Warning message] 
+
+
+```r
+x &lt;- c("2", -3, "end", 0, 4, 0.2)
+as.numeric(x)
+# Warning: NAs introduced by coercion
+# [1]  2.0 -3.0   NA  0.0  4.0  0.2
+```
+
+  * Cautions users about an action, but still executes the function.
+  * There might be an issue with the input and/or the output.
+]
+
+.pull-right[
+
+.alert[Error message] 
+
+
+```r
+x*10
+# Error in x * 10: non-numeric argument to binary operator
+```
+
+  * Informs the user that there is a problem that prevents the command from running. 
+  * One needs to solve the issue in order to carry on.
+
+]
+
+&lt;br&gt;
+.center[
+**Google is your best friend in solving Errors or Warnings!**
+]
+
+
+---
+class: inverse, center, middle
+
+# 2. Using `R` as a calculator &amp;nbsp; ![:faic](calculator)
+
+&lt;hr&gt;
+
+## Basic operations
+
+---
+# Arithmetic Operators
+
+- Additions and Subtractions
+
+
+```r
+1 + 1
+# [1] 2
+
+10 - 1
+# [1] 9
+```
+
+--
+
+- Multiplications and Divisions
+
+
+```r
+2 * 2
+# [1] 4
+
+8 / 2
+# [1] 4
+```
+
+--
+
+- Exponents
+
+
+```r
+2^3
+# [1] 8
+```
+
+---
+
+# Challenge ![:cube]()
+
+
+Use `R` to calculate the following equation:
+
+$$
+2+16*24-56
+$$
+
+&lt;br&gt;
+&lt;br&gt;
+
+.comment[**Hint**: The `*` symbol is used to multiply.]
+
+---
+# Challenge: Solution ![:cube]()
+
+Use `R` to calculate the following equation:
+
+$$
+2+16*24-56
+$$
+
+It would look like this in `R`:
+
+
+```r
+2 + 16 * 24 - 56
+# [1] 330
+```
+
+---
+# Challenge ![:cube]()
+
+Use `R` to calculate the following equation:
+
+$$
+2+16*24-56 / (2+1)-457
+$$
+
+&lt;br&gt;
+&lt;br&gt;
+
+.comment[**Hint**: Think about the order of the operation.]
+
+---
+# Challenge: Solution ![:cube]()
+
+Use R to calculate the following equation:
+
+$$
+2+16*24-56 / (2+1)-457
+$$
+
+It would look like this in `R`:
+
+
+```r
+2 + 16 * 24 - 56 / (2 + 1) - 457
+# [1] -89.66667
+```
+
+&lt;br&gt;
+
+.comment[Note that `R` respects the order of the operations]
+
+
+---
+# Still using `R` for arithmetic operations
+
+What is the area of a circle with a radius of `\(5\ cm\)`?
+.pull-left[
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-15-1.png" width="288" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;br&gt; 
+.comment[$$Area_{circle} = \pi \times r^2$$]
+]
+
+---
+# Still using `R` for arithmetic operations
+
+What is the area of a circle with a radius of `\(5\ cm\)`?
+.pull-left[
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-16-1.png" width="288" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;br&gt; 
+`$$Area_{circle} = \pi \times r^2$$`
+
+```r
+3.1416 * 5^2
+# [1] 78.54
+```
+]
+--
+
+.pull-left[
+But... `R` has built-in constants! 
+
+You can find them by typing `?` and `Constants` (as in `?Constants`) and executing it! What is the one for `\(\pi\)`? 
+
+]
+.pull-right[
+We can then write and execute this:
+
+
+```r
+pi * 5^2
+# [1] 78.53982
+```
+]
+
+.small[
+.center[You have just ran a command preceeded by `?`. _What happened?_]
+]
+
+---
+class: middle, center
+
+## A tip
+
+We can use the `\(\uparrow\)` and `\(\downarrow\)` arrow keys to retrieve commands previously run.
+
+Make sure your cursor is blinking in front of the `&gt;` prompt and give it a try!
+
+.center[
+![:scale 30%](images/keyboard_arrows.png)
+]
+
+
+---
+class: inverse, center, middle
+
+# 3. Manipulating objects in `R`
+
+&lt;hr&gt;
+
+---
+# `R`: an object-oriented environment
+
+You can **assign** information to named **objects** using the assignment operator `&lt;-`.
+
+The information is assigned to the name that is pointed by the assignment operator `&lt;-`.
+
+See the examples below:
+
+.pull-left[
+
+```r
+money_talks &lt;- "ACDC"
+money_talks
+# [1] "ACDC"
+```
+]
+.pull-right[
+
+```r
+9 -&gt; my_birthday_month
+my_birthday_month
+# [1] 9
+```
+]
+
+&lt;br&gt;
+
+.center[.alert[Careful! There is no space between the less than (`&lt;`) and minus (`-`) signs.]]
+
+&lt;br&gt;
+
+--
+
+One can assign values using `=` instead of the `&lt;-` operator. We caution against using `=` to assign values to objects because the `=` is allowed at the top level only and also determines subexpressions.
+
+---
+
+# Naming **objects**: a few rules
+
+Objects names can only include:
+
+&lt;br&gt;
+
+|  Type      |  Symbol |
+|------------|:-------:|
+| Letters    | a-z A-Z |
+| Numbers    |     0-9 |
+| Period     |       . |
+| Underscore |       _ |
+
+&lt;br&gt;
+
+1. Objects names must **always** begin with a letter.
+2. `R` is **case-sensitive**: `Data_1` is different than `data_1`.
+3. You **cannot** use special characters (`@`, `/`, `#`, etc.).
+4. Object names must be **unique**: `data_1 &lt;- 1` will overwrite any previously objects named `data_1`
+
+---
+
+#.small[Good practice when naming objects and writing code]
+
+
+**Short and explicit names are preferred**. 
+- Naming a variable `var`  is not very informative.
+
+**You can separate words within a name using underscores ( `_` ) or dots ( `.` )**.
+- `avg_richness` or `avg.richness` are easier to read than `avgrichness`.
+
+**Avoid using names of existing functions or constants (e.g., `c`, `table`, `T`, `matrix`)**
+
+&lt;br&gt;
+--
+
+**Add spaces around operators** (`=`, `+`, `-`, `&lt;-`, etc.) **to make the code more readable.**
+
+**Always put a space after a comma**, and never before (like in regular English).
+
+&lt;br&gt;
+.pull-left[
+**Preferred**
+
+```r
+mean_x &lt;- (2 + 6) / 2
+
+mean_x
+# [1] 4
+```
+]
+
+.pull-right[
+**Not preferred**
+
+```r
+meanx&lt;-(2+6)/2
+meanx
+# [1] 4
+```
+]
+
+---
+
+# Challenge ![:cube]()
+
+Create an object with a name (of your choice) that starts with a number. What happens?
+
+---
+# Challenge: Solution ![:cube]()
+
+Create an object with a name (of your choice) that starts with a number. What happens?
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;br&gt;
+
+Creating an object name that starts with a number returns the following error:
+
+
+```r
+Error: unexpected symbol in "your object name"
+```
+
+---
+# Challenge ![:cube]()
+
+Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
+
+---
+# Challenge: Solution ![:cube]()
+
+Create an object with a value of `1 + 1.718282` ([_e_ or Euler's number](https://en.wikipedia.org/wiki/E_(mathematical_constant)) and name it `euler_value`.
+
+&lt;br&gt;
+
+
+```r
+euler_value &lt;- 1 + 1.718282
+
+euler_value
+# [1] 2.718282
+```
+
+--
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+.center[What has happened in your **RStudio** window when you created this object?]
+
+&lt;br&gt;
+
+???
+
+The presenter should not here that the object will appear in the RStudio Environment.
+
+---
+# The **RStudio** Environment
+
+The **Environment** panel shows you all the objects you have defined in your current workspace.
+
+.center[![:scale 60%](https://bookdown.org/ndphillips/YaRrr/images/environmentss.png) ]
+
+---
+class: middle, center
+
+## Tip
+
+You can use the `Tab` key to auto-complete commands. 
+
+This helps preventing spelling errors
+
+&lt;br&gt;
+
+.center[**Let us try it!**]
+
+&lt;br&gt;
+
+Try writing `eul` or `abb` in front of the `&gt;` prompt and press `Tab`.
+
+If more than one element appears, you can use the arrow keys ( `\(\uparrow\)`  `\(\downarrow\)` ) and press "Return" or use your mouse to select the correct one.
+
+---
+class: inverse, center, middle
+
+# 3. Manipulating objects in `R`
+
+&lt;hr&gt;
+
+## Data types and structure
+
+---
+
+# Core data types in `R`
+
+**Data types** define how the values are stored in `R`.
+
+We can obtain the type and mode of an object using the functions `typeof()`. The core data types are:
+
+**Numeric**-type with **integer** and **double** values
+
+.pull-left[
+
+```r
+(x &lt;- 1.1)
+# [1] 1.1
+typeof(x)
+# [1] "double"
+```
+]
+
+.pull-right[
+
+```r
+(y &lt;- 2L)
+# [1] 2
+typeof(y)
+# [1] "integer"
+```
+]
+
+--
+
+**Character**-type (**always** between `" "`)
+
+
+```r
+z &lt;- "You are becoming very good in this!"
+typeof(z)
+# [1] "character"
+```
+
+--
+
+**Logical**-type
+
+.pull-left[
+
+```r
+t &lt;- TRUE
+typeof(t)
+# [1] "logical"
+```
+]
+
+.pull-right[
+
+```r
+f &lt;- FALSE
+typeof(f)
+# [1] "logical"
+```
+] 
+
+???
+
+The presenter might be asked about running the entire line within `()`. This is the same as `x &lt;-2; x`. We have done that so it fits.
+
+---
+
+# Data structure in `R`: **scalars**
+
+Until this moment, we have create objects that had just **one element** inside them:
+
+.pull-left[
+
+```r
+x &lt;- 1.1
+x
+# [1] 1.1
+```
+]
+
+.pull-right[
+
+```r
+euler_value &lt;- 1 + 1.718282
+euler_value
+# [1] 2.718282
+```
+]
+
+An object that has just a single value or unit like a number or a text string is called a **scalar**.
+
+.pull-left[
+
+```r
+a &lt;- 100
+b &lt;- 3 / 100
+c &lt;- (a + b) / b
+```
+]
+
+.pull-right[
+
+```r
+d &lt;- "species"
+e &lt;- "genus"
+f &lt;- "When is the next pause again?"
+```
+]
+
+--
+
+&lt;br&gt; 
+
+&lt;br&gt; 
+
+.center[By creating combinations of **scalars**, we can create data with different structures in `R`. We are getting there!]
+
+---
+# Data structure in `R`: **vectors**
+
+A **vector object** is just a combination of several scalars stored as a single object.
+
+&lt;br&gt;
+Like scalars, vectors can be of `numeric`-, `logical`-, `character`-types, but **never** a mix of them!
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-34-1.png" width="360" style="display: block; margin: auto;" /&gt;
+
+---
+# Data structure in `R`: **vectors**
+
+A **vector object** is just a combination of several scalars stored as a single object.
+
+&lt;br&gt;
+Like scalars, vectors can be of `numeric`-, `logical`-, `character`-types, but never a mix of them!
+
+&lt;br&gt;
+There are many ways to create vectors in `R`. Here are some we are going to see:
+
+&lt;br&gt;
+
+|           Function           |             Example              |     Result   |
+|:----------------------------:|:--------------------------------:|:------------:|
+| `c(a, b, ...)` |  `c(1, 3, 5, 7, 9)`  | 1, 3, 5, 7, 9 |
+| `a:b`          |     `1:5`             |  1, 2, 3, 4, 5  |
+|`seq(from, to, by, length.out)` |	`seq(from = 0, to = 6, by = 2)` |	0, 2, 4, 6 |
+|`rep(x, times, each, length.out)` |	`rep(c(7, 8), times = 2, each = 2)` |	7, 7, 8, 8, 7, 7, 8, 8 |
+&lt;br&gt;
+
+
+---
+# Creating vectors with `c()`
+
+The `c()` function (`c` stands for *concatenate*, meaning *bring them together*) combines several scalars as *arguments*, which are separated by commas, and returns a **vector** containing them:
+
+
+```r
+vector &lt;- c(value1, value2, ...)
+```
+
+Let us use the `c()` function to create vectors of different types:
+
+.pull-left[
+**Numeric vector**
+
+
+```r
+num_vector &lt;- c(1, 4, 32, -76, -4)
+num_vector
+# [1]   1   4  32 -76  -4
+```
+]
+.pull-right[
+**Character vector**
+
+
+```r
+char_vector &lt;- c("blue", 
+                 "red", 
+                 "green")
+char_vector
+# [1] "blue"  "red"   "green"
+```
+]
+
+**Logical vector**
+
+
+```r
+bool_vector &lt;- c(TRUE, TRUE, FALSE) # or c(T, T, F)
+bool_vector
+# [1]  TRUE  TRUE FALSE
+```
+
+---
+
+# .small[Creating vectors of sequential values: `a:b`, `seq()`, `rep()`]
+
+The `a:b` takes two numeric scalars `a` and `b` as *arguments*, and returns a vector of numbers from the starting point `a` to the ending point `b`, in steps of `1` unit:
+
+.pull-left[
+
+```r
+1:8
+# [1] 1 2 3 4 5 6 7 8
+```
+]
+
+.pull-right[
+
+```r
+7.5:1.5
+# [1] 7.5 6.5 5.5 4.5 3.5 2.5 1.5
+```
+]
+
+--
+
+`seq()` allows us to create a sequence, like `a:b`, but also allows us to specify either the size of the steps (the `by` *argument*), or the total length of the sequence (the `length.out` argument):
+
+.pull-left[
+
+```r
+seq(from = 1, to = 10, by = 2)
+# [1] 1 3 5 7 9
+```
+]
+
+.pull-right[
+
+```r
+seq(from = 20, to = 2, by = -2)
+#  [1] 20 18 16 14 12 10  8  6  4  2
+```
+]
+
+--
+
+`rep()` allows you to repeat a scalar (or vector) a specified number of times, or to a desired length:
+
+.pull-left[
+
+```r
+rep(x = 1:3, each = 2, times = 2)
+#  [1] 1 1 2 2 3 3 1 1 2 2 3 3
+```
+]
+
+.pull-right[
+
+```r
+rep(x = c(1, 2), each = 3)
+# [1] 1 1 1 2 2 2
+```
+]
+
+???
+
+The presenter should point out the differences between the rep example 1 and example 2, where a vector can be used inside the argument.
+
+---
+
+# Challenge ![:cube]()
+
+
+Let's practice:
+
+1. Create a vector containing the first 5 odd numbers, starting from 1
+2. Name it `odd_n`
+3. You can use any of the previous functions we have previously learned!
+
+---
+# Challenge: Solution ![:cube]()
+
+Let's practice:
+
+1. Create a vector containing the first 5 odd numbers, starting from 1
+2. Name it `odd_n`
+3. You can use any of the previous functions we have previously learned!
+
+&lt;br&gt;
+Solution:
+
+
+```r
+odd_n &lt;- c(1, 3, 5, 7, 9)
+```
+
+or 
+
+
+```r
+odd_n &lt;- seq(from = 1, to = 9, by = 2)
+
+odd_n
+# [1] 1 3 5 7 9
+```
+
+---
+exclude: true
+
+# Vector
+
+.comment[**Note**: Use the `dput` function to obtain the structure of an object.]
+
+```r
+dput(odd_n)
+# c(1, 3, 5, 7, 9)
+```
+
+.comment[These functions are really useful to provide a reproducible example for a question on [**stackoverflow**](https://stackoverflow.com) for instance (see one more application in the part about data frames) !]
+---
+# Operations using vectors
+
+Let us begin with the following objects:
+
+
+```r
+x &lt;- c(1:5)
+y &lt;- 6
+```
+
+&lt;br&gt;
+.comment[Remember that the colon symbol `:` combines all values between the first and the second number in steps of `1`. `c(1:5)` or `1:5` is equivalent to `c(1, 2, 3, 4, 5)`]
+&lt;br&gt;
+
+--
+
+What happens when we add and multiply the two objects together?
+
+.pull-left[
+
+```r
+x + y
+# [1]  7  8  9 10 11
+```
+]
+
+.pull-right[
+
+```r
+x * y
+# [1]  6 12 18 24 30
+```
+]
+
+--
+
+&lt;br&gt;
+&lt;br&gt;
+
+.center[**Excellent! We have learned a lot! How about a short break?**]
+
+---
+class: center, inverse, middle
+background-image: url("https://i.pinimg.com/originals/c5/9a/d2/c59ad2bd4ad2fbacd04017debc679ddb.gif")
+
+**Can you guess what our next _topic_ is?**
+
+---
+# Data structure in `R`: **matrices**
+
+We have learned that **scalars** contain one element, and that **vectors** contain more than one scalar of the same type!
+
+Matrices are nothing but a bunch of vectors stacked together! 
+
+While vectors have *one* dimension, matrices have *two* dimensions, determined by **rows** and **columns**.
+
+Finally, like **vectors** and **scalars** matrices can contain only one type of data: `numeric`, `character`, or `logical`.
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-51-1.png" width="360" style="display: block; margin: auto;" /&gt;
+
+---
+# .small[Creating **matrices** using `matrix()`, `cbind()`, `rbind()`]
+
+There are many ways to create your own matrix. Let us start with a simple one:
+
+.pull-left[
+
+```r
+matrix(data = 1:10,
+       nrow = 5,
+       ncol = 2)
+#      [,1] [,2]
+# [1,]    1    6
+# [2,]    2    7
+# [3,]    3    8
+# [4,]    4    9
+# [5,]    5   10
+```
+]
+
+.pull-right[
+
+```r
+matrix(data = 1:10,
+       nrow = 2,
+       ncol = 5)
+#      [,1] [,2] [,3] [,4] [,5]
+# [1,]    1    3    5    7    9
+# [2,]    2    4    6    8   10
+```
+]
+
+--
+
+We can also combine multiple vectors using `cbind()` and `rbind()`:
+
+```r
+nickname &lt;- c("kat", "gab", "lo")
+animal &lt;- c("dog", "mouse", "cat")
+```
+
+.pull-left[
+
+```r
+rbind(nickname, 
+      animal)
+#          [,1]  [,2]    [,3] 
+# nickname "kat" "gab"   "lo" 
+# animal   "dog" "mouse" "cat"
+```
+]
+
+.pull-right[
+
+```r
+cbind(nickname, animal)
+#      nickname animal 
+# [1,] "kat"    "dog"  
+# [2,] "gab"    "mouse"
+# [3,] "lo"     "cat"
+```
+]
+
+---
+
+# Operations with **matrices**
+
+Similarly as in the case of vectors, operations with matrices work just fine:
+
+.pull-left[
+
+```r
+(mat_1 &lt;- matrix(data = 1:9,
+       nrow = 3,
+       ncol = 3))
+#      [,1] [,2] [,3]
+# [1,]    1    4    7
+# [2,]    2    5    8
+# [3,]    3    6    9
+```
+]
+
+.pull-right[
+
+```r
+(mat_2 &lt;- matrix(data = 9:1,
+       nrow = 3,
+       ncol = 3))
+#      [,1] [,2] [,3]
+# [1,]    9    6    3
+# [2,]    8    5    2
+# [3,]    7    4    1
+```
+]
+
+The product of the matrices is:
+
+
+```r
+mat_1 * mat_2
+#      [,1] [,2] [,3]
+# [1,]    9   24   21
+# [2,]   16   25   16
+# [3,]   21   24    9
+```
+
+---
+
+# Challenge ![:cube]()
+
+It is your time to **get your hands dirty**!
+
+1. Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.
+2. Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like.
+3. Create a third object with 4 rows and 2 columns: 
+ - in the first column, include the numbers from 2 to 5; and,
+ - in the second column, include the first name of participants in this workshop.
+4. Compare them and tell us what differences have you detected (despite their values). 
+
+&lt;br&gt;
+
+**Remember** that text strings must always be surrounded by quote marks (`" "`).
+
+**Remember** that values or arguments must be separated by commas if they are inside a function, _e.g._ `c("one", "two", "three")`.
+
+---
+
+# Challenge ![:cube]()
+
+It is your time to **get your hands dirty**!
+
+1. Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.
+2. Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like.
+
+.pull-left[
+
+```r
+(step_1 &lt;- matrix(data = 1:6,
+       nrow = 2,
+       ncol = 3))
+#      [,1] [,2] [,3]
+# [1,]    1    3    5
+# [2,]    2    4    6
+```
+]
+
+.pull-right[
+
+```r
+(step_2 &lt;- matrix(
+  data = c("cheetah", 
+           "tiger", 
+           "ladybug",
+           "deer",
+           "monkey",
+           "crocodile"),
+  nrow = 2,
+  ncol = 3))
+#      [,1]      [,2]      [,3]       
+# [1,] "cheetah" "ladybug" "monkey"   
+# [2,] "tiger"   "deer"    "crocodile"
+```
+]
+
+---
+
+# Challenge ![:cube]()
+
+It is your time to **get your hands dirty**!
+
+3. Create a third object with 4 rows and 2 columns: 
+ - in the first column, include the numbers from 2 to 5; and,
+ - in the second column, include the first name of participants in this workshop.
+4. Compare them and tell us what differences have you detected (despite their values). 
+
+.pull-left[
+
+```r
+step_1
+#      [,1] [,2] [,3]
+# [1,]    1    3    5
+# [2,]    2    4    6
+```
+]
+
+.pull-right[
+
+```r
+step_2
+#      [,1]      [,2]      [,3]       
+# [1,] "cheetah" "ladybug" "monkey"   
+# [2,] "tiger"   "deer"    "crocodile"
+```
+]
+
+.pull-left[
+
+```r
+step_3 &lt;- cbind(c(2:5), 
+                c("linley", 
+                  "jessica", 
+                  "joe",
+                  "emma"))
+```
+]
+
+.pull-right[
+
+```r
+step_3
+#      [,1] [,2]     
+# [1,] "2"  "linley" 
+# [2,] "3"  "jessica"
+# [3,] "4"  "joe"    
+# [4,] "5"  "emma"
+```
+]
+
+???
+
+The presenter here should mention that matrices being formed by vectors or scalars with multiple data types become characters. This will be a window to introduce data frames to the participants.
+
+---
+# Data structure in `R`: **data frames**
+
+Differently than a matrix, a data frame can contain `numeric`, `character`, *and* `logical` columns (or vectors).
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-66-1.png" width="360" style="display: block; margin: auto;" /&gt;
+
+---
+# Data structure in `R`: **data frames**
+
+Data frames resemble a lot the usual Excel tables that we use in our research!
+
+.pull-left[
+
+&lt;br&gt;
+
+|site_id|soil_pH|num_sp|fertilised|
+|---|---|---|---|
+|A1.01|5.6|17|yes|
+|A1.02|7.3|23|yes|
+|B1.01|4.1|15|no|
+|B1.02|6.0|7|no|
+]
+.pull-right[
+.small[
+1. `site_id` identifies the sampling site, 
+2. `soil_pH` is the soil pH,
+3. `num_sp` is the number of species, and
+4. `fertilised` identifies the treatment applied.
+]
+]
+
+One of the ways of representing this table in R, is to create vectors:
+
+
+```r
+site_id &lt;- c("A1.01", "A1.02", "B1.01", "B1.02")
+soil_pH &lt;- c(5.6, 7.3, 4.1, 6.0)
+num_sp &lt;- c(17, 23, 15, 7)
+fertilised &lt;- c("yes", "yes", "no", "no")
+```
+
+--
+We then combine them using `data.frame()`:
+
+
+```r
+soil_fertilisation_data &lt;- data.frame(site_id, soil_pH, num_sp, fertilised)
+```
+
+---
+# Data structure in `R`: **data frames**
+
+Data frames resemble a lot the usual Excel tables that we use in our research!
+
+.pull-left[
+
+&lt;br&gt;
+
+|site_id|soil_pH|num_sp|fertilised|
+|---|---|---|---|
+|A1.01|5.6|17|yes|
+|A1.02|7.3|23|yes|
+|B1.01|4.1|15|no|
+|B1.02|6.0|7|no|
+]
+.pull-right[
+.small[
+1. `site_id` identifies the sampling site, 
+2. `soil_pH` is the soil pH,
+3. `num_sp` is the number of species, and
+4. `fertilised` identifies the treatment applied.
+]
+]
+
+&lt;br&gt;
+`soil_fertilisation_data` looks like this!
+&lt;br&gt;
+
+```r
+soil_fertilisation_data
+#   site_id soil_pH num_sp fertilised
+# 1   A1.01     5.6     17        yes
+# 2   A1.02     7.3     23        yes
+# 3   B1.01     4.1     15         no
+# 4   B1.02     6.0      7         no
+```
+
+Note how the data frame integrated the name of the objects as column names! 
+---
+exclude: true
+
+# Data structure in `R`: **data frames**
+.comment[Hint: Here the `dput` function in another example.]
+
+```r
+dput(soil_fertilisation_data)
+```
+
+Will return: 
+
+
+```r
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), 
+treatment = c("Fert", "Fert", "No_fert", "No_fert")), 
+class = "data.frame", row.names = c(NA, -4L))
+```
+
+
+---
+exclude: true
+
+# Data structure in `R`: **data frames**
+.comment[It is possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output shown here:]
+
+
+```r
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), 
+treatment = c("Fert", "Fert", "No_fert", "No_fert")), 
+class = "data.frame", row.names = c(NA, -4L))
+#   site_id soil_pH num_sp treatment
+# 1   A1.01     5.6     17      Fert
+# 2   A1.02     7.3     23      Fert
+# 3   B1.01     4.1     15   No_fert
+# 4   B1.02     6.0      7   No_fert
+```
+
+---
+class: inverse, center, middle
+
+# 3. Manipulating objects in `R`
+
+&lt;hr&gt;
+
+## Indexing
+
+---
+# Indexing objects in `R`
+
+We have our information stored as a `vector`, a `matrix`, or a `data.frame` in `R`.
+
+&lt;br&gt;
+We will probably be interested in *accessing* and even *subsetting* the data based on some criteria.
+
+&lt;br&gt;
+Let's start with a pretty basic one: the square brackets `[ ]` and `[, ]`
+
+&lt;br&gt;
+We can indicate the **position** of the values we want to see between the brackets. This is often called *indexing* or **slicing**.
+
+&lt;br&gt;
+Let us see how to index a vector object in `R`. 
+
+---
+# Indexing vectors
+
+To index an element within a vector using `[]`, we need to write position number of the element within the brackets `[]`. 
+
+For instance, here is our `odd_n` object:
+
+
+```r
+(odd_n &lt;- seq(1,9, by = 2))
+# [1] 1 3 5 7 9
+```
+
+--
+
+To obtain the value in the second position, we do as follows:
+
+```r
+odd_n[2]
+# [1] 3
+```
+
+--
+
+We can also obtain values for multiple positions within a vector with `c()`:
+
+
+```r
+odd_n[c(2, 4)]
+# [1] 3 7
+```
+
+--
+
+And, we can remove values pertaining to particular positions from a vector using the minus (`-`) sign before the position value: 
+.pull-left[
+
+```r
+odd_n[-c(1, 2)]
+# [1] 5 7 9
+```
+]
+.pull-right[
+
+```r
+odd_n[-4]
+# [1] 1 3 5 9
+```
+]
+
+---
+# Challenge ![:cube]()
+
+Using the vector `num_vector` and our indexing abilities:
+
+1. Extract the 4th value;
+2. Extract the 1st and 3rd values;
+3. Extract all values except for the 2nd and the 4th;
+4. Extract from the 6th to the 10th value.
+
+
+```r
+num_vector &lt;- c(1, 4, 3, 98, 32, -76, -4)
+```
+
+---
+# Challenge: Solution ![:cube]()
+
+Using the vector `num_vector` and our indexing abilities:
+
+1. Extract the 4th value
+
+
+```r
+num_vector[4]
+# [1] 98
+```
+
+2. Extract the 1st and 3rd values
+
+
+```r
+num_vector[c(1, 3)]
+# [1] 1 3
+```
+
+3. Extract all values except for the 2nd and the 4th
+
+
+```r
+num_vector[c(-2, -4)]
+# [1]   1   3  32 -76  -4
+```
+
+4. Extract from the 6th to the 10th value.
+
+
+```r
+num_vector[6:10]
+# [1] -76  -4  NA  NA  NA
+```
+&lt;br&gt;
+.center[_What happened there? What is that NA?_]
+
+---
+# Indexing from matrices and data frames
+
+To index a **data frame** you must specify the position of values within two dimensions: within the row and columns, as in:
+
+```r
+data_frame_name[row_number, column_number]
+```
+
+.pull-left[
+In this way, to extract the first row:
+
+```r
+my_df[1, ]
+```
+To extract the third column:
+
+```r
+my_df[, 3]
+```
+
+And, to extract the element within the second row and the fourth column:
+
+```r
+my_df[2, 4]
+``` 
+]
+
+.pull-right[
+
+.center[![:scale 70%](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Battleship_game_board.svg/1200px-Battleship_game_board.svg.png)]
+
+.center[Battleship (game) feelings!]
+]
+
+---
+# .small[Indexing matrices and data frames by variable names]
+
+Remember that our `soil_fertilisation_data` data frame had column names?
+
+
+```r
+soil_fertilisation_data
+#   site_id soil_pH num_sp fertilised
+# 1   A1.01     5.6     17        yes
+# 2   A1.02     7.3     23        yes
+# 3   B1.01     4.1     15         no
+# 4   B1.02     6.0      7         no
+```
+
+&lt;br&gt;
+We can subset columns from it using the column names:
+
+
+```r
+soil_fertilisation_data[ , c("site_id", "soil_pH")]
+#   site_id soil_pH
+# 1   A1.01     5.6
+# 2   A1.02     7.3
+# 3   B1.01     4.1
+# 4   B1.02     6.0
+```
+
+And, also subset columns from it using `$`:
+
+
+```r
+soil_fertilisation_data$site_id
+# [1] "A1.01" "A1.02" "B1.01" "B1.02"
+```
+
+_Note: `$` only works for data frames!_
+
+---
+class: middle, center
+
+What if I want to subset columns based on a condition?
+
+--
+
+We can do that! But first, you need to learn about **logical operators** and **logical testing**.
+
+---
+# Statement testing with logical operators 
+
+You might remember about the `logical` data types, which contains only TRUE and FALSE values.
+
+We can use **operators** to obtain TRUE or FALSE values for a type of testing. See examples below:
+
+|Operator|Description|Example|Result|
+|-------------|-------------------------|-------------------------------|-------------|
+|`&lt;` and `&gt;`  |less than or greater than|`odd_n &gt; 3`                    |FALSE, FALSE, TRUE, TRUE, TRUE|
+|`&lt;=` and `&gt;=`|less/greater or equal to |`odd_n &gt;= 3`                   |FALSE, TRUE, TRUE, TRUE, TRUE|
+|`==`         |exactly equal to         |`odd_n == 3`                   |FALSE, TRUE, FALSE, FALSE, FALSE|
+|`!=`         |not equal to             |`odd_n != 3`                   |TRUE, FALSE, TRUE, TRUE, TRUE|
+|`x` &amp;#124; `y`| x OR y                 |`odd_n[odd_n &gt;= 5` &amp;#124; `odd_n &lt; 3]` | 1, 5, 7, 9 |
+|`x &amp; y`      |x AND y                  |`odd_n[odd_n &gt;=3 &amp; odd_n &lt; 7]` | 3, 5 |
+|`x %in% y `  |x match y                |`odd_n[odd_n %in% c(3,7)]` | 3, 7 |
+
+---
+# Indexing with logical operators
+
+We can use conditions to select values:
+
+
+```r
+odd_n[odd_n &gt; 4]
+# [1] 5 7 9
+```
+
+--
+
+It is also possible to match a character string. 
+
+
+
+```r
+char_vector &lt;- c("blue", "red", "green")
+```
+
+
+
+```r
+char_vector[char_vector == "blue"]
+# [1] "blue"
+```
+
+---
+# Statement testing with logical functions
+
+There are also ways in `R` that allows us to test conditions!
+
+We can for, instance, test if values within a vector or a matrix are `numeric`:
+
+.pull-left[
+
+```r
+char_vector
+# [1] "blue"  "red"   "green"
+is.numeric(char_vector)
+# [1] FALSE
+```
+]
+
+.pull-right[
+
+```r
+odd_n
+# [1] 1 3 5 7 9
+is.numeric(odd_n)
+# [1] TRUE
+```
+]
+
+--
+
+Or, whether they are of the `character` type:
+.pull-left[
+
+```r
+char_vector
+# [1] "blue"  "red"   "green"
+is.character(char_vector)
+# [1] TRUE
+```
+]
+
+.pull-right[
+
+```r
+odd_n
+# [1] 1 3 5 7 9
+is.character(odd_n)
+# [1] FALSE
+```
+]
+
+--
+
+And, also, if they are vectors:
+
+
+```r
+char_vector
+# [1] "blue"  "red"   "green"
+is.vector(char_vector)
+# [1] TRUE
+```
+
+---
+# Challenge ![:cube]()
+
+Explore the difference between these two lines of code:
+
+
+```r
+char_vector == "blue"
+
+char_vector[char_vector == "blue"]
+```
+
+---
+# Challenge: Solution ![:cube]()
+
+Explore the difference between these 2 lines of code:
+
+
+```r
+char_vector == "blue"
+# [1]  TRUE FALSE FALSE
+```
+
+In this line of code, you **test a logical statement**. For each entry in the `char_vector`,  `R` checks whether the entry is equal to `blue` or not.
+
+
+```r
+char_vector[char_vector == "blue"]
+# [1] "blue"
+```
+
+In this above line, we asked `R` to extract all values within the `char_vector` vector that are exactly equal to `blue`.
+
+---
+# Challenge ![:cube]()
+
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by the first four values of `num_vec`.
+
+2. After that, write a statement that checks if the values you obtained are greater than 25.
+
+---
+# Challenge: Solution ![:cube]()
+
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by  the first four values of `num_vec`.
+
+
+```r
+soil_fertilisation_data$num_sp * num_vector[c(1:4)]
+# [1]  17  92  45 686
+```
+
+or
+
+
+```r
+soil_fertilisation_data[, 3] * num_vector[c(1:4)]
+# [1]  17  92  45 686
+```
+
+2. After that, write a statement that checks if the values you obtained are greater than 25.
+
+
+
+```r
+(soil_fertilisation_data$num_sp * num_vector[c(1:4)]) &gt; 25
+# [1] FALSE  TRUE  TRUE  TRUE
+```
+
+---
+# Other kinds of data structure: arrays and lists
+
+We focused here mainly on `vectors` and `data frames`.
+
+While we will discuss discuss about **arrays** and **lists** in other workshops, you can already have an idea what these types of object structure are. 
+
+_Any wild guesses?_
+.center[
+![:scale 60%](images/matrix.png)
+]
+
+---
+
+# Short review about data structure in `R`
+
+&lt;!-- ![:scale 90%](images/matrix.png) --&gt;
+![:scale 90%](images/Type_of_data_structure_in_R.png)
+
+
+---
+class: inverse, center, middle
+
+# 3. Manipulating objects in R
+
+&lt;hr&gt;
+
+## Built-in functions
+
+---
+# Functions
+
+.pull-left2[
+- A function is a tool that simplifies our lives!
+
+- It allows you to quickly execute operations on objects without having to write every mathematical step.
+
+- A function needs entry values called **arguments** (or parameters). 
+
+- It then performs (hidden) actions using these arguments and  **returns** an output.
+
+- Today, we will look only into `R`'s _built-in_ functions, but you will learn how to make your own functions during Workshop #5!
+]
+
+
+.pull.right2[
+![:scale 20%](images/function_V2_en.png)
+]
+
+---
+# Using functions
+
+To use (or to call) a function, the command must be structured properly, following the "grammar rules" of the `R` language: the syntax.
+
+
+```r
+function_name(argument1 = value, argument2 = value, ..., argument4 = value)
+```
+
+---
+# Using functions: arguments
+
+Arguments are **values** and **instructions** the function needs to run.
+
+Objects storing these values and instructions can be used in functions:
+.pull-left[
+
+```r
+a &lt;- 3
+b &lt;- 5
+
+sum(a, b)
+# [1] 8
+```
+]
+
+.pull-right[
+
+```r
+mean(soil_fertilisation_data$num_sp)
+# [1] 15.5
+```
+]
+
+---
+# Challenge ![:cube]()
+
+1. Create a vector `a` that contains all the numbers from 1 to 5.
+2. Create an object `b` that has a value of 2.
+3. Add `a` and `b` together using the basic `+` operator and save the result in an object called `result_add`.
+4. Add `a` and `b` together using the `sum` function and save the result in an object called `result_sum`.
+5. Are `result_add` and `result_sum` different?
+6. Add `5` to `result_sum` using the `sum()` function.
+
+---
+# Challenge: Solution  ![:cube]()
+
+5. Are `result_add` and `result_sum` different?
+
+```r
+a &lt;- c(1:5)
+b &lt;- 2
+
+result_add &lt;- a + b
+
+result_sum &lt;- sum(a, b)
+```
+
+6. Add `5` to `result_sum` using the `sum()` function.
+
+```r
+result_add
+# [1] 3 4 5 6 7
+
+result_sum
+# [1] 17
+
+sum(result_sum, 5)
+# [1] 22
+```
+
+--
+
+The operation `+` on the vector `a` adds 2 to each element. The result is a vector.
+
+The function `sum()` concatenates all the values provided and then sum them. It is the same as doing `1 + 2 + 3 + 4 + 5 + 2`.
+
+---
+# Arguments
+
+Each argument has a **name**, which may be used during a function call.
+
+For instance, the first arguments of the `matrix()` function are:
+
+
+```r
+matrix(data, nrow, ncol)
+```
+
+We can create a matrix using: 
+
+
+```r
+matrix(data = 1:12, nrow = 3, ncol = 4)
+#      [,1] [,2] [,3] [,4]
+# [1,]    1    4    7   10
+# [2,]    2    5    8   11
+# [3,]    3    6    9   12
+```
+
+We can also execute a function when omitting argument names, however the order of the values will matter:
+.pull-left[
+
+```r
+matrix(data = 1:12, 3, 4)
+#      [,1] [,2] [,3] [,4]
+# [1,]    1    4    7   10
+# [2,]    2    5    8   11
+# [3,]    3    6    9   12
+```
+]
+.pull-right[
+
+```r
+matrix(1:12, 4, 3)
+#      [,1] [,2] [,3]
+# [1,]    1    5    9
+# [2,]    2    6   10
+# [3,]    3    7   11
+# [4,]    4    8   12
+```
+]
+---
+# Challenge ![:cube]()
+
+`plot` is a function that draws a graph of `y` as a function of `x`. It requires two arguments names `x` and `y`. What are the differences between the following lines?
+
+
+```r
+a &lt;- 1:100
+b &lt;- a^2
+
+plot(a, b, type = "l")
+plot(b, a, type = "l")
+plot(x = a, y = b, type = "l")
+plot(y = b, x = a, type = "l")
+```
+
+.comment[The argument `type` of the function `plot` let you choose the type of graph you want. Try it without this argument.]
+
+---
+# Challenge: Solution ![:cube]()
+
+`plot` is a function that draws a graph of y as a function of x. It requires two arguments names `x` and `y`. What are the differences between the following lines?
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-110-1.png" width="648" style="display: block; margin: auto;" /&gt;
+
+---
+# Challenge: Solution
+
+.pull-left[
+
+```r
+plot(a, b, type = "l")
+```
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-112-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+```r
+plot(b, a, type = "l")
+```
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-114-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+]
+
+The shape of the plot changes, as we did not provide the argument's names, the order is important.
+
+---
+# Challenge: Solution
+
+.pull-left[
+
+```r
+plot(x = a, y = b, type = "l")
+```
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-116-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+```r
+plot(y = b, x = a, type = "l")
+```
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-118-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+]
+
+Same as `plot(a, b, type = "l")`. The argument names are provided, the order is not important.
+
+---
+class: inverse, center, middle
+
+# 4. Installing and using R packages
+
+---
+# `R` Packages
+
+Packages **group functions** and/or **datasets** that share a similar **theme**, _e.g._ statistics, spatial analysis, plotting.
+
+**Anyone** can develop packages and make them available to others.
+
+Many packages available through the *Comprehensive R Archive Network* ([CRAN](http://cran.r-project.org/web/packages/)) and now many more on [GitHub](https://github.com/).
+
+&lt;br&gt;
+
+.center[.alert[Guess how many packages are available (not only within the CRAN)?]]
+
+---
+# How many `R` packages?
+
+![](images/rdrr_10-03-20.png)
+
+*[rdrr.io](https://rdrr.io/) visited on March, 10th 2020*
+
+---
+# Installing `R` packages
+
+To install packages in your Computer, use the function `install.packages()`.
+
+```r
+install.packages("package_name")
+```
+
+Installing a package is essential to use it, but there is one more step: loading it. 
+
+You can load a package into your workspace using the `library()` function.
+
+```r
+library(package_name)
+```
+
+---
+# Installing your first `R` package: `ggplot2`
+
+Let us install a popular visualization package called `ggplot`.
+
+
+```r
+install.packages("ggplot2")
+```
+
+
+```r
+Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
+(as 'lib' is unspecified)
+```
+
+
+
+Now we will use the function `qplot` from the package
+
+```r
+qplot(1:10, 1:10)
+```
+
+--
+
+Did you get this error?
+
+```r
+## Error: could not find function "qplot"
+```
+
+---
+# Loading your first `R` package: `ggplot2`
+
+We need to gain access the functions that are available within the installed package. To do this, load `ggplot2` using the `library()` function.
+
+
+```r
+library(ggplot2)
+```
+
+Now we can draw the graph 
+
+```r
+qplot(1:10, 1:10)
+```
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-125-1.png" width="288" style="display: block; margin: auto;" /&gt;
+
+.comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
+
+---
+
+# Finding functions within packages
+
+WOW! `R` is so great! So many functions to do what I want!
+
+But... how do I find them?
+
+--
+
+To find a function that does something specific in your installed packages, you can use `??` followed by a search term.
+
+Let us say we want to create a *sequence* of odd numbers between 0 and 10 as we did earlier. We can search in our packages all the functions with the word "sequence" in them:
+
+
+```r
+??sequence
+```
+
+---
+# Search results
+
+![](images/searchseq1.svg)
+
+---
+# Search results
+
+![](images/searchseq2.svg)
+
+---
+# Search results
+
+![](images/searchseq3.svg)
+
+---
+# Getting help with functions
+
+OK! So let us use the `seq` function!
+
+But wait... how does it work? What arguments does it need?
+
+To find information about a function in particular, use `?`
+
+
+```r
+  ?seq
+```
+
+---
+# Help pages
+
+![](images/print-1.png)
+
+---
+# Description
+
+- `function_name {package_name}`
+- `Description`: a short description of what the function does.
+
+![](images/seq_description.png)
+
+---
+# Usage
+
+- How to call the function
+- If `name = value` is present, a default value is provided if the argument is missing. The argument becomes optional.
+- Other related functions described in this help page
+
+![](images/seq_usage.png)
+
+
+---
+# Arguments
+
+- Description of all the arguments and what they are used for
+
+![](images/seq_arguments.png)
+
+---
+# Details
+
+- A detailed description of how the functions work and their characteristics
+
+![](images/seq_details.png)
+
+---
+# Value, See Also, and Examples
+
+- A description of the return value
+
+![](images/seq_value.png)
+
+--
+
+- Other related functions that can be useful
+
+![](images/seq_see_also.png)
+
+--
+
+- Reproducible examples
+
+![](images/seq_examples.png)
+
+---
+# Challenge ![:cube]()
+
+1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
+
+2. Create an unsorted vector of your favourite numbers, then sort your vector in reverse order.
+
+---
+# Challenge: Solutions ![:cube]()
+
+1. Create a sequence of even numbers from 0 to 10 using the `seq` function.
+
+.pull-left[
+
+```r
+seq(from = 0, to = 10, by = 2)
+# [1]  0  2  4  6  8 10
+```
+]
+
+.pull-right[
+
+```r
+seq(0, 10, 2)
+# [1]  0  2  4  6  8 10
+```
+]
+
+
+2. Create an unsorted vector of your favorite numbers, then sort your vector in reverse order.
+
+
+```r
+numbers &lt;- c(2, 4, 22, 6, 26)
+sort(numbers, decreasing = TRUE)
+# [1] 26 22  6  4  2
+```
+
+---
+# Other ways to get help
+
+Usually, your best source of information will be your favorite search engine!
+
+Here are some tips on how to use them efficiently:
+- Search in English;
+- Use the keyword `R` at the beginning of your search;
+- Define precisely what you are looking for;
+- Learn to read discussion forums, such as [StackOverflow](https://stackoverflow.com/). Chances are other people already had your problem and asked about it!
+- Do not hesitate to search again using different keywords!
+
+---
+# Challenge ![:cube]()
+
+Find the appropriate functions to perform the following operations:
+
+- Square root
+- Calculate the mean of numbers
+- Combine two data frames by columns
+- List available objects in your workspace
+
+---
+# Challenge: Solutions ![:cube]()
+
+Find the appropriate functions to perform the following operations:
+
+- Square root
+  - `sqrt()`
+- Calculate the mean of numbers
+  - `mean()`
+- Combine two data frames by columns
+  - `cbind()`
+- List available objects in your workspace
+  - `ls()`
+
+---
+class: inverse, center, middle
+
+# Additional resources
+
+---
+# Cheat 4ever
+
+.center[
+![](http://dastornews.com/wp-content/uploads/2013/04/cheat.gif)
+]
+
+
+Lots of [cheat sheets](https://www.rstudio.com/resources/cheatsheets/) are available online.
+
+Open it directly from **RStudio**: Help `\(\rightarrow\)` Cheatsheets
+
+
+---
+# Cheatsheet 4ever
+
+.center[![:scale 90%](images/base-r.png)]
+
+---
+# Some useful `R` books
+
+.center[
+![](images/Book6.jpg) ![](images/Book5.jpg) ![](images/Book4.jpg)
+]
+.center[
+![](images/Book1.jpg) ![](images/Book2.jpg) ![](images/Book3.jpg)
+]
+
+---
+# Some useful R websites
+
+.pull-left[
+[![:scale 50%](http://r4ds.had.co.nz/cover.png)](http://r4ds.had.co.nz/index.html)
+
+[**An Introduction to R**](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
+
+[**R Reference card 2.0**](http://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf)
+
+]
+
+.pull-right[
+[![](http://www.lapk.org/images/QuickR.png)](http://statmethods.net/)
+
+[![:scale 50%](https://d33wubrfki0l68.cloudfront.net/1ac3f0e3753f18c7e2a8893957d1841fba1e3d08/48a33/wp-content/uploads/2018/10/rstudio-logo-flat.png)](https://support.rstudio.com/hc/en-us/categories/200035113-Documentation)
+
+[**Cookbook for `R`**](http://cookbook-r.com/)
+]
+
+
+---
+class: inverse, center, bottom
+
+# Thank you for attending!
+
+&lt;hr&gt;
+
+![:scale 50%](images/qcbs_logo.png)
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="qcbsR-macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightLines": true,
+"highlightStyle": "github"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
