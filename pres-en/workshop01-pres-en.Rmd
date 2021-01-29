@@ -42,7 +42,7 @@ if(length(new.packages) > 0) {
   install.packages(new.packages, dependencies = TRUE) 
   print(paste0("The following package was installed:", new.packages)) 
 } else if(length(new.packages) == 0) {
-    print("All packages were already installed previously")
+    print("All packages were already installed previously.")
   }
 ```
 
@@ -994,10 +994,10 @@ scalar.waffle <- waffle(scalar.parts,
 vector.parts <- c('TRUE' = 4, 'FALSE' = 16)
 
 vector.waffle <- waffle(vector.parts, 
-            rows = 4, 
-            colors = c("black", "white"),
-            legend_pos = "none",
-            title = "Vector")
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Vector")
 
 ggarrange(
   scalar.waffle, vector.waffle,
