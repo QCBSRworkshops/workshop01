@@ -2406,7 +2406,7 @@ Open it directly from **RStudio**: Help $\rightarrow$ Cheatsheets
 .center[![:scale 90%](images/base-r.png)]
 
 ---
-# Some useful R books
+# Some useful `R` books
 
 .center[
 ![](images/Book6.jpg) ![](images/Book5.jpg) ![](images/Book4.jpg)
