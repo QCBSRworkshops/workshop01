@@ -40,6 +40,19 @@ class: inverse, center, middle
 [![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=script&amp;message=01&amp;color=2a50b8&amp;logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
 
 ---
+
+# Required packages
+
+* [waffle](https://cran.r-project.org/package=waffle)
+* [ggpubr](https://cran.r-project.org/package=ggpubr)
+* [DiagrammeR](https://cran.r-project.org/package=DiagrammeR)
+
+&lt;br&gt;
+
+```R
+install.packages(c('waffle', 'ggpubr', 'DiagrammeR'))
+```
+---
 # Learning Objectives
 &lt;br&gt;
 
@@ -114,8 +127,8 @@ class: inverse, center, middle
 
 
 ```{=html}
-&lt;div id="htmlwidget-e750a097e3c286c2e8ce" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-e750a097e3c286c2e8ce"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+&lt;div id="htmlwidget-d2c01d6b643562264237" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-d2c01d6b643562264237"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
 ```
 ]
 
@@ -130,8 +143,8 @@ class: inverse, center, middle
 
 
 ```{=html}
-&lt;div id="htmlwidget-33929eecf7b5d6c848a0" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-33929eecf7b5d6c848a0"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+&lt;div id="htmlwidget-9d3afd552fbceadcf16c" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-9d3afd552fbceadcf16c"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
 ```
 ]
 
@@ -144,8 +157,8 @@ class: inverse, center, middle
 
 
 ```{=html}
-&lt;div id="htmlwidget-313442847924be321a77" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-313442847924be321a77"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; R;\n\n      edge [arrowhead = normal]\n      R -&gt; Graphs; R -&gt; Tables; R -&gt; Statistics; Graphs -&gt; Report; Tables -&gt; Report; Statistics -&gt; Report; R -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+&lt;div id="htmlwidget-424196f7119d0943d844" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-424196f7119d0943d844"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; R;\n\n      edge [arrowhead = normal]\n      R -&gt; Graphs; R -&gt; Tables; R -&gt; Statistics; Graphs -&gt; Report; Tables -&gt; Report; Statistics -&gt; Report; R -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
 ```
 
 ]
