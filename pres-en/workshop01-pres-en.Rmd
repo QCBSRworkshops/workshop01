@@ -132,7 +132,7 @@ class: inverse, center, middle
 
 
 ---
-# Why should I become an use`R`?
+# Why use `R`?
 
 .pull-left[
 

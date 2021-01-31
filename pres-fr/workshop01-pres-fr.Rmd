@@ -13,6 +13,20 @@ output:
       beforeInit: "qcbsR-macros.js"
 ---
 
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  comment = "#",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  cache = TRUE, # turn into FALSE before pushing
+  fig.width=5, fig.height=5, 
+  fig.retina=3,
+  fig.align = 'center'
+)
+options(repos=structure(c(CRAN="http://cran.r-project.org")))
+```
+
 class: inverse, center, middle
 
 ```{r install_pkgs, message=FALSE, warning=FALSE, include=FALSE, results=0}
@@ -107,53 +121,54 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 .pull-left[
 
-- Ce que les gens faisaient traditionnellement pour analyser leurs données:
+.center[Ce que les gens faisaient traditionnellement pour analyser leurs données.]
 
 <br>
 
 ```{r, echo = FALSE}
+library(DiagrammeR)
   grViz("
       digraph {
 
       node [shape = oval, fillcolor = PaleTurquoise]
-      Données; Graphiques; Tableaux; Statistiques
+      'Data \n (Excel, SQL)'; Graphs; Tables; Statistics
 
       node [shape = box]
       Sigmaplot; Excel; SAS
 
       ##add arrows
       edge [arrowhead = none]
-      Données -> Sigmaplot; Données -> Excel; Données -> SAS;
+      'Data \n (Excel, SQL)' -> Sigmaplot; 'Data \n (Excel, SQL)' -> Excel; 'Data \n (Excel, SQL)' -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint
 
       edge [arrowhead = normal]
-      Sigmaplot -> Graphiques; Excel -> Tableaux; SAS -> Statistiques;
+      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report
 
       }")
-
 ```
 ]
 
 .pull-right[
 
-- R permet de tout (ou presque) faire avec un seul programme!
+.center[`R` permet de tout (ou presque) faire avec un seul programme.]
+
 <br>
-<br>
+
 ```{r, echo = FALSE}
 grViz("
       digraph {
 
       node [shape = oval, fillcolor = PaleTurquoise]
-      Données; Graphiques; Tableaux; Statistiques
+      'Data \n (Excel, SQL)'; Graphs; Tables; Statistics
 
       node [shape = box]
       R
 
       ##add arrows
       edge [arrowhead = none]
-      Données -> R;
+      'Data \n (Excel, SQL)' -> R;
 
       edge [arrowhead = normal]
-      R -> Graphiques; R -> Tableaux; R -> Statistiques;
+      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report
 
       }")
 
