@@ -55,6 +55,19 @@ if(length(new.packages) > 0) {
 [![badge](https://img.shields.io/static/v1?style=for-the-badge&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
 
 ---
+
+# Required packages
+
+* [waffle](https://cran.r-project.org/package=waffle)
+* [ggpubr](https://cran.r-project.org/package=ggpubr)
+* [DiagrammeR](https://cran.r-project.org/package=DiagrammeR)
+
+<br>
+
+```R
+install.packages(c('waffle', 'ggpubr', 'DiagrammeR'))
+```
+---
 # Learning Objectives
 <br>
 
