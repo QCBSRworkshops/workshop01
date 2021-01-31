@@ -11,6 +11,8 @@ output:
     css: ["default", "qcbsR.css", "qcbsR-fonts.css"]
     nature:
       beforeInit: "qcbsR-macros.js"
+      highlightLines: true
+      highlightStyle: github
 ---
 
 ```{r setup, echo = FALSE}
@@ -32,7 +34,7 @@ class: inverse, center, middle
 ```{r install_pkgs, message=FALSE, warning=FALSE, include=FALSE, results=0}
 # Standard procedure to check and install packages and their dependencies, if needed.
 
-list.of.packages <- c("waffle", "ggpubr", "DiagrammeR")
+list.of.packages <- c("waffle", "ggpubr", "DiagrammeR", "htmlwidgets")
 
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 
@@ -51,20 +53,6 @@ if(length(new.packages) > 0) {
 [![badge](https://img.shields.io/static/v1?style=for-the-badge&label=Slides&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.html)
 [![badge](https://img.shields.io/static/v1?style=for-the-badge&label=Slides&message=01&color=red&logo=adobe-acrobat-reader)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.pdf)
 [![badge](https://img.shields.io/static/v1?style=for-the-badge&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
-
----
-
-# Packages requis
-
-* [waffle](https://cran.r-project.org/package=waffle)
-* [ggpubr](https://cran.r-project.org/package=ggpubr)
-* [DiagrammeR](https://cran.r-project.org/package=DiagrammeR)
-
-<br>
-
-```R
-install.packages(c('waffle', 'ggpubr', 'DiagrammeR'))
-```
 
 ---
 # Objectifs d'apprentissage

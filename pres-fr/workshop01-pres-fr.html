@@ -40,20 +40,6 @@ class: inverse, center, middle
 [![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=script&amp;message=01&amp;color=2a50b8&amp;logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
 
 ---
-
-# Packages requis
-
-* [waffle](https://cran.r-project.org/package=waffle)
-* [ggpubr](https://cran.r-project.org/package=ggpubr)
-* [DiagrammeR](https://cran.r-project.org/package=DiagrammeR)
-
-&lt;br&gt;
-
-```R
-install.packages(c('waffle', 'ggpubr', 'DiagrammeR'))
-```
-
----
 # Objectifs d'apprentissage
 
 &lt;br&gt;
@@ -114,8 +100,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 
 ```{=html}
-&lt;div id="htmlwidget-b4cac4da20a6bad07bb7" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-b4cac4da20a6bad07bb7"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+&lt;div id="htmlwidget-3dfddc591bf4ccfe143c" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-3dfddc591bf4ccfe143c"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
 ```
 ]
 
@@ -127,8 +113,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 
 ```{=html}
-&lt;div id="htmlwidget-f4128d6d96c59f244b0f" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-f4128d6d96c59f244b0f"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; R;\n\n      edge [arrowhead = normal]\n      R -&gt; Graphs; R -&gt; Tables; R -&gt; Statistics; Graphs -&gt; Report; Tables -&gt; Report; Statistics -&gt; Report; R -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
+&lt;div id="htmlwidget-788a5795d043416dd64a" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
+&lt;script type="application/json" data-for="htmlwidget-788a5795d043416dd64a"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; R;\n\n      edge [arrowhead = normal]\n      R -&gt; Graphs; R -&gt; Tables; R -&gt; Statistics; Graphs -&gt; Report; Tables -&gt; Report; Statistics -&gt; Report; R -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
 ```
 ]
 
@@ -1545,7 +1531,10 @@ class: inverse, center, bottom
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="qcbsR-macros.js"></script>
-<script>var slideshow = remark.create();
+<script>var slideshow = remark.create({
+"highlightLines": true,
+"highlightStyle": "github"
+});
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
 });
@@ -1610,7 +1599,24 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
       links[i].target = '_blank';
     }
   }
-})();</script>
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {
