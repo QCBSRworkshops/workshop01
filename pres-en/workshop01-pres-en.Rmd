@@ -165,10 +165,9 @@ class: inverse, center, middle
     ") %>%
 export_svg() %>%
 charToRaw() %>%
-rsvg_png("images/workflow-without-R-flow.png", 
-         height = 1000) # do not decrease; increase if output quality looks ugly 
+rsvg_svg("images/workflow-without-R-flow.svg")
   
-knitr::include_graphics("images/workflow-without-R-flow.png")
+knitr::include_graphics("images/workflow-without-R-flow.svg")
 ```
 ]
 
@@ -185,7 +184,10 @@ knitr::include_graphics("images/workflow-without-R-flow.png")
       digraph {
 
       node [shape = oval, fillcolor = PaleTurquoise]
-      'Data \n (Excel, SQL)'; Graphs; Tables; Statistics
+      'Data \n (Excel, SQL)'; 
+      Graphs; 
+      Tables; 
+      Statistics
 
       node [shape = box]
       R
@@ -195,15 +197,20 @@ knitr::include_graphics("images/workflow-without-R-flow.png")
       'Data \n (Excel, SQL)' -> R;
 
       edge [arrowhead = normal]
-      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report
+      R -> Graphs; 
+      R -> Tables; 
+      R -> Statistics; 
+      Graphs -> Report; 
+      Tables -> Report; 
+      Statistics -> Report;
+      R -> Report
 
       }") %>%
 export_svg() %>%
 charToRaw() %>%
-rsvg_png("images/workflow-with-R-flow.png", 
-         height = 1000) # do not decrease; increase if output quality looks ugly 
+rsvg_svg("images/workflow-with-R-flow.svg")
   
-knitr::include_graphics("images/workflow-with-R-flow.png")
+knitr::include_graphics("images/workflow-with-R-flow.svg")
 
 ```
 
