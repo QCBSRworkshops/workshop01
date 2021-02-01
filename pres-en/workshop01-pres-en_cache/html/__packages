@@ -4,3 +4,5 @@ waffle
 ggpubr
 htmlwidgets
 DiagrammeR
+DiagrammeRsvg
+rsvg

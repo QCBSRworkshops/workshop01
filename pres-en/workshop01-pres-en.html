@@ -5,10 +5,6 @@
     <meta charset="utf-8" />
     <meta name="author" content="Québec Centre for Biodiversity Science" />
     <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <script src="assets/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-    <script src="assets/viz-1.8.2/viz.js"></script>
-    <link href="assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-    <script src="assets/grViz-binding-1.0.6.1/grViz.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
     <link rel="stylesheet" href="qcbsR.css" type="text/css" />
@@ -112,29 +108,10 @@ class: inverse, center, middle
 
 &lt;br&gt;
 
-
-```{=html}
-&lt;div id="htmlwidget-635fc17d59c8c9a9c687" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-635fc17d59c8c9a9c687"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }\n    ","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
-```
+&lt;img src="images/workflow-without-R-flow.png" width="90%" style="display: block; margin: auto;" /&gt;
 ]
 
----
-# Why use `R`?
-
-.pull-left[
-
-.center[An example of a workflow to analyze data _without_ `R`.]
-
-&lt;br&gt;
-
-
-```{=html}
-&lt;div id="htmlwidget-c6af38fe29f940b2d719" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-c6af38fe29f940b2d719"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; Sigmaplot; \"Data \n (Excel, SQL)\" -&gt; Excel; \"Data \n (Excel, SQL)\" -&gt; SAS; Graphs -&gt; Word; Tables -&gt; Word; Statistics -&gt; Word;  Graphs -&gt; Powerpoint; Tables -&gt; Powerpoint; Statistics -&gt; Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -&gt; Graphs; Excel -&gt; Tables; SAS -&gt; Statistics; Word -&gt; Report; Powerpoint -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
-```
-]
-
+--
 
 .pull-right[
 
@@ -142,11 +119,7 @@ class: inverse, center, middle
 
 &lt;br&gt;
 
-
-```{=html}
-&lt;div id="htmlwidget-b1ee50867fd5ef0aa7c9" style="width:360px;height:360px;" class="grViz html-widget"&gt;&lt;/div&gt;
-&lt;script type="application/json" data-for="htmlwidget-b1ee50867fd5ef0aa7c9"&gt;{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -&gt; R;\n\n      edge [arrowhead = normal]\n      R -&gt; Graphs; R -&gt; Tables; R -&gt; Statistics; Graphs -&gt; Report; Tables -&gt; Report; Statistics -&gt; Report; R -&gt; Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}&lt;/script&gt;
-```
+&lt;img src="images/workflow-with-R-flow.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -156,7 +129,7 @@ class: inverse, center, middle
 - More and more scientists use it every year!
 - As of October 2020, there are more than 16000 packages registered within the **Comprehensive R Archive Network (CRAN)** (and thousands more within Github repositories)!
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-4-1.png" width="720" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-1-1.png" width="720" style="display: block; margin: auto;" /&gt;
 
 
 &lt;!-- .center[![:scale 70%](images/Rpackages.png)] --&gt;
@@ -514,7 +487,7 @@ It would look like this in `R`:
 
 What is the area of a circle with a radius of `\(5\ cm\)`?
 .pull-left[
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-15-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-12-1.png" width="288" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right[
 &lt;br&gt; 
@@ -526,7 +499,7 @@ What is the area of a circle with a radius of `\(5\ cm\)`?
 
 What is the area of a circle with a radius of `\(5\ cm\)`?
 .pull-left[
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-16-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-13-1.png" width="288" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right[
 &lt;br&gt; 
@@ -902,7 +875,7 @@ A **vector object** is just a combination of several scalars stored as a single 
 &lt;br&gt;
 Like scalars, vectors can be of `numeric`-, `logical`-, `character`-types, but **never** a mix of them!
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-34-1.png" width="360" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-31-1.png" width="360" style="display: block; margin: auto;" /&gt;
 
 ---
 # Data structure in `R`: **vectors**
@@ -1146,7 +1119,7 @@ While vectors have *one* dimension, matrices have *two* dimensions, determined b
 
 Finally, like **vectors** and **scalars** matrices can contain only one type of data: `numeric`, `character`, or `logical`.
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-51-1.png" width="360" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-48-1.png" width="360" style="display: block; margin: auto;" /&gt;
 
 ---
 # .small[Creating **matrices** using `matrix()`, `cbind()`, `rbind()`]
@@ -1375,7 +1348,7 @@ The presenter here should mention that matrices being formed by vectors or scala
 
 Differently than a matrix, a data frame can contain `numeric`, `character`, *and* `logical` columns (or vectors).
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-66-1.png" width="360" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-63-1.png" width="360" style="display: block; margin: auto;" /&gt;
 
 ---
 # Data structure in `R`: **data frames**
@@ -2081,7 +2054,7 @@ plot(y = b, x = a, type = "l")
 
 `plot` is a function that draws a graph of y as a function of x. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-110-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-107-1.png" width="648" style="display: block; margin: auto;" /&gt;
 
 ---
 # Challenge: Solution
@@ -2092,7 +2065,7 @@ plot(y = b, x = a, type = "l")
 plot(a, b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-112-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-109-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -2101,7 +2074,7 @@ plot(a, b, type = "l")
 plot(b, a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-114-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-111-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 The shape of the plot changes, as we did not provide the argument's names, the order is important.
@@ -2115,7 +2088,7 @@ The shape of the plot changes, as we did not provide the argument's names, the o
 plot(x = a, y = b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-116-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-113-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -2124,7 +2097,7 @@ plot(x = a, y = b, type = "l")
 plot(y = b, x = a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-118-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-115-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 Same as `plot(a, b, type = "l")`. The argument names are provided, the order is not important.
@@ -2219,7 +2192,7 @@ Now we can draw the graph
 qplot(1:10, 1:10)
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-125-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-122-1.png" width="288" style="display: block; margin: auto;" /&gt;
 
 .comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
 
