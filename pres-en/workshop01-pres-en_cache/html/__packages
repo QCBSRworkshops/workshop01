@@ -1,5 +1,6 @@
 base
-DiagrammeR
 ggplot2
 waffle
 ggpubr
+htmlwidgets
+DiagrammeR
