@@ -34,7 +34,7 @@ class: inverse, center, middle
 ```{r install_pkgs, message=FALSE, warning=FALSE, include=FALSE, results=0}
 # Standard procedure to check and install packages and their dependencies, if needed.
 
-list.of.packages <- c("waffle", "ggpubr", "DiagrammeR", "htmlwidgets")
+list.of.packages <- c("waffle", "ggpubr", "htmlwidgets", "DiagrammeR")
 
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 
@@ -42,8 +42,11 @@ if(length(new.packages) > 0) {
   install.packages(new.packages, dependencies = TRUE) 
   print(paste0("The following package was installed:", new.packages)) 
 } else if(length(new.packages) == 0) {
-    print("All packages were already installed previously.")
-  }
+  print("All packages were already installed previously.")
+}
+
+# Load all required libraries at once
+lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 ```
 
 # About this workshop
@@ -128,7 +131,6 @@ class: inverse, center, middle
 <br>
 
 ```{r, echo = FALSE}
-library(DiagrammeR)
   grViz("
       digraph {
 
@@ -145,8 +147,8 @@ library(DiagrammeR)
       edge [arrowhead = normal]
       Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report
 
-      }")
-
+      }
+    ")
 ```
 ]
 
