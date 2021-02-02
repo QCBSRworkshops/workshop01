@@ -12,7 +12,6 @@ output:
     nature:
       beforeInit: "qcbsR-macros.js"
       highlightLines: true
-      highlightStyle: github
 ---
 
 ```{r setup, echo = FALSE}
