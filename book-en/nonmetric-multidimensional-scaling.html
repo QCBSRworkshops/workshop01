@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Workshop 9: Multivariate Analyses in R</title>
+  <title>Chapter 12 Nonmetric MultiDimensional Scaling | Workshop 9: Multivariate Analyses in R</title>
   <meta name="description" content="Multivariate Analyses in R" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Workshop 9: Multivariate Analyses in R" />
+  <meta property="og:title" content="Chapter 12 Nonmetric MultiDimensional Scaling | Workshop 9: Multivariate Analyses in R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/qcbsRworkshops/" />
   <meta property="og:image" content="https://github.com/qcbsRworkshops/assets/images/logo/csbq_logo_accueil.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="qcbsRworkshops/workshop09" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Workshop 9: Multivariate Analyses in R" />
+  <meta name="twitter:title" content="Chapter 12 Nonmetric MultiDimensional Scaling | Workshop 9: Multivariate Analyses in R" />
   
   <meta name="twitter:description" content="Multivariate Analyses in R" />
   <meta name="twitter:image" content="https://github.com/qcbsRworkshops/assets/images/logo/csbq_logo_accueil.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="learning-objectives.html"/>
+<link rel="prev" href="principal-coordinates-analysis.html"/>
+<link rel="next" href="summary.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -200,74 +200,108 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
 </div>
-<div id="header">
-<h1 class="title">Workshop 9: Multivariate Analyses in <code>R</code></h1>
-<h2 class="subtitle"><em>QCBS R Workshop Series</em></h2>
-<p class="author"><em>Developed and maintained by the contributors of the QCBS R Workshop Series<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></em></p>
-<p class="date"><em>2021-02-24 04:47:47</em></p>
-</div>
-<div id="preface" class="section level1 unnumbered">
-<h1>Preface</h1>
-<p>The <strong>QCBS R Workshop Series</strong> is a series of 10 workshops that walks participants through the steps required to use R for a wide array of statistical analyses relevant to research in biology and ecology. These open-access workshops were created by members of the QCBS both for members of the QCBS and the larger community.</p>
-<p>The content of this workshop has been peer-reviewed by several QCBS members. If you would like to suggest modifications, please contact the current series coordinators, listed on the main Github page.</p>
-<div id="code-of-conduct" class="section level2">
-<h2><span class="header-section-number">0.1</span> Code of conduct</h2>
-<p>The QCBS R Workshop Series and the QCBS R Symposium are venues dedicated to providing a welcoming and supportive environment for all people, regardless of background or identity.</p>
-<p>Participants, presenters and organizers of the workshop series and other related activities accept this Code of Conduct when being present at any workshop-related activities.</p>
-<p>We do not tolerate behaviour that is disrespectful or that excludes, intimidates, or causes discomfort to others.</p>
-<p>We do not tolerate discrimination or harassment based on characteristics that include, but are not limited to, gender identity and expression, sexual orientation, disability, physical appearance, body size, citizenship, nationality, ethnic or social origin, pregnancy, familial status, genetic information, religion or belief (or lack thereof), membership of a national minority, property, age, education, socio-economic status, technical choices, and experience level.</p>
-<p>It applies to all spaces managed by or affiliated with the workshop, including, but not limited to, workshops, email lists, and online forums such as GitHub, Slack and Twitter.</p>
-<div id="expected-behaviour" class="section level3">
-<h3><span class="header-section-number">0.1.1</span> Expected behaviour</h3>
-<p>All participants are expected to show respect and courtesy to others. All interactions should be professional regardless of platform: either online or in-person. In order to foster a positive and professional learning environment we encourage the following kinds of behaviours in all workshop events and platforms:</p>
-<ul>
-<li>Use welcoming and inclusive language</li>
-<li>Be respectful of different viewpoints and experiences</li>
-<li>Gracefully accept constructive criticism</li>
-<li>Focus on what is best for the community</li>
-<li>Show courtesy and respect towards other community members</li>
-</ul>
-</div>
-<div id="unacceptable-behaviour" class="section level3">
-<h3><span class="header-section-number">0.1.2</span> Unacceptable behaviour</h3>
-<p>Examples of unacceptable behaviour by participants at any workshop event/platform include:</p>
-<ul>
-<li>written or verbal comments which have the effect of excluding people on the - basis of membership of any specific group;</li>
-<li>causing someone to fear for their safety, such as through stalking or intimidation;</li>
-<li>violent threats or language directed against another person;</li>
-<li>the display of sexual or violent images;</li>
-<li>unwelcome sexual attention;</li>
-<li>nonconsensual or unwelcome physical contact;</li>
-<li>insults or put-downs;</li>
-<li>sexist, racist, homophobic, transphobic, ableist, or exclusionary jokes;</li>
-<li>incitement to violence, suicide, or self-harm;</li>
-<li>continuing to initiate interaction (including photography or recording) with - someone after being asked to stop;</li>
-<li>publication of private communication without consent.</li>
-</ul>
-</div>
-</div>
-<div id="contributors" class="section level2">
-<h2><span class="header-section-number">0.2</span> Contributors</h2>
-<p>Originally developed by:</p>
-<p>Contributed with changes to the presentation:</p>
-<p>Contributed with changes to the written material:</p>
-<p>Contributed by reporting issues and suggesting modifications:</p>
-</div>
-<div id="contributing" class="section level2">
-<h2><span class="header-section-number">0.3</span> Contributing</h2>
-<p>Under construction.</p>
+<div id="nonmetric-multidimensional-scaling" class="section level1">
+<h1><span class="header-section-number">Chapter 12</span> Nonmetric MultiDimensional Scaling</h1>
+<p>The unconstrained ordination methods presented above allow to organize
+objects (e.g. sites) characterized by descriptors (e.g. species) in
+full-dimensional space. In other words, PCA, CA and PCoA computes a
+large number of ordination axes (proportional to the number of
+descriptors) representing the variation of descriptors among sites and
+preserve distance among objects (the Euclidean distances in PCA, the
+Chi2 distances in CA and the type of distances defined by the user in
+PCoA). Users can then select the axis of interest (generally the first
+two ones as the explained the larger part of the variation) to represent
+objects in an ordination plot. The produced biplot thus represents well
+the distance among objects (e.g. the between-sites similarity), but
+fails to represent the whole variation dimensions of the ordination
+space (as Axis3, Axis4,…, Axisn are not represented on the biplot, but
+still contribute to explain the variation among objects).</p>
+<p>In some case, the priority is not to preserve the exact distances among
+sites, but rather to represent as accurately as possible the
+relationships among objects in a small and number of axes (generally two
+or three) specified by the user. In such cases, nonmetric
+multidimensional scaling (NMDS) is the solution. If two axes are
+selected, the biplot produced from NMDS is the better 2D graphical
+representation of between-objects similarity: dissimilar objects are far
+apart in the ordination space and similar objects close to one another.
+Moreover, NMDS allows users to choose the distance measure applied to
+calculate the ordination.</p>
+<p>To find the best representation of objects, NMDS applies an iterative
+procedure that tries to position the objects in the requested number of
+dimensions in such a way as to minimize a stress function (scaled from 0
+to 1) which measure the goodness-of-fit of the distance adjustment in
+the reduced-space configuration. Consequently, the lower the stress
+value, the better the representation of objects in the ordination-space
+is. An additional way to assess the appropriateness of an NDMS is to
+construct a Shepard diagram which plot distances among objects in the
+ordination plot against the original distances. The R2 obtained from the
+regression between these two distances measure the goodness-of-fit of
+the NMDS ordination.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="nonmetric-multidimensional-scaling.html#cb49-1"></a><span class="co"># Run the NMDS</span></span>
+<span id="cb49-2"><a href="nonmetric-multidimensional-scaling.html#cb49-2"></a>spe.nmds &lt;-<span class="st"> </span><span class="kw">metaMDS</span>(spe, <span class="dt">distance =</span> <span class="st">&quot;bray&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>)</span>
+<span id="cb49-3"><a href="nonmetric-multidimensional-scaling.html#cb49-3"></a></span>
+<span id="cb49-4"><a href="nonmetric-multidimensional-scaling.html#cb49-4"></a><span class="co">### Extract the results</span></span>
+<span id="cb49-5"><a href="nonmetric-multidimensional-scaling.html#cb49-5"></a>spe.nmds</span>
+<span id="cb49-6"><a href="nonmetric-multidimensional-scaling.html#cb49-6"></a></span>
+<span id="cb49-7"><a href="nonmetric-multidimensional-scaling.html#cb49-7"></a><span class="co">### Assess the goodness of fit and draw a Shepard plot</span></span>
+<span id="cb49-8"><a href="nonmetric-multidimensional-scaling.html#cb49-8"></a>spe.nmds<span class="op">$</span>stress</span>
+<span id="cb49-9"><a href="nonmetric-multidimensional-scaling.html#cb49-9"></a><span class="kw">stressplot</span>(spe.nmds, <span class="dt">main =</span> <span class="st">&quot;Shepard plot&quot;</span>)</span>
+<span id="cb49-10"><a href="nonmetric-multidimensional-scaling.html#cb49-10"></a></span>
+<span id="cb49-11"><a href="nonmetric-multidimensional-scaling.html#cb49-11"></a><span class="co"># Construct the biplot</span></span>
+<span id="cb49-12"><a href="nonmetric-multidimensional-scaling.html#cb49-12"></a><span class="kw">windows</span>()</span>
+<span id="cb49-13"><a href="nonmetric-multidimensional-scaling.html#cb49-13"></a><span class="kw">plot</span>(spe.nmds, <span class="dt">type =</span> <span class="st">&quot;none&quot;</span>, <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;NMDS/Bray - Stress=&quot;</span>, </span>
+<span id="cb49-14"><a href="nonmetric-multidimensional-scaling.html#cb49-14"></a>    <span class="kw">round</span>(spe.nmds<span class="op">$</span>stress, <span class="dv">3</span>)), <span class="dt">xlab =</span> <span class="kw">c</span>(<span class="st">&quot;NMDS1&quot;</span>), <span class="dt">ylab =</span> <span class="kw">c</span>(<span class="st">&quot;NMDS2&quot;</span>))</span>
+<span id="cb49-15"><a href="nonmetric-multidimensional-scaling.html#cb49-15"></a><span class="kw">points</span>(<span class="kw">scores</span>(spe.nmds, <span class="dt">display =</span> <span class="st">&quot;sites&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)), </span>
+<span id="cb49-16"><a href="nonmetric-multidimensional-scaling.html#cb49-16"></a>    <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="dt">cex =</span> <span class="fl">1.2</span>)</span>
+<span id="cb49-17"><a href="nonmetric-multidimensional-scaling.html#cb49-17"></a><span class="kw">text</span>(<span class="kw">scores</span>(spe.nmds, <span class="dt">display =</span> <span class="st">&quot;species&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="dv">1</span>)), <span class="kw">scores</span>(spe.nmds, </span>
+<span id="cb49-18"><a href="nonmetric-multidimensional-scaling.html#cb49-18"></a>    <span class="dt">display =</span> <span class="st">&quot;species&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="dv">2</span>)), <span class="dt">labels =</span> <span class="kw">rownames</span>(<span class="kw">scores</span>(spe.nmds, </span>
+<span id="cb49-19"><a href="nonmetric-multidimensional-scaling.html#cb49-19"></a>    <span class="dt">display =</span> <span class="st">&quot;species&quot;</span>)), <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<p><img src="/shepard_plot.png" class="align-center" /></p>
+<p>The Shepard plot identifies a strong correlation between observed
+dissimilarity and ordination distance (R2 &gt; 0.95), highlighting a high
+goodness-of-fit of the NMDS.</p>
+<p><img src="/nmds_biplot.png" class="align-center" /></p>
+<p>The biplot of the NMDS shows a group of closed sites characterized by
+the species BLA, TRU, VAI, LOC, CHA and OMB, while the other species
+form a cluster of sites in the upper right part of the graph. Four sites
+in the lower part of the graph are strongly different from the others.</p>
+<p><strong>Challenge 6</strong> Run the NMDS of the mite species abundances in 2
+dimensions based on a Bray-Curtis distance. Assess the goodness-of-fit
+of the ordination and interpret the biplot.</p>
+<p><strong>Challenge 6 - Solution</strong> &lt;hidden&gt; Your code likely looks something
+like this:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="nonmetric-multidimensional-scaling.html#cb50-1"></a>mite.spe.nmds &lt;-<span class="st"> </span><span class="kw">metaMDS</span>(mite.spe, <span class="dt">distance =</span> <span class="st">&quot;bray&quot;</span>, <span class="dt">k =</span> <span class="dv">2</span>)</span>
+<span id="cb50-2"><a href="nonmetric-multidimensional-scaling.html#cb50-2"></a><span class="co">### Extract the results</span></span>
+<span id="cb50-3"><a href="nonmetric-multidimensional-scaling.html#cb50-3"></a>mite.spe.nmds</span>
+<span id="cb50-4"><a href="nonmetric-multidimensional-scaling.html#cb50-4"></a></span>
+<span id="cb50-5"><a href="nonmetric-multidimensional-scaling.html#cb50-5"></a><span class="co">### Assess the goodness of fit</span></span>
+<span id="cb50-6"><a href="nonmetric-multidimensional-scaling.html#cb50-6"></a>mite.spe.nmds<span class="op">$</span>stress</span>
+<span id="cb50-7"><a href="nonmetric-multidimensional-scaling.html#cb50-7"></a><span class="kw">stressplot</span>(mite.spe.nmds, <span class="dt">main =</span> <span class="st">&quot;Shepard plot&quot;</span>)</span>
+<span id="cb50-8"><a href="nonmetric-multidimensional-scaling.html#cb50-8"></a></span>
+<span id="cb50-9"><a href="nonmetric-multidimensional-scaling.html#cb50-9"></a><span class="co">### Construct the biplot</span></span>
+<span id="cb50-10"><a href="nonmetric-multidimensional-scaling.html#cb50-10"></a><span class="kw">windows</span>()</span>
+<span id="cb50-11"><a href="nonmetric-multidimensional-scaling.html#cb50-11"></a><span class="kw">plot</span>(mite.spe.nmds, <span class="dt">type =</span> <span class="st">&quot;none&quot;</span>, <span class="dt">main =</span> <span class="kw">paste</span>(<span class="st">&quot;NMDS/Bray - Stress=&quot;</span>, </span>
+<span id="cb50-12"><a href="nonmetric-multidimensional-scaling.html#cb50-12"></a>    <span class="kw">round</span>(mite.spe.nmds<span class="op">$</span>stress, <span class="dv">3</span>)), <span class="dt">xlab =</span> <span class="kw">c</span>(<span class="st">&quot;NMDS1&quot;</span>), <span class="dt">ylab =</span> <span class="kw">c</span>(<span class="st">&quot;NMDS2&quot;</span>))</span>
+<span id="cb50-13"><a href="nonmetric-multidimensional-scaling.html#cb50-13"></a><span class="kw">points</span>(<span class="kw">scores</span>(mite.spe.nmds, <span class="dt">display =</span> <span class="st">&quot;sites&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="dv">1</span>, </span>
+<span id="cb50-14"><a href="nonmetric-multidimensional-scaling.html#cb50-14"></a>    <span class="dv">2</span>)), <span class="dt">pch =</span> <span class="dv">21</span>, <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">bg =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="dt">cex =</span> <span class="fl">1.2</span>)</span>
+<span id="cb50-15"><a href="nonmetric-multidimensional-scaling.html#cb50-15"></a><span class="kw">text</span>(<span class="kw">scores</span>(mite.spe.nmds, <span class="dt">display =</span> <span class="st">&quot;species&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="dv">1</span>)), </span>
+<span id="cb50-16"><a href="nonmetric-multidimensional-scaling.html#cb50-16"></a>    <span class="kw">scores</span>(mite.spe.nmds, <span class="dt">display =</span> <span class="st">&quot;species&quot;</span>, <span class="dt">choices =</span> <span class="kw">c</span>(<span class="dv">2</span>)), </span>
+<span id="cb50-17"><a href="nonmetric-multidimensional-scaling.html#cb50-17"></a>    <span class="dt">labels =</span> <span class="kw">rownames</span>(<span class="kw">scores</span>(mite.spe.nmds, <span class="dt">display =</span> <span class="st">&quot;species&quot;</span>)), </span>
+<span id="cb50-18"><a href="nonmetric-multidimensional-scaling.html#cb50-18"></a>    <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">cex =</span> <span class="fl">0.8</span>)</span></code></pre></div>
+<p>And your plots like this:</p>
+<p><img src="/nmds_mite_shepard.png" class="align-center" /></p>
+<p>The correlation between observed dissimilarity and ordination distance
+(R2 &gt; 0.91) and the stress value relatively low, showing together a
+good accuracy of the NMDS ordination.</p>
+<p><img src="/nmds_mite_biplot.png" class="align-center" /></p>
+<p>No cluster of sites can be precisely defined from the NMDS biplot
+showing that most of the species occurred in most of the sites, i.e. a
+few sites shelter specific communities. &lt;/hidden&gt;</p>
 
 </div>
-</div>
 
 
 
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>The QCBS R Workshop Series is part of the <a href="https://www.qcbs.ca">Québec Centre for Biodiversity Science</a>, and is maintained by the series coordinators and graduent student, postdoctoral, and research professional members. <strong>The contributors for this workshop can be accessed <a href="link">here</a></strong>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
-</div>
 <hr>
 <center> 
   <div class="footer">
@@ -279,8 +313,8 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="learning-objectives.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="principal-coordinates-analysis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
