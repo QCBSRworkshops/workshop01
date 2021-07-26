@@ -1,0 +1,47 @@
+# Using R as a calculator
+
+## Challenge 2
+
+Use R to calculate the following skill testing question: 2 + 16 x 24 -
+56
+
+```{r}
+2 + 16 * 24 - 56
+```
+
+
+## Challenge 3
+
+Use R to calculate the following skill testing question:
+2 + 16 x 24 - 56 / (2 + 1) - 457
+
+*Pay attention to the order of operations when thinking about this
+question!*
+
+```{r}
+2 + 16 * 24 - 56 / (2 + 1) - 457
+```
+
+Note that R *always* follows the order of priorities.
+
+**R TIP**
+
+Try using the "up" and "down" arrows to reproduce previous commands.
+These keys actually allow you to scroll through your command history.
+This is a useful tool to go back and see what command you ran and if you
+might have made a mistake in it. This is always a useful tool to quickly
+alter previous commands you ran and to re-run them in a slightly
+different way.
+
+![Use arrow keys to go back to previous
+commands.](//arrow_keys.png){width="100"}
+
+## Challenge 4
+
+What is the area of a circle with a radius of 5 cm?
+
+Recall : ${circle = \pi r^2}$
+`> 3.1416 * 5^2 [1] 78.54`\
+
+R also has many built-in constants like pi.\
+`> pi * 5^2 [1] 78.54` ++\

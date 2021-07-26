@@ -1,0 +1,526 @@
+# Manipulating objects in R
+
+## Objects
+
+You have learned so far how to use R as a calculator to obtain various
+numerical values. However, it can get tiresome to always write the same
+code down in the R console, especially if you have to use some values
+repeatedly. This is where the concept of object becomes useful.
+
+R is an object-oriented programming language. What this means is that we
+can allocate a name to values we've created to save them in our
+workspace. An object is composed of three parts: 1) a value we're
+interested in, 2) an identifier and 3) the assignment operator.
+
+1.  The value can be almost anything we want: a number, the result of a
+    calculation, a string of characters, a data frame, a plot or a
+    function.
+2.  The identifier is the name you assign to the value. Whenever you
+    want to refer to this value, you simply type the identifier in the R
+    console and R will return its value. Identifiers can include only
+    letters, numbers, periods and underscores, and should always begin
+    with a letter.
+3.  The assignment operator resembles an arrow (`<-`) and is used to
+    link the value to the identifier.
+
+The following code clarifies these ideas:
+
+```{r, echo = TRUE, eval = FALSE}
+# Let's create an object called mean_x.
+# The # symbol is used in R to indicate comments. It is not processed by R.
+# It is important to add comments to code so that it can be understood and used by other people.
+mean_x <- (2 + 6) / 2
+# Typing its name will return its value.
+> mean_x
+[1]  4
+```
+
+Here, `(2 + 6) / 2` is the value you want to save as an object. The
+identifier `mean_x` is assigned to this value. Typing `mean_x` returns
+the value of the calculation (*i.e.* 4). You have to be scrupulous when
+typing the identifier because R is case-sensitive: writing `mean_x` is
+not the same as writing `MEAN_X`. You can see that the assignment
+operator `<-` creates an explicit link between the value and the
+identifier. It always points from the value to the identifier. Note that
+it is also possible to use the equal sign `=` as the assignment operator
+but [it is preferable
+not](http://stackoverflow.com/questions/1741820/assignment-operators-in-r-and)
+to because it is also used for other operations in R, which can cause
+problems when using it for assignment. Finally, imagine that the
+operator `<-` and `=` follow their own order of priorities.
+
+```{r, echo = TRUE, eval = FALSE}
+> y <- x = 5
+Error in y <- x = 5 : object 'y' not found
+> y = x <- 5
+> y
+[1] 5
+> x
+[1] 5
+
+```
+
+
+
+#### Good practices in R code
+
+**Name**
+
+-   Try having short and explicit names for your variables. Naming a
+    variable `var` is not very informative.
+-   Use an underscore (`_`), or a dot (`.`) to separate words within a
+    name and try to be consistent!
+-   Avoid using names of existing functions and variables (e.g., `c`,
+    `table`, `T`, etc.)
+
+**Space**
+
+1.  Add spaces around all operators (`=`, `+`, `-`, `<-`, etc.) to make
+    the code more readable.
+2.  Always put a space after a comma, and never before (like in regular
+    English).
+
+
+
+##### CHALLENGE 5
+
+> Create an object with a value of 1 + 1.718282 (Euler's number) and
+> name it `euler_value`
+
+ Challenge 5: Solution
+
+```{r, echo = TRUE, eval = FALSE}
+> euler_value <- 1 + 1.718282
+```
+
+
+
+
+
+##### CHALLENGE 6
+
+> Create an object (you decide the value) with a name that starts with a
+> number. What happens?
+
+ Challenge 6: Solution An object name that starts with a number
+will return the following error:
+`unexpected symbol in "your object name"`. 
+
+
+
+**R TIP**
+
+Using the Tab key allows auto-completion of names. It speeds up command
+entering and avoids spelling errors. For example, if you type `eu` and
+then press tab, you will see a list of objects or functions beginning
+with `eu`. Select `euler_value` (the object we just created) and press
+enter. The `euler_value` identifier now appears at the command line.
+
+
+## Data types and structure
+
+Using R to analyze your data is an important aspect of this software.
+Data comes in different forms and can be grouped in distinct categories.
+Depending on the nature of the values enclosed inside your data or
+object, R classifies them accordingly. The following figure illustrates
+common objects found in R.
+
+![Types of objects in R](// imageobjr.png){.align-center width="500"}
+
+The first object is a **vector**. It is one of the most common objects
+in R. A vector is an entity consisting of a list of related values. All
+values in a vector must be the same mode. The main modes in R are
+**numeric**, **character** and **logical**. Numeric vectors are made of
+numbers only. Character vectors include text strings or a mix of text
+strings and other modes. You need to use `""` to delimit elements in a
+character vector. Logical vectors include `TRUE/FALSE` entries only. A
+vector with a single value (usually a constant) is called an atomic
+vector.
+
+Before we look at how to create different types of vectors, let's have
+a look at the generic method of creating vectors. If you recall what you
+have just learned, you will first have to identify some value you want
+to put in a vector and then link it to an identifier with the assignment
+operator (*i.e.* create an object). When you have more than one value in
+a vector, you need a way to tell R to group all these values to create a
+vector. The trick here is to use the `c()` function. Don't worry, you
+will learn about functions pretty soon in one of the following sections.
+For now, just remember to put your values between parentheses next to
+letter `c()` in this format:
+`vector.name <- c(value1, value2, value3, ...)`. The function `c()`
+means combine or concatenate. It is a quick and easy function so
+remember it!
+
+Now that you know the generic method to create a vector in R, let's
+have a look at how to create different types of vectors.
+
+```{r, echo = TRUE, eval = FALSE}
+# Create a numeric vector with the c (which means combine or concatenate) function.
+# We will learn about functions soon!
+> num_vector <- c(1, 4, 3, 98, 32, -76, -4)
+
+# Create a character vector. Always use "" to delimit text strings!
+> char_vector <- c("blue", "red", "green")
+
+# Create a logical or boolean vector. Don't use "" or R will consider this as text strings.
+> bool_vector <- c(TRUE, TRUE, FALSE)
+
+#It is also possible to use abbreviations for logical vectors.
+> bool_vector2 <- c(T, T, F)
+```
+
+
+
+##### CHALLENGE 7
+
+> Create a vector containing the first five odd numbers (starting from
+> 1) and name it odd_n.
+
+Challenge 7: Solution
+
+```{r, echo = TRUE, eval = FALSE}
+> odd_n <- c(1, 3, 5, 7, 9)
+```
+
+
+
+
+
+**R TIP**
+
+Use `dput()` function to obtain the reverse, *i.e.* the content of an
+object formatted as a vector. *e.g.* :
+
+```{r, echo = TRUE, eval = FALSE}
+> odd_n <- c(1, 3, 5, 7, 9)
+> odd_n
+[1] 1 3 5 7 9
+
+> dput(odd_n)
+c(1, 3, 5, 7, 9)
+
+# The output can be copied-pasted to create a new object by using the structure() function
+> structure(c(1, 3, 5, 7, 9))
+```
+
+This demonstration might not be that convincing, but keep in mind that
+it can be very useful when you're manipulating data. These functions
+are really useful to provide a reproducible example for a question on
+[Stack Overflow](https://stackoverflow.com/) for instance (see one more
+application in the part about data frames)!
+
+
+
+What you have learned previously about calculations is also valid for
+vectors: vectors can be used for calculations. The only difference is
+that when a vector has more than 1 element, the operation is applied on
+all elements of the vector. The following example clarifies this.
+
+```{r, echo = TRUE, eval = FALSE}
+# Create two numeric vectors.
+> x <- 1:5
+
+# An equivalent form is: x <- c(1:5).
+> y <- 6
+# Remember that the : symbol, when used with numbers, is the sequence operator.
+# It tells R to create a series of numbers increasing by 1.
+# Equivalent to this is x <- c(1,2,3,4,5)
+
+# Let's sum both vectors.
+# 6 is added to all elements of the x vector.
+> x + y
+[1]  7 8 9 10 11
+
+# Let's multiply x by itself.
+> x * y
+[1]  6 12 18 24 30
+
+```
+
+
+
+Another important type of object you will use regularly is the data
+frame. A data frame is a group of vectors of the same length (*i.e.* the
+same number of elements). Columns are always variables and rows are
+observations, cases, sites or replicates. Different modes can be saved
+in different columns (but always the same mode in a column). It is in
+this format that ecological data are usually stored. The following
+example shows a fictitious dataset representing 4 sites where soil pH
+and the number of plant species were recorded. There is also a
+"Treatment" variable (fertilized or not). Let's have a look at the
+creation of a data frame.
+
+  site_id   soil_pH   num_sp   treatment
+  --------- --------- -------- ----------------
+  A1.01     5.6       17       Fertilised
+  A1.02     7.3       23       Fertilised
+  B1.01     4.1       15       Not Fertilised
+  B1.02     6.0       17       Not Fertilised
+
+```{r, echo = TRUE, eval = FALSE}
+# We first start by creating vectors.
+> site_id <- c("A1.01", "A1.02", "B1.01", "B1.02")
+> soil_pH <- c(5.6, 7.3, 4.1, 6.0)
+> num_sp <- c(17, 23, 15, 7)
+> treatment <- c("Fert", "Fert", "No_fert", "No_fert")
+
+# We then combine them to create a data frame with the data.frame function.
+my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
+
+# Visualise it!
+my_df
+```
+
+
+\*\* R TIP\*\*
+
+Here the `dput()` function in another example.
+
+```{r, echo = TRUE, eval = FALSE}
+> dput(my_df)
+structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7),
+treatment = c("Fert", "Fert", "No_fert", "No_fert")),
+class = "data.frame", row.names = c(NA, -4L))
+
+# It's possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output:
+> structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
+), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7),
+treatment = c("Fert", "Fert", "No_fert", "No_fert")),
+class = "data.frame", row.names = c(NA, -4L))
+```
+
+
+
+Other types of objects include matrices, arrays and lists. A matrix is
+similar to a data frame except that all cells in the matrix must be the
+same mode. An array is similar to a matrix but can have more than two
+dimensions. Arrays are usually used for advanced computation like
+numerical simulations and permutation tests. A list is an aggregation of
+various types of objects. For example, a list could include a vector, a
+data frame and a matrix in the same object.
+
+
+## Indexing
+
+#### Indexing a vector
+
+Typing an object's name in R returns the complete object. But what if
+our object is a huge data frame with millions of entries? It can easily
+become confusing to identify specific elements of an object. R allows us
+to extract only part of an object. This is called indexing. We specify
+the position of values we want to extract from an object with brackets
+`[ ]`. The following code illustrates the concept of indexation with
+vectors.
+
+```{r, echo = TRUE, eval = FALSE}
+# Let's first create a numeric and a character vector.
+# There is no need to do this again if you already did it in the previous exercise!
+> odd_n <- c(1, 3, 5, 7, 9)
+
+# Extract the second element of the numeric vector.
+> odd_n[2]
+[1]  3
+
+# Extract the second and fourth elements of the numeric vector.
+> odd_n[c(2, 4)]
+[1]  3 7
+
+# Extract all but the two first elements of the numeric vector.
+> odd_n[c(-1, -2)]
+[1] 5 7 9
+
+# If you select a position that is not in the numeric vector
+> odd_n[c(1,6)]
+[1] 1 NA
+# There is no sixth value in this vector so R returns a null value (i.e. NA)
+# NA stands for 'Not available'.
+
+# You can use logical statement to select values.
+> odd_n[odd_n > 4]
+[1] 5 7 9
+
+# Extract all elements of the character vector corresponding exactly to "blue".
+> char_vecteur[char_vecteur == "blue"]
+[1]  "bleu"
+# Note the use of the double equal sign ==.
+
+```
+
+
+
+##### CHALLENGE 8
+
+> a) Extract the 4th value of the `num_vector` vector.
+>
+> b) Extract the 1st and 3rd values of the `num_vector` vector.
+>
+> c) Extract all values of the `num_vector` vector excluding the 2nd
+> and 4th values.
+
+\> Challenge 8a: Indexing vectors\|
+
+```{r, echo = TRUE, eval = FALSE}
+> num_vector[4]
+[1] 3
+```
+
+ Challenge 8b: Indexing vectors\|
+
+```{r, echo = TRUE, eval = FALSE}
+> num_vector[c(1, 3)]
+[1] 1  5
+```
+
+ Challenge 8c: Indexing vectors\|
+
+```{r, echo = TRUE, eval = FALSE}
+> num_vector[c(-2, -4)]
+[1] 1  5  6  -2  4
+```
+
+
+
+
+
+##### CHALLENGE 9
+
+> Explore the difference between these 2 lines of code:
+
+```{r, echo = TRUE, eval = FALSE}
+> char_vector == "blue"
+> char_vector[char.vector == "blue"]
+```
+
+Challenge 9: Differences between codes\| In the first line of code
+you test a logical statement. For each entry in the "char_vector"
+vector, R checks whether the entry is exactly equal to "blue" or not
+and returns a TRUE/FALSE answer. The next subsection introduces you to
+logical statements. In the second line of code you ask R to extract all
+values within the "char_vector" vector that are exactly equal to
+"blue". It is also possible to extract the "blue" value by assigning
+a logical value to each element of the vector. Of course, you have to
+know the position of the "blue" value inside the vector.
+
+```{r, echo = TRUE, eval = FALSE}
+> char_vector[c(TRUE, FALSE, FALSE)]
+[1] "blue"
+# We specify which value is true,
+# i.e. the value we want R to return (the first one)
+# which corresponds to "blue".
+```
+
+
+
+
+
+#### Indexing a data frame
+
+For data frames, the concept of indexation is similar, but we usually
+have to specify two dimensions: the row and column numbers. The R syntax
+is
+
+`dataframe[row number, column number]`.
+
+Here are a few examples of data frame indexation. Note that the first
+four operations are also valid for indexing matrices.
+
+```{r, echo = TRUE, eval = FALSE}
+# Let's reuse the data frame we created earlier (my_df)
+# Extract the 1st row of the data frame
+> my_df[1, ]
+
+# Extract the 3rd columm
+> my_df[, 3]
+
+# Extract the 2nd element of the 4th column
+> my_df[2, 4]
+
+# Extract lines 2 to 4
+> my_df[c(2,4), ]
+
+# Extract the "site_id" column by referring directly to its name
+# The dollar sign ($) allows such an operation!
+> my_df$site_id
+
+# Extract the "site_id" and "soil_pH" variables
+> my_df[, c("site_id","soil_pH")]
+```
+
+
+
+### A quick note on logical statements
+
+R gives you the possibility to test logical statements, *i.e.* to
+evaluate whether a statement is true or false. You can compare objects
+with the following logical operators:
+
+  Operator   Description
+  ---------- --------------------------
+  \<         less than
+  \<=        less than or equal to
+  \>         greater than
+  \>=        greater than or equal to
+  ==         exactly equal to
+  !=         not equal to
+  x \| y     x OR y
+  x & y      x AND y
+
+The following examples illustrate how to use these operators properly.
+
+```{r, echo = TRUE, eval = FALSE}
+# First, let's create two vectors for comparison.
+> x2 <- c(1:5)
+> y2 <- c(1, 2, -7, 4, 5).
+
+# Let's verify if the elements in x2 are greater or equal to 3.
+# R returns a TRUE/FALSE value for each element (in order).
+> x2 >= 3
+[1] FALSE FALSE TRUE TRUE TRUE
+
+# Let's see if the elements of x2 are exactly equal to those of y2.
+> x2 == y2
+[1] TRUE TRUE FALSE TRUE TRUE
+
+# Is 3 not equal to 4? Of course!
+> 3 != 4
+[1] TRUE
+
+# Let's see which values in x2 are greater than 2 but smaller than 5.
+# You have to write x2 twice.
+# If you write x2 > 2 & < 5, you will get an error message.
+> x2 > 2 & x2 < 5
+[1] FALSE FALSE TRUE TRUE FALSE
+```
+
+\
+-
+
+##### CHALLENGE 10
+
+> a) Extract the `num_sp` column from `my_df` and multiply its values
+> by the first four values of the `num_vec` vector.\
+> \> b) After that, write a statement that checks if the values you
+> obtained are greater than 25. Refer to challenge 9 to complete this
+> challenge.\
+> \>
+
+ Challenge 10a: Indexing and multiplying\|
+
+```{r, echo = TRUE, eval = FALSE}
+> my_df$num.sp * num.vector[c(1:4)]
+[1] 17  92  45 686
+# or
+> my_df[, 3] * num_vector[c(1:4)]
+[1]  17  92  45 686
+
+```
+
+
+
+ Challenge 10b: Logical statement\|
+
+```{r, echo = TRUE, eval = FALSE}
+> (my_df$num.sp * num.vector[c(1:4)]) > 25
+[1] FALSE TRUE TRUE FALSE
+```

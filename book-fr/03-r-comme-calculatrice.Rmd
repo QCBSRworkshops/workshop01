@@ -1,0 +1,76 @@
+# Utiliser R comme une calculatrice
+
+La première chose à savoir à propos de la console R est qu'on peut
+l'utiliser comme calculatrice.
+
+```{r, echo = TRUE, eval = FALSE}
+> 1 + 1
+[1] 2
+```
+
+```{r, echo = TRUE, eval = FALSE}
+> 10 - 1
+[1] 9
+```
+
+```{r, echo = TRUE, eval = FALSE}
+> 2 * 2
+[1] 4
+```
+
+```{r, echo = TRUE, eval = FALSE}
+> 8 / 2
+[1] 4
+```
+
+```{r, echo = TRUE, eval = FALSE}
+> 2^3
+[1] 8
+```
+
+------------------------------------------------------------------------
+
+##### Défi 2
+
+Utilisez R pour effectuer l'opération suivante : 2 + 16 x 24 - 56
+
+++Défi 2 : Solution\|\
+`> 2 + 16 * 24 - 56 [1] 330` ++\
+\-\-\-\--
+
+##### Défi 3
+
+Utilisez R pour effectuer l'opération suivante:\
+2 + 16 x 24 - 56 / ( 2 + 1) - 457
+
+*Faites attention à la priorité des opérations!*
+
+++Défi 3 : Solution\|\
+`> 2 + 16 * 24 - 56 / (2 + 1) - 457 [1] -89.66667` ++\
+Prenez note que R respecte *toujours* la priorité des opérations.
+
+------------------------------------------------------------------------
+
+**Truc R**
+
+Utilisez les flèches \"haut\" et \"bas\" pour revenir à des commandes
+antérieures. Ces touches vous permettent de faire défiler l'historique
+des commandes. C'est un outil utile afin de vérifier si vous avez fait
+une erreur dans une commande. C'est également utile pour modifier
+rapidement une commande et la relancer d'une manière légèrement
+différente.
+
+![Utilisez les flèches pour revenir aux commandes
+précédentes.](//arrow_keys.png){width="100"}
+
+------------------------------------------------------------------------
+
+##### Défi 4
+
+Quelle est l'aire d'un cercle avec un rayon de 5 cm ?
+
+++Défi 4 : Solution\|\
+Rappel : \$A\_{cercle} = \\pi r\^2\$\
+`> 3.1416 * 5^2 [1] 78.54`\
+ou\
+`> pi * 5^2 [1] 78.53982`++\

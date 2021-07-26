@@ -1,5 +1,5 @@
 --- 
-title: "Workshop 9: Multivariate Analyses in `R`"
+title: "Workshop 1: Introduction to `R`"
 subtitle: "QCBS R Workshop Series"
 author:
 - Developed and maintained by the contributors of the QCBS R Workshop Series^[The QCBS R Workshop Series is part of the [Québec Centre for Biodiversity Science](https://www.qcbs.ca), and is maintained by the series coordinators and graduent student, postdoctoral, and research professional members. **The contributors for this workshop can be accessed [here](link)**.]
@@ -10,14 +10,14 @@ bibliography: ["references.bib"]
 biblio-style: apalike
 link-citations: yes
 cover-image: assets/images/logo/csbq_logo_accueil.png
-github-repo: "qcbsRworkshops/workshop09"
-description: "Multivariate Analyses in `R`"
+github-repo: "qcbsRworkshops/workshop01"
+description: "Introduction to `R`"
 favicon: "assets/images/favicon.ico"
 always_allow_html: yes
 url: 'https\://github.com/qcbsRworkshops/'
 config:
   edit:
-    link: https://github.com/qcbsRworkshops/workshop09/edit/main/book-en/%s
+    link: https://github.com/qcbsRworkshops/workshop01/edit/main/book-en/%s
     text: "Suggest changes"
 ---
 # (PART\*) QCBS R Workshop Series {-}
@@ -73,7 +73,7 @@ Examples of unacceptable behaviour by participants at any workshop event/platfor
 THIS SECTION MUST ONLY BE EDITED BY THE COORDINATORS OF THE WORKSHOP SERIES
 ```
 
-Originally developed by:
+Originally developed by: Sylvain Christin, Cédric Frenette Dussault, Dalal Hanna.
 
 Contributed with changes to the presentation:
 

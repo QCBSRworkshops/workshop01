@@ -1,0 +1,171 @@
+# Functions
+
+Most of the time with R, you will need to use functions to do what you
+want.
+
+Functions are tools that are there to simplify your life. They allow you
+to quickly execute operations on objects without having to write every
+mathematical step. Functions are usually pre-existing R code that are
+executed when used. They remove the need to create this code and to
+rewrite it every time you need it.
+
+To execute a function, you will need to [call]{.ul} it. A function call
+is essentially a shortcut to the code of the function.
+
+To perform the function call you will need entry values called
+**arguments** (or sometimes parameters). After performing its
+operations, the function will then give you a **return value**. The
+command also must be structured properly, following the "grammar
+rules" of the R language (syntax).
+
+A function call is structured as follow: the name of the function,
+followed by parenthesis `( )`. Inside the parenthesis, you insert all
+your arguments separated with commas.
+
+`function_name(arg1, arg2, ...)`
+
+Here an example:
+
+```{r, echo = TRUE, eval = FALSE}
+> sum(1, 2)
+```
+
+Arguments are **values** and the instructions the function needs to run.
+Objects can be passed into functions:
+
+```{r, echo = TRUE, eval = FALSE}
+> a <- 3
+> b <- 5
+> sum(a, b)
+[1] 8
+```
+
+On the last line, the output that appears is the **return value** of the
+function. In this case, it is the sum of `a` and `b`, 8.\
+
+------------------------------------------------------------------------
+
+##### CHALLENGE 11
+
+> a\) - Create a vector a that contains all numbers from 1 to 5\
+> \> - Create an object b with value of 2\
+> \> - Add a and b together using the basic `+` operator and save the
+> result in an object called `result_add`\
+> \> - Add a and b together using the `sum()` function and save the
+> result in an object called `result_sum`\
+> \> - Compare result_add and result_sum. Are they different?
+
+\>
+
+> b\) Add 5 to `result_sum` using the `sum()` function.
+
+\> ++++Challenge 11a: Calling functions\|
+
+```{r, echo = TRUE, eval = FALSE}
+> a <- 1:5
+> b <- 2
+> result_add <- a + b
+> result_sum <- sum(a, b)
+```
+
+```{r, echo = TRUE, eval = FALSE}
+> result_add
+[1]  3 4 5 6 7
+```
+
+The operation on the vector adds 2 to each element. The result is a
+**vector**.\
+
+```{r, echo = TRUE, eval = FALSE}
+> result_sum
+[1] 17
+```
+
+The function `sum()` adds all values of `a` and `b`. It is the same as
+doing 1 + 2 + 3 + 4 + 5 + 2. The result is a **number**.\
+++++
+
+++++Challenge 11b: Calling functions\|
+
+```{r, echo = TRUE, eval = FALSE}
+> sum(result_sum, 5)
+[1] 22
+```
+
+++++
+
+------------------------------------------------------------------------
+
+#### Arguments
+
+Arguments each have a **name** that can be provided during a function
+call.\
+If the name is [not provided]{.ul}, the order of the arguments [does
+matter]{.ul}.\
+If the name is [provided]{.ul}, the order of the arguments [does not
+matter]{.ul}.
+
+To provide an argument name during a function call, just enter it in the
+form `name=value`.
+
+```{r, echo = TRUE, eval = FALSE}
+log(8, base = 2)
+```
+
+------------------------------------------------------------------------
+
+##### CHALLENGE 12
+
+> `plot(x, y)` is a function that draws a graph of y as a function of x.
+> It requires two arguments named `x` and `y`. What are the differences
+> between the following lines?
+
+```{r, echo = TRUE, eval = FALSE}
+> a <- 1:100
+> b <- a^2
+> plot(a, b)
+> plot(b, a)
+> plot(x = a, y = b)
+> plot(y = b, x = a)
+```
+
+++++Challenge 12: Argument names\|
+
+```{r, echo = TRUE, eval = FALSE}
+plot(a, b)
+```
+
+![](images//rplot.png){width="200"}\
+Plots the graph of `b` as a function of `a`.
+
+```{r, echo = TRUE, eval = FALSE}
+plot(b, a)
+```
+
+![](images/plotba.png){width="200"}\
+Plots the graph of `a` as a function of `b`.The argument names are not
+provided, the order of the arguments matters.
+
+```{r, echo = TRUE, eval = FALSE}
+plot(x = a, y = b)
+```
+
+![](images/pltxayb.png){width="200"}\
+Plots the graph of `b` as a function of `a`, same as plot(a, b).
+
+```{r, echo = TRUE, eval = FALSE}
+plot(y = b, x = a)
+```
+
+![](images/plotybxa.png){width="200"}\
+Plots the graph of `b` as a function of `a`. The argument names are
+provided, the order of the arguments does not matter. ++++
+
+------------------------------------------------------------------------
+
+As a reference, here is a list of some of the most common R functions:
+
+    sqrt, log, exp, max, min, sum, mean, sd, var, summary, plot, par, paste, format,
+    head, length, str, names, typeof, class, attributes, library, ls, rm, setwd, getwd, file.choose,
+    c, seq, rep, tapply, lapply, aggregate, merge, cbind, rbind, unique,
+    help (or ?), help.search (or ??), help.start

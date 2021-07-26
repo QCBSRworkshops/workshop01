@@ -1,0 +1,179 @@
+# Les fonctions
+
+La plupart du temps, vous devrez utiliser des fonctions dans R pour
+effectuer les tâches voulues.
+
+Les fonctions sont des outils qui permettent de simplifier
+l'utilisation de R. Elles permettent d'exécuter des opérations sur des
+objets sans avoir à spécifier chaque étape. Les fonctions sont des codes
+pré-existants dans R qui sont exécutés lorsque nécessaire. Ça permet de
+sauver du temps, car il n'est pas nécessaire de créer un code et de
+l'écrire à chaque fois qu'on doit l'utiliser.
+
+Pour exécuter une fonction, vous devez l'[appeler]{.ul}. L'appel
+d'une fonction est un raccourci vers le code de la fonction. Pour ce
+faire, il est nécessaire de spécifier des valeurs d'entrée qu'on nomme
+**arguments** (ou quelquefois paramètres). Après avoir lancé une
+fonction, R retourne une **valeur de retour** dans la console. La
+commande doit être structurée proprement en suivant les \"règles de
+grammaire\" du langage R (*i.e.* la syntaxe).
+
+Un appel de fonction est structuré de la manière suivante : le nom de la
+fonction suivi de parenthèses `( )`. On insère les arguments séparés par
+des virgules à l'intérieur des parenthèses :
+
+`nom_de_la_fonction(arg1, arg2, ...)`
+
+Voyons l'exemple de la fonction `sum` qui permet de faire la somme de
+deux ou plusieurs nombres.
+
+```{r, echo = TRUE, eval = FALSE}
+> sum(1, 2)
+[1] 3
+```
+
+Les arguments sont des **valeurs** utilisées comme instructions pour que
+la fonction puisse retourner un résultat. Les objets peuvent être
+utilisés comme arguments :
+
+```{r, echo = TRUE, eval = FALSE}
+> a <- 3
+> b <- 5
+> sum(a, b)
+[1] 8
+```
+
+La sortie, qui apparaît sur la dernière ligne, est la **valeur de
+retour** de la fonction. Dans ce cas-ci, c'est la somme de `a` et `b`,
+soit 8.\
+
+------------------------------------------------------------------------
+
+##### Défi 11
+
+> a\) - Créez un vecteur nommé `a` contenant tous les nombres de 1 à 5\
+> \> - Créez un objet nommé `b` avec une valeur de 2\
+> \> - Ajoutez a à b en utilisant l'opérateur `+` et enregistrez le
+> résultat dans un objet appelé `resultat_add`\
+> \> - Ajoutez a à b en utilisant la fonction `sum()` et enregistrez le
+> résultat dans un objet appelé `resultat_sum`\
+> \> - Comparez les objets resultat_add et resultat_sum. Sont-ils
+> différents?
+
+\>
+
+> b\) Ajoutez 5 à `resultat_sum` en utilisant la fonction `sum()`.
+
+\> ++++Défi 11a : Appeler des fonctions\|
+
+```{r, echo = TRUE, eval = FALSE}
+> a <- 1:5
+> b <- 2
+> resultat_add <- a + b
+> resultat_sum <- sum(a, b)
+```
+
+```{r, echo = TRUE, eval = FALSE}
+> resultat_add
+[1]  3 4 5 6 7
+```
+
+L'opération sur le vecteur ajoute deux à chaque élément. Le résultat
+est un **vecteur**.\
+
+```{r, echo = TRUE, eval = FALSE}
+> resultat_sum
+[1] 17
+```
+
+La fonction `sum()` additionne toutes les valeurs de `a` et `b`. C'est
+équivalent à 1 + 2 + 3 + 4 + 5 + 2. Le résultat est un **nombre**.\
+++++
+
+++++Défi 11b : Appeler des fonctions\|
+
+```{r, echo = TRUE, eval = FALSE}
+> sum(resultat_sum, 5)
+[1] 22
+```
+
+++++
+
+------------------------------------------------------------------------
+
+#### Arguments
+
+Tous les arguments ont un **nom** qui peut être indiqué lorsqu'on
+appelle une fonction.\
+Si le nom n'est pas [indiqué]{.ul}, l'ordre des arguments [est
+primordial]{.ul}.\
+Si le nom est [indiqué]{.ul}, l'ordre des arguments [n'a pas
+d'importance]{.ul}.
+
+Pour indiquer le nom d'un argument lors d'un appel de fonction, il
+suffit simplement de l'écrire de la façon suivante :
+`nom_argument=valeur`.
+
+```{r, echo = TRUE, eval = FALSE}
+> log(x = 8, base = 2)
+```
+
+------------------------------------------------------------------------
+
+##### Défi 12
+
+> `plot(x, y)` est une fonction qui crée un graphique de y en fonction
+> de x. Cette fonction nécessite deux arguments nommés `x` et `y`.
+> Quelles sont les différences entre les lignes de codes suivantes ?
+
+```{r, echo = TRUE, eval = FALSE}
+> a <- 1:100
+> b <- a^2
+> plot(a, b)
+> plot(b, a)
+> plot(x = a, y = b)
+> plot(y = b, x = a)
+```
+
+++++Défi 12 : Noms d'arguments\|
+
+```{r, echo = TRUE, eval = FALSE}
+plot(a, b)
+```
+
+![](images//rplot.png){width="200"}\
+Crée un graphique de `b` en fonction de `a`.
+
+```{r, echo = TRUE, eval = FALSE}
+plot(b, a)
+```
+
+![](images/plotba.png){width="200"}\
+Crée un graphique de `a` en fonction de `b`. Les noms d'arguments ne
+sont pas indiqués, donc l'ordre des arguments est primordial.
+
+```{r, echo = TRUE, eval = FALSE}
+plot(x = a, y = b)
+```
+
+![](images/pltxayb.png){width="200"}\
+Crée un graphique de `b` en fonction de `a`. C'est le même graphique
+que `plot(a, b)`.
+
+```{r, echo = TRUE, eval = FALSE}
+plot(y = b, x = a)
+```
+
+![](images/plotybxa.png){width="200"}\
+Crée un graphique de `b` en fonction de `a`. Les noms d'arguments sont
+indiqués, donc l'ordre des arguments n'a pas d'importance. ++++
+
+------------------------------------------------------------------------
+
+À titre de référence, voici une liste de fonctions couramment utilisées
+dans R :
+
+    sqrt, log, exp, max, min, sum, mean, sd, var, summary, plot, par, paste, format,
+    head, length, str, names, typeof, class, attributes, library, ls, rm, setwd, getwd, file.choose,
+    c, seq, rep, tapply, lapply, aggregate, merge, cbind, rbind, unique,
+    help (or ?), help.search (or ??), help.start

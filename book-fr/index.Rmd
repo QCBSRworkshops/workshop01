@@ -1,5 +1,5 @@
 --- 
-title: "Atelier 9 : Analyses multivariées en `R`"
+title: "Atelier 1: Introduction à `R`"
 subtitle: "Série d'ateliers R du CSBQ"
 author:
 - Développé et entretenu par les contributeurs et les contributrices de la Série d'ateliers R du CSBQ^[La Série d'ateliers R du CSBQ fait partie du [Centre de la science de la biodiversité du Québec](https://www.qcbs.ca), et est maintenue par les coordonnateurs et les coordonnatrices de la série, et les membres étudiants diplômés, postdoctoraux et professionnels de la recherche. **La liste des contributeurs et des contributrices de cet atelier sont accessibles[ici](lien)**].
@@ -10,8 +10,8 @@ bibliography: ["references.bib"]
 biblio-style: apalike
 link-citations: yes
 cover-image: assets/images/logo/csbq_logo_accueil.png
-github-repo: "qcbsRworkshops/workshop09"
-description: "Analyses multivariées en `R`"
+github-repo: "qcbsRworkshops/workshop01"
+description: "Introduction à `R`"
 favicon: "assets/images/favicon.ico"
 always_allow_html: yes
 url: 'https\://github.com/qcbsRworkshops/'
@@ -74,7 +74,7 @@ Voici quelques exemples de comportements inacceptables de la part des participan
 CETTE SECTION NE DOIT ÊTRE ÉDITÉE QUE PAR LES COORDINATEURS DE LA SÉRIE D'ATELIERS R
 ```
 
-Développé à l'origine par :
+Développé à l'origine par: Sylvain Christin, Cédric Frenette Dussault, Dalal Hanna.
 
 A contribué à modifier la présentation :
 

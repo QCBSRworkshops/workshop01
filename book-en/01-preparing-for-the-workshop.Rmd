@@ -1,38 +1,37 @@
-# (PART\*) Multivariate Analyses in `R` {-}
+# (PART\*) Introduction to `R` {-}
 
 # Learning objectives
 
-*Include learning objectives.*
+In this introductory R Workshop you will learn what R
+open-source statistical software is, why you should absolutely start
+using it, and all the first steps to help you get started in R. We will
+show you how R can act as a calculator, teach you about the various
+types of objects in R, show you how to use functions and load packages,
+and find all the resources you need to get help. If any of this sounds
+obscure, don't worry! By the end of this workshop, we will have accomplished these objectives:
+
+1.  Understand what R and RStudio are;
+2.  Use R as a calculator;
+3.  Manipulate objects in R;
+4.  Install, use an R package and get help.
 
 # Preparing for the workshop
 
-To prepare for this workshop, you must do the following steps:
+Before you can effectively start this workshop, you will need to install
+the R and RStudio softwares on your computer.
 
-Download the R script and data required for this workshop:
+To install R, go to
+<http://www.r-project.org/> and click on download. You will have to
+select a mirror site (usually one close to you) and select your platform
+(OS X, Windows or Linux). Download the file and launch it to complete
+the installation. You don't have to change the default settings.
 
--    [R Script](http://qcbs.ca/wiki/_media/multivar1_e.r)
--    [DoubsEnv data](http://qcbs.ca/wiki/_media/DoubsEnv.csv)
--    [DoubsSpe data](http://qcbs.ca/wiki/_media/DoubsSpe.csv)
--    [Coldiss R function](http://qcbs.ca/wiki/_media/coldiss.R)
+To install RStudio, go to <http://www.rstudio.com/> and select RStudio
+from the Products tab. Click on the open source version of RStudio
+Desktop and select your platform to download it. Launch the file you
+just downloaded to complete the installation. Again, you can keep the
+default settings.
 
-Make sure to load the following packages (see how in the R script):
+You can also download the R script for this workshop:
 
--    [vegan (for multivariate
-    analyses)](http://cran.r-project.org/web/packages/vegan/index.html)
--    [gclus (for clustering
-    graphics)](http://cran.r-project.org/web/packages/gclus/index.html)
--    [ape (for
-    phylogenetics)](http://cran.r-project.org/web/packages/ape/index.html)
-
-```{r, echo = TRUE, eval = FALSE}
-install.packages("vegan")
-install.packages("gclus")
-install.packages("ape")
-
-library(vegan)
-library(gclus)
-library(ape)
-
-source(file.choose()) # use coldiss.R which you have downloaded to your own directory
-```
-
+-    [R Script](https://qcbsrworkshops.github.io/workshop01/book-en/workshop01-script-en.R)

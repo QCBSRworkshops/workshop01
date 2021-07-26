@@ -2,38 +2,38 @@
 
 # Objectifs d'apprentissage
 
-**Résumé:** Dans cet atelier, vous apprendrez les bases des analyses
-multivariées qui vous permettront de révéler les patrons de diversité
-dans vos données de communautés. Vous apprendrez d'abord comment
-choisir les mesures de distance et les transformations appropriées pour
-ensuite réaliser plusieurs types d'analyses multivariées: des
-groupements, des Analyses en Composantes Principales (PCA), des Analyses
-de Correspondance (CA), des Analyses en Coordonnées Principales (PCoA)
-et des Positionnements Multidimensionnels Non-Métriques (NMDS).
+**Résumé :** Durant cet atelier, vous apprendrez ce qu'est le logiciel
+d'analyse statistique R et vous découvrerai plusieurs raisons pourquoi
+vous devriez l'utiliser. Vous ferez vos premiers pas dans ce logiciel:
+Vous verrez comment R peut être utilisé comme une calculatrice, vous
+apprendrez ce qu'est un « objet » dans R, et vous utiliserez des
+fonctions simples. De plus, vous apprendrez comment télécharger de
+nouvelles fonctions et comment trouver des ressources d'aide pour
+utiliser R. Si tout ceci vous semble étrange, ne vous inquiétez pas! À
+la fin de cet atelier, vous comprendrez tous ces concepts:
+
+1.  Comprendre ce que sont R et RStudio
+2.  Utiliser R comme une calculatrice
+3.  Manipuler les objets dans R
+4.  Installer et utiliser les packages R
 
 # Préparez-vous pour cet atelier
 
-**Téléchargez le script R et les données pour cet atelier:**
+Avant de débuter cet atelier, vous devez installer les logiciels R et R
+Studio sur votre ordinateur personnel. Pour obtenir le logiciel R,
+rendez-vous au <http://www.r-project.org/> et cliquez sur « Download ».
+Vous devez sélectionner un site miroir (préférablement un situé près de
+vous) et choisir votre plateforme (OS X, Windows ou Linux). Téléchargez
+le fichier et lancez-le afin de compléter l'installation. Vous pouvez
+garder les paramètres d'installation par défaut.
 
--   [script R](http://qcbs.ca/wiki/_media/multivar1_f.r)
--   [DoubsEnv](http://qcbs.ca/wiki/_media/DoubsEnv.csv)
--   [DoubsSpe](http://qcbs.ca/wiki/_media/DoubsSpe.csv)
--   [Coldiss (fonction R)](http://qcbs.ca/wiki/_media/coldiss.R)
+Pour installer R Studio, rendez-vous au <http://www.rstudio.com/> et
+sélectionnez R Studio à partir de l'onglet « Products tab ». Cliquez sur
+la version en source libre (*i.e.* open source) du « R Studio Desktop »
+et sélectionnez votre plateforme pour le télécharger. Lancez le fichier
+d'installation afin de compléter l'installation. Encore une fois, vous
+pouvez garder les paramètres d'installation par défaut.
 
-**Télechargez les paquets R pour cet atelier:**
+Vous pouvez aussi télécharger le script R pour cet atelier:
 
--   [vegan](http://cran.r-project.org/web/packages/vegan/index.html)
--   [gclus](http://cran.r-project.org/web/packages/gclus/index.html)
--   [ape](http://cran.r-project.org/web/packages/ape/index.html)
-
-```{r, echo = TRUE, eval = FALSE}
-install.packages("vegan")
-install.packages("gclus")
-install.packages("ape")
-
-library(vegan)
-library(gclus)
-library(ape)
-
-source(file.choose()) #coldiss.R 
-```
+-   [script R](https://qcbsrworkshops.github.io/workshop01/book-fr/workshop01-script-fr.R)

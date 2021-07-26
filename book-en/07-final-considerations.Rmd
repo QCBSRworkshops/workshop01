@@ -1,0 +1,38 @@
+# (PART\*) Final considerations {-}
+
+# Summary
+
+R is...
+
+In the next workshop, ...
+
+# Additional resources
+
+#### Cheat Sheets
+
+<https://www.rstudio.com/resources/cheatsheets/>
+
+These cheat sheets are also directly available in RStudio (Help -\>
+Cheat Sheets)
+
+------------------------------------------------------------------------
+
+#### A few books
+
+-   R for Dummies
+-   A Handbook of Statistical Analyses using R
+-   R in Action
+-   Introductory Statistics in R
+-   A Beginner's Guide to R
+-   The R Book
+
+------------------------------------------------------------------------
+
+#### A few useful links
+
+-   [r4ds.had.co.nz/index.html](https:*cran.r-project.org/doc/manuals/r-release/R-intro.html)
+\|https:*cran.r-project.org/doc/manuals/r-release/R-intro.html\]\] \*
+    \[\[http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\|http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\]\] \*
+    \[\[http:*statmethods.net/\|http:*statmethods.net/\]\] \*
+    \[\[https:*support.rstudio.com/hc/en-us/categories/200035113-Documentation\|https:*support.rstudio.com/hc/en-us/categories/200035113-Documentation\]\] \*
+    \[\[http:*cookbook-r.com/\|http://cookbook-r.com/](http://r4ds.had.co.nz/index.html)

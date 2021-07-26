@@ -1,28 +1,104 @@
-# Qu'est-ce que l'ordination?
+# Comprendre ce que sont R et RStudio
 
-L'ordination est un ensemble de méthodes pour décrire des échantillons
-dans de multiples dimensions (Clarke et Warwick 2011). Les méthodes
-d'ordination sont donc très utiles pour simplifier et interpréter des
-données multivariées. Les écologistes parlent souvent de \"faire une
-PCA\" face à des données multidimensionnelles complexes et désordonnées.
-Programmer des méthodes d'ordination à partir de R est relativement
-simple. L'interprétation des analyses d'ordination peut par contre
-être plus difficile, surtout si vous n'êtes pas sûr des questions
-biologiques que vous souhaitez explorer avec la méthode d'ordination
-que vous utilisez. Un examen attentif des objectifs de ces méthodes et
-de leur cadre d'application est nécessaire pour obtenir de bons
-résultats !
+### Qu'est-ce que R?
 
-Lorsque vous utilisez une méthode d'ordination, un ensemble de
-variables est utilisé pour ordonner des échantillons (objets, sites,
-etc.) le long d'axes principaux représentant des combinaison de
-variables (Gotelli et Ellison 2004). L'ordination permet donc de
-réduire ou de simplifier les données en créant de nouveaux axes
-intégrant la majeure partie de la variation présentes dans les données.
-A titre d'exemple, un ensemble de données avec 24 variables peut être
-réduit à cinq composantes principales qui représentent les principaux
-gradients de variation entre les échantillons. Les méthodes
-d'ordination sans contrainte ne sont pas adaptées au test d'hypothèses
-biologiques, mais permettent l'analyse exploratoire des données. Voir
-([the Ordination Website](http://ordination.okstate.edu/)) pour un
-aperçu des différents méthodes (en Anglais).
+------------------------------------------------------------------------
+
+R est un langage de programmation [open
+source](https://fr.wikipedia.org/wiki/Open_source) conçu pour l'analyse
+statistique, l'exploration et la visualisation de données.
+
+### Pourquoi utiliser R?
+
+------------------------------------------------------------------------
+
+-   R est en source libre ! Ça signifie que ce logiciel est libre,
+    gratuit et constamment mis à jour et amélioré.
+
+```{=html}
+<!-- -->
+```
+-   R est compatible avec la majorité des système d'exploitation, ce
+    qui rend le partage de codes R facile. De plus, le langage R permet
+    d'entrer en contact avec des gens de divers horizons à travers le
+    monde et avec différents systèmes d'exploitation.
+
+```{=html}
+<!-- -->
+```
+-   R peut créer des tableaux, produire des graphiques et faire des
+    analyses statistiques, le tout au sein du même logiciel. Avec R, il
+    devient inutile d'utiliser plus d'un logiciel pour la gestion de
+    vos données. Tout est possible avec un seul logiciel !
+
+```{=html}
+<!-- -->
+```
+-   De plus en plus de scientifiques utilisent R chaque année. Ses
+    capacités sont en augmentation constante et vont continuer dans
+    cette direction au fil des années. Cela signifie également qu'il y
+    a une grande communauté en ligne qui peut vous donner un coup de
+    main lorsque vous rencontrez un problème dans R.
+
+![](images//operating_systems.png){width="100"}
+![](images//open_source.png){width="200"}
+![](images//the_why_r_plot_2.png){width="400"}
+
+### Utiliser RStudio
+
+------------------------------------------------------------------------
+
+RStudio est un environnement de développement intégré pour R. Ça
+signifie que c'est un endroit où on peut utiliser le langage R,
+visualiser des tableaux et des figures et même réaliser une multitude
+d'analyses statistiques. Il est recommandé d'utiliser R Studio au lieu
+de la simple ligne de commande, car plusieurs options de visualisation
+et outils (que vous apprendrez au cours de cet atelier) sont disponibles
+avec RStudio.
+
+------------------------------------------------------------------------
+
+##### Défi 1
+
+Lancer RStudio
+
+![R Studio logo](/logo_rstudio.jpg){width="200"}
+
+**Note pour les utilisateurs Windows**: si la restriction: \"Unable to
+write on disk\" apparaît quand vous ouvrez R Studio ou que vous
+installez une bibliothèque, fermer l'application. Cliqué avec le bouton
+droit de la souris sur l'icône R Studio et choisissez "Execute as
+administrator" pour ouvrir R Studio.
+
+------------------------------------------------------------------------
+
+**La console**
+
+Lorsque vous lancez RStudio, le premier élément que vous voyez à la
+gauche de l'écran est la console. C'est à cet endroit que vous allez
+travailler pour le reste de cet atelier d'introduction à R.
+
+![R Studio console](/Rstudioconsole_fleche.png){width="800"}
+
+L'exemple suivant illustre le format du texte qui apparaît typiquement
+à l'écran :
+
+```{r, echo = TRUE, eval = FALSE}
+> sortie
+[1] "Ceci est la sortie"
+```
+
+Note 1: Il faut toujours appuyer sur \"Entrée\" pour lancer une commande
+dans la console.
+
+Note 2: Les nouveaux utilisateurs de R se demandent souvent ce que les
+crochets devant la sortie représentent. Ils indiquent tout simplement la
+position des éléments de la sortie. Par exemple, si vous demandez à R
+d'afficher les nombres de 1 à 10 et que la sortie est sur deux lignes,
+les crochets au début de la deuxième ligne indiquent à quel élément on
+est rendu (le 6^ième^ élément dans ce cas-ci).
+
+```{r, echo = TRUE, eval = FALSE}
+[1] 1 2 3 4 5
+[6] 6 7 8 9 10
+```
