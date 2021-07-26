@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 7 Installer et utiliser les librairies R | Atelier 1: Introduction à R</title>
+  <meta name="description" content="Introduction à R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 7 Installer et utiliser les librairies R | Atelier 1: Introduction à R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/qcbsRworkshops/" />
+  <meta property="og:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
+  <meta property="og:description" content="Introduction à R" />
+  <meta name="github-repo" content="qcbsRworkshops/workshop01" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 7 Installer et utiliser les librairies R | Atelier 1: Introduction à R" />
+  
+  <meta name="twitter:description" content="Introduction à R" />
+  <meta name="twitter:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
+
+<meta name="author" content="Développé et entretenu par les contributeurs et les contributrices de la Série d’ateliers R du CSBQ." />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="les-fonctions.html"/>
+<link rel="next" href="sommaire.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/qcbs-style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="./"><img src="assets/images/csbq_logo_gray_accueil.png"></a></li>
+<link rel="icon" type="image/png" href="assets/images/favicon.ico"/>
+
+<li class="divider"></li>
+<li class="part"><span><b>Série d’ateliers R du CSBQ</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-de-conduite"><i class="fa fa-check"></i><b>0.1</b> Code de conduite</a><ul>
+<li class="chapter" data-level="0.1.1" data-path="index.html"><a href="index.html#comportement-attendu"><i class="fa fa-check"></i><b>0.1.1</b> Comportement attendu</a></li>
+<li class="chapter" data-level="0.1.2" data-path="index.html"><a href="index.html#comportements-inacceptables"><i class="fa fa-check"></i><b>0.1.2</b> Comportements inacceptables</a></li>
+</ul></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#contributeurs-et-contributrices"><i class="fa fa-check"></i><b>0.2</b> Contributeurs et contributrices</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#contribuez-à-la-série"><i class="fa fa-check"></i><b>0.3</b> Contribuez à la série!</a></li>
+</ul></li>
+<li class="part"><span><b>Analyses multivariées en <code>R</code></b></span></li>
+<li class="chapter" data-level="1" data-path="objectifs-dapprentissage.html"><a href="objectifs-dapprentissage.html"><i class="fa fa-check"></i><b>1</b> Objectifs d’apprentissage</a></li>
+<li class="chapter" data-level="2" data-path="préparez-vous-pour-cet-atelier.html"><a href="préparez-vous-pour-cet-atelier.html"><i class="fa fa-check"></i><b>2</b> Préparez-vous pour cet atelier</a></li>
+<li class="chapter" data-level="3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html"><i class="fa fa-check"></i><b>3</b> Comprendre ce que sont R et RStudio</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#quest-ce-que-r"><i class="fa fa-check"></i><b>3.0.1</b> Qu’est-ce que R?</a></li>
+<li class="chapter" data-level="3.0.2" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#pourquoi-utiliser-r"><i class="fa fa-check"></i><b>3.0.2</b> Pourquoi utiliser R?</a></li>
+<li class="chapter" data-level="3.0.3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#utiliser-rstudio"><i class="fa fa-check"></i><b>3.0.3</b> Utiliser RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html"><i class="fa fa-check"></i><b>4</b> Utiliser R comme une calculatrice</a></li>
+<li class="chapter" data-level="5" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html"><i class="fa fa-check"></i><b>5</b> Manipuler les objets dans R</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#objet"><i class="fa fa-check"></i><b>5.0.1</b> Objet</a></li>
+<li class="chapter" data-level="5.0.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#types-de-structures-de-données-en-r"><i class="fa fa-check"></i><b>5.0.2</b> Types de structures de données en R</a></li>
+<li class="chapter" data-level="5.0.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-des-objets-dans-r"><i class="fa fa-check"></i><b>5.0.3</b> Indexer des objets dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="les-fonctions.html"><a href="les-fonctions.html"><i class="fa fa-check"></i><b>6</b> Les fonctions</a></li>
+<li class="chapter" data-level="7" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html"><i class="fa fa-check"></i><b>7</b> Installer et utiliser les librairies R</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#package"><i class="fa fa-check"></i><b>7.0.1</b> Package</a></li>
+<li class="chapter" data-level="7.0.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide"><i class="fa fa-check"></i><b>7.0.2</b> Obtenir de l’aide</a></li>
+</ul></li>
+<li class="part"><span><b>Considérations finales</b></span></li>
+<li class="chapter" data-level="8" data-path="sommaire.html"><a href="sommaire.html"><i class="fa fa-check"></i><b>8</b> Sommaire</a></li>
+<li class="chapter" data-level="9" data-path="resources-additionnels.html"><a href="resources-additionnels.html"><i class="fa fa-check"></i><b>9</b> Resources additionnels</a></li>
+<li class="chapter" data-level="10" data-path="réferences.html"><a href="réferences.html"><i class="fa fa-check"></i><b>10</b> Réferences</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/qcbsRworkshops" target="blank">QCBS R Workshop Series</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Atelier 1: Introduction à <code>R</code></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!------------------------ Hero Image Container --------------------------> 
+
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/6a26f47516.js"></script>
+  <script src="assets/qcbs-hideOutput.js"></script>
+  <link href="assets/qcbs-style.css" rel="stylesheet">
+</head>
+
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
+</div>
+<div id="installer-et-utiliser-les-librairies-r" class="section level1">
+<h1><span class="header-section-number">Chapitre 7</span> Installer et utiliser les librairies R</h1>
+<div id="package" class="section level3">
+<h3><span class="header-section-number">7.0.1</span> Package</h3>
+<hr />
+<p>Les packages (<em>paquets</em> pour être rigoureux) sont des regroupements de
+fonctions et de jeux de données partageant un thème similaire, <em>e.g.</em>
+statistiques, analyse spatiale, visualisation...</p>
+<p>Tout le monde peut développer des packages et les rendre disponibles aux
+autres utilisateurs de R.</p>
+<p>Les packages sont généralement disponibles via le <em>Comprehensive R
+Archive Network</em> (CRAN)<a href="http://cran.r-project.org/web/packages/" class="uri">http://cran.r-project.org/web/packages/</a>.</p>
+<p>Actuellement, plus de 16000 packages sont disponibles librement.</p>
+<p>Pour installer des packages dans R, il suffit d’utiliser la fonction
+<code>install.packages()</code> :</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="installer-et-utiliser-les-librairies-r.html#cb40-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<p>Il est nécessaire d’installer un package une seule fois, même si des
+mises à jours régulières sont recommandées. Cependant, pour utiliser une
+fonction se trouvant au sein d’un package, il ne suffit pas de
+simplement installer le package. Il faut également utiliser la fonction
+<code>library()</code> à chaque début de session R pour "charger" le package.
+Voici un exemple qui utilise la fonction <code>qplot()</code> du package
+<strong>ggplot2</strong> que l’on vient tout juste d’installer.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="installer-et-utiliser-les-librairies-r.html#cb41-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">qplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<p>Le package a été installé correctement, mais il n’a pas été chargé. Par
+conséquent, l’exécution de ce code cause l’erreur suivante :</p>
+<p><code>Erreur: impossible de trouver la fonction "qplot"</code></p>
+<p>Pour utiliser la fonction <code>qplot()</code>, il faut charger le package
+<code>ggplot2</code> avant d’appeler cette fonction.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="installer-et-utiliser-les-librairies-r.html#cb42-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb42-2"><a href="installer-et-utiliser-les-librairies-r.html#cb42-2"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">qplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<p>La fonction peut maintenant être trouvée par R et l’exécution de cette
+fonction retourne le graphique suivant :</p>
+<p><img src="images//qplot.png" width="200" /></p>
+<p>Il est de bon usage de décharger les packages une fois que l’on a fini
+de les utiliser car ils pourraient entrer en conflit avec d’autres
+packages. Le déchargement est effectué avec la fonction <code>detach()</code> et en
+spécifiant qu’il s’agit d’un package:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="installer-et-utiliser-les-librairies-r.html#cb43-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">detach</span>(package<span class="op">:</span>ggplot2)</span></code></pre></div>
+</div>
+<div id="obtenir-de-laide" class="section level3">
+<h3><span class="header-section-number">7.0.2</span> Obtenir de l’aide</h3>
+<hr />
+<div id="recherche-de-fonctions" class="section level4">
+<h4><span class="header-section-number">7.0.2.1</span> Recherche de fonctions</h4>
+<p>Nous avons vu jusqu’à maintenant que R est un outil très puissant et
+comporte de nombreuses fonctions. Parmi ces fonctions, il y en a
+probablement une qui vous permet d’effectuer une tâche que vous devez
+compléter.</p>
+<p>Par contre, il n’est pas toujours facile de savoir quelle fonction
+utiliser pour une tâche précise. Comment trouver la bonne ?</p>
+<p>Pour trouver une fonction pouvant réaliser une action spécifique, il
+faut utiliser l’opérateur <code>??</code> ou la fonction <code>help.search()</code>. Pour
+effectuer une recherche, tapez <code>??</code> suivi d’un terme relié à votre
+recherche. Par exemple, supposons que l’on souhaite créer une séquence
+de nombres pairs entre 0 et 10. On effectue une recherche avec le terme
+<strong>sequence</strong> :</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="installer-et-utiliser-les-librairies-r.html#cb44-1"></a><span class="op">&gt;</span><span class="st"> </span>??sequence</span></code></pre></div>
+<p>Cette commande ouvre la fenêtre suivante :</p>
+<p><img src="images//sequence_help.png" width="400" /><br />
+<strong>Note</strong> : les résultats d’une recherche dépendent des packages
+installés sur votre ordinateur.</p>
+<p>Les résultats de la recherche comportent deux colonnes :</p>
+<ul>
+<li>À gauche, on retrouve les noms du package et de la fonction sous le
+format : <code>nom_du_package::nom_de_la_fonction</code>.</li>
+<li>À droite, on retrouve la description des fonctions.</li>
+</ul>
+<p>Généralement, les fonctions portent un nom qui est représentatif de ce
+qu’elles font. C’est plus facile de les trouver. Rappelez-vous de ceci
+si jamais vous décidez d’écrire vos propres fonctions !</p>
+<p>Dans le cas présent, le résultat qui nous intéresse est <code>base::seq</code>,
+<em>i.e.</em> la fonction <code>seq</code> qui se trouve dans le package <code>base</code> qui permet
+de générer des séquences.<br />
+<strong>Note</strong> : Le package <code>base</code> comporte des fonctions de base qui se
+chargent automatiquement lorsqu’on lance R. Elles sont donc toujours
+disponibles.</p>
+<hr />
+</div>
+<div id="aide-pour-les-fonctions" class="section level4">
+<h4><span class="header-section-number">7.0.2.2</span> Aide pour les fonctions</h4>
+<p>Utilisons la fonction <code>seq()</code> afin de générer notre séquence de nombres
+pairs. Pour l’instant, nous ne savons rien de cette fonction. Comment
+fonctionne-t-elle ? Comment l’utiliser ?</p>
+<p>Pour répondre à ces questions, il faut accéder à la page d’aide de
+cette fonction. Pour ce faire, il faut utiliser l’opérateur <code>?</code> ou la
+fonction <code>help()</code> de la manière suivante : <code>?nom_de_la_fonction</code></p>
+<p>Voici un exemple pour la fonction <code>seq()</code> :</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="installer-et-utiliser-les-librairies-r.html#cb45-1"></a><span class="op">&gt;</span><span class="st"> </span>?seq</span></code></pre></div>
+<p>Cette commande ouvre la page suivante :</p>
+<p><img src="images//seq.png" class="align-center" width="600" /><br />
+Une page d’aide contient généralement les sections et éléments suivants
+: (<strong>Note</strong> : parfois, une même page d’aide est utilisée pour plus
+d’une fonction.)</p>
+<ul>
+<li>Dans le coin supérieur gauche, les noms de la fonction et du package
+dans lequel elle se trouve sont indiqués dans le format suivant :
+<code>fonction {package}</code>.</li>
+<li><strong>Description</strong>: Une brève description de la fonction.</li>
+<li><strong>Usage</strong>: Explique comment utiliser la fonction, en particulier
+quels sont les noms et l’ordre des arguments. Si une valeur est
+spécifiée pour un argument, ça signifie que c’est la valeur par
+défaut de cet argument et qu’il est facultatif de l’inclure dans
+notre commande. Si l’argument est manquant, la valeur par défaut
+sera utilisée. Par exemple, si on ne spécifie pas l’argument <code>from</code>
+pour la fonction <code>seq()</code>, la séquence débutera automatiquement par
+<strong>1</strong>.</li>
+<li><strong>Arguments</strong>: Une description détaillée de tous les arguments et de
+ce qui est attendu ou requis pour que la fonction soit utilisée
+correctement. Portez attention à cette section ! C’est une liste de
+tous les arguments pour toutes les fonctions et non une liste
+d’arguments pour une fonction donnée. Par exemple, dans l’image
+ci-dessus, les arguments <code>from</code> et <code>to</code> ne sont pas disponibles pour
+la fonction <code>seq_along()</code>.</li>
+<li><strong>Détails</strong>: Fournit une description détaillée du fonctionnement de
+la fonction. Des cas spécifiques peuvent être discutés ici en plus
+de fournir des informations supplémentaires.</li>
+<li><strong>Valeur</strong>: Explique les valeurs de retour de la fonction.</li>
+<li><strong>Références</strong>: Les sources utilisées comme base de la fonction ou
+des lectures intéressantes sur le sujet.</li>
+<li><strong>Voir aussi</strong>: Une liste de fonctions connexes pouvant parfois être
+utiles, spécialement lorsqu’on cherche la fonction appropriée à nos
+besoins.</li>
+<li><strong>Exemples</strong>: Quelques exemples d’utilisation de la fonction.</li>
+</ul>
+<hr />
+<div id="défi-13" class="section level5">
+<h5><span class="header-section-number">7.0.2.2.1</span> Défi 13</h5>
+<blockquote>
+<p>a) Créez une séquence de nombres pairs de 0 à 10 en utilisant la
+fonction <code>seq()</code>.</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>b) - Créez un vecteur de vos nombres préférés sans qu’il ne soit en
+ordre croissant ou décroissant.</p>
+<p>- Trouvez comment mettre ce vecteur en ordre en tapant <code>?sort</code> à la
+console.</p>
+<p>- Ordonnez votre vecteur en ordre décroissant.</p>
+</blockquote>
+<p>++++ Défi 13a |</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="installer-et-utiliser-les-librairies-r.html#cb46-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb46-2"><a href="installer-et-utiliser-les-librairies-r.html#cb46-2"></a>[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">2</span> <span class="dv">4</span> <span class="dv">6</span> <span class="dv">8</span> <span class="dv">10</span></span></code></pre></div>
+<p>Nous aurions également pu écrire :</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="installer-et-utiliser-les-librairies-r.html#cb47-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb47-2"><a href="installer-et-utiliser-les-librairies-r.html#cb47-2"></a>[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">2</span> <span class="dv">4</span> <span class="dv">6</span> <span class="dv">8</span> <span class="dv">10</span></span></code></pre></div>
+<p>++++</p>
+<p>++++ Défi 13b |</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="installer-et-utiliser-les-librairies-r.html#cb48-1"></a><span class="op">&gt;</span><span class="st"> </span>nombres &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">22</span>, <span class="dv">6</span>, <span class="dv">26</span>)</span>
+<span id="cb48-2"><a href="installer-et-utiliser-les-librairies-r.html#cb48-2"></a><span class="kw">sort</span>(nombres, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb48-3"><a href="installer-et-utiliser-les-librairies-r.html#cb48-3"></a>[<span class="dv">1</span>] <span class="dv">26</span> <span class="dv">22</span>  <span class="dv">6</span>  <span class="dv">4</span>  <span class="dv">2</span></span></code></pre></div>
+<p>++++</p>
+<hr />
+</div>
+</div>
+<div id="obtenir-de-laide-sur-le-web" class="section level4">
+<h4><span class="header-section-number">7.0.2.3</span> Obtenir de l’aide sur le web</h4>
+<p>Généralement, la meilleure source d’information sur R provient d’un
+moteur de recherche (Google, Bing, Yahoo, etc.).</p>
+<p>Voici quelques conseils pour une recherche efficace :</p>
+<ul>
+<li>Faites vos recherches en anglais.</li>
+<li>Utilisez le mot-clé "R" au début de votre recherche.</li>
+<li>Définissez précisément ce que vous cherchez.</li>
+<li>Apprenez à lire les discussions sur les forums. Il y a de fortes
+chances que d’autres utilisateurs aient eu le même problème avant
+vous. Créez-vous un compte sur les forums où les questions
+concernant R sont souvent posées comme
+<a href="http://stats.stackexchange.com">stackexchange</a>.</li>
+<li>N’hésitez pas à faire des recherches avec des mots-clés différents!</li>
+</ul>
+<hr />
+<div id="défi-14" class="section level5">
+<h5><span class="header-section-number">7.0.2.3.1</span> Défi 14</h5>
+<blockquote>
+<p>Trouvez la fonction appropriée pour effectuer les opérations suivantes
+:</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>a) Calculer la racine carrée d’un nombre</p>
+<p>b) Calculer la moyenne de nombres</p>
+<p>c) Combiner des tableaux de données par colonne (<em>i.e.</em> un par-dessus
+l’autre)</p>
+<p>d) Faire une liste de tous les objets de la session</p>
+</blockquote>
+<p>++++ Défi 14 | a) <code>sqrt</code><br />
+b) <code>mean</code><br />
+c) <code>cbind</code><br />
+d) <code>ls</code><br />
+++++</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+<hr>
+<center> 
+  <div class="footer">
+      All the content of the workshop series is under a <a href="https://creativecommons.org/licenses/by-nc/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="les-fonctions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="sommaire.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

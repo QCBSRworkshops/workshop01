@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 5 Manipuler les objets dans R | Atelier 1: Introduction à R</title>
+  <meta name="description" content="Introduction à R" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 5 Manipuler les objets dans R | Atelier 1: Introduction à R" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/qcbsRworkshops/" />
+  <meta property="og:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
+  <meta property="og:description" content="Introduction à R" />
+  <meta name="github-repo" content="qcbsRworkshops/workshop01" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 5 Manipuler les objets dans R | Atelier 1: Introduction à R" />
+  
+  <meta name="twitter:description" content="Introduction à R" />
+  <meta name="twitter:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
+
+<meta name="author" content="Développé et entretenu par les contributeurs et les contributrices de la Série d’ateliers R du CSBQ." />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
+<link rel="prev" href="utiliser-r-comme-une-calculatrice.html"/>
+<link rel="next" href="les-fonctions.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/qcbs-style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="toc-logo"><a href="./"><img src="assets/images/csbq_logo_gray_accueil.png"></a></li>
+<link rel="icon" type="image/png" href="assets/images/favicon.ico"/>
+
+<li class="divider"></li>
+<li class="part"><span><b>Série d’ateliers R du CSBQ</b></span></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-de-conduite"><i class="fa fa-check"></i><b>0.1</b> Code de conduite</a><ul>
+<li class="chapter" data-level="0.1.1" data-path="index.html"><a href="index.html#comportement-attendu"><i class="fa fa-check"></i><b>0.1.1</b> Comportement attendu</a></li>
+<li class="chapter" data-level="0.1.2" data-path="index.html"><a href="index.html#comportements-inacceptables"><i class="fa fa-check"></i><b>0.1.2</b> Comportements inacceptables</a></li>
+</ul></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#contributeurs-et-contributrices"><i class="fa fa-check"></i><b>0.2</b> Contributeurs et contributrices</a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#contribuez-à-la-série"><i class="fa fa-check"></i><b>0.3</b> Contribuez à la série!</a></li>
+</ul></li>
+<li class="part"><span><b>Analyses multivariées en <code>R</code></b></span></li>
+<li class="chapter" data-level="1" data-path="objectifs-dapprentissage.html"><a href="objectifs-dapprentissage.html"><i class="fa fa-check"></i><b>1</b> Objectifs d’apprentissage</a></li>
+<li class="chapter" data-level="2" data-path="préparez-vous-pour-cet-atelier.html"><a href="préparez-vous-pour-cet-atelier.html"><i class="fa fa-check"></i><b>2</b> Préparez-vous pour cet atelier</a></li>
+<li class="chapter" data-level="3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html"><i class="fa fa-check"></i><b>3</b> Comprendre ce que sont R et RStudio</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#quest-ce-que-r"><i class="fa fa-check"></i><b>3.0.1</b> Qu’est-ce que R?</a></li>
+<li class="chapter" data-level="3.0.2" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#pourquoi-utiliser-r"><i class="fa fa-check"></i><b>3.0.2</b> Pourquoi utiliser R?</a></li>
+<li class="chapter" data-level="3.0.3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#utiliser-rstudio"><i class="fa fa-check"></i><b>3.0.3</b> Utiliser RStudio</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html"><i class="fa fa-check"></i><b>4</b> Utiliser R comme une calculatrice</a></li>
+<li class="chapter" data-level="5" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html"><i class="fa fa-check"></i><b>5</b> Manipuler les objets dans R</a><ul>
+<li class="chapter" data-level="5.0.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#objet"><i class="fa fa-check"></i><b>5.0.1</b> Objet</a></li>
+<li class="chapter" data-level="5.0.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#types-de-structures-de-données-en-r"><i class="fa fa-check"></i><b>5.0.2</b> Types de structures de données en R</a></li>
+<li class="chapter" data-level="5.0.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-des-objets-dans-r"><i class="fa fa-check"></i><b>5.0.3</b> Indexer des objets dans R</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="les-fonctions.html"><a href="les-fonctions.html"><i class="fa fa-check"></i><b>6</b> Les fonctions</a></li>
+<li class="chapter" data-level="7" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html"><i class="fa fa-check"></i><b>7</b> Installer et utiliser les librairies R</a><ul>
+<li class="chapter" data-level="7.0.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#package"><i class="fa fa-check"></i><b>7.0.1</b> Package</a></li>
+<li class="chapter" data-level="7.0.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide"><i class="fa fa-check"></i><b>7.0.2</b> Obtenir de l’aide</a></li>
+</ul></li>
+<li class="part"><span><b>Considérations finales</b></span></li>
+<li class="chapter" data-level="8" data-path="sommaire.html"><a href="sommaire.html"><i class="fa fa-check"></i><b>8</b> Sommaire</a></li>
+<li class="chapter" data-level="9" data-path="resources-additionnels.html"><a href="resources-additionnels.html"><i class="fa fa-check"></i><b>9</b> Resources additionnels</a></li>
+<li class="chapter" data-level="10" data-path="réferences.html"><a href="réferences.html"><i class="fa fa-check"></i><b>10</b> Réferences</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/qcbsRworkshops" target="blank">QCBS R Workshop Series</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Atelier 1: Introduction à <code>R</code></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!------------------------ Hero Image Container --------------------------> 
+
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=10.0,initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/6a26f47516.js"></script>
+  <script src="assets/qcbs-hideOutput.js"></script>
+  <link href="assets/qcbs-style.css" rel="stylesheet">
+</head>
+
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
+</div>
+<div id="manipuler-les-objets-dans-r" class="section level1">
+<h1><span class="header-section-number">Chapitre 5</span> Manipuler les objets dans R</h1>
+<div id="objet" class="section level3">
+<h3><span class="header-section-number">5.0.1</span> Objet</h3>
+<hr />
+<p>Jusqu’à maintenant, vous avez appris à utiliser R comme calculatrice
+afin d’obtenir différentes valeurs numériques. Cependant, si vous devez
+utiliser certaines valeurs ou calculs fréquemment, ça peut rapidement
+devenir ennuyeux de toujours devoir réécrire le même code dans la
+console. Le concept d’objet permet d’enregistrer certaines étapes afin
+de vous faire sauver du temps.</p>
+<p>R est un langage de programmation par objet (<em>object-oriented
+programming language</em>). Ça signifie qu’on peut allouer un nom à des
+valeurs qu’on a créées afin de les enregistrer dans un espace de
+travail. Un objet est composé de trois parties : 1) une valeur
+d’intérêt, 2) un identifiant et 3) l’opérateur d’assignation.</p>
+<ol style="list-style-type: decimal">
+<li><dl>
+<dt>La valeur d’intérêt peut être à peu près de n’importe quelle nature</dt>
+<dd>un nombre, le résultat d’un calcul, une chaîne de caractères, un
+tableau de données, un graphique ou une fonction.
+</dd>
+</dl></li>
+<li>L’identifiant est le nom qui est assigné à la valeur d’intérêt.
+Lorsqu’on veut faire référence à cette valeur, il suffit simplement
+de taper son nom à la console et R va afficher cette valeur. Les
+identifiants peuvent seulement inclure des lettres, des chiffres,
+des points et des traits de soulignement (<em>underscore</em>). Ils doivent
+toujours débuter par une lettre.</li>
+<li>L’opérateur d’assignation ressemble à une flèche (<code>&lt;-</code>) et est
+utilisé afin de lier la valeur d’intérêt à son identifiant.</li>
+</ol>
+<p>Le code suivant illustre le concept d’objet :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="manipuler-les-objets-dans-r.html#cb8-1"></a><span class="co">#Commençons par créer un objet nommé moy_x.</span></span>
+<span id="cb8-2"><a href="manipuler-les-objets-dans-r.html#cb8-2"></a><span class="co">#Le symbole # est utilisé dans R afin d’indiquer les commentaires à l’intérieur d’un code.</span></span>
+<span id="cb8-3"><a href="manipuler-les-objets-dans-r.html#cb8-3"></a><span class="co">#Ces lignes ne sont pas traitées par R.</span></span>
+<span id="cb8-4"><a href="manipuler-les-objets-dans-r.html#cb8-4"></a><span class="co">#C’est très important d’ajouter des commentaires à un code,</span></span>
+<span id="cb8-5"><a href="manipuler-les-objets-dans-r.html#cb8-5"></a><span class="co">#car ça permet à d’autres personnes de mieux le comprendre et de l’utiliser.</span></span>
+<span id="cb8-6"><a href="manipuler-les-objets-dans-r.html#cb8-6"></a>moy_x &lt;-<span class="st"> </span>(<span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">6</span>) <span class="op">/</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb8-7"><a href="manipuler-les-objets-dans-r.html#cb8-7"></a><span class="co">#En tapant le nom de l’objet dans la console, R retourne la valeur de l’objet.</span></span>
+<span id="cb8-8"><a href="manipuler-les-objets-dans-r.html#cb8-8"></a>moy_x</span>
+<span id="cb8-9"><a href="manipuler-les-objets-dans-r.html#cb8-9"></a>[<span class="dv">1</span>]  <span class="dv">4</span></span></code></pre></div>
+<p>Dans cet exemple, <code>(2 + 6) / 2</code> est la valeur qu’on souhaite enregistrer
+en tant qu’objet. L’identifiant "moy_x" est assigné à cette valeur. En
+tapant <code>moy_x</code> à la console, R retourne la valeur du calcul (<em>i.e.</em> 4).
+Il faut être très scrupuleux lorsqu’on entre l’identifiant à la console,
+car R fait la différence entre les lettres minuscules et majuscules :
+écrire <code>moy_x</code> n’est pas la même chose qu’écrire <code>MOY_X</code>. On peut voir
+que l’opérateur d’assignation <code>&lt;-</code> crée un lien explicite entre la
+valeur d’intérêt et son identifiant. L’opérateur d’assignation pointe
+toujours de la valeur vers l’identifiant. Si votre clavier est configuré
+en anglais la combinaison de touche "Alt + - " vous permettra
+d’insérer directement l’opérateur <code>&lt;-</code>. Il est également possible
+d’utiliser le symbole d’égalité <code>=</code> comme opérateur d’assignation, mais
+<a href="http://stackoverflow.com/questions/1741820/assignment-operators-in-r-and">c’est préférable de ne pas
+l’utiliser</a>.
+Le symbole d’égalité est aussi utilisé pour d’autres opérations dans R,
+ce qui pourrait causer des problèmes lorsqu’on l’utilise comme opérateur
+d’assignation. Finalement, imaginez que l’opérateur <code>&lt;-</code> et <code>=</code> ont une
+priorité d’opération :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="manipuler-les-objets-dans-r.html#cb9-1"></a><span class="op">&gt;</span> y &lt;-<span class="st"> </span>x =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb9-2"><a href="manipuler-les-objets-dans-r.html#cb9-2"></a>Error <span class="cf">in</span> y &lt;-<span class="st"> </span>x =<span class="st"> </span><span class="dv">5</span> <span class="op">:</span><span class="st"> </span>object <span class="st">&#39;y&#39;</span> not found</span>
+<span id="cb9-3"><a href="manipuler-les-objets-dans-r.html#cb9-3"></a><span class="op">&gt;</span><span class="st"> </span>y =<span class="st"> </span>x &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb9-4"><a href="manipuler-les-objets-dans-r.html#cb9-4"></a><span class="op">&gt;</span><span class="st"> </span>y</span>
+<span id="cb9-5"><a href="manipuler-les-objets-dans-r.html#cb9-5"></a>[<span class="dv">1</span>] <span class="dv">5</span></span>
+<span id="cb9-6"><a href="manipuler-les-objets-dans-r.html#cb9-6"></a><span class="op">&gt;</span><span class="st"> </span>x</span>
+<span id="cb9-7"><a href="manipuler-les-objets-dans-r.html#cb9-7"></a>[<span class="dv">1</span>] <span class="dv">5</span></span></code></pre></div>
+<hr />
+<div id="bonnes-pratiques-du-code-r" class="section level4">
+<h4><span class="header-section-number">5.0.1.1</span> Bonnes pratiques du code R</h4>
+<p><strong>Nom</strong>:</p>
+<ul>
+<li>Essayez d’avoir des noms courts et explicites pour vos variables.
+Nommer une variable <code>var</code> n’est pas très instructif.</li>
+<li>Utilisez un trait de soulignement <code>_</code> pour séparer les mots d’un
+nom ou essayez d’être constant!</li>
+<li>Évitez les noms d’objets de fonction qui existe dans R (e.g. <code>c</code> ou
+<code>table</code>)</li>
+</ul>
+<p><strong>Espace</strong>:</p>
+<ul>
+<li>Ajoutez des espaces autour de tous les opérateurs (<code>=</code>, <code>+</code>, <code>-</code>,
+<code>&lt;-</code>, etc.) pour rendre le code plus lisible</li>
+<li>Mettez un espace après une virgule, mais jamais avant (comme en
+français).</li>
+</ul>
+<hr />
+<div id="défi-5" class="section level5">
+<h5><span class="header-section-number">5.0.1.1.1</span> Défi 5</h5>
+<blockquote>
+<p>Créez un objet avec une valeur de 1 + 1.718282 (<em>i.e.</em> le nombre
+d’Euler) et nommez le <code>valeur_euler</code>.</p>
+</blockquote>
+<p>++++ Défi 5 : Solution|</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="manipuler-les-objets-dans-r.html#cb10-1"></a>valeur_euler &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="fl">1.718282</span></span></code></pre></div>
+<p>++++</p>
+<hr />
+</div>
+<div id="défi-6" class="section level5">
+<h5><span class="header-section-number">5.0.1.1.2</span> Défi 6</h5>
+<blockquote>
+<p>Créez un objet (vous choisissez la valeur) avec un nom débutant par un
+chiffre. Que se passe-t-il?</p>
+</blockquote>
+<p>++++ Défi 6 : Solution| Un objet débutant par un chiffre va retourner
+l’erreur suivante : <code>Symbole inattendu dans "votre nom d’objet"</code>. ++++</p>
+<hr />
+<p><strong>Truc R</strong></p>
+<p>La touche « Tabulation » permet de compléter automatiquement les noms
+d’objets. Ça accélère l’entrée des commandes et ça évite les erreurs de
+frappe. Par exemple, si vous tapez <code>val</code> et appuyez sur « Tabulation »
+ensuite, vous allez voir une liste d’objets ou de fonctions débutant par
+<code>val</code>. Sélectionnez <code>valeur_euler</code> (l’objet que vous venez de créer) et
+appuyez sur « Entrée ». L’identifiant <code>valeur_euler</code> apparaît maintenant
+dans la console.</p>
+</div>
+</div>
+</div>
+<div id="types-de-structures-de-données-en-r" class="section level3">
+<h3><span class="header-section-number">5.0.2</span> Types de structures de données en R</h3>
+<hr />
+<p>Le logiciel R est un outil très puissant pour l’analyse des données. Les
+données existent sous plusieurs formes, mais peuvent être regroupées en
+catégories distinctes. R classifie les données selon la nature des
+valeurs contenues dans un objet. La figure suivante illustre les types
+de données couramment rencontrés dans R.</p>
+<div class="figure">
+<img src="//%20imageobjr.png" class="align-center" width="500" alt="" />
+<p class="caption">Types d’objets dans R</p>
+</div>
+<p>Le premier type d’objet est le <strong>vecteur</strong>. C’est un des objets les plus
+communs dans R. Un vecteur est une entité constituée d’une liste de
+valeurs semblables. Toutes les valeurs d’un vecteur doivent avoir le
+même mode (ou classe). Les principaux modes dans R sont <strong>numérique,
+caractère</strong> et <strong>logique</strong>. Les vecteurs numériques sont composés de
+chiffres seulement. Les vecteurs de caractères sont généralement
+composés de chaînes de caractères ou d’un mélange de chaînes de
+caractères et de valeurs numériques et logiques. Il est absolument
+nécessaire d’utiliser les guillemets <code>" "</code> afin de délimiter les chaînes
+de caractères. Les vecteurs logiques sont composés des mots <code>TRUE</code> et
+<code>FALSE</code> seulement. Un vecteur composé d’un seul élément (généralement
+une constante) est appelé un vecteur atomique.</p>
+<p>Avant d’apprendre à créer différents types de vecteurs, regardons
+comment un vecteur est créé de manière générique. Si vous vous rappelez
+ce que vous venez tout juste d’apprendre, vous devez premièrement avoir
+une valeur d’intérêt que vous voulez intégrer dans un vecteur et ensuite
+le lier à un identifiant avec l’opérateur d’assignation (<em>i.e.</em> créer un
+objet). Lorsque vous avez plus d’une valeur dans un vecteur, il est
+nécessaire d’indiquer au logiciel R qu’il faut regrouper ces valeurs au
+sein d’un même vecteur. Pour ce faire, il faut utiliser la fonction
+<code>c()</code>. Ne vous en faites pas ! Vous allez bientôt apprendre ce qu’est
+une fonction dans une des sections suivantes. Pour l’instant, sachez que
+vous devez mettre vos valeurs que vous souhaitez avoir dans un vecteur
+entre parenthèses tout juste après la lettre <code>c()</code> dans la console de R.
+Le format est le suivant :
+<code>nom.du.vecteur &lt;- c(valeur1, valeur2, valeur3, ...)</code>. La fonction <code>c()</code>
+signifie combiner ou concaténer. C’est une fonction facile et très
+utile, alors rappelez-vous en !</p>
+<p>Vous connaissez la méthode générique pour créer un vecteur dans R.
+Regardons maintenant comment générer différents types de vecteurs
+(<em>i.e.</em> de différents modes).</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="manipuler-les-objets-dans-r.html#cb11-1"></a><span class="co"># Créez un vecteur numérique avec la fonction c (qui</span></span>
+<span id="cb11-2"><a href="manipuler-les-objets-dans-r.html#cb11-2"></a><span class="co"># signifie combiner ou concaténer).</span></span>
+<span id="cb11-3"><a href="manipuler-les-objets-dans-r.html#cb11-3"></a>num_vecteur &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">98</span>, <span class="dv">32</span>, <span class="dv">-76</span>, <span class="dv">-4</span>)</span>
+<span id="cb11-4"><a href="manipuler-les-objets-dans-r.html#cb11-4"></a></span>
+<span id="cb11-5"><a href="manipuler-les-objets-dans-r.html#cb11-5"></a><span class="co"># Créez un vecteur de caractères. N’oubliez pas les</span></span>
+<span id="cb11-6"><a href="manipuler-les-objets-dans-r.html#cb11-6"></a><span class="co"># guillemets !</span></span>
+<span id="cb11-7"><a href="manipuler-les-objets-dans-r.html#cb11-7"></a>car_vecteur &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;bleu&quot;</span>, <span class="st">&quot;rouge&quot;</span>, <span class="st">&quot;vert&quot;</span>)</span>
+<span id="cb11-8"><a href="manipuler-les-objets-dans-r.html#cb11-8"></a></span>
+<span id="cb11-9"><a href="manipuler-les-objets-dans-r.html#cb11-9"></a><span class="co"># Créez un vecteur logique ou booléen. N’utilisez pas les</span></span>
+<span id="cb11-10"><a href="manipuler-les-objets-dans-r.html#cb11-10"></a><span class="co"># guillemets sinon R va considérer les éléments comme des</span></span>
+<span id="cb11-11"><a href="manipuler-les-objets-dans-r.html#cb11-11"></a><span class="co"># chaînes de caractères.</span></span>
+<span id="cb11-12"><a href="manipuler-les-objets-dans-r.html#cb11-12"></a>bool_vecteur &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>)</span>
+<span id="cb11-13"><a href="manipuler-les-objets-dans-r.html#cb11-13"></a></span>
+<span id="cb11-14"><a href="manipuler-les-objets-dans-r.html#cb11-14"></a><span class="co"># C’est aussi possible d’utiliser les abréviations pour les</span></span>
+<span id="cb11-15"><a href="manipuler-les-objets-dans-r.html#cb11-15"></a><span class="co"># vecteurs logiques.</span></span>
+<span id="cb11-16"><a href="manipuler-les-objets-dans-r.html#cb11-16"></a>bool_vecteur2 &lt;-<span class="st"> </span><span class="kw">c</span>(T, T, F)</span></code></pre></div>
+<hr />
+<div id="défi-7" class="section level5">
+<h5><span class="header-section-number">5.0.2.0.1</span> Défi 7</h5>
+<blockquote>
+<p>Créez un vecteur comprenant les cinq premiers nombres impairs (en
+commençant par 1) et nommez ce vecteur "impair".</p>
+</blockquote>
+<p>++++Défi 7 : Solution|</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="manipuler-les-objets-dans-r.html#cb12-1"></a>impair &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span></code></pre></div>
+<p>++++</p>
+<hr />
+<p><strong>Truc R</strong></p>
+<p>Utilisez la fonction <code>dput()</code> pour obtenir l’inverse, c’est-à-dire le
+contenue d’un objet sous forme de vecteur. Par exemple :</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="manipuler-les-objets-dans-r.html#cb13-1"></a><span class="op">&gt;</span><span class="st"> </span>impair &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb13-2"><a href="manipuler-les-objets-dans-r.html#cb13-2"></a><span class="op">&gt;</span><span class="st"> </span>impair</span>
+<span id="cb13-3"><a href="manipuler-les-objets-dans-r.html#cb13-3"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">3</span> <span class="dv">5</span> <span class="dv">7</span> <span class="dv">9</span></span>
+<span id="cb13-4"><a href="manipuler-les-objets-dans-r.html#cb13-4"></a><span class="co">#  La réponse que R retourne en inscrivant &#39;&#39;impair&#39;&#39; n’est pas directement utilisable</span></span>
+<span id="cb13-5"><a href="manipuler-les-objets-dans-r.html#cb13-5"></a><span class="co"># (puisqu’elle n’est pas dans la fonction &#39;&#39;c()&#39;&#39; et les chiffres ne sont pas entourés de virgules).</span></span>
+<span id="cb13-6"><a href="manipuler-les-objets-dans-r.html#cb13-6"></a></span>
+<span id="cb13-7"><a href="manipuler-les-objets-dans-r.html#cb13-7"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">dput</span>(impair)</span>
+<span id="cb13-8"><a href="manipuler-les-objets-dans-r.html#cb13-8"></a><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb13-9"><a href="manipuler-les-objets-dans-r.html#cb13-9"></a></span>
+<span id="cb13-10"><a href="manipuler-les-objets-dans-r.html#cb13-10"></a><span class="co"># La sortie peut être copiée et collée pour créer un nouvel objet en utilisant la fonction structure()</span></span>
+<span id="cb13-11"><a href="manipuler-les-objets-dans-r.html#cb13-11"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">structure</span>(<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>))</span>
+<span id="cb13-12"><a href="manipuler-les-objets-dans-r.html#cb13-12"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="dv">3</span> <span class="dv">5</span> <span class="dv">7</span> <span class="dv">9</span></span></code></pre></div>
+<p>Cette démonstration n’est peut-être pas convaincante, mais ces fonctions
+peuvent s’avérer fort utiles lors de la manipulation de données!
+Notamment si vous souhaitez fournir un exemple reproductible dans le cas
+d’une question sur <a href="https://stackoverflow.com/">Stack Overflow</a>, par
+exemple.</p>
+<hr />
+<p>Ce que vous avez appris dans la première section est également valide
+pour les vecteurs : les vecteurs peuvent être utilisés dans des calculs.
+La seule différence est que, lorsqu’un vecteur a plus d’un élément,
+l’opération est appliquée à tous les éléments du vecteur. L’exemple
+suivant clarifie ceci.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="manipuler-les-objets-dans-r.html#cb14-1"></a><span class="co">#Créez deux vecteurs numériques.</span></span>
+<span id="cb14-2"><a href="manipuler-les-objets-dans-r.html#cb14-2"></a><span class="op">&gt;</span><span class="st"> </span>x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb14-3"><a href="manipuler-les-objets-dans-r.html#cb14-3"></a><span class="co"># Rappelez-vous que le symbole &#39;&#39;:&#39;&#39;, lorsqu’utilisé avec des chiffres, est l’opérateur de séquence.</span></span>
+<span id="cb14-4"><a href="manipuler-les-objets-dans-r.html#cb14-4"></a><span class="co"># Ça indique à R de créer une série qui augmente de 1.</span></span>
+<span id="cb14-5"><a href="manipuler-les-objets-dans-r.html#cb14-5"></a><span class="co"># C’est équivalent à écrire x &lt;- c(1, 2, 3, 4, 5)</span></span>
+<span id="cb14-6"><a href="manipuler-les-objets-dans-r.html#cb14-6"></a><span class="co"># Une autre façon équivalente est : x &lt;- c(1:5).</span></span>
+<span id="cb14-7"><a href="manipuler-les-objets-dans-r.html#cb14-7"></a></span>
+<span id="cb14-8"><a href="manipuler-les-objets-dans-r.html#cb14-8"></a><span class="op">&gt;</span><span class="st"> </span>y &lt;-<span class="st"> </span><span class="dv">6</span></span>
+<span id="cb14-9"><a href="manipuler-les-objets-dans-r.html#cb14-9"></a></span>
+<span id="cb14-10"><a href="manipuler-les-objets-dans-r.html#cb14-10"></a><span class="co"># Faisons la somme des deux vecteurs.</span></span>
+<span id="cb14-11"><a href="manipuler-les-objets-dans-r.html#cb14-11"></a><span class="co"># 6 est ajouté à tous les éléments du vecteur x.</span></span>
+<span id="cb14-12"><a href="manipuler-les-objets-dans-r.html#cb14-12"></a><span class="op">&gt;</span><span class="st"> </span>x <span class="op">+</span><span class="st"> </span>y</span>
+<span id="cb14-13"><a href="manipuler-les-objets-dans-r.html#cb14-13"></a>[<span class="dv">1</span>]  <span class="dv">7</span> <span class="dv">8</span> <span class="dv">9</span> <span class="dv">10</span> <span class="dv">11</span></span>
+<span id="cb14-14"><a href="manipuler-les-objets-dans-r.html#cb14-14"></a></span>
+<span id="cb14-15"><a href="manipuler-les-objets-dans-r.html#cb14-15"></a><span class="co"># Multiplions x par y.</span></span>
+<span id="cb14-16"><a href="manipuler-les-objets-dans-r.html#cb14-16"></a><span class="op">&gt;</span><span class="st"> </span>x <span class="op">*</span><span class="st"> </span>y</span>
+<span id="cb14-17"><a href="manipuler-les-objets-dans-r.html#cb14-17"></a>[<span class="dv">1</span>]  <span class="dv">6</span> <span class="dv">12</span> <span class="dv">18</span> <span class="dv">24</span> <span class="dv">30</span></span></code></pre></div>
+<hr />
+<p>Un autre type d’objet couramment utilisé en écologie est le data frame
+(c-à-d. tableau de données). Un data frame est un groupe de vecteurs de
+la même longueur (<em>i.e.</em> avec le même nombre d’éléments). Les variables
+sont toujours représentées en colonnes et les observations, cas,
+individus, sites ou répétitions sont toujours représentés en lignes. Un
+data frame peut être composé de plusieurs modes, mais une colonne doit
+toujours contenir le même mode. C’est sous ce format que la plupart des
+données écologiques sont enregistrées. L’exemple suivant présente un jeu
+de données fictif représentant quatre sites où le pH du sol et le nombre
+d’espèces ont été mesurés. On y trouve également une colonne de
+traitement (fertilisé ou non). Regardons plus en détail comment créer un
+tel tableau de données.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">site_id</th>
+<th align="left">pH_sol</th>
+<th align="left">num_sp</th>
+<th align="left">traitement</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">A1.01</td>
+<td align="left">5.6</td>
+<td align="left">17</td>
+<td align="left">Fertilisé</td>
+</tr>
+<tr class="even">
+<td align="left">A1.02</td>
+<td align="left">7.3</td>
+<td align="left">23</td>
+<td align="left">Fertilisé</td>
+</tr>
+<tr class="odd">
+<td align="left">B1.01</td>
+<td align="left">4.1</td>
+<td align="left">15</td>
+<td align="left">Non Fertilisé</td>
+</tr>
+<tr class="even">
+<td align="left">B1.02</td>
+<td align="left">6.0</td>
+<td align="left">17</td>
+<td align="left">Non Fertilisé</td>
+</tr>
+</tbody>
+</table>
+<p>N. B. Les noms des colonnes et leur contenu n’ont ni accent, ni
+d’espace, ni caractères spéciaux puisque R préfère une seule suite de
+caractères comme titre. Ainsi, num_sp représente bien ‘Nombre
+d’espèces’, mais R préfère la forme ‘num_sp’. Il en va de même pour
+le contenu du tableau (pas ‘Fertilisé’, mais bien ‘Fert’).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="manipuler-les-objets-dans-r.html#cb15-1"></a><span class="co"># On commence par créer les vecteurs.</span></span>
+<span id="cb15-2"><a href="manipuler-les-objets-dans-r.html#cb15-2"></a>site_id &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;A1.01&quot;</span>, <span class="st">&quot;A1.02&quot;</span>, <span class="st">&quot;B1.01&quot;</span>, <span class="st">&quot;B1.02&quot;</span>)</span>
+<span id="cb15-3"><a href="manipuler-les-objets-dans-r.html#cb15-3"></a>pH_sol &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">5.6</span>, <span class="fl">7.3</span>, <span class="fl">4.1</span>, <span class="dv">6</span>)</span>
+<span id="cb15-4"><a href="manipuler-les-objets-dans-r.html#cb15-4"></a>num_sp &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">17</span>, <span class="dv">23</span>, <span class="dv">15</span>, <span class="dv">7</span>)</span>
+<span id="cb15-5"><a href="manipuler-les-objets-dans-r.html#cb15-5"></a>traitement &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fert&quot;</span>, <span class="st">&quot;Fert&quot;</span>, <span class="st">&quot;Non_fert&quot;</span>, <span class="st">&quot;Non_fert&quot;</span>)</span>
+<span id="cb15-6"><a href="manipuler-les-objets-dans-r.html#cb15-6"></a></span>
+<span id="cb15-7"><a href="manipuler-les-objets-dans-r.html#cb15-7"></a><span class="co"># On peut grouper tous ces vecteurs en un data frame avec</span></span>
+<span id="cb15-8"><a href="manipuler-les-objets-dans-r.html#cb15-8"></a><span class="co"># la fonction data.frame().</span></span>
+<span id="cb15-9"><a href="manipuler-les-objets-dans-r.html#cb15-9"></a>mon_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(site_id, pH_sol, num_sp, traitement)</span>
+<span id="cb15-10"><a href="manipuler-les-objets-dans-r.html#cb15-10"></a></span>
+<span id="cb15-11"><a href="manipuler-les-objets-dans-r.html#cb15-11"></a><span class="co"># On l’affiche à la console!</span></span>
+<span id="cb15-12"><a href="manipuler-les-objets-dans-r.html#cb15-12"></a>mon_df</span></code></pre></div>
+<hr />
+<p><strong>Truc R</strong></p>
+<p>Voici la fonction <code>dput()</code> dans un exemple plus concret:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="manipuler-les-objets-dans-r.html#cb16-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">dput</span>(mon_df)</span>
+<span id="cb16-2"><a href="manipuler-les-objets-dans-r.html#cb16-2"></a><span class="kw">structure</span>(<span class="kw">list</span>(<span class="dt">site_id =</span> <span class="kw">c</span>(<span class="st">&quot;A1.01&quot;</span>, <span class="st">&quot;A1.02&quot;</span>, <span class="st">&quot;B1.01&quot;</span>, <span class="st">&quot;B1.02&quot;</span></span>
+<span id="cb16-3"><a href="manipuler-les-objets-dans-r.html#cb16-3"></a>), <span class="dt">pH_sol =</span> <span class="kw">c</span>(<span class="fl">5.6</span>, <span class="fl">7.3</span>, <span class="fl">4.1</span>, <span class="dv">6</span>), <span class="dt">num_sp =</span> <span class="kw">c</span>(<span class="dv">17</span>, <span class="dv">23</span>, <span class="dv">15</span>, <span class="dv">7</span>), <span class="dt">traitement =</span> <span class="kw">c</span>(<span class="st">&quot;Fert&quot;</span>,</span>
+<span id="cb16-4"><a href="manipuler-les-objets-dans-r.html#cb16-4"></a><span class="st">&quot;Fert&quot;</span>, <span class="st">&quot;Non_fert&quot;</span>, <span class="st">&quot;Non_fert&quot;</span>)), <span class="dt">class =</span> <span class="st">&quot;data.frame&quot;</span>, <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="op">-</span>4L))</span>
+<span id="cb16-5"><a href="manipuler-les-objets-dans-r.html#cb16-5"></a></span>
+<span id="cb16-6"><a href="manipuler-les-objets-dans-r.html#cb16-6"></a><span class="co"># Il est possible de reconstruire le data frame initial (avec certaines métadonnées associées, telles que la classe des variables par exemple) en copiant-collant la sortie précédente</span></span>
+<span id="cb16-7"><a href="manipuler-les-objets-dans-r.html#cb16-7"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">structure</span>(<span class="kw">list</span>(<span class="dt">site_id =</span> <span class="kw">c</span>(<span class="st">&quot;A1.01&quot;</span>, <span class="st">&quot;A1.02&quot;</span>, <span class="st">&quot;B1.01&quot;</span>, <span class="st">&quot;B1.02&quot;</span></span>
+<span id="cb16-8"><a href="manipuler-les-objets-dans-r.html#cb16-8"></a>), <span class="dt">pH_sol =</span> <span class="kw">c</span>(<span class="fl">5.6</span>, <span class="fl">7.3</span>, <span class="fl">4.1</span>, <span class="dv">6</span>), <span class="dt">num_sp =</span> <span class="kw">c</span>(<span class="dv">17</span>, <span class="dv">23</span>, <span class="dv">15</span>, <span class="dv">7</span>), <span class="dt">traitement =</span> <span class="kw">c</span>(<span class="st">&quot;Fert&quot;</span>,</span>
+<span id="cb16-9"><a href="manipuler-les-objets-dans-r.html#cb16-9"></a><span class="st">&quot;Fert&quot;</span>, <span class="st">&quot;Non_fert&quot;</span>, <span class="st">&quot;Non_fert&quot;</span>)), <span class="dt">class =</span> <span class="st">&quot;data.frame&quot;</span>, <span class="dt">row.names =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="op">-</span>4L))</span></code></pre></div>
+<hr />
+<p>Les autres types d’objets pour stocker des données qu’on retrouve dans R
+sont les matrices, les tableaux (<em>i.e.</em> array en anglais) et les listes.
+Une matrice est très similaire à un data frame à l’exception que toutes
+les cellules de la matrice doivent être du même mode. Un array est
+similaire à une matrice, mais peut avoir plus de deux dimensions. Les
+arrays sont surtout utilisés pour des calculs avancés tels que des
+simulations numériques et des tests de permutations. Une liste est un
+groupement de plusieurs types d’objets différents. Par exemple, une
+liste pourrait comprendre un vecteur, un tableau de données et une
+matrice au sein du même objet.</p>
+</div>
+</div>
+<div id="indexer-des-objets-dans-r" class="section level3">
+<h3><span class="header-section-number">5.0.3</span> Indexer des objets dans R</h3>
+<hr />
+<div id="indexer-un-vecteur" class="section level4">
+<h4><span class="header-section-number">5.0.3.1</span> Indexer un vecteur</h4>
+<p>Lorsqu’on tape le nom d’un objet dans la console, R retourne l’objet en
+entier. Par contre, ce n’est pas pratique si l’objet est, par exemple,
+une énorme base de données avec des millions de lignes. Ça peut
+rapidement devenir difficile d’identifier des éléments précis d’un
+objet. R nous permet d’extraire certaines parties d’un objet en indexant
+ce dernier. Il suffit de spécifier la position des valeurs à l’intérieur
+d’un objet qu’on souhaite extraire à l’aide des crochets <code>[ ]</code>. Le code
+suivant illustre le concept d’indexation des vecteurs.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="manipuler-les-objets-dans-r.html#cb17-1"></a><span class="co"># Créons tout d’abord un vecteur numérique et un vecteur de caractères.</span></span>
+<span id="cb17-2"><a href="manipuler-les-objets-dans-r.html#cb17-2"></a><span class="co"># Ce n’est pas nécessaire de faire cette étape si vous l’avez déjà fait dans un exercice précédent.</span></span>
+<span id="cb17-3"><a href="manipuler-les-objets-dans-r.html#cb17-3"></a><span class="op">&gt;</span><span class="st"> </span>impair &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb17-4"><a href="manipuler-les-objets-dans-r.html#cb17-4"></a></span>
+<span id="cb17-5"><a href="manipuler-les-objets-dans-r.html#cb17-5"></a><span class="co"># Extrayons le deuxième élément du vecteur numérique.</span></span>
+<span id="cb17-6"><a href="manipuler-les-objets-dans-r.html#cb17-6"></a><span class="op">&gt;</span><span class="st"> </span>impair[<span class="dv">2</span>]</span>
+<span id="cb17-7"><a href="manipuler-les-objets-dans-r.html#cb17-7"></a>[<span class="dv">1</span>]  <span class="dv">3</span></span>
+<span id="cb17-8"><a href="manipuler-les-objets-dans-r.html#cb17-8"></a></span>
+<span id="cb17-9"><a href="manipuler-les-objets-dans-r.html#cb17-9"></a><span class="co"># Extrayons les 2ème et 4ème éléments du vecteur numérique.</span></span>
+<span id="cb17-10"><a href="manipuler-les-objets-dans-r.html#cb17-10"></a><span class="op">&gt;</span><span class="st"> </span>impair[<span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>)]</span>
+<span id="cb17-11"><a href="manipuler-les-objets-dans-r.html#cb17-11"></a>[<span class="dv">1</span>]  <span class="dv">3</span> <span class="dv">7</span></span>
+<span id="cb17-12"><a href="manipuler-les-objets-dans-r.html#cb17-12"></a></span>
+<span id="cb17-13"><a href="manipuler-les-objets-dans-r.html#cb17-13"></a><span class="co"># Extrayons tous les éléments du vecteur numérique sauf les deux premières.</span></span>
+<span id="cb17-14"><a href="manipuler-les-objets-dans-r.html#cb17-14"></a><span class="op">&gt;</span><span class="st"> </span>impair[<span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>, <span class="dv">-2</span>)]</span>
+<span id="cb17-15"><a href="manipuler-les-objets-dans-r.html#cb17-15"></a>[<span class="dv">1</span>] <span class="dv">5</span> <span class="dv">7</span> <span class="dv">9</span></span>
+<span id="cb17-16"><a href="manipuler-les-objets-dans-r.html#cb17-16"></a></span>
+<span id="cb17-17"><a href="manipuler-les-objets-dans-r.html#cb17-17"></a><span class="co"># Si nous sélectionnons une position qui n&#39;existe pas dans le vecteur numérique.</span></span>
+<span id="cb17-18"><a href="manipuler-les-objets-dans-r.html#cb17-18"></a>impair[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">6</span>)]</span>
+<span id="cb17-19"><a href="manipuler-les-objets-dans-r.html#cb17-19"></a>[<span class="dv">1</span>] <span class="dv">1</span> <span class="ot">NA</span></span>
+<span id="cb17-20"><a href="manipuler-les-objets-dans-r.html#cb17-20"></a><span class="co"># Il n’y a pas de sixième valeur dans ce vecteur, donc R retourne une valeur nulle (i.e. NA).</span></span>
+<span id="cb17-21"><a href="manipuler-les-objets-dans-r.html#cb17-21"></a><span class="co"># NA signifie &#39;Not available&#39;.</span></span>
+<span id="cb17-22"><a href="manipuler-les-objets-dans-r.html#cb17-22"></a></span>
+<span id="cb17-23"><a href="manipuler-les-objets-dans-r.html#cb17-23"></a><span class="co"># Nous pouvons également utiliser des conditions pour sélectionner des valeurs.</span></span>
+<span id="cb17-24"><a href="manipuler-les-objets-dans-r.html#cb17-24"></a><span class="op">&gt;</span><span class="st"> </span>impair[impair <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>]</span>
+<span id="cb17-25"><a href="manipuler-les-objets-dans-r.html#cb17-25"></a>[<span class="dv">1</span>] <span class="dv">5</span> <span class="dv">7</span> <span class="dv">9</span></span>
+<span id="cb17-26"><a href="manipuler-les-objets-dans-r.html#cb17-26"></a></span>
+<span id="cb17-27"><a href="manipuler-les-objets-dans-r.html#cb17-27"></a><span class="co"># Nous pouvons procéder de même sur les vecteurs de caractère</span></span>
+<span id="cb17-28"><a href="manipuler-les-objets-dans-r.html#cb17-28"></a><span class="co"># Extraire tous les éléments correspondant exactement à « bleu » du vecteur de caractères.</span></span>
+<span id="cb17-29"><a href="manipuler-les-objets-dans-r.html#cb17-29"></a><span class="co"># Prenez note de l’utilisation du double signe d’égalité ==.</span></span>
+<span id="cb17-30"><a href="manipuler-les-objets-dans-r.html#cb17-30"></a><span class="op">&gt;</span><span class="st"> </span>car_vecteur[car_vecteur <span class="op">==</span><span class="st"> &quot;bleu&quot;</span>]</span>
+<span id="cb17-31"><a href="manipuler-les-objets-dans-r.html#cb17-31"></a>[<span class="dv">1</span>]  <span class="st">&quot;bleu&quot;</span></span></code></pre></div>
+<hr />
+<div id="défi-8" class="section level5">
+<h5><span class="header-section-number">5.0.3.1.1</span> Défi 8</h5>
+<blockquote>
+<p>a) Extraire la quatrième valeur du vecteur numérique num_vecteur.</p>
+<p>b) Extraire les première et troisièmes valeurs du vecteur numérique
+num_vecteur.</p>
+<p>c) Extraire toutes les valeurs du vecteur numérique num_vecteur à
+l’exception des deuxième et quatrième valeurs.</p>
+</blockquote>
+<p>&gt; ++++Défi 8a : Indexer des vecteurs|</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="manipuler-les-objets-dans-r.html#cb18-1"></a><span class="op">&gt;</span><span class="st"> </span>num_vecteur[<span class="dv">4</span>]</span>
+<span id="cb18-2"><a href="manipuler-les-objets-dans-r.html#cb18-2"></a>[<span class="dv">1</span>] <span class="dv">98</span></span></code></pre></div>
+<p>++++ ++++Défi 8b : Indexer des vecteurs|</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="manipuler-les-objets-dans-r.html#cb19-1"></a><span class="op">&gt;</span><span class="st"> </span>num_vecteur[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</span>
+<span id="cb19-2"><a href="manipuler-les-objets-dans-r.html#cb19-2"></a>[<span class="dv">1</span>] <span class="dv">1</span>  <span class="dv">3</span></span></code></pre></div>
+<p>++++ ++++Défi 8c : Indexer des vecteurs|</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="manipuler-les-objets-dans-r.html#cb20-1"></a><span class="op">&gt;</span><span class="st"> </span>num_vecteur[<span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">4</span>)]</span>
+<span id="cb20-2"><a href="manipuler-les-objets-dans-r.html#cb20-2"></a>[<span class="dv">1</span>] <span class="dv">1</span>  <span class="dv">3</span>  <span class="dv">32</span>  <span class="dv">-76</span>  <span class="dv">-4</span></span></code></pre></div>
+<p>++++</p>
+<hr />
+</div>
+<div id="défi-9" class="section level5">
+<h5><span class="header-section-number">5.0.3.1.2</span> Défi 9</h5>
+<blockquote>
+<p>Explorez la différence entre ces deux lignes de codes :</p>
+</blockquote>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="manipuler-les-objets-dans-r.html#cb21-1"></a><span class="op">&gt;</span><span class="st"> </span>car_vecteur <span class="op">==</span><span class="st"> &quot;bleu&quot;</span></span>
+<span id="cb21-2"><a href="manipuler-les-objets-dans-r.html#cb21-2"></a><span class="op">&gt;</span><span class="st"> </span>car_vecteur[car_vecteur <span class="op">==</span><span class="st"> &quot;bleu&quot;</span>]</span></code></pre></div>
+<p>++++Défi 9 : Différences entre codes| La première ligne de code évalue
+une déclaration logique. Pour chaque élément du vecteur <code>car_vecteur</code>, R
+vérifie si cet élément est exactement égal à « bleu » ou non et retourne
+une réponse (TRUE ou FALSE). La prochaine sous-section présente une
+brève introduction aux déclarations logiques. La deuxième ligne de code
+demande à R d’extraire tous les éléments à l’intérieur du vecteur
+<code>car_vecteur</code> qui sont exactement égaux à « bleu ». Il est également
+possible d’extraire la valeur « bleu » en attribuant une valeur logique
+à chaque valeur du vecteur. Pour cela, il faut bien sûr connaître la
+position de la valeur « bleu » à l’intérieur du vecteur.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="manipuler-les-objets-dans-r.html#cb22-1"></a>car_vecteur[<span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">FALSE</span>, <span class="ot">FALSE</span>)]</span>
+<span id="cb22-2"><a href="manipuler-les-objets-dans-r.html#cb22-2"></a><span class="co"># On spécifie ici que la première valeur est &#39;vraie&#39;,</span></span>
+<span id="cb22-3"><a href="manipuler-les-objets-dans-r.html#cb22-3"></a><span class="co"># c&#39;est-à-dire qu&#39;on souhaite que R nous retourne la</span></span>
+<span id="cb22-4"><a href="manipuler-les-objets-dans-r.html#cb22-4"></a><span class="co"># première valeur du vecteur car_vecteur, soit &#39;bleu&#39;.</span></span></code></pre></div>
+<p>++++</p>
+<hr />
+</div>
+</div>
+<div id="indexer-un-data-frame" class="section level4">
+<h4><span class="header-section-number">5.0.3.2</span> Indexer un data frame</h4>
+<p>L’indexation des data frames est similaire à celle des vecteurs, mais il
+est généralement nécessaire de spécifier deux dimensions : le numéro de
+ligne et de colonne. Pour ce faire, la syntaxe dans R est :</p>
+<p><code>data frame[numéro de ligne, numéro de colonne]</code>.</p>
+<p>Voici quelques exemples d’indexation de data frames. Prenez note que les
+quatre premières opérations sont également valides pour les matrices.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="manipuler-les-objets-dans-r.html#cb23-1"></a><span class="co"># Réutilisons le data frame créé précédemment (mon_df)</span></span>
+<span id="cb23-2"><a href="manipuler-les-objets-dans-r.html#cb23-2"></a><span class="co"># Extrayons la première ligne du data frame.</span></span>
+<span id="cb23-3"><a href="manipuler-les-objets-dans-r.html#cb23-3"></a><span class="op">&gt;</span><span class="st"> </span>mon_df[<span class="dv">1</span>, ]</span>
+<span id="cb23-4"><a href="manipuler-les-objets-dans-r.html#cb23-4"></a></span>
+<span id="cb23-5"><a href="manipuler-les-objets-dans-r.html#cb23-5"></a><span class="co"># Extrayons la troisième colonne du data frame.</span></span>
+<span id="cb23-6"><a href="manipuler-les-objets-dans-r.html#cb23-6"></a><span class="op">&gt;</span><span class="st"> </span>mon_df[, <span class="dv">3</span>]</span>
+<span id="cb23-7"><a href="manipuler-les-objets-dans-r.html#cb23-7"></a><span class="co"># Notez qu&#39;un index vide sélectionne toutes les valeurs</span></span>
+<span id="cb23-8"><a href="manipuler-les-objets-dans-r.html#cb23-8"></a></span>
+<span id="cb23-9"><a href="manipuler-les-objets-dans-r.html#cb23-9"></a><span class="co"># Extrayons le deuxième élément de la quatrième colonne du data frame.</span></span>
+<span id="cb23-10"><a href="manipuler-les-objets-dans-r.html#cb23-10"></a><span class="op">&gt;</span><span class="st"> </span>mon_df[<span class="dv">2</span>, <span class="dv">4</span>]</span>
+<span id="cb23-11"><a href="manipuler-les-objets-dans-r.html#cb23-11"></a></span>
+<span id="cb23-12"><a href="manipuler-les-objets-dans-r.html#cb23-12"></a><span class="co"># Extrayons les lignes 2 et 4 du data frame.</span></span>
+<span id="cb23-13"><a href="manipuler-les-objets-dans-r.html#cb23-13"></a><span class="op">&gt;</span><span class="st"> </span>mon_df[<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>), ]</span>
+<span id="cb23-14"><a href="manipuler-les-objets-dans-r.html#cb23-14"></a></span>
+<span id="cb23-15"><a href="manipuler-les-objets-dans-r.html#cb23-15"></a><span class="co"># Extrayons la colonne « site_id » en référant directement à son nom.</span></span>
+<span id="cb23-16"><a href="manipuler-les-objets-dans-r.html#cb23-16"></a><span class="co"># Le signe de dollar ($) permet une telle opération !</span></span>
+<span id="cb23-17"><a href="manipuler-les-objets-dans-r.html#cb23-17"></a><span class="op">&gt;</span><span class="st"> </span>mon_df<span class="op">$</span>site_id</span>
+<span id="cb23-18"><a href="manipuler-les-objets-dans-r.html#cb23-18"></a></span>
+<span id="cb23-19"><a href="manipuler-les-objets-dans-r.html#cb23-19"></a><span class="co"># Extrayons la deuxième valeur de la colonne « site_id »</span></span>
+<span id="cb23-20"><a href="manipuler-les-objets-dans-r.html#cb23-20"></a><span class="op">&gt;</span><span class="st"> </span>mon_df<span class="op">$</span>site_id[<span class="dv">2</span>]</span>
+<span id="cb23-21"><a href="manipuler-les-objets-dans-r.html#cb23-21"></a></span>
+<span id="cb23-22"><a href="manipuler-les-objets-dans-r.html#cb23-22"></a><span class="co"># Extrayons les variables « site_id » et « pH_sol ».</span></span>
+<span id="cb23-23"><a href="manipuler-les-objets-dans-r.html#cb23-23"></a><span class="op">&gt;</span><span class="st"> </span>mon_df[,<span class="kw">c</span>(<span class="st">&quot;site_id&quot;</span>,<span class="st">&quot;pH_sol&quot;</span>)]</span></code></pre></div>
+<hr />
+</div>
+<div id="un-bref-commentaire-sur-les-déclarations-logiques" class="section level4">
+<h4><span class="header-section-number">5.0.3.3</span> Un bref commentaire sur les déclarations logiques</h4>
+<p>R permet de tester les déclarations logiques, i.e. tester si une
+déclaration est vraie ou fausse. Vous devez utiliser des opérateurs
+logiques pour cela.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Opérateur</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">&lt;</td>
+<td align="left">plus petit que</td>
+</tr>
+<tr class="even">
+<td align="left">&lt;=</td>
+<td align="left">plus petit ou égal à</td>
+</tr>
+<tr class="odd">
+<td align="left">&gt;</td>
+<td align="left">plus grand que</td>
+</tr>
+<tr class="even">
+<td align="left">&gt;=</td>
+<td align="left">plus grand ou égal à</td>
+</tr>
+<tr class="odd">
+<td align="left">==</td>
+<td align="left">exactement égal à</td>
+</tr>
+<tr class="even">
+<td align="left">!=</td>
+<td align="left">pas égal à</td>
+</tr>
+<tr class="odd">
+<td align="left">x | y</td>
+<td align="left">x OU y</td>
+</tr>
+<tr class="even">
+<td align="left">x &amp; y</td>
+<td align="left">x ET y</td>
+</tr>
+</tbody>
+</table>
+<p>Les exemples suivants illustrent comment utiliser ces opérateurs de
+manière appropriée.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="manipuler-les-objets-dans-r.html#cb24-1"></a><span class="co"># Commençons par créer deux vecteurs à comparer.</span></span>
+<span id="cb24-2"><a href="manipuler-les-objets-dans-r.html#cb24-2"></a><span class="op">&gt;</span><span class="st"> </span>x2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>)</span>
+<span id="cb24-3"><a href="manipuler-les-objets-dans-r.html#cb24-3"></a><span class="op">&gt;</span><span class="st"> </span>y2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">-7</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb24-4"><a href="manipuler-les-objets-dans-r.html#cb24-4"></a></span>
+<span id="cb24-5"><a href="manipuler-les-objets-dans-r.html#cb24-5"></a><span class="co"># Vérifions si les éléments de x2 sont plus grand ou égaux à 3.</span></span>
+<span id="cb24-6"><a href="manipuler-les-objets-dans-r.html#cb24-6"></a><span class="co"># R retourne une valeur TRUE/FALSE pour chaque élément (dans le même ordre que x2).</span></span>
+<span id="cb24-7"><a href="manipuler-les-objets-dans-r.html#cb24-7"></a><span class="op">&gt;</span><span class="st"> </span>x2 <span class="op">&gt;=</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb24-8"><a href="manipuler-les-objets-dans-r.html#cb24-8"></a>[<span class="dv">1</span>] <span class="ot">FALSE</span> <span class="ot">FALSE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span></span>
+<span id="cb24-9"><a href="manipuler-les-objets-dans-r.html#cb24-9"></a></span>
+<span id="cb24-10"><a href="manipuler-les-objets-dans-r.html#cb24-10"></a><span class="co"># Vérifions si les éléments de x2 sont exactement égaux à ceux de y.</span></span>
+<span id="cb24-11"><a href="manipuler-les-objets-dans-r.html#cb24-11"></a><span class="op">&gt;</span><span class="st"> </span>x2 <span class="op">==</span><span class="st"> </span>y2</span>
+<span id="cb24-12"><a href="manipuler-les-objets-dans-r.html#cb24-12"></a>[<span class="dv">1</span>] <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">FALSE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span></span>
+<span id="cb24-13"><a href="manipuler-les-objets-dans-r.html#cb24-13"></a></span>
+<span id="cb24-14"><a href="manipuler-les-objets-dans-r.html#cb24-14"></a><span class="co"># Est-ce que 3 n’est pas égal à 4? Bien sûr!</span></span>
+<span id="cb24-15"><a href="manipuler-les-objets-dans-r.html#cb24-15"></a><span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> <span class="op">!=</span><span class="st"> </span><span class="dv">4</span></span>
+<span id="cb24-16"><a href="manipuler-les-objets-dans-r.html#cb24-16"></a>[<span class="dv">1</span>] <span class="ot">TRUE</span></span>
+<span id="cb24-17"><a href="manipuler-les-objets-dans-r.html#cb24-17"></a></span>
+<span id="cb24-18"><a href="manipuler-les-objets-dans-r.html#cb24-18"></a><span class="co"># Vérifions quels éléments de x2 sont plus grands que 2, mais plus petits que 5.</span></span>
+<span id="cb24-19"><a href="manipuler-les-objets-dans-r.html#cb24-19"></a><span class="co"># Il faut réécrire x2 deux fois pour que ça fonctionne!</span></span>
+<span id="cb24-20"><a href="manipuler-les-objets-dans-r.html#cb24-20"></a><span class="op">&gt;</span><span class="st"> </span>x2 <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span> <span class="op">&amp;</span><span class="st"> </span>x2 <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span></span>
+<span id="cb24-21"><a href="manipuler-les-objets-dans-r.html#cb24-21"></a>[<span class="dv">1</span>] <span class="ot">FALSE</span> <span class="ot">FALSE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">FALSE</span></span>
+<span id="cb24-22"><a href="manipuler-les-objets-dans-r.html#cb24-22"></a><span class="co"># Écrire x2 &gt; 2 &amp; &lt; 5 va retourner une erreur !</span></span></code></pre></div>
+<p><br />
+-----</p>
+<div id="défi-10" class="section level5">
+<h5><span class="header-section-number">5.0.3.3.1</span> Défi 10</h5>
+<blockquote>
+<p>a) Extrayez la colonne « num_sp » du tableau <code>mon_df</code> et
+multipliez-la par les quatre premières valeurs du vecteur
+<code>num_vecteur</code>.<br />
+&gt; b) Ensuite, écrivez une déclaration logique qui vérifie si chaque
+valeur obtenue est supérieure à 25. Référez-vous au défi 9 pour
+compléter cette question.<br />
+&gt;</p>
+</blockquote>
+<p>++++ Défi 10a : Indexer et multiplier|</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="manipuler-les-objets-dans-r.html#cb25-1"></a><span class="op">&gt;</span><span class="st"> </span>mon_df<span class="op">$</span>num_sp <span class="op">*</span><span class="st"> </span>num_vecteur[<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)]</span>
+<span id="cb25-2"><a href="manipuler-les-objets-dans-r.html#cb25-2"></a>[<span class="dv">1</span>] <span class="dv">17</span> <span class="dv">92</span> <span class="dv">45</span> <span class="dv">686</span></span>
+<span id="cb25-3"><a href="manipuler-les-objets-dans-r.html#cb25-3"></a></span>
+<span id="cb25-4"><a href="manipuler-les-objets-dans-r.html#cb25-4"></a><span class="co"># Ou encore</span></span>
+<span id="cb25-5"><a href="manipuler-les-objets-dans-r.html#cb25-5"></a><span class="op">&gt;</span><span class="st"> </span>mon_df[, <span class="dv">3</span>] <span class="op">*</span><span class="st"> </span>num_vecteur[<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)]</span>
+<span id="cb25-6"><a href="manipuler-les-objets-dans-r.html#cb25-6"></a>[<span class="dv">1</span>] <span class="dv">17</span> <span class="dv">92</span> <span class="dv">45</span> <span class="dv">686</span></span></code></pre></div>
+<p>++++</p>
+<p>++++ Défi 10b : Déclaration logique|</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="manipuler-les-objets-dans-r.html#cb26-1"></a><span class="op">&gt;</span><span class="st"> </span>(mon_df<span class="op">$</span>num_sp <span class="op">*</span><span class="st"> </span>num_vecteur[<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)]) <span class="op">&gt;</span><span class="st"> </span><span class="dv">25</span></span>
+<span id="cb26-2"><a href="manipuler-les-objets-dans-r.html#cb26-2"></a>[<span class="dv">1</span>] <span class="ot">FALSE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span> <span class="ot">TRUE</span></span></code></pre></div>
+<p>++++</p>
+
+</div>
+</div>
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All the content of the workshop series is under a <a href="https://creativecommons.org/licenses/by-nc/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="utiliser-r-comme-une-calculatrice.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="les-fonctions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
