@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Additional resources | Workshop 1: Introduction to R</title>
+  <title>Chapter 6 Functions | Workshop 1: Introduction to R</title>
   <meta name="description" content="Introduction to R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Additional resources | Workshop 1: Introduction to R" />
+  <meta property="og:title" content="Chapter 6 Functions | Workshop 1: Introduction to R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/qcbsRworkshops/" />
   <meta property="og:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="qcbsRworkshops/workshop01" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Additional resources | Workshop 1: Introduction to R" />
+  <meta name="twitter:title" content="Chapter 6 Functions | Workshop 1: Introduction to R" />
   
   <meta name="twitter:description" content="Introduction to R" />
   <meta name="twitter:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="summary.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="manipulating-objects-in-r.html"/>
+<link rel="next" href="installing-and-using-r-packages.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -211,38 +211,122 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
 </div>
-<div id="additional-resources" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Additional resources</h1>
-<div id="cheat-sheets" class="section level4">
-<h4><span class="header-section-number">9.0.0.1</span> Cheat Sheets</h4>
-<p><a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p>
-<p>These cheat sheets are also directly available in RStudio (Help -&gt;
-Cheat Sheets)</p>
+<div id="functions" class="section level1">
+<h1><span class="header-section-number">Chapter 6</span> Functions</h1>
+<p>Most of the time with R, you will need to use functions to do what you
+want.</p>
+<p>Functions are tools that are there to simplify your life. They allow you
+to quickly execute operations on objects without having to write every
+mathematical step. Functions are usually pre-existing R code that are
+executed when used. They remove the need to create this code and to
+rewrite it every time you need it.</p>
+<p>To execute a function, you will need to <span class="ul">call</span> it. A function call
+is essentially a shortcut to the code of the function.</p>
+<p>To perform the function call you will need entry values called
+<strong>arguments</strong> (or sometimes parameters). After performing its
+operations, the function will then give you a <strong>return value</strong>. The
+command also must be structured properly, following the “grammar
+rules” of the R language (syntax).</p>
+<p>A function call is structured as follow: the name of the function,
+followed by parenthesis <code>( )</code>. Inside the parenthesis, you insert all
+your arguments separated with commas.</p>
+<p><code>function_name(arg1, arg2, ...)</code></p>
+<p>Here an example:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="functions.html#cb26-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
+<p>Arguments are <strong>values</strong> and the instructions the function needs to run.
+Objects can be passed into functions:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="functions.html#cb27-1"></a><span class="op">&gt;</span><span class="st"> </span>a &lt;-<span class="st"> </span><span class="dv">3</span></span>
+<span id="cb27-2"><a href="functions.html#cb27-2"></a><span class="op">&gt;</span><span class="st"> </span>b &lt;-<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb27-3"><a href="functions.html#cb27-3"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sum</span>(a, b)</span>
+<span id="cb27-4"><a href="functions.html#cb27-4"></a>[<span class="dv">1</span>] <span class="dv">8</span></span></code></pre></div>
+<p>On the last line, the output that appears is the <strong>return value</strong> of the
+function. In this case, it is the sum of <code>a</code> and <code>b</code>, 8.<br />
+</p>
+<hr />
+<div id="challenge-11" class="section level5">
+<h5><span class="header-section-number">6.0.0.0.1</span> CHALLENGE 11</h5>
+<blockquote>
+<p>a) - Create a vector a that contains all numbers from 1 to 5<br />
+&gt; - Create an object b with value of 2<br />
+&gt; - Add a and b together using the basic <code>+</code> operator and save the
+result in an object called <code>result_add</code><br />
+&gt; - Add a and b together using the <code>sum()</code> function and save the
+result in an object called <code>result_sum</code><br />
+&gt; - Compare result_add and result_sum. Are they different?</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>b) Add 5 to <code>result_sum</code> using the <code>sum()</code> function.</p>
+</blockquote>
+<p>&gt; ++++Challenge 11a: Calling functions|</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="functions.html#cb28-1"></a><span class="op">&gt;</span><span class="st"> </span>a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span>
+<span id="cb28-2"><a href="functions.html#cb28-2"></a><span class="op">&gt;</span><span class="st"> </span>b &lt;-<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb28-3"><a href="functions.html#cb28-3"></a><span class="op">&gt;</span><span class="st"> </span>result_add &lt;-<span class="st"> </span>a <span class="op">+</span><span class="st"> </span>b</span>
+<span id="cb28-4"><a href="functions.html#cb28-4"></a><span class="op">&gt;</span><span class="st"> </span>result_sum &lt;-<span class="st"> </span><span class="kw">sum</span>(a, b)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="functions.html#cb29-1"></a><span class="op">&gt;</span><span class="st"> </span>result_add</span>
+<span id="cb29-2"><a href="functions.html#cb29-2"></a>[<span class="dv">1</span>]  <span class="dv">3</span> <span class="dv">4</span> <span class="dv">5</span> <span class="dv">6</span> <span class="dv">7</span></span></code></pre></div>
+<p>The operation on the vector adds 2 to each element. The result is a
+<strong>vector</strong>.<br />
+</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="functions.html#cb30-1"></a><span class="op">&gt;</span><span class="st"> </span>result_sum</span>
+<span id="cb30-2"><a href="functions.html#cb30-2"></a>[<span class="dv">1</span>] <span class="dv">17</span></span></code></pre></div>
+<p>The function <code>sum()</code> adds all values of <code>a</code> and <code>b</code>. It is the same as
+doing 1 + 2 + 3 + 4 + 5 + 2. The result is a <strong>number</strong>.<br />
+++++</p>
+<p>++++Challenge 11b: Calling functions|</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="functions.html#cb31-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sum</span>(result_sum, <span class="dv">5</span>)</span>
+<span id="cb31-2"><a href="functions.html#cb31-2"></a>[<span class="dv">1</span>] <span class="dv">22</span></span></code></pre></div>
+<p>++++</p>
 <hr />
 </div>
-<div id="a-few-books" class="section level4">
-<h4><span class="header-section-number">9.0.0.2</span> A few books</h4>
-<ul>
-<li>R for Dummies</li>
-<li>A Handbook of Statistical Analyses using R</li>
-<li>R in Action</li>
-<li>Introductory Statistics in R</li>
-<li>A Beginner’s Guide to R</li>
-<li>The R Book</li>
-</ul>
+<div id="arguments" class="section level4">
+<h4><span class="header-section-number">6.0.0.1</span> Arguments</h4>
+<p>Arguments each have a <strong>name</strong> that can be provided during a function
+call.<br />
+If the name is <span class="ul">not provided</span>, the order of the arguments <span class="ul">does
+matter</span>.<br />
+If the name is <span class="ul">provided</span>, the order of the arguments <span class="ul">does not
+matter</span>.</p>
+<p>To provide an argument name during a function call, just enter it in the
+form <code>name=value</code>.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="functions.html#cb32-1"></a><span class="kw">log</span>(<span class="dv">8</span>, <span class="dt">base =</span> <span class="dv">2</span>)</span></code></pre></div>
 <hr />
-</div>
-<div id="a-few-useful-links" class="section level4">
-<h4><span class="header-section-number">9.0.0.3</span> A few useful links</h4>
-<ul>
-<li><a href="https:*cran.r-project.org/doc/manuals/r-release/R-intro.html">r4ds.had.co.nz/index.html</a>
-|https:<em>cran.r-project.org/doc/manuals/r-release/R-intro.html]] *
-<span class="math display">\[\[http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\|http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\]</span>] *
-<span class="math display">\[\[http:*statmethods.net/\|http:*statmethods.net/\]</span>] *
-<span class="math display">\[\[https:*support.rstudio.com/hc/en-us/categories/200035113-Documentation\|https:*support.rstudio.com/hc/en-us/categories/200035113-Documentation\]</span>] *
-[[http:</em>cookbook-r.com/|<a href="http://cookbook-r.com/" class="uri">http://cookbook-r.com/</a>](<a href="http://r4ds.had.co.nz/index.html" class="uri">http://r4ds.had.co.nz/index.html</a>)</li>
-</ul>
+<div id="challenge-12" class="section level5">
+<h5><span class="header-section-number">6.0.0.1.1</span> CHALLENGE 12</h5>
+<blockquote>
+<p><code>plot(x, y)</code> is a function that draws a graph of y as a function of x.
+It requires two arguments named <code>x</code> and <code>y</code>. What are the differences
+between the following lines?</p>
+</blockquote>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="functions.html#cb33-1"></a><span class="op">&gt;</span><span class="st"> </span>a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span></span>
+<span id="cb33-2"><a href="functions.html#cb33-2"></a><span class="op">&gt;</span><span class="st"> </span>b &lt;-<span class="st"> </span>a<span class="op">^</span><span class="dv">2</span></span>
+<span id="cb33-3"><a href="functions.html#cb33-3"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(a, b)</span>
+<span id="cb33-4"><a href="functions.html#cb33-4"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(b, a)</span>
+<span id="cb33-5"><a href="functions.html#cb33-5"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(<span class="dt">x =</span> a, <span class="dt">y =</span> b)</span>
+<span id="cb33-6"><a href="functions.html#cb33-6"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">plot</span>(<span class="dt">y =</span> b, <span class="dt">x =</span> a)</span></code></pre></div>
+<p>++++Challenge 12: Argument names|</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="functions.html#cb34-1"></a><span class="kw">plot</span>(a, b)</span></code></pre></div>
+<p><img src="images//rplot.png" width="200" /><br />
+Plots the graph of <code>b</code> as a function of <code>a</code>.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="functions.html#cb35-1"></a><span class="kw">plot</span>(b, a)</span></code></pre></div>
+<p><img src="images/plotba.png" width="200" /><br />
+Plots the graph of <code>a</code> as a function of <code>b</code>.The argument names are not
+provided, the order of the arguments matters.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="functions.html#cb36-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> a, <span class="dt">y =</span> b)</span></code></pre></div>
+<p><img src="images/pltxayb.png" width="200" /><br />
+Plots the graph of <code>b</code> as a function of <code>a</code>, same as plot(a, b).</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="functions.html#cb37-1"></a><span class="kw">plot</span>(<span class="dt">y =</span> b, <span class="dt">x =</span> a)</span></code></pre></div>
+<p><img src="images/plotybxa.png" width="200" /><br />
+Plots the graph of <code>b</code> as a function of <code>a</code>. The argument names are
+provided, the order of the arguments does not matter. ++++</p>
+<hr />
+<p>As a reference, here is a list of some of the most common R functions:</p>
+<pre><code>sqrt, log, exp, max, min, sum, mean, sd, var, summary, plot, par, paste, format,
+head, length, str, names, typeof, class, attributes, library, ls, rm, setwd, getwd, file.choose,
+c, seq, rep, tapply, lapply, aggregate, merge, cbind, rbind, unique,
+help (or ?), help.search (or ??), help.start</code></pre>
 
+</div>
 </div>
 </div>
 <hr>
@@ -256,8 +340,8 @@ Cheat Sheets)</p>
           </div>
         </div>
       </div>
-<a href="summary.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="manipulating-objects-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="installing-and-using-r-packages.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

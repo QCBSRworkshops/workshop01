@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Additional resources | Workshop 1: Introduction to R</title>
+  <title>Chapter 7 Installing and using R packages | Workshop 1: Introduction to R</title>
   <meta name="description" content="Introduction to R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Additional resources | Workshop 1: Introduction to R" />
+  <meta property="og:title" content="Chapter 7 Installing and using R packages | Workshop 1: Introduction to R" />
   <meta property="og:type" content="book" />
   <meta property="og:url" content="https://github.com/qcbsRworkshops/" />
   <meta property="og:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="qcbsRworkshops/workshop01" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Additional resources | Workshop 1: Introduction to R" />
+  <meta name="twitter:title" content="Chapter 7 Installing and using R packages | Workshop 1: Introduction to R" />
   
   <meta name="twitter:description" content="Introduction to R" />
   <meta name="twitter:image" content="https://github.com/qcbsRworkshops//assets/images/logo/csbq_logo_accueil.png" />
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-<link rel="prev" href="summary.html"/>
-<link rel="next" href="references.html"/>
+<link rel="prev" href="functions.html"/>
+<link rel="next" href="summary.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -211,40 +211,186 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="hero-image-container"> 
   <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
 </div>
-<div id="additional-resources" class="section level1">
-<h1><span class="header-section-number">Chapter 9</span> Additional resources</h1>
-<div id="cheat-sheets" class="section level4">
-<h4><span class="header-section-number">9.0.0.1</span> Cheat Sheets</h4>
-<p><a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p>
-<p>These cheat sheets are also directly available in RStudio (Help -&gt;
-Cheat Sheets)</p>
+<div id="installing-and-using-r-packages" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Installing and using R packages</h1>
+<div id="packages" class="section level3">
+<h3><span class="header-section-number">7.0.1</span> Packages</h3>
+<hr />
+<p>Packages are a grouping of functions and/or datasets that share a
+similar theme. Ex : statistics, spatial analysis, plotting...</p>
+<p>Everyone can develop packages and make them available to other R users.</p>
+<p>They are usually available through the Comprehensive R Archive Network
+(CRAN)<a href="http://cran.r-project.org/web/packages/" class="uri">http://cran.r-project.org/web/packages/</a></p>
+<p>Currently, more than 16000 packages are publicly available.</p>
+<p>To install packages on your computer, use the function
+<code>install.packages()</code></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="installing-and-using-r-packages.html#cb39-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<p>Installing a package is required only once (but updated from time to
+time) but it is not enough to use its functions. You need to load the
+package once per R session before using it with the <code>library()</code>
+function. Let’s try using the function <code>qplot()</code> found in the
+<strong>ggplot2</strong> package we just installed.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="installing-and-using-r-packages.html#cb40-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">qplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<p>The package was correctly installed but we didn’t load it. Therefore,
+the execution of this code leads to the following error:</p>
+<p><code>Error: could not find function "qplot"</code></p>
+<p>To be able to use the function <code>qplot()</code> we need to load the package
+<code>ggplot2</code> before.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="installing-and-using-r-packages.html#cb41-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb41-2"><a href="installing-and-using-r-packages.html#cb41-2"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">qplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<p>Now the function is found and the execution of our code leads to the
+following graph:</p>
+<p><img src="images//qplot.png" width="200" /></p>
+<p>It is good practice to unload packages once we are done with them
+because it might conflict with other packages. Unloading a package is
+done with the <code>detach()</code> function and by specifying that it is a
+package:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="installing-and-using-r-packages.html#cb42-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">detach</span>(package<span class="op">:</span>ggplot2)</span></code></pre></div>
+</div>
+<div id="getting-help" class="section level3">
+<h3><span class="header-section-number">7.0.2</span> Getting help</h3>
+<hr />
+<div id="getting-help-with-functions" class="section level4">
+<h4><span class="header-section-number">7.0.2.1</span> Getting help with functions</h4>
+<p>We’ve seen so far that R is really great and offers us a lot of
+functions to work with. Among all these functions, there are probably
+some that can do what we want.</p>
+<p>Now the problem is: how to find them?</p>
+<p>To find a function that does something specific in your installed
+packages, you can use the operator <code>??</code> (or the <code>help.search()</code>
+function). To perform a search, just type <code>??</code> and what you want to
+search. For example, let’s say we want to create a sequence of odd
+numbers between 0 and 10. We will search in our packages all functions
+with the word <strong>sequence</strong> in them.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="installing-and-using-r-packages.html#cb43-1"></a><span class="op">&gt;</span><span class="st"> </span>??sequence</span></code></pre></div>
+<p>This opens the following window (<em>Note</em>: the search result may vary
+depending on the packages installed on your computer):</p>
+<p><img src="images//sequence_help.png" width="400" /><br />
+The search result contains two columns:</p>
+<ul>
+<li>On the left, we have the name of the function and the package in
+which we can find it in the format <code>package_name::function_name</code></li>
+<li>On the right, we have the description of the function</li>
+</ul>
+<p>Usually, functions have names that are representative of what they do.
+This makes it easier to use. Remember this if you ever start to write
+your own functions!</p>
+<p>Here the result that interests us is <code>base::seq</code>, i.e. the function
+<code>seq</code> that can be found in the <code>base</code> package and that generates
+sequences.<br />
+<strong>Note</strong>: the <code>base</code> package contains basic functions that load with R
+when you launch it and are therefore always available.</p>
 <hr />
 </div>
-<div id="a-few-books" class="section level4">
-<h4><span class="header-section-number">9.0.0.2</span> A few books</h4>
+<div id="help-page-of-functions" class="section level4">
+<h4><span class="header-section-number">7.0.2.2</span> Help page of functions</h4>
+<p>We will use the <code>seq()</code> function to generate our sequence. But how does
+it work? What does it do? How should I use it?</p>
+<p>To answer all these questions, we’ll try to find the help page of the
+function. For that, we will use the <code>?</code> operator (or the <code>help()</code>
+function). To access the help page of a function, we enter the commage
+as follow: <code>?function_name</code></p>
+<p>So for the <code>seq()</code> function, we type:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="installing-and-using-r-packages.html#cb44-1"></a><span class="op">&gt;</span><span class="st"> </span>?seq</span></code></pre></div>
+<p>This opens the following page:</p>
+<p><img src="images//seq.png" class="align-center" width="600" /><br />
+A help page usually contains the folowing elements and sections (<em>Note</em>:
+sometimes, the same help page is used for more than one function):</p>
 <ul>
-<li>R for Dummies</li>
-<li>A Handbook of Statistical Analyses using R</li>
-<li>R in Action</li>
-<li>Introductory Statistics in R</li>
-<li>A Beginner’s Guide to R</li>
-<li>The R Book</li>
+<li>On the top left corner, the name of the function and the package it
+belongs to in the format <code>function{package}</code></li>
+<li><strong>Description</strong>: a short description of the function(s)</li>
+<li><strong>Usage</strong>: how to use the function(s), especially what are the name
+and order of the arguments. If a value is specified near an argument
+name, it means that a default value has been defined for this
+argument, which makes it optional to specify another value. If the
+argument is missing, the default value will be used. For example, if
+we do not provide a <code>from</code> argument, the sequence will automatically
+start from <strong>1</strong></li>
+<li><strong>Arguments</strong>: A detailed description of all the arguments and what
+is expected or required for the function to work correctly. Be
+careful! Here are listed all the arguments for all the functions
+described on the help page; not all arguments are available for all
+listed functions. For example, in this help page, the arguments
+<code>from</code> and <code>to</code> are not available for the function <code>seq_along()</code>.</li>
+<li><strong>Details</strong>: Provide in depth details of the inner working of the
+function(s). Some specific cases can be discussed here or
+additionnal information provided.</li>
+<li><strong>Value</strong>: Explains what the return value of the function is.</li>
+<li><strong>References</strong>: Sources used as basis for the function or
+interesting readings on the subject.</li>
+<li><strong>See Also</strong>: Related functions that can sometimes be of use,
+especially when searching for the correct function for our needs.</li>
+<li><strong>Examples</strong>: Some examples on how to use the function(s)</li>
 </ul>
 <hr />
+<div id="challenge-13" class="section level5">
+<h5><span class="header-section-number">7.0.2.2.1</span> Challenge 13</h5>
+<blockquote>
+<p>a) Create a sequence of even numbers from 0 to 10 using the seq
+function</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>b) - Create an unsorted vector of your favourite numbers.</p>
+<p>- Find out how to sort it using</p>
+<p>?sort.</p>
+<p>- Sort your vector in reverse order.</p>
+</blockquote>
+<p>++++ Challenge 13a |</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="installing-and-using-r-packages.html#cb45-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
+<span id="cb45-2"><a href="installing-and-using-r-packages.html#cb45-2"></a>[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">2</span> <span class="dv">4</span> <span class="dv">6</span> <span class="dv">8</span> <span class="dv">10</span></span></code></pre></div>
+<p>We could also have written</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="installing-and-using-r-packages.html#cb46-1"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb46-2"><a href="installing-and-using-r-packages.html#cb46-2"></a>[<span class="dv">1</span>] <span class="dv">0</span> <span class="dv">2</span> <span class="dv">4</span> <span class="dv">6</span> <span class="dv">8</span> <span class="dv">10</span></span></code></pre></div>
+<p>++++</p>
+<p>++++ Challenge 13b |</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="installing-and-using-r-packages.html#cb47-1"></a><span class="op">&gt;</span><span class="st"> </span>numbers &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">22</span>, <span class="dv">6</span>, <span class="dv">26</span>)</span>
+<span id="cb47-2"><a href="installing-and-using-r-packages.html#cb47-2"></a><span class="op">&gt;</span><span class="st"> </span><span class="kw">sort</span>(numbers, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb47-3"><a href="installing-and-using-r-packages.html#cb47-3"></a>[<span class="dv">1</span>]  <span class="dv">26</span> <span class="dv">22</span>  <span class="dv">6</span>  <span class="dv">4</span>  <span class="dv">2</span></span></code></pre></div>
 </div>
-<div id="a-few-useful-links" class="section level4">
-<h4><span class="header-section-number">9.0.0.3</span> A few useful links</h4>
+</div>
+<div id="getting-help-on-the-web" class="section level4">
+<h4><span class="header-section-number">7.0.2.3</span> Getting help on the Web</h4>
+<p>Usually, your best source of information will be your favorite search
+engine (Google, Bing, Yahoo, etc.)</p>
+<p>Here are some tips on how to use them efficiently:</p>
 <ul>
-<li><a href="https:*cran.r-project.org/doc/manuals/r-release/R-intro.html">r4ds.had.co.nz/index.html</a>
-|https:<em>cran.r-project.org/doc/manuals/r-release/R-intro.html]] *
-<span class="math display">\[\[http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\|http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\]</span>] *
-<span class="math display">\[\[http:*statmethods.net/\|http:*statmethods.net/\]</span>] *
-<span class="math display">\[\[https:*support.rstudio.com/hc/en-us/categories/200035113-Documentation\|https:*support.rstudio.com/hc/en-us/categories/200035113-Documentation\]</span>] *
-[[http:</em>cookbook-r.com/|<a href="http://cookbook-r.com/" class="uri">http://cookbook-r.com/</a>](<a href="http://r4ds.had.co.nz/index.html" class="uri">http://r4ds.had.co.nz/index.html</a>)</li>
+<li>Search in English</li>
+<li>Use the keyword “R” at the beginning of your search</li>
+<li>Define precisely what you are looking for</li>
+<li>Learn to read discussion forums. Chances are other people already
+had the same problem and asked about it. Create your account on
+forums where questions about R are often asked like
+<a href="http://stats.stackexchange.com">stackexchange</a>.</li>
+<li>Don’t hesitate to search again with different keywords!</li>
 </ul>
+<hr />
+<div id="challenge-14" class="section level5">
+<h5><span class="header-section-number">7.0.2.3.1</span> Challenge 14</h5>
+<blockquote>
+<p>Find the appropriate functions to perform the following operations</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>a) Square root</p>
+<p>b) Calculate the mean of numbers</p>
+<p>c) Combine two dataframes by columns</p>
+<p>d) List available objects</p>
+</blockquote>
+<p>++++ Challenge 14 | a) <code>sqrt</code><br />
+b) <code>mean</code><br />
+c) <code>cbind</code><br />
+d) <code>ls</code><br />
+</p>
 
 </div>
 </div>
+</div>
+</div>
+
+
+
 <hr>
 <center> 
   <div class="footer">
@@ -256,8 +402,8 @@ Cheat Sheets)</p>
           </div>
         </div>
       </div>
-<a href="summary.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
