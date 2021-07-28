@@ -17,7 +17,7 @@ always_allow_html: yes
 url: 'https\://github.com/qcbsRworkshops/'
 config:
   edit:
-    link: https://github.com/qcbsRworkshops/workshop09/edit/main/book-fr/%s
+    link: https://github.com/qcbsRworkshops/workshop01/edit/main/book-fr/%s
     text: "Suggest changes"
 ---
 # (PART\*) Série d'ateliers R du CSBQ {-}
