@@ -40,7 +40,7 @@ aide-pour-les-fonctions
 défi-13
 obtenir-de-laide-sur-le-web
 défi-14
-sommaire
+résumé
 resources-additionnels
 aides-mémoire-cheat-sheets
 quelques-livres
