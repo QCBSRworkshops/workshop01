@@ -22,9 +22,9 @@
     time. This also means that there is a big online community of people
     that can help with any problems you have in R.
 
-![](images//operating_systems.png){width="50"}
-![](images//open_source.png){width="100"}
-![](images//the_why_r_plot_2.png){width="200"}
+![](images/operating_systems.png){width="50"}
+![](images/open_source.png){width="100"}
+![](images/the_why_r_plot_2.png){width="200"}
 
 
 ## Using RStudio
