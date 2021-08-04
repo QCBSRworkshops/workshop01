@@ -43,5 +43,7 @@ FR   | [![render-presentation-fr](https://github.com/QCBSRworkshops/workshop01/w
 
 # Contributors
 
+These people have contributed to the workshop material:
+
 <!-- readme: contributors -start -->
 <!-- readme: contributors -end -->
