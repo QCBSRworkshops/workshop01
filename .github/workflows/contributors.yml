@@ -3,10 +3,12 @@ on:
      branches:
        - main
 
+permissions: read-all|write-all
+
 jobs:
     contrib-readme-job:
         runs-on: ubuntu-latest
-        name: A job to automate contrib in readme
+        name: Generate contributor table in readme
         steps:
             - name: Contribute List
               uses: akhilmhdh/contributors-readme-action@v2.2
