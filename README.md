@@ -39,3 +39,9 @@ Language | Slides | Book
 :------- | :----- | :-----
 EN  | [![render-presentation-en](https://github.com/QCBSRworkshops/workshop01/workflows/render-presentation-en/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-presentation-en) | [![render-book-en](https://github.com/QCBSRworkshops/workshop01/workflows/render-book-en/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-book-en)
 FR   | [![render-presentation-fr](https://github.com/QCBSRworkshops/workshop01/workflows/render-presentation-fr/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-presentation-fr) | [![render-book-fr](https://github.com/QCBSRworkshops/workshop01/workflows/render-book-fr/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-book-fr)
+
+
+# Contributors
+
+<!-- readme: contributors -start -->
+<!-- readme: contributors -end -->
