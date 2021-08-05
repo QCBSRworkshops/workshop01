@@ -23,4 +23,4 @@ jobs:
           title: Update contributor table
           body: Credit new contributors by updating README
           base: ${{ github.head_ref }}
-          branch: update-contributors
+          branch: main
