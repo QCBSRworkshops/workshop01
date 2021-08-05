@@ -9,16 +9,18 @@ jobs:
     steps:
       - name: 🛎️ Checkout repository
         uses: actions/checkout@v2
-
-      # Make changes to pull request here
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: Update contributor table
-          base: ${{ github.head_ref }}         
-        
+      
       # Make changes to contributor table here 
       - name: Contribute List
         uses: akhilmhdh/contributors-readme-action@v2.2
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}          
+      
+      # Make pull request here
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: Update contributor table
+          body: Credit new contributors by updating README
+          base: ${{ github.head_ref }}
+          branch: update-contributors
