@@ -1,4 +1,11 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Functions
+
+## Introduction
 
 Most of the time with R, you will need to use functions to do what you
 want.
@@ -27,17 +34,16 @@ your arguments separated with commas.
 Here an example:
 
 ```{r, echo = TRUE, eval = FALSE}
-> sum(1, 2)
+sum(1, 2)
 ```
 
 Arguments are **values** and the instructions the function needs to run.
 Objects can be passed into functions:
 
-```{r, echo = TRUE, eval = FALSE}
-> a <- 3
-> b <- 5
-> sum(a, b)
-[1] 8
+```{r, echo = TRUE, eval = TRUE}
+a <- 3
+b <- 5
+sum(a, b)
 ```
 
 On the last line, the output that appears is the **return value** of the
@@ -45,65 +51,76 @@ function. In this case, it is the sum of `a` and `b`, 8.\
 
 ------------------------------------------------------------------------
 
-##### CHALLENGE 11
+## Challenge 11
 
-> a\) - Create a vector a that contains all numbers from 1 to 5\
-> \> - Create an object b with value of 2\
-> \> - Add a and b together using the basic `+` operator and save the
-> result in an object called `result_add`\
-> \> - Add a and b together using the `sum()` function and save the
-> result in an object called `result_sum`\
-> \> - Compare result_add and result_sum. Are they different?
+- Create a vector `a` that contains all numbers from 1 to 5
 
-\>
+- Create an object `b` with value of 2
 
-> b\) Add 5 to `result_sum` using the `sum()` function.
+- Add `a` and `b` together using the basic `+` operator and save the
+result in an object called `result_add`
 
-\> ++++Challenge 11a: Calling functions\|
+- Add `a` and `b` together using the `sum` function and save the result in an object called `result_sum`
 
-```{r, echo = TRUE, eval = FALSE}
-> a <- 1:5
-> b <- 2
-> result_add <- a + b
-> result_sum <- sum(a, b)
+- Compare `result_add` and `result_sum`. Are they different?
+
+- Add 5 to `result_sum` using the `sum` function.
+
+### Solutions {-}
+
+- Create a vector `a` that contains all numbers from 1 to 5
+
+```{r, echo = TRUE, eval = TRUE, class.source = 'fold-hide'}
+a <- 1:5
 ```
 
-```{r, echo = TRUE, eval = FALSE}
-> result_add
-[1]  3 4 5 6 7
+- Create an object `b` with value of 2
+
+```{r, echo = TRUE, eval = TRUE}
+b <- 2
+```
+
+- Add `a` and `b` together using the basic `+` operator and save the
+result in an object called `result_add`
+
+```{r, echo = TRUE, eval = TRUE}
+result_add <- a + b
+```
+
+- Add `a` and `b` together using the `sum` function and save the result in an object called `result_sum`
+
+```{r, echo = TRUE, eval = TRUE}
+result_sum <- sum(a,b)
+```
+
+- Compare `result_add` and `result_sum`. Are they different?
+
+```{r, echo = TRUE, eval = TRUE}
+result_add
 ```
 
 The operation on the vector adds 2 to each element. The result is a
-**vector**.\
+**vector**.
 
-```{r, echo = TRUE, eval = FALSE}
-> result_sum
-[1] 17
+```{r, echo = TRUE, eval = TRUE}
+result_sum
 ```
 
 The function `sum()` adds all values of `a` and `b`. It is the same as
-doing 1 + 2 + 3 + 4 + 5 + 2. The result is a **number**.\
-++++
+doing 1 + 2 + 3 + 4 + 5 + 2. The result is a **number**.
 
-++++Challenge 11b: Calling functions\|
+- Add 5 to `result_sum` using the `sum` function.
 
-```{r, echo = TRUE, eval = FALSE}
-> sum(result_sum, 5)
-[1] 22
+```{r, echo = TRUE, eval = TRUE}
+sum(result_sum, 5)
 ```
-
-++++
 
 ------------------------------------------------------------------------
 
-#### Arguments
+## Arguments
 
 Arguments each have a **name** that can be provided during a function
 call.\
-If the name is [not provided]{.ul}, the order of the arguments [does
-matter]{.ul}.\
-If the name is [provided]{.ul}, the order of the arguments [does not
-matter]{.ul}.
 
 To provide an argument name during a function call, just enter it in the
 form `name=value`.
@@ -112,60 +129,77 @@ form `name=value`.
 log(8, base = 2)
 ```
 
+If the name of the argument is not provided, the order of the arguments does
+matter.\
+
+```{r, echo = TRUE, eval = TRUE}
+log(8, 2)
+log(2, 8)
+```
+
+If the name argument is provided, the order of the arguments does not
+matter.\
+
+```{r, echo = TRUE, eval = TRUE}
+log(x = 8, base = 2)
+log(base = 2, x = 8)
+```
+
 ------------------------------------------------------------------------
 
-##### CHALLENGE 12
+## Challenge 12
 
-> `plot(x, y)` is a function that draws a graph of y as a function of x.
-> It requires two arguments named `x` and `y`. What are the differences
-> between the following lines?
-
-```{r, echo = TRUE, eval = FALSE}
-> a <- 1:100
-> b <- a^2
-> plot(a, b)
-> plot(b, a)
-> plot(x = a, y = b)
-> plot(y = b, x = a)
-```
-
-++++Challenge 12: Argument names\|
+`plot(x, y)` is a function that draws a graph of y as a function of x.
+It requires two arguments named `x` and `y`. What are the differences
+between the following lines?
 
 ```{r, echo = TRUE, eval = FALSE}
+a <- 1:100
+b <- a^2
 plot(a, b)
-```
-
-![](images//rplot.png){width="200"}\
-Plots the graph of `b` as a function of `a`.
-
-```{r, echo = TRUE, eval = FALSE}
 plot(b, a)
-```
-
-![](images/plotba.png){width="200"}\
-Plots the graph of `a` as a function of `b`.The argument names are not
-provided, the order of the arguments matters.
-
-```{r, echo = TRUE, eval = FALSE}
 plot(x = a, y = b)
-```
-
-![](images/pltxayb.png){width="200"}\
-Plots the graph of `b` as a function of `a`, same as plot(a, b).
-
-```{r, echo = TRUE, eval = FALSE}
 plot(y = b, x = a)
 ```
 
-![](images/plotybxa.png){width="200"}\
+### Solutions {-}
+
+```{r, echo = FALSE, eval = TRUE}
+a <- 1:100
+b <- a^2
+```
+
+```{r, echo = TRUE, eval = TRUE}
+plot(a, b)
+```
+
+Plots the graph of `b` as a function of `a`.
+
+```{r, echo = TRUE, eval = TRUE}
+plot(b, a)
+```
+
+Plots the graph of `a` as a function of `b`.The argument names are not
+provided, the order of the arguments matters!
+
+```{r, echo = TRUE, eval = TRUE}
+plot(x = a, y = b)
+```
+
+Plots the graph of `b` as a function of `a`, same as plot(a, b).
+
+```{r, echo = TRUE, eval = TRUE}
+plot(y = b, x = a)
+```
+
 Plots the graph of `b` as a function of `a`. The argument names are
-provided, the order of the arguments does not matter. ++++
+provided, the order of the arguments does not matter!
 
 ------------------------------------------------------------------------
 
 As a reference, here is a list of some of the most common R functions:
 
     sqrt, log, exp, max, min, sum, mean, sd, var, summary, plot, par, paste, format,
-    head, length, str, names, typeof, class, attributes, library, ls, rm, setwd, getwd, file.choose,
-    c, seq, rep, tapply, lapply, aggregate, merge, cbind, rbind, unique,
+    head, length, str, names, typeof, class, attributes, library, ls, rm, setwd, getwd, 
+    file.choose, c, seq, rep, tapply, lapply, aggregate, merge, cbind, rbind, unique,
     help (or ?), help.search (or ??), help.start
