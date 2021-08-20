@@ -1,6 +1,6 @@
 # Installing and using R packages
 
-### Packages
+## Packages
 
 ------------------------------------------------------------------------
 
@@ -9,8 +9,8 @@ similar theme. Ex : statistics, spatial analysis, plotting\...
 
 Everyone can develop packages and make them available to other R users.
 
-They are usually available through the Comprehensive R Archive Network
-(CRAN)<http://cran.r-project.org/web/packages/>
+They are usually available through the [Comprehensive R Archive Network
+(CRAN)](http://cran.r-project.org/web/packages/)
 
 Currently, more than 16000 packages are publicly available.
 
@@ -18,7 +18,7 @@ To install packages on your computer, use the function
 `install.packages()`
 
 ```{r, echo = TRUE, eval = FALSE}
-> install.packages("ggplot2")
+install.packages("ggplot2")
 ```
 
 Installing a package is required only once (but updated from time to
@@ -28,7 +28,7 @@ function. Let's try using the function `qplot()` found in the
 **ggplot2** package we just installed.
 
 ```{r, echo = TRUE, eval = FALSE}
-> qplot(1:10, 1:10)
+qplot(1:10, 1:10)
 ```
 
 The package was correctly installed but we didn't load it. Therefore,
@@ -40,14 +40,17 @@ To be able to use the function `qplot()` we need to load the package
 `ggplot2` before.
 
 ```{r, echo = TRUE, eval = FALSE}
-> library("ggplot2")
-> qplot(1:10, 1:10)
+library("ggplot2")
+qplot(1:10, 1:10)
 ```
 
 Now the function is found and the execution of our code leads to the
 following graph:
 
-![](images//qplot.png){width="200"}
+```{r, echo = FALSE, eval = TRUE}
+library("ggplot2")
+qplot(1:10, 1:10)
+```
 
 It is good practice to unload packages once we are done with them
 because it might conflict with other packages. Unloading a package is
@@ -55,14 +58,14 @@ done with the `detach()` function and by specifying that it is a
 package:
 
 ```{r, echo = TRUE, eval = FALSE}
-> detach(package:ggplot2)
+detach(package:ggplot2)
 ```
 
-### Getting help
+## Getting help
 
 ------------------------------------------------------------------------
 
-#### Getting help with functions
+### Getting help with functions
 
 We've seen so far that R is really great and offers us a lot of
 functions to work with. Among all these functions, there are probably
@@ -78,13 +81,13 @@ numbers between 0 and 10. We will search in our packages all functions
 with the word **sequence** in them.
 
 ```{r, echo = TRUE, eval = FALSE}
-> ??sequence
+??sequence
 ```
 
 This opens the following window (*Note*: the search result may vary
 depending on the packages installed on your computer):
 
-![](images//sequence_help.png){width="400"}\
+![](images/searchseq1.png){width="400"}\
 The search result contains two columns:
 
 -   On the left, we have the name of the function and the package in
@@ -103,7 +106,7 @@ when you launch it and are therefore always available.
 
 ------------------------------------------------------------------------
 
-#### Help page of functions
+### Help page of functions
 
 We will use the `seq()` function to generate our sequence. But how does
 it work? What does it do? How should I use it?
@@ -116,12 +119,13 @@ as follow: `?function_name`
 So for the `seq()` function, we type:
 
 ```{r, echo = TRUE, eval = FALSE}
-> ?seq
+?seq
 ```
 
 This opens the following page:
 
-![](images//seq.png){.align-center width="600"}\
+![](images/searchseq.png){.align-center width="600"}\
+
 A help page usually contains the folowing elements and sections (*Note*:
 sometimes, the same help page is used for more than one function):
 
@@ -153,46 +157,36 @@ sometimes, the same help page is used for more than one function):
 
 ------------------------------------------------------------------------
 
-##### Challenge 13
+## Challenge 13
 
-> a\) Create a sequence of even numbers from 0 to 10 using the seq
-> function
+- Create a sequence of even numbers from 0 to 10 using the seq function
 
-\>
+- Create an unsorted vector of your favourite numbers. Sort your vector in reverse order.
 
-> b\) - Create an unsorted vector of your favourite numbers.
->
-> \- Find out how to sort it using
->
-> ?sort.
->
-> \- Sort your vector in reverse order.
+*Hint: Find out how to sort it using `?sort`.*
 
-++++ Challenge 13a \|
+### Solutions
 
-```{r, echo = TRUE, eval = FALSE}
-> seq(from = 0, to = 10, by = 2)
-[1] 0 2 4 6 8 10
+- Create a sequence of even numbers from 0 to 10 using the seq function
+
+```{r, echo = TRUE, eval = TRUE}
+seq(from = 0, to = 10, by = 2)
 ```
 
 We could also have written
 
-```{r, echo = TRUE, eval = FALSE}
-> seq(0, 10, 2)
-[1] 0 2 4 6 8 10
+```{r, echo = TRUE, eval = TRUE}
+seq(0, 10, 2)
 ```
 
-++++
+- Create an unsorted vector of your favourite numbers.
 
-++++ Challenge 13b \|
-
-```{r, echo = TRUE, eval = FALSE}
-> numbers <- c(2, 4, 22, 6, 26)
-> sort(numbers, decreasing = TRUE)
-[1]  26 22  6  4  2
+```{r, echo = TRUE, eval = TRUE}
+numbers <- c(2, 4, 22, 6, 26)
+sort(numbers, decreasing = TRUE)
 ```
 
-#### Getting help on the Web
+## Getting help on the Web
 
 Usually, your best source of information will be your favorite search
 engine (Google, Bing, Yahoo, etc.)
@@ -210,21 +204,21 @@ Here are some tips on how to use them efficiently:
 
 ------------------------------------------------------------------------
 
-##### Challenge 14
+## Challenge 14
 
-> Find the appropriate functions to perform the following operations
+Find the appropriate functions to perform the following operations
 
-\>
+- Square root
 
-> a\) Square root
->
-> b\) Calculate the mean of numbers
->
-> c\) Combine two dataframes by columns
->
-> d\) List available objects
+- Calculate the mean of numbers
 
-++++ Challenge 14 \| a) `sqrt`\
-b) `mean`\
-c) `cbind`\
-d) `ls`\
+- Combine two dataframes by columns
+
+- List available objects
+
+## Solutions
+
+- `sqrt`\
+- `mean`\
+- `cbind`\
+- `ls`\
