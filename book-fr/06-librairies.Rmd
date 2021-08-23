@@ -4,7 +4,7 @@
 
 ------------------------------------------------------------------------
 
-Les packages (*paquets* pour être rigoureux) sont des regroupements de
+Les *packages* (*paquets* pour être rigoureux) sont des regroupements de
 fonctions et de jeux de données partageant un thème similaire, *e.g.*
 statistiques, analyse spatiale, visualisation\...
 
@@ -12,46 +12,49 @@ Tout le monde peut développer des packages et les rendre disponibles aux
 autres utilisateurs de R.
 
 Les packages sont généralement disponibles via le *Comprehensive R
-Archive Network* (CRAN)<http://cran.r-project.org/web/packages/>.
+Archive Network* (CRAN) <http://cran.r-project.org/web/packages/>.
 
-Actuellement, plus de 16000 packages sont disponibles librement.
+Actuellement, plus de 18000 packages sont disponibles librement.
 
 Pour installer des packages dans R, il suffit d'utiliser la fonction
 `install.packages()` :
 
 ```{r, echo = TRUE, eval = FALSE}
-> install.packages("ggplot2")
+install.packages("ggplot2")
 ```
 
 Il est nécessaire d'installer un package une seule fois, même si des
 mises à jours régulières sont recommandées. Cependant, pour utiliser une
 fonction se trouvant au sein d'un package, il ne suffit pas de
 simplement installer le package. Il faut également utiliser la fonction
-`library()` à chaque début de session R pour \"charger\" le package.
+`library()` à chaque début de session R pour "charger" le package.
 Voici un exemple qui utilise la fonction `qplot()` du package
 **ggplot2** que l'on vient tout juste d'installer.
 
 ```{r, echo = TRUE, eval = FALSE}
-> qplot(1:10, 1:10)
+qplot(1:10, 1:10)
 ```
 
 Le package a été installé correctement, mais il n'a pas été chargé. Par
 conséquent, l'exécution de ce code cause l'erreur suivante :
 
-`Erreur: impossible de trouver la fonction "qplot"`
+`Error in qplot(1:10, 1:10) : could not find function "qplot"`
 
 Pour utiliser la fonction `qplot()`, il faut charger le package
 `ggplot2` avant d'appeler cette fonction.
 
 ```{r, echo = TRUE, eval = FALSE}
-> library("ggplot2")
-> qplot(1:10, 1:10)
+library("ggplot2")
+qplot(1:10, 1:10)
 ```
 
 La fonction peut maintenant être trouvée par R et l'exécution de cette
 fonction retourne le graphique suivant :
 
-![](images//qplot.png){width="200"}
+```{r, echo = FALSE, eval = TRUE}
+library("ggplot2")
+qplot(1:10, 1:10)
+```
 
 Il est de bon usage de décharger les packages une fois que l'on a fini
 de les utiliser car ils pourraient entrer en conflit avec d'autres
@@ -59,14 +62,14 @@ packages. Le déchargement est effectué avec la fonction `detach()` et en
 spécifiant qu'il s'agit d'un package:
 
 ```{r, echo = TRUE, eval = FALSE}
-> detach(package:ggplot2)
+detach(package:ggplot2)
 ```
 
-### Obtenir de l'aide
+## Obtenir de l'aide
 
 ------------------------------------------------------------------------
 
-#### Recherche de fonctions
+### Recherche de fonctions
 
 Nous avons vu jusqu'à maintenant que R est un outil très puissant et
 comporte de nombreuses fonctions. Parmi ces fonctions, il y en a
@@ -84,12 +87,13 @@ de nombres pairs entre 0 et 10. On effectue une recherche avec le terme
 **sequence** :
 
 ```{r, echo = TRUE, eval = FALSE}
-> ??sequence
+??sequence
 ```
 
 Cette commande ouvre la fenêtre suivante :
 
-![](images//sequence_help.png){width="400"}\
+![](images/searchseq1.png){width="400"}\
+
 **Note** : les résultats d'une recherche dépendent des packages
 installés sur votre ordinateur.
 
@@ -112,7 +116,7 @@ disponibles.
 
 ------------------------------------------------------------------------
 
-#### Aide pour les fonctions
+### Aide pour les fonctions
 
 Utilisons la fonction `seq()` afin de générer notre séquence de nombres
 pairs. Pour l'instant, nous ne savons rien de cette fonction. Comment
@@ -125,12 +129,13 @@ fonction `help()` de la manière suivante : `?nom_de_la_fonction`
 Voici un exemple pour la fonction `seq()` :
 
 ```{r, echo = TRUE, eval = FALSE}
-> ?seq
+?seq
 ```
 
 Cette commande ouvre la page suivante :
 
-![](images//seq.png){.align-center width="600"}\
+![](images/searchseq.png){.align-center width="600"}\
+
 Une page d'aide contient généralement les sections et éléments suivants
 : (**Note** : parfois, une même page d'aide est utilisée pour plus
 d'une fonction.)
@@ -167,50 +172,38 @@ d'une fonction.)
 
 ------------------------------------------------------------------------
 
-##### Défi 13
+## Défi 13
 
-> a\) Créez une séquence de nombres pairs de 0 à 10 en utilisant la
-> fonction `seq()`.
+- Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq()`.
 
-\>
+- Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
 
-> b\) - Créez un vecteur de vos nombres préférés sans qu'il ne soit en
-> ordre croissant ou décroissant.
->
-> \- Trouvez comment mettre ce vecteur en ordre en tapant `?sort` à la
-> console.
->
-> \- Ordonnez votre vecteur en ordre décroissant.
+*Indice: Trouvez comment mettre ce vecteur en ordre en tapant `?sort` à la console.*
 
-++++ Défi 13a \|
+### Solutions
 
-```{r, echo = TRUE, eval = FALSE}
-> seq(from = 0, to = 10, by = 2)
-[1] 0 2 4 6 8 10
+- Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq()`.
+
+```{r, echo = TRUE, eval = TRUE}
+seq(from = 0, to = 10, by = 2)
 ```
 
 Nous aurions également pu écrire :
 
-```{r, echo = TRUE, eval = FALSE}
-> seq(0, 10, 2)
-[1] 0 2 4 6 8 10
+```{r, echo = TRUE, eval = TRUE}
+seq(0, 10, 2)
 ```
 
-++++
+- Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l'ordre inverse.
 
-++++ Défi 13b \|
-
-```{r, echo = TRUE, eval = FALSE}
-> nombres <- c(2, 4, 22, 6, 26)
+```{r, echo = TRUE, eval = TRUE}
+nombres <- c(2, 4, 22, 6, 26)
 sort(nombres, decreasing = TRUE)
-[1] 26 22  6  4  2
 ```
-
-++++
 
 ------------------------------------------------------------------------
 
-#### Obtenir de l'aide sur le web
+## Obtenir de l'aide sur le web
 
 Généralement, la meilleure source d'information sur R provient d'un
 moteur de recherche (Google, Bing, Yahoo, etc.).
@@ -218,7 +211,7 @@ moteur de recherche (Google, Bing, Yahoo, etc.).
 Voici quelques conseils pour une recherche efficace :
 
 -   Faites vos recherches en anglais.
--   Utilisez le mot-clé \"R\" au début de votre recherche.
+-   Utilisez le mot-clé "R" au début de votre recherche.
 -   Définissez précisément ce que vous cherchez.
 -   Apprenez à lire les discussions sur les forums. Il y a de fortes
     chances que d'autres utilisateurs aient eu le même problème avant
@@ -229,24 +222,24 @@ Voici quelques conseils pour une recherche efficace :
 
 ------------------------------------------------------------------------
 
-##### Défi 14
+## Défi 14
 
-> Trouvez la fonction appropriée pour effectuer les opérations suivantes
-> :
+Trouvez la fonction appropriée pour effectuer les opérations suivantes :
 
-\>
+- Calculer la racine carrée d'un nombre
 
-> a\) Calculer la racine carrée d'un nombre
->
-> b\) Calculer la moyenne de nombres
->
-> c\) Combiner des tableaux de données par colonne (*i.e.* un par-dessus
-> l'autre)
->
-> d\) Faire une liste de tous les objets de la session
+- Calculer la moyenne de nombres
 
-++++ Défi 14 \| a) `sqrt`\
-b) `mean`\
-c) `cbind`\
-d) `ls`\
-++++
+- Combiner des tableaux de données par colonne (*i.e.* un par-dessus l'autre)
+
+- Faire une liste de tous les objets de la session
+
+### Solutions
+
+- `sqrt`\
+
+- `mean`\
+
+- `cbind`\
+
+- `ls`\

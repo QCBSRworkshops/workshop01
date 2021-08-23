@@ -2,14 +2,14 @@
 
 # Résumé
 
-R est...
+R est un language de programmation et un environment proposant une grande variété de techniques statistiques et graphiques. Nous utilisons et enseignons R parce que c'est un programme ** *open source* **, il est **compatible** avec la majorité des systèmes d'exploitation et parce qu'il est utilisé par une **grande communauté** de scientifiques. Durant cet atelier d'introduction à R, nous avons présenté l'environment de développement **RStudio**, nous avons présenté des **opérations de bases** disponible sur R, nous avons introduit les concepts d'*objets*, de *fonctions* et de *packages* et nous avons présenté des manières et des resources permettant de **trouver de l'aide** lors de vos analyses.
 
 
-Lors du prochaine atelier, vous verrez comment...
+Lors du **prochain atelier**, les objectifs seront de se familiariser avec les **projets** dans R, apprendre à organiser ses codes de programmation sous forme de **script**, apprendre à **manipuler** les objets dans R, et finalement, découvrir des **packages** spécifiquement développés pour manipuler des `dataframes` .
 
 # Resources additionnels
 
-#### Aides mémoire (*cheat sheets*)
+## Aides mémoire (*cheat sheets*)
 
 <https://www.rstudio.com/resources/cheatsheets/>
 
@@ -18,22 +18,21 @@ Ces aides-mémoires sont aussi disponible directement dans RStudio (Help
 
 ------------------------------------------------------------------------
 
-#### Quelques livres
+## Quelques livres
 
--   R for Dummies
--   A Handbook of Statistical Analyses using R
--   R in Action
--   Introductory Statistics in R
--   A Beginner's Guide to R
--   The R Book
+-   [R for Dummies](http://sgpwe.izt.uam.mx/files/users/uami/gma/R_for_dummies.pdf) (*available online*)
+-   [A Handbook of Statistical Analyses using R](https://www.routledge.com/A-Handbook-of-Statistical-Analyses-using-R/Hothorn-Everitt/p/book/9781482204582)
+-   [R in Action](https://www.manning.com/books/r-in-action) (*available online*)
+-   [Introductory Statistics in R](https://www.springer.com/gp/book/9780387790534)
+-   [A Beginner's Guide to R](https://link-springer-com.proxy3.library.mcgill.ca/book/10.1007/978-0-387-93837-0)
+-   [The R Book](https://www.wiley.com/en-us/The+R+Book%2C+2nd+Edition-p-9780470973929)
 
 ------------------------------------------------------------------------
 
 #### Quelques sites internet
 
--   r4ds.had.co.nz/index.html
--   https:*cran.r-project.org/doc/manuals/r-release/R-intro.html\|https:*cran.r-project.org/doc/manuals/r-release/R-intro.html\]\] \*
-    \[\[http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\|http:*cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf\]\] \*
-    \[\[http:*statmethods.net/\|http:*statmethods.net/\]\] \*
-   [https:support.rstudio.com/hc/en-us/categories/200035113-Documentation](https:support.rstudio.com/hc/en-us/categories/200035113-Documentation)
-    [http:*cookbook-r.com/\|http://cookbook-r.com/](http://r4ds.had.co.nz/index.html)
+- [Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
+- [R reference card](https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf)
+- [Quick-R](https://www.statmethods.net)
+- [Cookbook for R](http://cookbook-r.com)
+- [R for Data Science](http://r4ds.had.co.nz/index.html)

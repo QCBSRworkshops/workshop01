@@ -12,7 +12,7 @@ Everyone can develop packages and make them available to other R users.
 They are usually available through the [Comprehensive R Archive Network
 (CRAN)](http://cran.r-project.org/web/packages/)
 
-Currently, more than 16000 packages are publicly available.
+Currently, more than 18000 packages are publicly available.
 
 To install packages on your computer, use the function
 `install.packages()`
@@ -88,6 +88,7 @@ This opens the following window (*Note*: the search result may vary
 depending on the packages installed on your computer):
 
 ![](images/searchseq1.png){width="400"}\
+
 The search result contains two columns:
 
 -   On the left, we have the name of the function and the package in
@@ -185,6 +186,8 @@ seq(0, 10, 2)
 numbers <- c(2, 4, 22, 6, 26)
 sort(numbers, decreasing = TRUE)
 ```
+
+------------------------------------------------------------------------
 
 ## Getting help on the Web
 

@@ -16,7 +16,7 @@ mathematical step. Functions are usually pre-existing R code that are
 executed when used. They remove the need to create this code and to
 rewrite it every time you need it.
 
-To execute a function, you will need to [call]{.ul} it. A function call
+To execute a function, you will need to call it. A function call
 is essentially a shortcut to the code of the function.
 
 To perform the function call you will need entry values called
@@ -70,7 +70,7 @@ result in an object called `result_add`
 
 - Create a vector `a` that contains all numbers from 1 to 5
 
-```{r, echo = TRUE, eval = TRUE, class.source = 'fold-hide'}
+```{r, echo = TRUE, eval = TRUE}
 a <- 1:5
 ```
 
@@ -150,8 +150,8 @@ log(base = 2, x = 8)
 ## Challenge 12
 
 `plot(x, y)` is a function that draws a graph of y as a function of x.
-It requires two arguments named `x` and `y`. What are the differences
-between the following lines?
+It requires two arguments named `x` and `y`.  
+What are the differences between the following lines?
 
 ```{r, echo = TRUE, eval = FALSE}
 a <- 1:100
