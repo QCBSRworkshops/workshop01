@@ -1,6 +1,6 @@
 # Comprendre ce que sont R et RStudio
 
-### Qu'est-ce que R?
+## Qu'est-ce que R?
 
 ------------------------------------------------------------------------
 
@@ -8,43 +8,31 @@ R est un langage de programmation [open
 source](https://fr.wikipedia.org/wiki/Open_source) conçu pour l'analyse
 statistique, l'exploration et la visualisation de données.
 
-### Pourquoi utiliser R?
+## Pourquoi utiliser R?
 
 ------------------------------------------------------------------------
 
--   R est en source libre ! Ça signifie que ce logiciel est libre,
+*   R est en source libre ! Ça signifie que ce logiciel est libre,
     gratuit et constamment mis à jour et amélioré.
-
-```{=html}
-<!-- -->
-```
--   R est compatible avec la majorité des système d'exploitation, ce
+*   R est compatible avec la majorité des système d'exploitation, ce
     qui rend le partage de codes R facile. De plus, le langage R permet
     d'entrer en contact avec des gens de divers horizons à travers le
     monde et avec différents systèmes d'exploitation.
-
-```{=html}
-<!-- -->
-```
--   R peut créer des tableaux, produire des graphiques et faire des
+*   R peut créer des tableaux, produire des graphiques et faire des
     analyses statistiques, le tout au sein du même logiciel. Avec R, il
     devient inutile d'utiliser plus d'un logiciel pour la gestion de
     vos données. Tout est possible avec un seul logiciel !
-
-```{=html}
-<!-- -->
-```
--   De plus en plus de scientifiques utilisent R chaque année. Ses
+*   De plus en plus de scientifiques utilisent R chaque année. Ses
     capacités sont en augmentation constante et vont continuer dans
     cette direction au fil des années. Cela signifie également qu'il y
     a une grande communauté en ligne qui peut vous donner un coup de
     main lorsque vous rencontrez un problème dans R.
 
-![](images//operating_systems.png){width="100"}
-![](images//open_source.png){width="200"}
-![](images//the_why_r_plot_2.png){width="400"}
+![](images//operating_stm.png){width="300"}
+![](images//Opensource.png){width="300"}
+![](images//the_why_r_plot_2.png){width="300"}
 
-### Utiliser RStudio
+## Utiliser RStudio
 
 ------------------------------------------------------------------------
 
@@ -58,11 +46,11 @@ avec RStudio.
 
 ------------------------------------------------------------------------
 
-##### Défi 1
+### DÉFI 1
 
 Lancer RStudio
 
-![R Studio logo](/logo_rstudio.jpg){width="200"}
+![logo RStudio](images//Rstudio.png){width="200"}
 
 **Note pour les utilisateurs Windows**: si la restriction: \"Unable to
 write on disk\" apparaît quand vous ouvrez R Studio ou que vous
@@ -72,20 +60,23 @@ administrator" pour ouvrir R Studio.
 
 ------------------------------------------------------------------------
 
-**La console**
+**La console RStudio**
 
 Lorsque vous lancez RStudio, le premier élément que vous voyez à la
 gauche de l'écran est la console. C'est à cet endroit que vous allez
 travailler pour le reste de cet atelier d'introduction à R.
 
-![R Studio console](/Rstudioconsole_fleche.png){width="800"}
+![La console RStudio ](images//Rstudioconsole_fleche.png){width="800"}
 
 L'exemple suivant illustre le format du texte qui apparaît typiquement
 à l'écran :
+```{r, echo = FALSE, eval = TRUE}
+sortie <- "Ceci est la sortie"
+```
 
-```{r, echo = TRUE, eval = FALSE}
-> sortie
-[1] "Ceci est la sortie"
+
+```{r, echo = TRUE, eval = TRUE}
+sortie
 ```
 
 Note 1: Il faut toujours appuyer sur \"Entrée\" pour lancer une commande
@@ -102,3 +93,31 @@ est rendu (le 6^ième^ élément dans ce cas-ci).
 [1] 1 2 3 4 5
 [6] 6 7 8 9 10
 ```
+
+## Erreur et avertissement
+
+**Warning message**
+
+```{r error=TRUE, message=TRUE, warning=TRUE}
+x <- c("2", -3, "end", 0, 4, 0.2)
+as.numeric(x)
+```
+
+* Met en garde l'utilisateur sans arrêter l'exécution d'une fonction.
+
+* Bien que la fonction puisse vous donner une réponse, il pourrait y avoir un problème avec vos entrées. Ainsi, le calcul pourrait être erroné.
+
+**Error message**
+
+```{r, error = TRUE}
+x*10
+```
+
+* Arrête l'exécution en cours car R est incapable de réaliser le calcul.
+Il indique un problème dans votre code
+
+
+Pour résoudre une *erreur*, les internets sont vontre meilleur ami. 
+
+
+
