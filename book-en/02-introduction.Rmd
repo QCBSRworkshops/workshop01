@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # Recognizing and using R and RStudio
 
 ## What is R?
@@ -10,22 +15,14 @@
     
 ## Why use R?
 
--   R is **open-source**! This means that it is free, and constantly
-    being updated and improved.
--   It is **compatible**. R works on most existing operating systems.
--   R can help you create tables, produce graphs and do your statistics,
-    all within the same program. So with R, there is no need to use more
-    than one program to manage data for your publications. Everything
-    can happen in one single program.
--   More and more scientists are using R every year. This means that its
-    capacities are constantly growing and will continue to increase over
-    time. This also means that there is a big online community of people
-    that can help with any problems you have in R.
+* R is open-source! This means that it is free, and constantly being updated and improved.
+* It is compatible. R works on most existing operating systems.
+* R can help you create tables, produce graphs and do your statistics, all within the same program. So with R, there is no need to use more than one program to manage data for your publications. Everything can happen in one single program.
+* More and more scientists are using R every year. This means that its capacities are constantly growing and will continue to increase over time. This also means that there is a big online community of people that can help with any problems you have in R.
 
-![](images//operating_systems.png){width="50"}
-![](images//open_source.png){width="100"}
-![](images//the_why_r_plot_2.png){width="200"}
-
+![](images//operating_stm.png){width="300"}
+![](images//Opensource.png){width="300"}
+![](images//the_why_r_plot_2.png){width="300"}
 
 ## Using RStudio
 
@@ -36,12 +33,22 @@ using it instead of the traditional command line as it provides great
 visual aid and a number of useful tools that you will learn more about
 over the course of this workshop.
 
+It includes a **console**, a **syntax-highlighting editor** that supports direct code execution with tools for plotting, history, debugging and workspace management.
 
-## Challenge 1
+It integrates with R (and other programming languages) to provide a lot of useful features:
+
+* RStudio supports authoring HTML, PDF, Word, and presentation documents
+* RStudio supports version control with Git (direction to Github) and Subversion
+* RStudio makes it easy to start new or find existing projects
+* RStudio supports interactive graphics with Shiny and ggvis
+
+There are other IDE for R: **Atom, Visual Studio, Jupyter notebook, and Jupyter lab**
+
+#### CHALLENGE 1
 
 Open RStudio
 
-![RStudio logo](/logo_rstudio.jpg){width="200"}
+![RStudio logo](images//Rstudio.png){width="200"}
 
 **Note for Windows users**: If the restriction "unable to write on
 disk" appears when you try to open R-Studio, right-click on your
@@ -50,19 +57,32 @@ program.
 
 ------------------------------------------------------------------------
 
-**The console**
+## The RStudio interface
 
-When you open RStudio, the first thing that you see to the left of the
+When you open RStudio for the first time, the screen will be divided across three main Pane groups:
+
+1. **Console, Terminal, Job** group;
+2. **Environment, History, Connections** group;
+3. **Files, Plot, Packages, Help, Viewer** panes; and
+4. **Script** pane group
+
+Once you *Open a Script* or *Create a New Script* (File > New File > R script or `Ctrl/Cmd + Shift + N`), the fourth panel will appear
+
+
+## The RStudio Console
+The first thing that you see to the left of the
 screen is the "console". This is where we will be working for the rest
 of this Introduction to R workshop.
 
-![RStudio console](/Rstudioconsole_fleche.png){width="800"}
+![](images//Rstudioconsole_fleche.png){width="800"}
 
 Text in the console typically looks like this:
+```{r, include = FALSE}
+output <- "This is the output"
+```
 
-```{r, echo = TRUE, eval = FALSE}
-> output
-[1] "This is the output"
+```{r}
+output
 ```
 
 Note 1: You always have to push "enter" for the input to run in the
@@ -78,4 +98,32 @@ you understand at which value of the output you are situated:
 [1] 1 2 3 4 5
 [6] 6 7 8 9 10
 ```
+
+## Error and Warning
+Often, the **Console** will output **Errors** and **Warning** messages.
+
+**Warning message**
+
+
+```{r error=TRUE, message=TRUE, warning=TRUE}
+x <- c("2", -3, "end", 0, 4, 0.2)
+as.numeric(x)
+```
+
+* Cautions users about an action, but still executes the function.
+* There might be an issue with the input and/or the output.
+
+**Error message**
+
+```{r, error = TRUE}
+x*10
+```
+
+
+* Informs the user that there is a problem that prevents the command from running.
+* One needs to solve the issue in order to carry on
+
+Google is your best friend in solving **Errors** or **Warnings**!
+
+
 
