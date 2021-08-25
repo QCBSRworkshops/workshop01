@@ -29,7 +29,7 @@ Ces aides-mémoires sont aussi disponible directement dans RStudio (Help
 
 ------------------------------------------------------------------------
 
-#### Quelques sites internet
+## Quelques sites internet
 
 - [Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html)
 - [R reference card](https://cran.r-project.org/doc/contrib/Baggott-refcard-v2.pdf)

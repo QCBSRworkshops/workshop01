@@ -172,7 +172,7 @@ d'une fonction.)
 
 ------------------------------------------------------------------------
 
-## Défi 13
+### Défi 13
 
 - Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq()`.
 
@@ -180,7 +180,7 @@ d'une fonction.)
 
 *Indice: Trouvez comment mettre ce vecteur en ordre en tapant `?sort` à la console.*
 
-### Solutions
+#### Solutions {-}
 
 - Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction `seq()`.
 
@@ -222,7 +222,7 @@ Voici quelques conseils pour une recherche efficace :
 
 ------------------------------------------------------------------------
 
-## Défi 14
+### Défi 14
 
 Trouvez la fonction appropriée pour effectuer les opérations suivantes :
 
@@ -234,7 +234,7 @@ Trouvez la fonction appropriée pour effectuer les opérations suivantes :
 
 - Faire une liste de tous les objets de la session
 
-### Solutions
+#### Solutions {-} 
 
 - `sqrt`\
 

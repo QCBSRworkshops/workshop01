@@ -49,7 +49,7 @@ soit 8.\
 
 ------------------------------------------------------------------------
 
-## Défi 11
+### DÉFI 11
 
 - Créez un vecteur nommé `a` contenant tous les nombres de 1 à 5\
 
@@ -63,7 +63,7 @@ soit 8.\
 
 - Ajoutez 5 à `resultat_sum` en utilisant la fonction `sum()`.
 
-### Solutions {-}
+#### Solutions {-}
 
 - Créez un vecteur nommé `a` contenant tous les nombres de 1 à 5\
 
@@ -143,7 +143,7 @@ log(base = 2, x = 8)
 
 ------------------------------------------------------------------------
 
-## Défi 12
+### DÉFI 12
 
 `plot(x, y)` est une fonction qui crée un graphique de y en fonction
 de x. Cette fonction nécessite deux arguments nommés `x` et `y`. 
@@ -159,7 +159,7 @@ plot(x = a, y = b)
 plot(y = b, x = a)
 ```
 
-### Solutions
+#### Solutions {-}
 
 ```{r, echo = FALSE, eval = TRUE}
 a <- 1:100

@@ -51,7 +51,7 @@ function. In this case, it is the sum of `a` and `b`, 8.\
 
 ------------------------------------------------------------------------
 
-## Challenge 11
+### CHALLENGE 11
 
 - Create a vector `a` that contains all numbers from 1 to 5
 
@@ -66,7 +66,7 @@ result in an object called `result_add`
 
 - Add 5 to `result_sum` using the `sum` function.
 
-### Solutions {-}
+#### Solutions {-}
 
 - Create a vector `a` that contains all numbers from 1 to 5
 
@@ -147,7 +147,7 @@ log(base = 2, x = 8)
 
 ------------------------------------------------------------------------
 
-## Challenge 12
+### CHALLENGE 12
 
 `plot(x, y)` is a function that draws a graph of y as a function of x.
 It requires two arguments named `x` and `y`.  
@@ -162,7 +162,7 @@ plot(x = a, y = b)
 plot(y = b, x = a)
 ```
 
-### Solutions {-}
+#### Solutions {-}
 
 ```{r, echo = FALSE, eval = TRUE}
 a <- 1:100
