@@ -81,7 +81,7 @@ x
 Create an object (you decide the value) with a name that starts with a
 number. What happens?
 
-**Challenge 5: Solution**
+#### Solution {-}
  
 An object name that starts with a number
 will return the following error:
@@ -92,7 +92,7 @@ will return the following error:
 Create an object with a value of 1 + 1.718282 (Euler's number) and
 name it `euler_value`
 
-**Challenge 6: Solution**
+#### Solution {-}
 
 ```{r, echo = TRUE, eval = TRUE}
 euler_value <- 1 + 1.718282
@@ -244,7 +244,7 @@ rep(x = c(1,2), each = 3)
 
 Create a vector containing the first five odd numbers (starting from 1) and name it odd_n.
 
-**Challenge 7: Solution**
+#### Solution {-}
 
 ```{r, echo = TRUE, eval = TRUE}
 odd_n <- c(1, 3, 5, 7, 9)
@@ -355,7 +355,7 @@ mat_1 * mat_2
 **Remember** that text strings must always be surrounded by quote marks (" ").
 **Remember** that values or arguments must be separated by commas if they are inside a function, e.g. `c("one", "two", "three")`.
 
-**Challenge 8 Solution:**
+#### Solution {-}
 ```{r}
 #Step 1:
 (step_1 <- matrix(data = 1:6, nrow = 2, ncol = 3))
@@ -495,7 +495,7 @@ Using the vector `num_vector` and our indexing abilities:
 num_vector <- c(1, 4, 3, 98, 32, -76, -4)
 ```
 
-**Challenge 9 Solution**
+#### Solution {-}
 
 a) Extract the 4th value
 ```{r, echo = TRUE, eval = TRUE}
@@ -659,7 +659,7 @@ char_vector[char_vector == "blue"]
 ```
 
 
-**Challenge 10 Solution:**
+#### Solution {-}
 
 ```{r}
 char_vector == "blue"
@@ -681,7 +681,7 @@ b) After that, write a statement that checks if the values you
    obtained are greater than 25. Refer to challenge 9 to complete this
    challenge.
 
-**Challenge 11 Solution:**
+#### Solution {-}
 
 a) Extract the `num_sp` column from `soil_fertilisation_data` and multiply its values
   by the first four values of the `num_vec` vector.

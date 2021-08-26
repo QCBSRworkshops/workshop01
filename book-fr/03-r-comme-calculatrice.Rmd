@@ -40,7 +40,7 @@ Utilisez R pour effectuer l'opération suivante :
 $2 + 16 * 24 - 56$
 
 
-Défi 2: Solution
+#### Solution {-}
 ```{r, echo=TRUE, eval=TRUE}
 2+16*24-56
 ```
@@ -54,7 +54,7 @@ $2 + 16 * 24 - 56 / ( 2 + 1) - 457$
 
 *Faites attention à la priorité des opérations!*
 
-Défi 3: Solution
+#### Solution {-}
 ```{r, echo = TRUE, eval = TRUE}
 2+16*24-56/(2+1)-457
 ```
@@ -79,7 +79,7 @@ différente.
 
 Quelle est l'aire d'un cercle avec un rayon de 5 cm ?
 
-Défi 4 : Solution
+#### Solution {-}
 
 Rappel : ${Aire_{cercle} = \pi r^2}$
 

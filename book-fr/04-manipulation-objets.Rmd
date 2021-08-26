@@ -98,7 +98,7 @@ x
 
 Créez un objet avec une valeur de 1 + 1.718282 (*i.e.* le nombre d'Euler) et nommez le `valeur_euler`.
 
-Défi 5 : Solution
+#### Solution {-}
 
 ```{r, echo = TRUE, eval = TRUE}
 valeur_euler <- 1 + 1.718282
@@ -113,7 +113,7 @@ valeur_euler
 Créez un objet (vous choisissez la valeur) avec un nom débutant par un
 chiffre. Que se passe-t-il?
 
-Défi 6 : Solution 
+#### Solution {-}
 Un objet débutant par un chiffre va retourner
 l'erreur suivante : `Symbole inattendu dans "votre nom d’objet"`. 
 
@@ -203,8 +203,7 @@ bool_vecteur2
 Créez un vecteur comprenant les cinq premiers nombres impairs (en
 commençant par 1) et nommez ce vecteur \"impair\".
 
-Défi 7 : Solution
-
+#### Solution {-}
 ```{r, echo = TRUE, eval = TRUE}
 impair <- c(1, 3, 5, 7, 9)
 ```
@@ -398,7 +397,7 @@ car_vecteur[car_vecteur == "bleu"]
  c) Extraire toutes les valeurs du vecteur numérique num_vecteur à
  l'exception des deuxième et quatrième valeurs.
 
-Défi 8: Solution
+#### Solution {-}
 
 a) Indexer des vecteurs
 
@@ -421,7 +420,7 @@ num_vecteur[c(-2,-4)]
 
 ------------------------------------------------------------------------
 
-##### DÉFI 9
+### DÉFI 9
 
 Explorez la différence entre ces deux lignes de codes :
 
@@ -432,7 +431,7 @@ car_vecteur[car_vecteur == "bleu"]
 ```
 
 
-Défi 9 : Solution 
+#### Solution {-}
 Différences entre codes: La première ligne de code évalue
 une déclaration logique. Pour chaque élément du vecteur `car_vecteur`, R
 vérifie si cet élément est exactement égal à « bleu » ou non et retourne
@@ -544,7 +543,7 @@ x2 > 2 & x2 < 5
  compléter cette question.
 
 
-Défi 10 : Solution 
+#### Solution {-}
 
 a) Indexer et multiplier
 

@@ -30,6 +30,7 @@ Use R to calculate the following skill testing question:
 
 $2 + 16 * 24 -56$
 
+#### Solution {-}
 ```{r, echo = TRUE, eval = TRUE}
 2 + 16 * 24 - 56
 ```
@@ -44,6 +45,7 @@ $2 + 16 * 24 - 56 / (2 + 1) - 457$
 *Pay attention to the order of operations when thinking about this
 question!*
 
+#### Solution {-}
 ```{r, eval = TRUE, echo = TRUE}
 2 + 16 * 24 - 56 / (2 + 1) - 457
 ```
@@ -67,6 +69,7 @@ What is the area of a circle with a radius of 5 cm?
 
 Recall : ${Area _{circle} = \pi r^2}$
 
+#### Solution {-}
 ```{r, echo = TRUE, eval = TRUE}
 3.1416 *5^2
 ```
