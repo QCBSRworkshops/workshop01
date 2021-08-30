@@ -2,7 +2,7 @@
 
 The first thing to know about the R console is that you can use it as a calculator.
 
-
+-------------------------------------------------------------
 ## Arithmetic Operators
 * Additions and Subtractions
 ```{r, echo=TRUE, eval=TRUE}
@@ -24,6 +24,7 @@ The first thing to know about the R console is that you can use it as a calculat
 2^3
 ```
 
+------------------------------------------------
 ### CHALLENGE 2
 
 Use R to calculate the following skill testing question: 
@@ -35,6 +36,7 @@ $2 + 16 * 24 -56$
 2 + 16 * 24 - 56
 ```
 
+------------------------------------------------
 
 ### CHALLENGE 3
 
@@ -63,7 +65,8 @@ different way.
 
 ![](images//arrow_keys.png){width="400"}
 
-### Challenge 4
+------------------------------------------------
+### CHALLENGE 4
 
 What is the area of a circle with a radius of 5 cm?
 

@@ -31,7 +31,7 @@ your arguments separated with commas.
 
 `function_name(arg1, arg2, ...)`
 
-Here an example:
+Here is an example:
 
 ```{r, echo = TRUE, eval = FALSE}
 sum(1, 2)
@@ -66,7 +66,7 @@ result in an object called `result_add`
 
 - Add 5 to `result_sum` using the `sum` function.
 
-#### Solutions {-}
+#### Solution {-}
 
 - Create a vector `a` that contains all numbers from 1 to 5
 
@@ -162,7 +162,7 @@ plot(x = a, y = b)
 plot(y = b, x = a)
 ```
 
-#### Solutions {-}
+#### Solution {-}
 
 ```{r, echo = FALSE, eval = TRUE}
 a <- 1:100

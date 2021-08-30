@@ -1,26 +1,26 @@
 # Manipulating objects in R
 
+
 ## Objects
 
 You have learned so far how to use R as a calculator to obtain various
 numerical values. However, it can get tiresome to always write the same
 code down in the R console, especially if you have to use some values
-repeatedly. This is where the concept of object becomes useful.
+repeatedly. This is where the concept of **object** becomes useful.
 
-R is an object-oriented programming language. What this means is that we
-can allocate a name to values we've created to save them in our
-workspace. An object is composed of three parts: 1) a value we're
-interested in, 2) an identifier and 3) the assignment operator.
+R is an object-oriented programming language. What this means is that we can allocate a name to values we've created to save them in our
+**workspace**. An object is composed of three parts: 1) a **value** we're
+interested in, 2) an **identifier** and 3) the **assignment operator**.
 
-1.  The value can be almost anything we want: a number, the result of a
+1.  The **value** can be almost anything we want: a number, the result of a
     calculation, a string of characters, a data frame, a plot or a
     function.
-2.  The identifier is the name you assign to the value. Whenever you
+2.  The **identifier** is the name you assign to the value. Whenever you
     want to refer to this value, you simply type the identifier in the R
     console and R will return its value. Identifiers can include only
     letters, numbers, periods and underscores, and should always begin
     with a letter.
-3.  The assignment operator resembles an arrow (`<-`) and is used to
+3.  The **assignment operator** resembles an arrow (`<-`) and is used to
     link the value to the identifier.
 
 
@@ -56,7 +56,7 @@ y
 x
 ```
 
-
+-----------------------------------------------------------------------
 
 ## Good practices in R code
 
@@ -76,16 +76,19 @@ x
 2.  Always put a space after a comma, and never before (like in regular
     English).
 
+
 ### CHALLENGE 5
 
 Create an object (you decide the value) with a name that starts with a
 number. What happens?
-
 #### Solution {-}
  
 An object name that starts with a number
 will return the following error:
 `unexpected symbol in "your object name"`. 
+
+
+----------------------------------------------------------------------------------
 
 ### CHALLENGE 6
 
@@ -102,6 +105,8 @@ euler_value
 
 What has happened in your **RStudio** window when you created this object?
 
+---------------------------------------------------------------------------------------------------
+
 ### The RStudio Environment
 
 The **Environment** panel shows you all the objects you have defined in your current workspace
@@ -114,6 +119,9 @@ then press tab, you will see a list of objects or functions beginning
 with `eu`. Select `euler_value` (the object we just created) and press
 enter. The `euler_value` identifier now appears at the command line.
 If more than one element appears, you can use the arrow keys and press "Return" or use your mouse to select the correct one. 
+
+
+---------------------------------------------------------------------------------
 
 
 ## Data types and structure
@@ -215,7 +223,7 @@ bool_vector <- c(TRUE, TRUE, FALSE)
 bool_vector2 <- c(T, T, F)
 ```
 
-** Creating vectors of sequential values:**
+#### Creating vectors of sequential values:
 The `a:b` takes two numeric scalars `a` and `b` as *arguments*, and returns a vector of numbers from the starting point `a` to the ending point `b`, in steps of `1` unit:
 
 ```{r}
@@ -224,7 +232,7 @@ The `a:b` takes two numeric scalars `a` and `b` as *arguments*, and returns a ve
 7.5:1.5
 ```
 
-`seq()` allows us to create a sequence, like `a:b`, but also allows us to specify either the size of the steps (the `by` *argument*), or the total length of the sequence (the `length.out` argument):
+`seq()` allows us to create a sequence, like `a:b`, but also allows us to specify either the size of the steps (the `by` argument), or the total length of the sequence (the `length.out` argument):
 ```{r}
 seq(from = 1, to = 10, by = 2)
 
@@ -257,6 +265,7 @@ odd_n
 
 ```
 
+-----------------------------------------------------------------------
 **R TIP**
 
 Use `dput()` function to obtain the reverse, *i.e.* the content of an
@@ -277,7 +286,7 @@ are really useful to provide a reproducible example for a question on
 [Stack Overflow](https://stackoverflow.com/) for instance (see one more
 application in the part about data frames)!
 
-
+-----------------------------------------------------------------------
 ### Operations using vectors
 What you have learned previously about calculations is also valid for
 vectors: vectors can be used for calculations. The only difference is
@@ -378,6 +387,7 @@ step_3 <- cbind(c(2:5),
                   "emma"))
 ```
 
+------------------------------------------------------------------------------------------
 
 ### Data structure in R: data frames
 
@@ -397,7 +407,7 @@ creation of a data frame.
   A1.01     5.6       17       yes
   A1.02     7.3       23       yes
   B1.01     4.1       15       no
-  B1.02     6.0       7       no
+  B1.02     6.0       7        no
 
 ```{r, echo = TRUE, eval = TRUE}
 # We first start by creating vectors.
@@ -476,10 +486,13 @@ char_vector[char_vector == "blue"]
 ```
 
 
+----------------------------------------------------------------------------------------
+
 
 ### CHALLENGE 9
 
 Using the vector `num_vector` and our indexing abilities:
+ 
  a) Extract the 4th value of the `num_vector` vector.
 
  b) Extract the 1st and 3rd values of the `num_vector` vector.
@@ -519,6 +532,7 @@ num_vector[6:10]
 
 What happened there? What is that NA?
 
+---------------------------------------------------------------------------------------------
 
 
 ### Indexing a data frame
@@ -647,6 +661,9 @@ char_vector
 is.vector(char_vector)
 ```
 
+-------------------------------------------------------------------------------------
+
+
 ### CHALLENGE 10
 Explore the difference between these two lines of code:
 ```{r}
@@ -660,15 +677,17 @@ char_vector[char_vector == "blue"]
 
 ```{r}
 char_vector == "blue"
-# [1] TRUE FALSE FALSE 
 ```
 
 In this line of code, you test a logical statement. For each entry in the char_vector, R checks whether the entry is equal to "blue" or not
 ```{r}
 char_vector[char_vector == "blue"]
-# [1] "blue
 ```
+
 In this above line, we asked R to extract all values within the `char_vector` vector that are exactly equal to `blue`
+
+
+--------------------------------------------------------------------------------------
 
 ### CHALLENGE 11
 
@@ -697,6 +716,7 @@ b) After that, write a statement that checks if the values you
 (soil_fertilisation_data$num_sp * num_vector[c(1:4)]) > 25
 ```
 
+-----------------------------------------------------------------------
 ### Other kinds of data structure: arrays and lists
 Other types of objects arrays and lists.  An array is similar to a matrix but can have more than two dimensions. Arrays are usually used for advanced computation like
 numerical simulations and permutation tests. A list is an aggregation of

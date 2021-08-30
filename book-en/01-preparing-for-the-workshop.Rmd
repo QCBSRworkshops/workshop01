@@ -2,12 +2,12 @@
 
 # Learning objectives
 
-In this introductory R Workshop you will learn what R open-source statistical software is, why you should absolutely start using it, and all the first steps to help you get started in R. We will show you how R can act as a calculator, teach you about the various types of objects in R, show you how to use functions and load packages, and find all the resources you need to get help. If any of this sounds obscure, don't worry! By the end of this workshop, we will have accomplished these objectives:
+In this introductory R Workshop you will learn what the R open-source statistical software is, why you should absolutely start using it, and all the first steps to help you get started in R. We will show you how R can act as a calculator, teach you about the various types of objects in R, show you how to use functions and load packages, and find all the resources you need to get help. If any of this sounds obscure, don't worry! By the end of this workshop, we will have accomplished these objectives:
 
 1.  Recognize and use R and RStudio;
 2.  Use R as a calculator;
 3.  Manipulate objects in R;
-4.  Install, and use R packages and functions
+4.  Install, and use R packages and functions;
 5.  Get help.
 
 # Preparing for the workshop
