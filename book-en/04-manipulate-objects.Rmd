@@ -170,7 +170,7 @@ Depending on the nature of the values enclosed inside your data or
 object, R classifies them accordingly. The following figure illustrates
 common objects found in R.
 
-![Types of objects in R](images//imageobjr.png){.align-center width="500"}
+![](images//imageobjr.png){.align-center width="500"}
 
 ### Data structure in R: vectors
 
@@ -421,10 +421,6 @@ Here the `dput()` function in another example.
 
 ```{r, echo = TRUE, eval = TRUE}
 dput(soil_fertilisation_data)
-structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
-), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7),
-treatment = c("Fert", "Fert", "No_fert", "No_fert")),
-class = "data.frame", row.names = c(NA, -4L))
 
 # It's possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output:
 structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
@@ -465,10 +461,11 @@ odd_n[-4]
 
 # If you select a position that is not in the numeric vector
 odd_n[c(1,6)]
+```
 
-# There is no sixth value in this vector so R returns a null value (i.e. NA)
-# NA stands for 'Not available'.
+There is no sixth value in this vector so R returns a null value (i.e. NA). NA stands for 'Not available'.
 
+```{r, echo = TRUE, eval = TRUE}
 # You can use logical statement to select values.
 odd_n[odd_n > 4]
 

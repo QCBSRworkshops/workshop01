@@ -61,7 +61,7 @@ might have made a mistake in it. This is always a useful tool to quickly
 alter previous commands you ran and to re-run them in a slightly
 different way.
 
-![Use arrow keys to go back to previous commands.](images//arrow_keys.png){width="400"}
+![](images//arrow_keys.png){width="400"}
 
 ### Challenge 4
 

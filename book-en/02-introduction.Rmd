@@ -48,7 +48,7 @@ There are other IDE for R: **Atom, Visual Studio, Jupyter notebook, and Jupyter 
 
 Open RStudio
 
-![RStudio logo](images//Rstudio.png){width="200"}
+![](images//Rstudio.png){width="200"}
 
 **Note for Windows users**: If the restriction "unable to write on
 disk" appears when you try to open R-Studio, right-click on your
@@ -77,12 +77,10 @@ of this Introduction to R workshop.
 ![](images//Rstudioconsole_fleche.png){width="800"}
 
 Text in the console typically looks like this:
-```{r, include = FALSE}
-output <- "This is the output"
-```
 
-```{r}
-output
+```{r, echo = TRUE, eval = TRUE}
+sortie <- "Ceci est la sortie"
+sortie
 ```
 
 Note 1: You always have to push "enter" for the input to run in the

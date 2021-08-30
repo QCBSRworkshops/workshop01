@@ -52,7 +52,7 @@ tapant `moy_x` à la console, R retourne la valeur du calcul (*i.e.* 4).
 Il faut être très scrupuleux lorsqu'on entre l'identifiant à la console,
 car R fait la différence entre les lettres minuscules et majuscules :
 écrire `moy_x` n'est pas la même chose qu'écrire `MOY_X`. On peut voir
-que l'opérateur d'assignation `<-` crée un lien explicite entre la
+que l'opérateur d'assignation `<-` créer un lien explicite entre la
 valeur d'intérêt et son identifiant. L'opérateur d'assignation pointe
 toujours de la valeur vers l'identifiant. Si votre clavier est configuré
 en anglais la combinaison de touche `Alt` + `-` vous permettra
@@ -115,7 +115,7 @@ chiffre. Que se passe-t-il?
 
 #### Solution {-}
 Un objet débutant par un chiffre va retourner
-l'erreur suivante : `Symbole inattendu dans "votre nom d’objet"`. 
+l'erreur suivante : `Error: unexpected symbol in "votre nom d'objet"`. 
 
 ------------------------------------------------------------------------
 
@@ -139,7 +139,7 @@ catégories distinctes. R classifie les données selon la nature des
 valeurs contenues dans un objet. La figure suivante illustre les types
 de données couramment rencontrés dans R.
 
-![Types d'objets dans R](images//Type_of_data_structure_in_R.png){.align-center width="500"}
+![](images//Type_of_data_structure_in_R.png){.align-center width="500"}
 
 **Types de structures de données en R: le vecteur**
 
@@ -147,8 +147,8 @@ Le premier type d'objet est le **vecteur**. C'est un des objets les plus
 communs dans R. Un vecteur est une entité constituée d'une liste de
 valeurs semblables. Toutes les valeurs d'un vecteur doivent avoir le
 même mode (ou classe). Les principaux modes dans R sont **numérique**,
-**caractère** et **logique**. Les vecteurs numériques sont composés de
-chiffres seulement. Les vecteurs de caractères sont généralement
+**caractère** et **logique**. Les vecteurs numériques sont seulement 
+composés de nombres. Les vecteurs de caractères sont généralement
 composés de chaînes de caractères ou d'un mélange de chaînes de
 caractères et de valeurs numériques et logiques. Il est absolument
 nécessaire d'utiliser les guillemets `" "` afin de délimiter les chaînes
@@ -166,7 +166,7 @@ nécessaire d'indiquer au logiciel R qu' il faut regrouper ces valeurs au
 sein d'un même vecteur. Pour ce faire, il faut utiliser la fonction
 `c()`. Ne vous en faites pas ! Vous allez bientôt apprendre ce qu'est
 une fonction dans une des sections suivantes. Pour l'instant, sachez que
-vous devez mettre v os valeurs que vous souhaitez avoir dans un vecteur
+vous devez mettre vos valeurs que vous souhaitez avoir dans un vecteur
 entre parenthèses tout juste après la lettre `c()` dans la console de R.
 Le format est le suivant :
 `nom.du.vecteur <- c(valeur1, valeur2, valeur3, ...)`. La fonction `c()`
@@ -316,9 +316,6 @@ Voici la fonction `dput()` dans un exemple plus concret:
 
 ```{r, echo = TRUE, eval = TRUE}
 dput(mon_df)
-structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
-), pH_sol = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7), traitement = c("Fert",
-"Fert", "Non_fert", "Non_fert")), class = "data.frame", row.names = c(NA, -4L))
 
 # Il est possible de reconstruire le data frame initial (avec certaines métadonnées associées, telles que la classe des variables par exemple) en copiant-collant la sortie précédente
 structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
@@ -372,9 +369,11 @@ impair[c(-1, -2)]
 
 # Si nous sélectionnons une position qui n'existe pas dans le vecteur numérique.
 impair[c(1,6)]
-# Il n’y a pas de sixième valeur dans ce vecteur, donc R retourne une valeur nulle (i.e. NA).
-# NA signifie 'Not available'.
+```
 
+Il n’y a pas de sixième valeur dans ce vecteur, donc R retourne une valeur nulle (i.e. NA). NA signifie 'Not available'.
+
+```{r, echo = TRUE, eval = TRUE}
 # Nous pouvons également utiliser des conditions pour sélectionner des valeurs.
 impair[impair > 4]
 

@@ -50,11 +50,11 @@ avec RStudio.
 
 Lancer RStudio
 
-![logo RStudio](images//Rstudio.png){width="200"}
+![](images//Rstudio.png){width="200"}
 
 **Note pour les utilisateurs Windows**: si la restriction: \"Unable to
 write on disk\" apparaît quand vous ouvrez R Studio ou que vous
-installez une bibliothèque, fermer l'application. Cliqué avec le bouton
+installez une bibliothèque, fermez l'application. Cliquez avec le bouton
 droit de la souris sur l'icône R Studio et choisissez "Execute as
 administrator" pour ouvrir R Studio.
 
@@ -66,16 +66,12 @@ Lorsque vous lancez RStudio, le premier élément que vous voyez à la
 gauche de l'écran est la console. C'est à cet endroit que vous allez
 travailler pour le reste de cet atelier d'introduction à R.
 
-![La console RStudio ](images//Rstudioconsole_fleche.png){width="800"}
+![](images//Rstudioconsole_fleche.png){width="800"}
 
 L'exemple suivant illustre le format du texte qui apparaît typiquement
 à l'écran :
-```{r, echo = FALSE, eval = TRUE}
-sortie <- "Ceci est la sortie"
-```
-
-
 ```{r, echo = TRUE, eval = TRUE}
+sortie <- "Ceci est la sortie"
 sortie
 ```
 
@@ -117,7 +113,7 @@ x*10
 Il indique un problème dans votre code
 
 
-Pour résoudre une *erreur*, les internets sont vontre meilleur ami. 
+Pour résoudre une *erreur*, Google est votre meilleur ami. 
 
 
 

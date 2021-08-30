@@ -39,7 +39,6 @@ Utilisez R pour effectuer l'opération suivante :
 
 $2 + 16 * 24 - 56$
 
-
 #### Solution {-}
 ```{r, echo=TRUE, eval=TRUE}
 2+16*24-56
@@ -50,7 +49,7 @@ $2 + 16 * 24 - 56$
 
 Utilisez R pour effectuer l'opération suivante: 
 
-$2 + 16 * 24 - 56 / ( 2 + 1) - 457$
+$2 + 16 * 24 - 56 / (2 + 1) - 457$
 
 *Faites attention à la priorité des opérations!*
 
@@ -72,8 +71,7 @@ une erreur dans une commande. C'est également utile pour modifier
 rapidement une commande et la relancer d'une manière légèrement
 différente.
 
-![Utilisez les flèches pour revenir aux commandes précédentes](images//arrow_keys.png){width = "100"}
-------------------------------------------------------------------------
+![](images//arrow_keys.png){width = "100"}
 
 ### DÉFI 4
 
