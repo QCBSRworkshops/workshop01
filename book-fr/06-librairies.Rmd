@@ -19,7 +19,7 @@ Actuellement, plus de 18000 packages sont disponibles librement.
 Pour installer des packages dans R, il suffit d'utiliser la fonction
 `install.packages()` :
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = FALSE, eval = TRUE, results='hide'}
 install.packages("ggplot2")
 ```
 
