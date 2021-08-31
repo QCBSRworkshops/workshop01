@@ -10,6 +10,7 @@ quest-ce-que-r
 pourquoi-utiliser-r
 utiliser-rstudio
 défi-1
+erreur-et-avertissement
 utiliser-r-comme-une-calculatrice
 défi-2
 défi-3
@@ -29,6 +30,7 @@ indexer-un-data-frame
 un-bref-commentaire-sur-les-déclarations-logiques
 défi-10
 les-fonctions
+introduction
 défi-11
 arguments
 défi-12
