@@ -2,28 +2,19 @@
 
 # Learning objectives
 
-In this introductory R Workshop you will learn what R
-open-source statistical software is, why you should absolutely start
-using it, and all the first steps to help you get started in R. We will
-show you how R can act as a calculator, teach you about the various
-types of objects in R, show you how to use functions and load packages,
-and find all the resources you need to get help. If any of this sounds
-obscure, don't worry! By the end of this workshop, we will have accomplished these objectives:
+In this introductory R Workshop you will learn what the R open-source statistical software is, why you should absolutely start using it, and all the first steps to help you get started in R. We will show you how R can act as a calculator, teach you about the various types of objects in R, show you how to use functions and load packages, and find all the resources you need to get help. If any of this sounds obscure, don't worry! By the end of this workshop, we will have accomplished these objectives:
 
-1.  Understand what R and RStudio are;
+1.  Recognize and use R and RStudio;
 2.  Use R as a calculator;
 3.  Manipulate objects in R;
-4.  Install, use an R package and get help.
+4.  Install, and use R packages and functions;
+5.  Get help.
 
 # Preparing for the workshop
 
-Before you can effectively start this workshop, you will need to install
-the R and RStudio softwares on your computer.
+Before you can effectively start this workshop, you will need to install the R and RStudio softwares on your computer.
 
-To install R, go to
-<http://www.r-project.org/> and click on download. You will have to
-select a mirror site (usually one close to you) and select your platform
-(OS X, Windows or Linux). Download the file and launch it to complete
+To install R, go to <http://www.r-project.org/> and click on download. You will have to select a mirror site (usually one close to you) and select your platform (OS X, Windows or Linux). Download the file and launch it to complete
 the installation. You don't have to change the default settings.
 
 To install RStudio, go to <http://www.rstudio.com/> and select RStudio
@@ -34,4 +25,4 @@ default settings.
 
 You can also download the R script for this workshop:
 
--    [R Script](https://qcbsrworkshops.github.io/workshop01/book-en/workshop01-script-en.R)
+*    [R Script](https://qcbsrworkshops.github.io/workshop01/book-en/workshop01-script-en.R)

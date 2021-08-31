@@ -3,50 +3,61 @@
 La première chose à savoir à propos de la console R est qu'on peut
 l'utiliser comme calculatrice.
 
-```{r, echo = TRUE, eval = FALSE}
-> 1 + 1
-[1] 2
+* Additions et soustractions
+```{r, echo = TRUE, eval = TRUE}
+1 + 1
+
 ```
 
-```{r, echo = TRUE, eval = FALSE}
-> 10 - 1
-[1] 9
+```{r, echo = TRUE, eval = TRUE}
+10 - 1
+
 ```
 
-```{r, echo = TRUE, eval = FALSE}
-> 2 * 2
-[1] 4
+* Multiplications et divisions
+```{r, echo = TRUE, eval = TRUE}
+2 * 2
+
 ```
 
-```{r, echo = TRUE, eval = FALSE}
-> 8 / 2
-[1] 4
+```{r, echo = TRUE, eval = TRUE}
+8 / 2
+
 ```
 
-```{r, echo = TRUE, eval = FALSE}
-> 2^3
-[1] 8
+* Exposants
+```{r, echo = TRUE, eval = TRUE}
+ 2^3
+
 ```
 
 ------------------------------------------------------------------------
 
-##### Défi 2
+### DÉFI 2
 
-Utilisez R pour effectuer l'opération suivante : 2 + 16 x 24 - 56
+Utilisez R pour effectuer l'opération suivante : 
 
-++Défi 2 : Solution\|\
-`> 2 + 16 * 24 - 56 [1] 330` ++\
-\-\-\-\--
+$2 + 16 * 24 - 56$
 
-##### Défi 3
+#### Solution {-}
+```{r, echo=TRUE, eval=TRUE}
+2+16*24-56
+```
 
-Utilisez R pour effectuer l'opération suivante:\
-2 + 16 x 24 - 56 / ( 2 + 1) - 457
+
+### DÉFI 3
+
+Utilisez R pour effectuer l'opération suivante: 
+
+$2 + 16 * 24 - 56 / (2 + 1) - 457$
 
 *Faites attention à la priorité des opérations!*
 
-++Défi 3 : Solution\|\
-`> 2 + 16 * 24 - 56 / (2 + 1) - 457 [1] -89.66667` ++\
+#### Solution {-}
+```{r, echo = TRUE, eval = TRUE}
+2+16*24-56/(2+1)-457
+```
+
 Prenez note que R respecte *toujours* la priorité des opérations.
 
 ------------------------------------------------------------------------
@@ -60,17 +71,22 @@ une erreur dans une commande. C'est également utile pour modifier
 rapidement une commande et la relancer d'une manière légèrement
 différente.
 
-![Utilisez les flèches pour revenir aux commandes
-précédentes.](//arrow_keys.png){width="100"}
+![](images//arrow_keys.png){width = "100"}
 
-------------------------------------------------------------------------
-
-##### Défi 4
+### DÉFI 4
 
 Quelle est l'aire d'un cercle avec un rayon de 5 cm ?
 
-++Défi 4 : Solution\|\
-Rappel : \$A\_{cercle} = \\pi r\^2\$\
-`> 3.1416 * 5^2 [1] 78.54`\
-ou\
-`> pi * 5^2 [1] 78.53982`++\
+#### Solution {-}
+
+Rappel : ${Aire_{cercle} = \pi r^2}$
+
+```{r}
+3.1416 * 5^2
+```
+
+*Astuce: Notez que R a des constantes intégrées, telle que ${\pi}$, vous pouvez donc écrire:
+
+```{r}
+pi*5^2
+```

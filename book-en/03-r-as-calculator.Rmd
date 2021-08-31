@@ -1,24 +1,57 @@
 # Using R as a calculator
 
-## Challenge 2
+The first thing to know about the R console is that you can use it as a calculator.
 
-Use R to calculate the following skill testing question: 2 + 16 x 24 -
-56
+---------------------------------------------------------------------------------------------
 
-```{r}
+## Arithmetic Operators
+* Additions and Subtractions
+```{r, echo=TRUE, eval=TRUE}
+1+1
+
+10-1
+```
+
+* Multiplications and Divisions
+
+```{r, echo = TRUE, eval = TRUE}
+2*2
+
+8/2
+```
+
+* Exponents
+```{r, echo = TRUE, eval = TRUE}
+2^3
+```
+
+----------------------------------------------------------------------------------------------
+
+### CHALLENGE 2
+
+Use R to calculate the following skill testing question: 
+
+$2 + 16 * 24 -56$
+
+#### Solution {-}
+```{r, echo = TRUE, eval = TRUE}
 2 + 16 * 24 - 56
 ```
 
+------------------------------------------------------------------------------------------------
 
-## Challenge 3
 
-Use R to calculate the following skill testing question:
-2 + 16 x 24 - 56 / (2 + 1) - 457
+### CHALLENGE 3
+
+Use R to calculate the following skill testing equation:
+
+$2 + 16 * 24 - 56 / (2 + 1) - 457$
 
 *Pay attention to the order of operations when thinking about this
 question!*
 
-```{r}
+#### Solution {-}
+```{r, eval = TRUE, echo = TRUE}
 2 + 16 * 24 - 56 / (2 + 1) - 457
 ```
 
@@ -33,15 +66,27 @@ might have made a mistake in it. This is always a useful tool to quickly
 alter previous commands you ran and to re-run them in a slightly
 different way.
 
-![Use arrow keys to go back to previous
-commands.](//arrow_keys.png){width="100"}
+![](images//arrow_keys.png){width="400"}
 
-## Challenge 4
+----------------------------------------------------------------------------------------
+
+
+### CHALLENGE 4
 
 What is the area of a circle with a radius of 5 cm?
 
-Recall : ${circle = \pi r^2}$
-`> 3.1416 * 5^2 [1] 78.54`\
+Recall : ${Area _{circle} = \pi r^2}$
 
-R also has many built-in constants like pi.\
-`> pi * 5^2 [1] 78.54` ++\
+#### Solution {-}
+```{r, echo = TRUE, eval = TRUE}
+3.1416 *5^2
+```
+
+R also has many built-in constants like pi.
+
+```{r, eval = TRUE, echo = TRUE}
+pi * 5^2
+```
+
+You can find them by typing `?` and `Constants` (as in `?Constants`) and executing it!
+`

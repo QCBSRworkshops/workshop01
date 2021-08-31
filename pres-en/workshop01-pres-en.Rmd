@@ -50,11 +50,11 @@ lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 
 # About this workshop
 
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=wiki&message=01&logo=wikipedia)](https://wiki.qcbs.ca/r_workshop1)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=Slides&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.html)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=Slides&message=01&color=red&logo=adobe-acrobat-reader)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.pdf)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=slides&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/pres-en/workshop01-pres-en.html)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=book&message=01&logo=github)](https://qcbsrworkshops.github.io/workshop01/book-en/index.html)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=wiki&message=01&logo=wikipedia)](https://wiki.qcbs.ca/r_workshop1)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/book-en/workshop01-script-en.R)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01)
 
 ---
 # Learning Objectives
@@ -1919,7 +1919,7 @@ _Any wild guesses?_
 ---
 class: inverse, center, middle
 
-# 3. Manipulating objects in R
+# 4. Functions
 
 <hr>
 
@@ -2130,7 +2130,7 @@ Same as `plot(a, b, type = "l")`. The argument names are provided, the order is 
 ---
 class: inverse, center, middle
 
-# 4. Installing and using R packages
+# 5. Installing and using R packages
 
 ---
 # `R` Packages

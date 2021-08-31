@@ -1,5 +1,7 @@
 # Les fonctions
 
+## Introduction
+
 La plupart du temps, vous devrez utiliser des fonctions dans R pour
 effectuer les tâches voulues.
 
@@ -10,13 +12,13 @@ pré-existants dans R qui sont exécutés lorsque nécessaire. Ça permet de
 sauver du temps, car il n'est pas nécessaire de créer un code et de
 l'écrire à chaque fois qu'on doit l'utiliser.
 
-Pour exécuter une fonction, vous devez l'[appeler]{.ul}. L'appel
+Pour exécuter une fonction, vous devez l'appeler. L'appel
 d'une fonction est un raccourci vers le code de la fonction. Pour ce
 faire, il est nécessaire de spécifier des valeurs d'entrée qu'on nomme
 **arguments** (ou quelquefois paramètres). Après avoir lancé une
 fonction, R retourne une **valeur de retour** dans la console. La
-commande doit être structurée proprement en suivant les \"règles de
-grammaire\" du langage R (*i.e.* la syntaxe).
+commande doit être structurée proprement en suivant les "règles de
+grammaire" du langage R (*i.e.* la syntaxe).
 
 Un appel de fonction est structuré de la manière suivante : le nom de la
 fonction suivi de parenthèses `( )`. On insère les arguments séparés par
@@ -28,19 +30,17 @@ Voyons l'exemple de la fonction `sum` qui permet de faire la somme de
 deux ou plusieurs nombres.
 
 ```{r, echo = TRUE, eval = FALSE}
-> sum(1, 2)
-[1] 3
+sum(1, 2)
 ```
 
 Les arguments sont des **valeurs** utilisées comme instructions pour que
 la fonction puisse retourner un résultat. Les objets peuvent être
 utilisés comme arguments :
 
-```{r, echo = TRUE, eval = FALSE}
-> a <- 3
-> b <- 5
-> sum(a, b)
-[1] 8
+```{r, echo = TRUE, eval = TRUE}
+a <- 3
+b <- 5
+sum(a, b)
 ```
 
 La sortie, qui apparaît sur la dernière ligne, est la **valeur de
@@ -49,124 +49,149 @@ soit 8.\
 
 ------------------------------------------------------------------------
 
-##### Défi 11
+### DÉFI 11
 
-> a\) - Créez un vecteur nommé `a` contenant tous les nombres de 1 à 5\
-> \> - Créez un objet nommé `b` avec une valeur de 2\
-> \> - Ajoutez a à b en utilisant l'opérateur `+` et enregistrez le
-> résultat dans un objet appelé `resultat_add`\
-> \> - Ajoutez a à b en utilisant la fonction `sum()` et enregistrez le
-> résultat dans un objet appelé `resultat_sum`\
-> \> - Comparez les objets resultat_add et resultat_sum. Sont-ils
-> différents?
+- Créez un vecteur nommé `a` contenant tous les nombres de 1 à 5\
 
-\>
+- Créez un objet nommé `b` avec une valeur de 2\
 
-> b\) Ajoutez 5 à `resultat_sum` en utilisant la fonction `sum()`.
+- Ajoutez a à b en utilisant l'opérateur `+` et enregistrez le résultat dans un objet appelé `resultat_add`\
 
-\> ++++Défi 11a : Appeler des fonctions\|
+- Ajoutez a à b en utilisant la fonction `sum()` et enregistrez le résultat dans un objet appelé `resultat_sum`\
 
-```{r, echo = TRUE, eval = FALSE}
-> a <- 1:5
-> b <- 2
-> resultat_add <- a + b
-> resultat_sum <- sum(a, b)
+- Comparez les objets resultat_add et resultat_sum. Sont-ils différents?
+
+- Ajoutez 5 à `resultat_sum` en utilisant la fonction `sum()`.
+
+#### Solutions {-}
+
+- Créez un vecteur nommé `a` contenant tous les nombres de 1 à 5\
+
+```{r, echo = TRUE, eval = TRUE}
+a <- 1:5
 ```
 
-```{r, echo = TRUE, eval = FALSE}
-> resultat_add
-[1]  3 4 5 6 7
+- Créez un objet nommé `b` avec une valeur de 2\
+
+```{r, echo = TRUE, eval = TRUE}
+b <- 2
+```
+
+- Ajoutez a à b en utilisant l'opérateur `+` et enregistrez le résultat dans un objet appelé `resultat_add`\
+
+```{r, echo = TRUE, eval = TRUE}
+resultat_add <- a + b
+```
+
+- Ajoutez a à b en utilisant la fonction `sum()` et enregistrez le résultat dans un objet appelé `resultat_sum`\
+
+```{r, echo = TRUE, eval = TRUE}
+resultat_sum <- sum(a, b)
+```
+- Comparez les objets resultat_add et resultat_sum. Sont-ils différents?
+
+```{r, echo = TRUE, eval = TRUE}
+resultat_add
 ```
 
 L'opération sur le vecteur ajoute deux à chaque élément. Le résultat
 est un **vecteur**.\
 
-```{r, echo = TRUE, eval = FALSE}
-> resultat_sum
-[1] 17
+```{r, echo = TRUE, eval = TRUE}
+result_sum
 ```
 
 La fonction `sum()` additionne toutes les valeurs de `a` et `b`. C'est
 équivalent à 1 + 2 + 3 + 4 + 5 + 2. Le résultat est un **nombre**.\
-++++
 
-++++Défi 11b : Appeler des fonctions\|
+- Ajoutez 5 à `resultat_sum` en utilisant la fonction `sum()`.
 
-```{r, echo = TRUE, eval = FALSE}
-> sum(resultat_sum, 5)
-[1] 22
+```{r, echo = TRUE, eval = TRUE}
+sum(resultat_sum, 5)
 ```
-
-++++
 
 ------------------------------------------------------------------------
 
-#### Arguments
+## Arguments
 
 Tous les arguments ont un **nom** qui peut être indiqué lorsqu'on
 appelle une fonction.\
-Si le nom n'est pas [indiqué]{.ul}, l'ordre des arguments [est
-primordial]{.ul}.\
-Si le nom est [indiqué]{.ul}, l'ordre des arguments [n'a pas
-d'importance]{.ul}.
 
 Pour indiquer le nom d'un argument lors d'un appel de fonction, il
 suffit simplement de l'écrire de la façon suivante :
-`nom_argument=valeur`.
+`nom_argument=valeur`:
 
 ```{r, echo = TRUE, eval = FALSE}
-> log(x = 8, base = 2)
+log(x = 8, base = 2)
+```
+
+Si le nom n'est pas indiqué, l'ordre des arguments est
+primordial.\
+
+```{r, echo = TRUE, eval = TRUE}
+log(8, 2)
+log(2, 8)
+```
+
+Si le nom est indiqué, l'ordre des arguments n'a pas
+d'importance.
+
+```{r, echo = TRUE, eval = TRUE}
+log(x = 8, base = 2)
+log(base = 2, x = 8)
 ```
 
 ------------------------------------------------------------------------
 
-##### Défi 12
+### DÉFI 12
 
-> `plot(x, y)` est une fonction qui crée un graphique de y en fonction
-> de x. Cette fonction nécessite deux arguments nommés `x` et `y`.
-> Quelles sont les différences entre les lignes de codes suivantes ?
+`plot(x, y)` est une fonction qui crée un graphique de y en fonction
+de x. Cette fonction nécessite deux arguments nommés `x` et `y`. 
 
-```{r, echo = TRUE, eval = FALSE}
-> a <- 1:100
-> b <- a^2
-> plot(a, b)
-> plot(b, a)
-> plot(x = a, y = b)
-> plot(y = b, x = a)
-```
-
-++++Défi 12 : Noms d'arguments\|
+Quelles sont les différences entre les lignes de codes suivantes ?
 
 ```{r, echo = TRUE, eval = FALSE}
+a <- 1:100
+b <- a^2
 plot(a, b)
-```
-
-![](images//rplot.png){width="200"}\
-Crée un graphique de `b` en fonction de `a`.
-
-```{r, echo = TRUE, eval = FALSE}
 plot(b, a)
-```
-
-![](images/plotba.png){width="200"}\
-Crée un graphique de `a` en fonction de `b`. Les noms d'arguments ne
-sont pas indiqués, donc l'ordre des arguments est primordial.
-
-```{r, echo = TRUE, eval = FALSE}
 plot(x = a, y = b)
-```
-
-![](images/pltxayb.png){width="200"}\
-Crée un graphique de `b` en fonction de `a`. C'est le même graphique
-que `plot(a, b)`.
-
-```{r, echo = TRUE, eval = FALSE}
 plot(y = b, x = a)
 ```
 
-![](images/plotybxa.png){width="200"}\
-Crée un graphique de `b` en fonction de `a`. Les noms d'arguments sont
-indiqués, donc l'ordre des arguments n'a pas d'importance. ++++
+#### Solutions {-}
+
+```{r, echo = FALSE, eval = TRUE}
+a <- 1:100
+b <- a^2
+```
+
+```{r, echo = TRUE, eval = TRUE}
+plot(a, b)
+```
+
+Créer un graphique de `b` en fonction de `a`.
+
+```{r, echo = TRUE, eval = TRUE}
+plot(b, a)
+```
+
+Créer un graphique de `a` en fonction de `b`. Les noms d'arguments ne
+sont pas indiqués, donc l'ordre des arguments est primordial!
+
+```{r, echo = TRUE, eval = TRUE}
+plot(x = a, y = b)
+```
+
+Créer un graphique de `b` en fonction de `a`. C'est le même graphique
+que `plot(a, b)`.
+
+```{r, echo = TRUE, eval = TRUE}
+plot(y = b, x = a)
+```
+
+Créer un graphique de `b` en fonction de `a`. Les noms d'arguments sont
+indiqués, donc l'ordre des arguments n'a pas d'importance.
 
 ------------------------------------------------------------------------
 

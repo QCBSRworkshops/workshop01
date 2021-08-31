@@ -1,38 +1,38 @@
 # Manipulating objects in R
 
+
 ## Objects
 
 You have learned so far how to use R as a calculator to obtain various
 numerical values. However, it can get tiresome to always write the same
 code down in the R console, especially if you have to use some values
-repeatedly. This is where the concept of object becomes useful.
+repeatedly. This is where the concept of **object** becomes useful.
 
-R is an object-oriented programming language. What this means is that we
-can allocate a name to values we've created to save them in our
-workspace. An object is composed of three parts: 1) a value we're
-interested in, 2) an identifier and 3) the assignment operator.
+R is an object-oriented programming language. What this means is that we can allocate a name to values we've created to save them in our
+**workspace**. An object is composed of three parts: 1) a **value** we're
+interested in, 2) an **identifier** and 3) the **assignment operator**.
 
-1.  The value can be almost anything we want: a number, the result of a
+1.  The **value** can be almost anything we want: a number, the result of a
     calculation, a string of characters, a data frame, a plot or a
     function.
-2.  The identifier is the name you assign to the value. Whenever you
+2.  The **identifier** is the name you assign to the value. Whenever you
     want to refer to this value, you simply type the identifier in the R
     console and R will return its value. Identifiers can include only
     letters, numbers, periods and underscores, and should always begin
     with a letter.
-3.  The assignment operator resembles an arrow (`<-`) and is used to
+3.  The **assignment operator** resembles an arrow (`<-`) and is used to
     link the value to the identifier.
+
 
 The following code clarifies these ideas:
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE}
 # Let's create an object called mean_x.
 # The # symbol is used in R to indicate comments. It is not processed by R.
 # It is important to add comments to code so that it can be understood and used by other people.
 mean_x <- (2 + 6) / 2
 # Typing its name will return its value.
-> mean_x
-[1]  4
+mean_x
 ```
 
 Here, `(2 + 6) / 2` is the value you want to save as an object. The
@@ -49,20 +49,16 @@ to because it is also used for other operations in R, which can cause
 problems when using it for assignment. Finally, imagine that the
 operator `<-` and `=` follow their own order of priorities.
 
-```{r, echo = TRUE, eval = FALSE}
-> y <- x = 5
-Error in y <- x = 5 : object 'y' not found
-> y = x <- 5
-> y
-[1] 5
-> x
-[1] 5
-
+```{r, echo = TRUE, eval = TRUE, error=TRUE}
+y <- x = 5
+y = x <- 5
+y
+x
 ```
 
+-----------------------------------------------------------------------
 
-
-#### Good practices in R code
+## Good practices in R code
 
 **Name**
 
@@ -81,32 +77,39 @@ Error in y <- x = 5 : object 'y' not found
     English).
 
 
+### CHALLENGE 5
 
-##### CHALLENGE 5
-
-> Create an object with a value of 1 + 1.718282 (Euler's number) and
-> name it `euler_value`
-
- Challenge 5: Solution
-
-```{r, echo = TRUE, eval = FALSE}
-> euler_value <- 1 + 1.718282
-```
-
-
-
-
-
-##### CHALLENGE 6
-
-> Create an object (you decide the value) with a name that starts with a
-> number. What happens?
-
- Challenge 6: Solution An object name that starts with a number
+Create an object (you decide the value) with a name that starts with a
+number. What happens?
+#### Solution {-}
+ 
+An object name that starts with a number
 will return the following error:
 `unexpected symbol in "your object name"`. 
 
 
+----------------------------------------------------------------------------------
+
+### CHALLENGE 6
+
+Create an object with a value of 1 + 1.718282 (Euler's number) and
+name it `euler_value`
+
+#### Solution {-}
+
+```{r, echo = TRUE, eval = TRUE}
+euler_value <- 1 + 1.718282
+
+euler_value
+```
+
+What has happened in your **RStudio** window when you created this object?
+
+---------------------------------------------------------------------------------------------------
+
+### The RStudio Environment
+
+The **Environment** panel shows you all the objects you have defined in your current workspace
 
 **R TIP**
 
@@ -115,9 +118,59 @@ entering and avoids spelling errors. For example, if you type `eu` and
 then press tab, you will see a list of objects or functions beginning
 with `eu`. Select `euler_value` (the object we just created) and press
 enter. The `euler_value` identifier now appears at the command line.
+If more than one element appears, you can use the arrow keys and press "Return" or use your mouse to select the correct one. 
+
+
+---------------------------------------------------------------------------------
 
 
 ## Data types and structure
+
+### Core data types in R
+**Data types ** define how the values are stored in R. 
+We can obtain the type and mode of an object using the function `typeof()`.
+The core data types are:
+
+* **Numeric**-type with **integer** and **double** values
+
+```{r}
+(x <- 1.1)
+typeof(x)
+
+(y <- 2L)
+typeof(y)
+```
+
+* **Character**-type (always between `" "`)
+```{r}
+z <- "You are becoming very good in this!"
+typeof(z)
+```
+
+* **Logical**-type
+```{r}
+t <- TRUE
+typeof(t)
+
+f<- FALSE
+typeof(f)
+```
+
+
+### Data structure in R: scalars
+
+Until this moment, we have created objects that had just **one element** inside them. An object that has just a single value or unit like a number or a text string is called a **scalar**.
+
+```{r}
+#Examples of scalars
+a <- 100
+b <- 3/100
+c <- (a+b)/b
+d <- "species"
+e <- "genus"
+```
+
+By creating combinations of **scalars**, we can create data with different structures in R. 
 
 Using R to analyze your data is an important aspect of this software.
 Data comes in different forms and can be grouped in distinct categories.
@@ -125,13 +178,14 @@ Depending on the nature of the values enclosed inside your data or
 object, R classifies them accordingly. The following figure illustrates
 common objects found in R.
 
-![Types of objects in R](// imageobjr.png){.align-center width="500"}
+![](images//imageobjr.png){.align-center width="500"}
+
+### Data structure in R: vectors
 
 The first object is a **vector**. It is one of the most common objects
-in R. A vector is an entity consisting of a list of related values. All
+in R. A vector is an entity consisting of several scalars stored in a single object. All
 values in a vector must be the same mode. The main modes in R are
-**numeric**, **character** and **logical**. Numeric vectors are made of
-numbers only. Character vectors include text strings or a mix of text
+**numeric**, **character** and **logical**. Character vectors include text strings or a mix of text
 strings and other modes. You need to use `""` to delimit elements in a
 character vector. Logical vectors include `TRUE/FALSE` entries only. A
 vector with a single value (usually a constant) is called an atomic
@@ -154,53 +208,77 @@ remember it!
 Now that you know the generic method to create a vector in R, let's
 have a look at how to create different types of vectors.
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE}
 # Create a numeric vector with the c (which means combine or concatenate) function.
 # We will learn about functions soon!
-> num_vector <- c(1, 4, 3, 98, 32, -76, -4)
+num_vector <- c(1, 4, 3, 98, 32, -76, -4)
 
 # Create a character vector. Always use "" to delimit text strings!
-> char_vector <- c("blue", "red", "green")
+char_vector <- c("blue", "red", "green")
 
 # Create a logical or boolean vector. Don't use "" or R will consider this as text strings.
-> bool_vector <- c(TRUE, TRUE, FALSE)
+bool_vector <- c(TRUE, TRUE, FALSE)
 
 #It is also possible to use abbreviations for logical vectors.
-> bool_vector2 <- c(T, T, F)
+bool_vector2 <- c(T, T, F)
+```
+
+#### Creating vectors of sequential values:
+The `a:b` takes two numeric scalars `a` and `b` as *arguments*, and returns a vector of numbers from the starting point `a` to the ending point `b`, in steps of `1` unit:
+
+```{r}
+1:8
+
+7.5:1.5
+```
+
+`seq()` allows us to create a sequence, like `a:b`, but also allows us to specify either the size of the steps (the `by` argument), or the total length of the sequence (the `length.out` argument):
+```{r}
+seq(from = 1, to = 10, by = 2)
+
+seq(from = 20, to = 2, by = -2)
+```
+
+`rep()` allows you to repeat a scalar (or vector) a specified number of times, or to a desired length:
+
+```{r}
+rep(x = 1:3, each = 2, times = 2)
+
+rep(x = c(1,2), each = 3)
 ```
 
 
+### CHALLENGE 7
 
-##### CHALLENGE 7
+Create a vector containing the first five odd numbers (starting from 1) and name it odd_n.
 
-> Create a vector containing the first five odd numbers (starting from
-> 1) and name it odd_n.
+#### Solution {-}
 
-Challenge 7: Solution
-
-```{r, echo = TRUE, eval = FALSE}
-> odd_n <- c(1, 3, 5, 7, 9)
+```{r, echo = TRUE, eval = TRUE}
+odd_n <- c(1, 3, 5, 7, 9)
 ```
 
+OR
+```{r, echo = TRUE, eval = TRUE}
+odd_n <- seq(from = 1, to = 9, by = 2)
+odd_n
 
+```
 
-
+-----------------------------------------------------------------------
 
 **R TIP**
 
 Use `dput()` function to obtain the reverse, *i.e.* the content of an
 object formatted as a vector. *e.g.* :
 
-```{r, echo = TRUE, eval = FALSE}
-> odd_n <- c(1, 3, 5, 7, 9)
-> odd_n
-[1] 1 3 5 7 9
+```{r, echo = TRUE, eval = TRUE}
+odd_n <- c(1, 3, 5, 7, 9)
+odd_n
 
-> dput(odd_n)
-c(1, 3, 5, 7, 9)
-
+dput(odd_n)
 # The output can be copied-pasted to create a new object by using the structure() function
-> structure(c(1, 3, 5, 7, 9))
+structure(c(1, 3, 5, 7, 9))
 ```
 
 This demonstration might not be that convincing, but keep in mind that
@@ -210,95 +288,160 @@ are really useful to provide a reproducible example for a question on
 application in the part about data frames)!
 
 
+-----------------------------------------------------------------------
 
+
+### Operations using vectors
 What you have learned previously about calculations is also valid for
 vectors: vectors can be used for calculations. The only difference is
 that when a vector has more than 1 element, the operation is applied on
 all elements of the vector. The following example clarifies this.
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE}
 # Create two numeric vectors.
-> x <- 1:5
-
-# An equivalent form is: x <- c(1:5).
-> y <- 6
+x <- c(1:5)
+y <- 6
 # Remember that the : symbol, when used with numbers, is the sequence operator.
 # It tells R to create a series of numbers increasing by 1.
-# Equivalent to this is x <- c(1,2,3,4,5)
+# c(1:5) or 1:5 is equivalent to x <- c(1,2,3,4,5)
 
 # Let's sum both vectors.
 # 6 is added to all elements of the x vector.
-> x + y
-[1]  7 8 9 10 11
+x + y
 
-# Let's multiply x by itself.
-> x * y
-[1]  6 12 18 24 30
+# Let's multiply x by y
+x * y
 
 ```
 
+### Data structure in R: matrices
+We have learned that **scalars** contain one element, and that **vectors** contain more than one scalar of the same type!
+Matrices are nothing but a bunch of vectors stacked together!
+While vectors have one dimension, matrices have two dimensions, determined by **rows** and **columns**.
+Finally, like **vectors** and **scalars** matrices can contain only one type of data: `numeric`, `character`, or `logical`.
 
+There are many wasy to create your own matrix. Let us start with a simple one:
+```{r}
+matrix(data = 1:10,
+       nrow = 5,
+       ncol = 2)
+
+matrix(data = 1:10, 
+       nrow = 2, 
+       ncol = 5)
+```
+
+We can also combine multiple vectors using `cbind()` and `rbind()`:
+
+```{r}
+nickname <- c("kat", "gab", "lo")
+animal <- c("dog", "mouse", "cat")
+
+rbind(nickname, animal)
+
+cbind(nickname, animal)
+```
+
+Similarly as in the case of vectors, operations with matrices work just fine:
+
+```{r}
+(mat_1 <- matrix(data = 1:9,
+                 nrow = 3,
+                 ncol = 3))
+(mat_2 <- matrix(data = 9:1,
+                 nrow = 3,
+                 ncol = 3))
+
+# The product of the matrices is:
+mat_1 * mat_2
+```
+
+### CHALLENGE 8
+
+1. Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.
+2. Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like. 
+3. Create a third object with 4 rows and 2 columns:
+  + in the first column, include the numbers from 2 to 5 
+  + in the second column, include the first names of four friends
+4. Compare them see what differences you can detect (despite their values)
+
+**Remember** that text strings must always be surrounded by quote marks (" ").
+**Remember** that values or arguments must be separated by commas if they are inside a function, e.g. `c("one", "two", "three")`.
+
+#### Solution {-}
+```{r}
+#Step 1:
+(step_1 <- matrix(data = 1:6, nrow = 2, ncol = 3))
+
+#Step 2
+(step_2 <- matrix(data = c("cheetah",
+                           "tiger",
+                           "ladybug",
+                           "deer",
+                           "monkey",
+                           "crocodile"),
+                  nrow = 2,
+                  ncol = 3))
+
+#Step 3
+step_3 <- cbind(c(2:5),
+                c("linley",
+                  "jessica",
+                  "joe",
+                  "emma"))
+```
+
+------------------------------------------------------------------------------------------
+
+### Data structure in R: data frames
 
 Another important type of object you will use regularly is the data
 frame. A data frame is a group of vectors of the same length (*i.e.* the
 same number of elements). Columns are always variables and rows are
-observations, cases, sites or replicates. Different modes can be saved
-in different columns (but always the same mode in a column). It is in
-this format that ecological data are usually stored. The following
+observations, cases, sites or replicates. Differently than a matrix, a data frame can contain different modes saved in different columns (but always the same mode in a column). 
+
+It is in this format that ecological data are usually stored. The following
 example shows a fictitious dataset representing 4 sites where soil pH
 and the number of plant species were recorded. There is also a
-"Treatment" variable (fertilized or not). Let's have a look at the
+"fertilised" variable (fertilized or not). Let's have a look at the
 creation of a data frame.
 
-  site_id   soil_pH   num_sp   treatment
+  site_id   soil_pH   num_sp   fertilised
   --------- --------- -------- ----------------
-  A1.01     5.6       17       Fertilised
-  A1.02     7.3       23       Fertilised
-  B1.01     4.1       15       Not Fertilised
-  B1.02     6.0       17       Not Fertilised
+  A1.01     5.6       17       yes
+  A1.02     7.3       23       yes
+  B1.01     4.1       15       no
+  B1.02     6.0       7        no
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE}
 # We first start by creating vectors.
-> site_id <- c("A1.01", "A1.02", "B1.01", "B1.02")
-> soil_pH <- c(5.6, 7.3, 4.1, 6.0)
-> num_sp <- c(17, 23, 15, 7)
-> treatment <- c("Fert", "Fert", "No_fert", "No_fert")
+site_id <- c("A1.01", "A1.02", "B1.01", "B1.02") #identifies the sampling site
+soil_pH <- c(5.6, 7.3, 4.1, 6.0) #soil pH
+num_sp <- c(17, 23, 15, 7) #number of species
+fertilised <- c("yes", "yes", "no", "no") #identifies the treatment applied
 
 # We then combine them to create a data frame with the data.frame function.
-my_df <- data.frame(site_id, soil_pH, num_sp, treatment)
+soil_fertilisation_data <- data.frame(site_id, soil_pH, num_sp, fertilised)
 
 # Visualise it!
-my_df
+soil_fertilisation_data
 ```
 
+Note how the data frame integrated the name of the objects as column names
 
-\*\* R TIP\*\*
+**R TIP**
 
 Here the `dput()` function in another example.
 
-```{r, echo = TRUE, eval = FALSE}
-> dput(my_df)
+```{r, echo = TRUE, eval = TRUE}
+dput(soil_fertilisation_data)
+
+# It's possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output:
 structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
 ), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7),
 treatment = c("Fert", "Fert", "No_fert", "No_fert")),
 class = "data.frame", row.names = c(NA, -4L))
-
-# It's possible to rebuild the initial data frame (with some associated metadata as the class of variables) by copying and pasting the previous output:
-> structure(list(site_id = c("A1.01", "A1.02", "B1.01", "B1.02"
-), soil_pH = c(5.6, 7.3, 4.1, 6), num_sp = c(17, 23, 15, 7),
-treatment = c("Fert", "Fert", "No_fert", "No_fert")),
-class = "data.frame", row.names = c(NA, -4L))
 ```
-
-
-
-Other types of objects include matrices, arrays and lists. A matrix is
-similar to a data frame except that all cells in the matrix must be the
-same mode. An array is similar to a matrix but can have more than two
-dimensions. Arrays are usually used for advanced computation like
-numerical simulations and permutation tests. A list is an aggregation of
-various types of objects. For example, a list could include a vector, a
-data frame and a matrix in the same object.
 
 
 ## Indexing
@@ -313,108 +456,90 @@ the position of values we want to extract from an object with brackets
 `[ ]`. The following code illustrates the concept of indexation with
 vectors.
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE}
 # Let's first create a numeric and a character vector.
 # There is no need to do this again if you already did it in the previous exercise!
-> odd_n <- c(1, 3, 5, 7, 9)
+odd_n <- c(1, 3, 5, 7, 9)
 
-# Extract the second element of the numeric vector.
-> odd_n[2]
-[1]  3
+# To obtain the value in the second position, we do as follows:
+odd_n[2]
 
-# Extract the second and fourth elements of the numeric vector.
-> odd_n[c(2, 4)]
-[1]  3 7
 
-# Extract all but the two first elements of the numeric vector.
-> odd_n[c(-1, -2)]
-[1] 5 7 9
+# We can also obtain values for multiple positions within a vector with c()
+odd_n[c(2, 4)]
+
+# We can remove values pertaining to particular positions from a vector using the minus (-) sign before the position value
+odd_n[c(-1, -2)]
+
+odd_n[-4]
 
 # If you select a position that is not in the numeric vector
-> odd_n[c(1,6)]
-[1] 1 NA
-# There is no sixth value in this vector so R returns a null value (i.e. NA)
-# NA stands for 'Not available'.
+odd_n[c(1,6)]
+```
 
+There is no sixth value in this vector so R returns a null value (i.e. NA). NA stands for 'Not available'.
+
+```{r, echo = TRUE, eval = TRUE}
 # You can use logical statement to select values.
-> odd_n[odd_n > 4]
-[1] 5 7 9
+odd_n[odd_n > 4]
 
 # Extract all elements of the character vector corresponding exactly to "blue".
-> char_vecteur[char_vecteur == "blue"]
-[1]  "bleu"
+char_vector[char_vector == "blue"]
 # Note the use of the double equal sign ==.
 
 ```
 
 
+----------------------------------------------------------------------------------------
 
-##### CHALLENGE 8
 
-> a) Extract the 4th value of the `num_vector` vector.
->
-> b) Extract the 1st and 3rd values of the `num_vector` vector.
->
-> c) Extract all values of the `num_vector` vector excluding the 2nd
-> and 4th values.
+### CHALLENGE 9
 
-\> Challenge 8a: Indexing vectors\|
+Using the vector `num_vector` and our indexing abilities:
+ 
+ a) Extract the 4th value of the `num_vector` vector.
 
-```{r, echo = TRUE, eval = FALSE}
-> num_vector[4]
-[1] 3
+ b) Extract the 1st and 3rd values of the `num_vector` vector.
+
+ c) Extract all values of the `num_vector` vector excluding the 2nd and 4th values.
+ 
+ d) Extract from the 6th to the 10th value.
+ 
+```{r, echo = TRUE, eval = TRUE}
+num_vector <- c(1, 4, 3, 98, 32, -76, -4)
 ```
 
- Challenge 8b: Indexing vectors\|
+#### Solution {-}
 
-```{r, echo = TRUE, eval = FALSE}
-> num_vector[c(1, 3)]
-[1] 1  5
+a) Extract the 4th value
+```{r, echo = TRUE, eval = TRUE}
+num_vector[4]
+
 ```
 
- Challenge 8c: Indexing vectors\|
-
-```{r, echo = TRUE, eval = FALSE}
-> num_vector[c(-2, -4)]
-[1] 1  5  6  -2  4
+b) Extract the 1st and 3rd values
+```{r, echo = TRUE, eval = TRUE}
+num_vector[c(1, 3)]
 ```
 
-
-
-
-
-##### CHALLENGE 9
-
-> Explore the difference between these 2 lines of code:
-
-```{r, echo = TRUE, eval = FALSE}
-> char_vector == "blue"
-> char_vector[char.vector == "blue"]
+c) Extract all values except for the 2nd and the 4th
+```{r, echo = TRUE, eval = TRUE}
+num_vector[c(-2, -4)]
 ```
 
-Challenge 9: Differences between codes\| In the first line of code
-you test a logical statement. For each entry in the "char_vector"
-vector, R checks whether the entry is exactly equal to "blue" or not
-and returns a TRUE/FALSE answer. The next subsection introduces you to
-logical statements. In the second line of code you ask R to extract all
-values within the "char_vector" vector that are exactly equal to
-"blue". It is also possible to extract the "blue" value by assigning
-a logical value to each element of the vector. Of course, you have to
-know the position of the "blue" value inside the vector.
+d) Extract from the 6th to the 10th value
 
-```{r, echo = TRUE, eval = FALSE}
-> char_vector[c(TRUE, FALSE, FALSE)]
-[1] "blue"
-# We specify which value is true,
-# i.e. the value we want R to return (the first one)
-# which corresponds to "blue".
+```{r, echo = TRUE, eval = TRUE}
+num_vector[6:10]
+
 ```
 
+What happened there? What is that NA?
+
+---------------------------------------------------------------------------------------------
 
 
-
-
-#### Indexing a data frame
+### Indexing a data frame
 
 For data frames, the concept of indexation is similar, but we usually
 have to specify two dimensions: the row and column numbers. The R syntax
@@ -426,27 +551,31 @@ Here are a few examples of data frame indexation. Note that the first
 four operations are also valid for indexing matrices.
 
 ```{r, echo = TRUE, eval = FALSE}
-# Let's reuse the data frame we created earlier (my_df)
+# Let's reuse the data frame we created earlier (soil_fertilisation_data)
 # Extract the 1st row of the data frame
-> my_df[1, ]
+soil_fertilisation_data[1, ]
 
 # Extract the 3rd columm
-> my_df[, 3]
+soil_fertilisation_data[, 3]
 
 # Extract the 2nd element of the 4th column
-> my_df[2, 4]
+soil_fertilisation_data[2, 4]
 
 # Extract lines 2 to 4
-> my_df[c(2,4), ]
-
-# Extract the "site_id" column by referring directly to its name
-# The dollar sign ($) allows such an operation!
-> my_df$site_id
-
-# Extract the "site_id" and "soil_pH" variables
-> my_df[, c("site_id","soil_pH")]
+soil_fertilisation_data[2:4]
 ```
 
+We can subset columns from it using the column names:
+```{r}
+#Remember that our soil_fertilisation_data data frame had column names?
+soil_fertilisation_data
+
+#We can subset columns using column names:
+soil_fertilisation_data[ , c("site_id", "soil_pH")]
+
+# And, also subset columns from it using "$"
+soil_fertilisation_data$site_id
+```
 
 
 ### A quick note on logical statements
@@ -468,59 +597,134 @@ with the following logical operators:
 
 The following examples illustrate how to use these operators properly.
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE}
 # First, let's create two vectors for comparison.
-> x2 <- c(1:5)
-> y2 <- c(1, 2, -7, 4, 5).
+x2 <- c(1:5)
+y2 <- c(1, 2, -7, 4, 5)
 
 # Let's verify if the elements in x2 are greater or equal to 3.
 # R returns a TRUE/FALSE value for each element (in order).
-> x2 >= 3
-[1] FALSE FALSE TRUE TRUE TRUE
+x2 >= 3
 
 # Let's see if the elements of x2 are exactly equal to those of y2.
-> x2 == y2
-[1] TRUE TRUE FALSE TRUE TRUE
+x2 == y2
 
 # Is 3 not equal to 4? Of course!
-> 3 != 4
-[1] TRUE
+3 != 4
 
 # Let's see which values in x2 are greater than 2 but smaller than 5.
+
+x2 > 2 & x2 < 5
 # You have to write x2 twice.
 # If you write x2 > 2 & < 5, you will get an error message.
-> x2 > 2 & x2 < 5
-[1] FALSE FALSE TRUE TRUE FALSE
+
 ```
 
-\
--
+### Indexing with logical vectors
 
-##### CHALLENGE 10
+We can use conditions to select values:
 
-> a) Extract the `num_sp` column from `my_df` and multiply its values
-> by the first four values of the `num_vec` vector.\
-> \> b) After that, write a statement that checks if the values you
-> obtained are greater than 25. Refer to challenge 9 to complete this
-> challenge.\
-> \>
+```{r, echo=TRUE, eval = TRUE}
+odd_n[odd_n >4]
+```
 
- Challenge 10a: Indexing and multiplying\|
+It is also possible to match a character string
 
-```{r, echo = TRUE, eval = FALSE}
-> my_df$num.sp * num.vector[c(1:4)]
-[1] 17  92  45 686
+```{r}
+char_vector <- c("blue", "red", "green")
+char_vector[char_vector == "blue"]
+
+```
+
+
+There are also ways in R that allows us to test conditions
+
+We can, for instance, test if values within a vector or a matrix are numeric:
+```{r}
+char_vector
+is.numeric(char_vector)
+
+odd_n
+is.numeric(odd_n)
+
+```
+
+Or whether they are of the character type:
+```{r}
+char_vector
+is.character(char_vector)
+
+odd_n
+is.character(odd_n)
+```
+
+And, also, if they are vectors:
+```{r}
+char_vector
+
+is.vector(char_vector)
+```
+
+-------------------------------------------------------------------------------------
+
+
+### CHALLENGE 10
+Explore the difference between these two lines of code:
+```{r}
+char_vector == "blue"
+
+char_vector[char_vector == "blue"]
+```
+
+
+#### Solution {-}
+
+```{r}
+char_vector == "blue"
+```
+
+In this line of code, you test a logical statement. For each entry in the char_vector, R checks whether the entry is equal to "blue" or not
+```{r}
+char_vector[char_vector == "blue"]
+```
+
+In this above line, we asked R to extract all values within the `char_vector` vector that are exactly equal to `blue`
+
+
+--------------------------------------------------------------------------------------
+
+### CHALLENGE 11
+
+a) Extract the `num_sp` column from `soil_fertilisation_data` and multiply its values
+  by the first four values of the `num_vec` vector.
+b) After that, write a statement that checks if the values you
+   obtained are greater than 25. Refer to challenge 9 to complete this
+   challenge.
+
+#### Solution {-}
+
+a) Extract the `num_sp` column from `soil_fertilisation_data` and multiply its values
+  by the first four values of the `num_vec` vector.
+```{r, echo = TRUE, eval = TRUE}
+soil_fertilisation_data$num.sp * num_vector[c(1:4)]
 # or
-> my_df[, 3] * num_vector[c(1:4)]
-[1]  17  92  45 686
+soil_fertilisation_data[, 3] * num_vector[c(1:4)]
 
 ```
 
+b) After that, write a statement that checks if the values you
+   obtained are greater than 25. Refer to challenge 9 to complete this
+   challenge.
 
-
- Challenge 10b: Logical statement\|
-
-```{r, echo = TRUE, eval = FALSE}
-> (my_df$num.sp * num.vector[c(1:4)]) > 25
-[1] FALSE TRUE TRUE FALSE
+```{r}
+(soil_fertilisation_data$num_sp * num_vector[c(1:4)]) > 25
 ```
+
+-----------------------------------------------------------------------
+### Other kinds of data structure: arrays and lists
+Other types of objects arrays and lists.  An array is similar to a matrix but can have more than two dimensions. Arrays are usually used for advanced computation like
+numerical simulations and permutation tests. A list is an aggregation of
+various types of objects. For example, a list could include a vector, a
+data frame and a matrix in the same object.
+
+
