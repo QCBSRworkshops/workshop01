@@ -17,7 +17,7 @@ Currently, more than 18000 packages are publicly available.
 To install packages on your computer, use the function
 `install.packages()`
 
-```{r, echo = TRUE, eval = FALSE}
+```{r, echo = TRUE, eval = TRUE, results='hide'}
 install.packages("ggplot2")
 ```
 
