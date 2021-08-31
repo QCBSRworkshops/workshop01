@@ -98,7 +98,7 @@ L'opération sur le vecteur ajoute deux à chaque élément. Le résultat
 est un **vecteur**.\
 
 ```{r, echo = TRUE, eval = TRUE}
-result_sum
+resultat_sum
 ```
 
 La fonction `sum()` additionne toutes les valeurs de `a` et `b`. C'est
