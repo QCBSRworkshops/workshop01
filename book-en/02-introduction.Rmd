@@ -66,7 +66,7 @@ When you open RStudio for the first time, the screen will be divided across thre
 3. **Files, Plot, Packages, Help, Viewer** panes; and
 4. **Script** pane group
 
-Once you *Open a Script* or *Create a New Script* (File > New File > R script or `Ctrl/Cmd + Shift + N`), the fourth panel will appear
+Once you *Open a Script* or *Create a New Script* (File > New File > R script or `Ctrl/Cmd + Shift + N`), the fourth panel will appear.
 
 
 ### The RStudio Console
@@ -112,7 +112,7 @@ as.numeric(x)
 * Cautions users about an action, but still executes the function.
 * There might be an issue with the input and/or the output.
 
-### Error message
+### Error messages
 
 ```{r, error = TRUE}
 x*10

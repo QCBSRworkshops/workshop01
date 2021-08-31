@@ -266,6 +266,7 @@ odd_n
 ```
 
 -----------------------------------------------------------------------
+
 **R TIP**
 
 Use `dput()` function to obtain the reverse, *i.e.* the content of an
@@ -286,7 +287,10 @@ are really useful to provide a reproducible example for a question on
 [Stack Overflow](https://stackoverflow.com/) for instance (see one more
 application in the part about data frames)!
 
+
 -----------------------------------------------------------------------
+
+
 ### Operations using vectors
 What you have learned previously about calculations is also valid for
 vectors: vectors can be used for calculations. The only difference is
