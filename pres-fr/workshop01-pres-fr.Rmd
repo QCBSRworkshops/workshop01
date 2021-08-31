@@ -51,11 +51,12 @@ lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 
 # À propos de cet atelier
 
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=wiki&message=01&logo=wikipedia)](https://wiki.qcbs.ca/r_workshop1)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=Slides&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.html)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=Slides&message=01&color=red&logo=adobe-acrobat-reader)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.pdf)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=diapos&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/pres-fr/workshop01-pres-fr.html)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=livre&message=01&logo=github)](https://qcbsrworkshops.github.io/workshop01/book-fr/index.html)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=wiki&message=01&logo=wikipedia)](https://wiki.qcbs.ca/r_atelier1)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/book-fr/workshop01-script-fr.R)
+[![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01) 
+
 
 ---
 # Objectifs d'apprentissage
@@ -69,6 +70,8 @@ lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 #### 3. Manipuler les objets dans R 
 
 #### 4. Installer et utiliser les packages R 
+
+#### 5. Obtenir de l'aide 
 
 
 ---
@@ -986,7 +989,7 @@ mon_df[, 3] * num_vecteur[c(1:4)]
 ---
 class: inverse, center, middle
 
-# 3. Manipuler les objets dans R
+# 4. Utiliser les fonctions dans R
 
 <hr>
 
@@ -1164,7 +1167,7 @@ plot(y = b, x = a, type = "l")
 ---
 class: inverse, center, middle
 
-# 4. Installer et utiliser les packages R 
+# 5. Installer et utiliser les packages R 
 
 ## Package
 
@@ -1235,7 +1238,7 @@ qplot(1:10, 1:10)
 ---
 class: inverse, center, middle
 
-# 4. Installer et utiliser les packages R
+# 5. Installer et utiliser les packages R
 
 <hr>
 

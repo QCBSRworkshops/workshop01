@@ -33,11 +33,12 @@ class: inverse, center, middle
 
 # À propos de cet atelier
 
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=repo&amp;message=dev&amp;color=6f42c1&amp;logo=github)](https://github.com/QCBSRworkshops/workshop01)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=wiki&amp;message=01&amp;logo=wikipedia)](https://wiki.qcbs.ca/r_workshop1)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=Slides&amp;message=01&amp;color=red&amp;logo=html5)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.html)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=Slides&amp;message=01&amp;color=red&amp;logo=adobe-acrobat-reader)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.pdf)
-[![badge](https://img.shields.io/static/v1?style=for-the-badge&amp;label=script&amp;message=01&amp;color=2a50b8&amp;logo=r)](https://qcbsrworkshops.github.io/workshop01/workshop01-en/workshop01-en.R) 
+[![badge](https://img.shields.io/static/v1?style=flat-square&amp;label=diapos&amp;message=01&amp;color=red&amp;logo=html5)](https://qcbsrworkshops.github.io/workshop01/pres-fr/workshop01-pres-fr.html)
+[![badge](https://img.shields.io/static/v1?style=flat-square&amp;label=livre&amp;message=01&amp;logo=github)](https://qcbsrworkshops.github.io/workshop01/book-fr/index.html)
+[![badge](https://img.shields.io/static/v1?style=flat-square&amp;label=wiki&amp;message=01&amp;logo=wikipedia)](https://wiki.qcbs.ca/r_atelier1)
+[![badge](https://img.shields.io/static/v1?style=flat-square&amp;label=script&amp;message=01&amp;color=2a50b8&amp;logo=r)](https://qcbsrworkshops.github.io/workshop01/book-fr/workshop01-script-fr.R)
+[![badge](https://img.shields.io/static/v1?style=flat-square&amp;label=repo&amp;message=dev&amp;color=6f42c1&amp;logo=github)](https://github.com/QCBSRworkshops/workshop01) 
+
 
 ---
 # Objectifs d'apprentissage
@@ -51,6 +52,8 @@ class: inverse, center, middle
 #### 3. Manipuler les objets dans R 
 
 #### 4. Installer et utiliser les packages R 
+
+#### 5. Obtenir de l'aide 
 
 
 ---
@@ -98,8 +101,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-cb00453c42ee8f0c5263" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-cb00453c42ee8f0c5263">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4b50d3722b324dae59b1" style="width:360px;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4b50d3722b324dae59b1">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 .pull-right[
@@ -108,8 +111,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-8c3e5206e79d7a07aed5" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8c3e5206e79d7a07aed5">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e7c1a533acf6d8e25e9b" style="width:360px;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e7c1a533acf6d8e25e9b">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -1011,7 +1014,7 @@ mon_df[, 3] * num_vecteur[c(1:4)]
 ---
 class: inverse, center, middle
 
-# 3. Manipuler les objets dans R
+# 4. Utiliser les fonctions dans R
 
 &lt;hr&gt;
 
@@ -1182,7 +1185,7 @@ plot(y = b, x = a, type = "l")
 ---
 class: inverse, center, middle
 
-# 4. Installer et utiliser les packages R 
+# 5. Installer et utiliser les packages R 
 
 ## Package
 
@@ -1260,7 +1263,7 @@ qplot(1:10, 1:10)
 ---
 class: inverse, center, middle
 
-# 4. Installer et utiliser les packages R
+# 5. Installer et utiliser les packages R
 
 &lt;hr&gt;
 
