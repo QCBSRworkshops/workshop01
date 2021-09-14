@@ -20,12 +20,35 @@ Dans cet atelier d’introduction à R, vous apprendrez ce qu’est le logiciel 
 
 # Workshop materials
 
-Language | Slides | Bookdown | Wiki | Script | GitHub 
-:--------|:-------|:-----|:-----|:------ |:-------
-EN | [![badge](https://img.shields.io/static/v1?style=flat-square&label=slides&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/pres-en/workshop01-pres-en.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=book&message=01&logo=github)](https://qcbsrworkshops.github.io/workshop01/book-en/index.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=wiki&message=01&logo=wikipedia)](https://wiki.qcbs.ca/r_workshop1) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/book-en/workshop01-script-en.R) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01) 
-FR | [![badge](https://img.shields.io/static/v1?style=flat-square&label=diapos&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/pres-fr/workshop01-pres-fr.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=livre&message=01&logo=github)](https://qcbsrworkshops.github.io/workshop01/book-fr/index.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=wiki&message=01&logo=wikipedia)](https://wiki.qcbs.ca/r_atelier1) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/book-fr/workshop01-script-fr.R) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01) 
+Language | Slides | Bookdown |Script | GitHub 
+:--------|:-------|:-----|:-----|:------ 
+EN | [![badge](https://img.shields.io/static/v1?style=flat-square&label=slides&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/pres-en/workshop01-pres-en.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=book&message=01&logo=github)](https://qcbsrworkshops.github.io/workshop01/book-en/index.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/book-en/workshop01-script-en.R) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01) 
+FR | [![badge](https://img.shields.io/static/v1?style=flat-square&label=diapos&message=01&color=red&logo=html5)](https://qcbsrworkshops.github.io/workshop01/pres-fr/workshop01-pres-fr.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=livre&message=01&logo=github)](https://qcbsrworkshops.github.io/workshop01/book-fr/index.html) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://qcbsrworkshops.github.io/workshop01/book-fr/workshop01-script-fr.R) | [![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01) 
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+> *Note: The wiki for this workshop was converted to Bookdown in September 2021. <br> The wiki pages for this workshop will no longer be updated (Archive: [EN](https://wiki.qcbs.ca/r_workshop1), [FR](https://wiki.qcbs.ca/r_atelier1)).* 
+
+# License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
+
+# Contributors | Contributeurs et contributrices 
+
+This workshop was originally developed by Sylvain Christin, Cédric Frenette Dussault, and Dalal Hanna.
+
+Since 2014, several QCBS members contributed to consistently and collaboratively develop and update this workshop, as part of the *Learning and Development Award* from the Québec Centre for Biodiversity Science. They were:
+
+
+|      2022 - 2021 - 2020     |      2019 - 2018 - 2017     |      2016 - 2015 - 2014      |
+|:---------------------------:|:---------------------------:|:----------------------------:|
+| Ella Martin    |     Claire-Cécile Juhasz   | Sylvain Christin |
+|  Dominique Caron         |      Marc-Olivier Beausoleil |Cédric Frenette Dussault|
+|     Marc-Olivier Beausoleil      | Marie-Hélène Brice                     |       Dalal Hanna       |
+| Kevin Cazelles |   Katherine Hébert                          |      Marc-Olivier Beausoleil     |
+|   Claire-Cécile Juhasz     |                             |   Vincent Fugère                           |
+|   Pedro Henrique P. Braga   |                             |                              |
+|   Marie-Hélène Brice     |                             |                              |
 
 # Development status
 
@@ -39,9 +62,3 @@ Language | Slides | Book
 :------- | :----- | :-----
 EN  | [![render-presentation-en](https://github.com/QCBSRworkshops/workshop01/workflows/render-presentation-en/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-presentation-en) | [![render-book-en](https://github.com/QCBSRworkshops/workshop01/workflows/render-book-en/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-book-en)
 FR   | [![render-presentation-fr](https://github.com/QCBSRworkshops/workshop01/workflows/render-presentation-fr/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-presentation-fr) | [![render-book-fr](https://github.com/QCBSRworkshops/workshop01/workflows/render-book-fr/badge.svg)](https://github.com/QCBSRworkshops/workshop01/actions?query=workflow%3Arender-book-fr)
-
-
-# Contributors
-
-<!-- readme: contributors -start -->
-<!-- readme: contributors -end -->
