@@ -19,7 +19,7 @@ la fin de cet atelier, vous comprendrez tous ces concepts:
 
 # Préparez-vous pour cet atelier
 
-Tout le matériel de l'atelier se trouve sur [github.com/QCBSRworkshops/workshop01](https://github.com/QCBSRworkshops/workshop01). Cela inclut un [script R](https://qcbsrworkshops.github.io/workshop01/book-fr/workshop01-script-fr.R) qui rassemble tous les morceaux de code présentés dans ce livre.
+Tout le matériel de l'atelier se trouve sur [github.com/QCBSRworkshops/workshop01](https://github.com/QCBSRworkshops/workshop01). Cela inclut un [script R](https://r.qcbs.ca/workshop01/book-fr/workshop01-script-fr.R) qui rassemble tous les morceaux de code présentés dans ce livre.
 
 Avant de débuter cet atelier, vous devez installer les logiciels R et R
 Studio sur votre ordinateur personnel. Pour obtenir le logiciel R,
@@ -38,4 +38,4 @@ pouvez garder les paramètres d'installation par défaut.
 
 Vous pouvez aussi télécharger le script R pour cet atelier:
 
--   [script R](https://qcbsrworkshops.github.io/workshop01/book-fr/workshop01-script-fr.R)
+-   [script R](https://r.qcbs.ca/workshop01/book-fr/workshop01-script-fr.R)
