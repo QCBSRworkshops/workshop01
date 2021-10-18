@@ -25,4 +25,4 @@ default settings.
 
 You can also download the R script for this workshop:
 
-*    [R Script](https://qcbsrworkshops.github.io/workshop01/book-en/workshop01-script-en.R)
+*    [R Script](https://r.qcbs.ca/workshop01/book-en/workshop01-script-en.R)
