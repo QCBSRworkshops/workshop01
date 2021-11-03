@@ -1343,16 +1343,16 @@ step_3
 The presenter here should mention that matrices being formed by vectors or scalars with multiple data types become characters. This will be a window to introduce data frames to the participants.
 
 ---
-# Data structure in `R`: **data frames**
+# Data structure in `R`: **data.frame**
 
 Differently than a matrix, a data frame can contain `numeric`, `character`, *and* `logical` columns (or vectors).
 
 &lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-63-1.png" width="360" style="display: block; margin: auto;" /&gt;
 
 ---
-# Data structure in `R`: **data frames**
+# Data structure in `R`: **data.frame**
 
-Data frames resemble a lot the usual Excel tables that we use in our research!
+Data frames resemble the usual MS Excel tables that many use in to tabulate data from their research!
 
 .pull-left[
 
@@ -1367,14 +1367,14 @@ Data frames resemble a lot the usual Excel tables that we use in our research!
 ]
 .pull-right[
 .small[
-1. `site_id` identifies the sampling site, 
-2. `soil_pH` is the soil pH,
-3. `num_sp` is the number of species, and
+1. `site_id` identifies the sampling site; 
+2. `soil_pH` is the soil pH;
+3. `num_sp` is the number of species; and,
 4. `fertilised` identifies the treatment applied.
 ]
 ]
 
-One of the ways of representing this table in R, is to create vectors:
+We can represent this table in `R` using vectors:
 
 
 ```r
@@ -1393,9 +1393,9 @@ soil_fertilisation_data &lt;- data.frame(site_id, soil_pH, num_sp, fertilised)
 ```
 
 ---
-# Data structure in `R`: **data frames**
+# Data structure in `R`: **data.frame**
 
-Data frames resemble a lot the usual Excel tables that we use in our research!
+Data frames resemble the usual MS Excel tables that many use in to tabulate data from their research!
 
 .pull-left[
 
@@ -1410,9 +1410,9 @@ Data frames resemble a lot the usual Excel tables that we use in our research!
 ]
 .pull-right[
 .small[
-1. `site_id` identifies the sampling site, 
-2. `soil_pH` is the soil pH,
-3. `num_sp` is the number of species, and
+1. `site_id` identifies the sampling site; 
+2. `soil_pH` is the soil pH;
+3. `num_sp` is the number of species; and,
 4. `fertilised` identifies the treatment applied.
 ]
 ]
@@ -1430,7 +1430,7 @@ soil_fertilisation_data
 # 4   B1.02     6.0      7         no
 ```
 
-Note how the data frame integrated the name of the objects as column names! 
+Note how the `data.frame` integrated the name of the objects as column names! 
 ---
 exclude: true
 
@@ -1489,7 +1489,7 @@ We have our information stored as a `vector`, a `matrix`, or a `data.frame` in `
 We will probably be interested in *accessing* and even *subsetting* the data based on some criteria.
 
 &lt;br&gt;
-Let's start with a pretty basic one: the square brackets `[ ]` and `[, ]`
+Let us start with a pretty basic one: the square brackets `[ ]` and `[ , ]`.
 
 &lt;br&gt;
 We can indicate the **position** of the values we want to see between the brackets. This is often called *indexing* or **slicing**.
@@ -1500,13 +1500,13 @@ Let us see how to index a vector object in `R`.
 ---
 # Indexing vectors
 
-To index an element within a vector using `[]`, we need to write position number of the element within the brackets `[]`. 
+To index an element within a vector using `[ ]`, we need to write the *position number* of the element within the brackets `[ ]`. 
 
 For instance, here is our `odd_n` object:
 
 
 ```r
-(odd_n &lt;- seq(1,9, by = 2))
+(odd_n &lt;- seq(1, 9, by = 2))
 # [1] 1 3 5 7 9
 ```
 
@@ -1567,7 +1567,8 @@ num_vector &lt;- c(1, 4, 3, 98, 32, -76, -4)
 
 Using the vector `num_vector` and our indexing abilities:
 
-1. Extract the 4th value
+.pull-left[
+1. Extract the 4th value:
 
 
 ```r
@@ -1575,7 +1576,9 @@ num_vector[4]
 # [1] 98
 ```
 
-2. Extract the 1st and 3rd values
+&lt;br&gt;
+
+2\. Extract the 1st and 3rd values:
 
 
 ```r
@@ -1583,7 +1586,9 @@ num_vector[c(1, 3)]
 # [1] 1 3
 ```
 
-3. Extract all values except for the 2nd and the 4th
+]
+.pull-right[
+3\. Extract all values, except the 2nd and 4th:
 
 
 ```r
@@ -1591,20 +1596,24 @@ num_vector[c(-2, -4)]
 # [1]   1   3  32 -76  -4
 ```
 
-4. Extract from the 6th to the 10th value.
+4\. Extract from the 6th to the 10th value.
 
 
 ```r
 num_vector[6:10]
 # [1] -76  -4  NA  NA  NA
 ```
+]
+
 &lt;br&gt;
+
 .center[_What happened there? What is that NA?_]
 
 ---
 # Indexing from matrices and data frames
 
-To index a **data frame** you must specify the position of values within two dimensions: within the row and columns, as in:
+To index a **data.frame** you must specify the position of values within its two dimensions, (row and columns), as in:
+
 
 ```r
 data_frame_name[row_number, column_number]
@@ -1613,10 +1622,12 @@ data_frame_name[row_number, column_number]
 .pull-left[
 In this way, to extract the first row:
 
+
 ```r
 my_df[1, ]
 ```
 To extract the third column:
+
 
 ```r
 my_df[, 3]
@@ -1624,16 +1635,17 @@ my_df[, 3]
 
 And, to extract the element within the second row and the fourth column:
 
+
 ```r
 my_df[2, 4]
-``` 
+```
 ]
 
 .pull-right[
 
 .center[![:scale 70%](https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Battleship_game_board.svg/1200px-Battleship_game_board.svg.png)]
 
-.center[Battleship (game) feelings!]
+.center[*Battleship (game) feelings!*]
 ]
 
 ---
@@ -1651,7 +1663,8 @@ soil_fertilisation_data
 # 4   B1.02     6.0      7         no
 ```
 
-&lt;br&gt;
+.pull-left[
+
 We can subset columns from it using the column names:
 
 
@@ -1663,16 +1676,19 @@ soil_fertilisation_data[ , c("site_id", "soil_pH")]
 # 3   B1.01     4.1
 # 4   B1.02     6.0
 ```
+]
 
-And, also subset columns from it using `$`:
+.pull-right[
+Alternatively, we can use `$`:
 
 
 ```r
 soil_fertilisation_data$site_id
 # [1] "A1.01" "A1.02" "B1.01" "B1.02"
 ```
+]
 
-_Note: `$` only works for data frames!_
+_Note: `$` can be used to select, assign new values to or create new variables (columns) in `data.frame`s and elements in `list`s._
 
 ---
 class: middle, center
@@ -1690,20 +1706,22 @@ You might remember about the `logical` data types, which contains only TRUE and 
 
 We can use **operators** to obtain TRUE or FALSE values for a type of testing. See examples below:
 
+Reminder: `odd_n` contained 1, 3, 5, 7, 9.
+
 |Operator|Description|Example|Result|
 |-------------|-------------------------|-------------------------------|-------------|
 |`&lt;` and `&gt;`  |less than or greater than|`odd_n &gt; 3`                    |FALSE, FALSE, TRUE, TRUE, TRUE|
 |`&lt;=` and `&gt;=`|less/greater or equal to |`odd_n &gt;= 3`                   |FALSE, TRUE, TRUE, TRUE, TRUE|
 |`==`         |exactly equal to         |`odd_n == 3`                   |FALSE, TRUE, FALSE, FALSE, FALSE|
 |`!=`         |not equal to             |`odd_n != 3`                   |TRUE, FALSE, TRUE, TRUE, TRUE|
-|`x` &amp;#124; `y`| x OR y                 |`odd_n[odd_n &gt;= 5` &amp;#124; `odd_n &lt; 3]` | 1, 5, 7, 9 |
-|`x &amp; y`      |x AND y                  |`odd_n[odd_n &gt;=3 &amp; odd_n &lt; 7]` | 3, 5 |
-|`x %in% y `  |x match y                |`odd_n[odd_n %in% c(3,7)]` | 3, 7 |
+|`x` &amp;#124; `y`| `x` OR `y`                 |`odd_n[odd_n &gt;= 5` &amp;#124; `odd_n &lt; 3]` | 1, 5, 7, 9 |
+|`x &amp; y`      |`x` AND `y`                  |`odd_n[odd_n &gt;=3 &amp; odd_n &lt; 7]` | 3, 5 |
+|`x %in% y `  |`x` match `y`                |`odd_n[odd_n %in% c(3,7)]` | 3, 7 |
 
 ---
 # Indexing with logical operators
 
-We can use conditions to select values:
+We can use conditions to select values. For instance, let us obtain all values that are above `4` from `odd_n`:
 
 
 ```r
@@ -1713,7 +1731,7 @@ odd_n[odd_n &gt; 4]
 
 --
 
-It is also possible to match a character string. 
+It is also possible to match a character string. Look at the example below:
 
 
 
@@ -1757,7 +1775,7 @@ is.numeric(odd_n)
 
 --
 
-Or, whether they are of the `character` type:
+Alternatively, whether they are of the `character` type:
 .pull-left[
 
 ```r
@@ -1780,7 +1798,7 @@ is.character(odd_n)
 
 --
 
-And, also, if they are vectors:
+And, also, test if they are vectors:
 
 
 ```r
@@ -1861,9 +1879,9 @@ soil_fertilisation_data[, 3] * num_vector[c(1:4)]
 ---
 # Other kinds of data structure: arrays and lists
 
-We focused here mainly on `vectors` and `data frames`.
+We focused mainly on `vector`-type and `data.frame`-type objects.
 
-While we will discuss discuss about **arrays** and **lists** in other workshops, you can already have an idea what these types of object structure are. 
+While we will discuss about **arrays** and **lists** in other workshops, you can already have an idea what these types of object structure are. 
 
 _Any wild guesses?_
 .center[
@@ -1891,17 +1909,16 @@ class: inverse, center, middle
 # Functions
 
 .pull-left2[
-- A function is a tool that simplifies our lives!
+1. A function allows one  to quickly execute operations on objects without having to write every mathematical step.
 
-- It allows you to quickly execute operations on objects without having to write every mathematical step.
+2. In other words, a function is a tool that is supposed to simplify our lives!
 
-- A function needs entry values called **arguments** (or parameters). 
+3.. A function needs entry values called **arguments** (or parameters). 
 
-- It then performs (hidden) actions using these arguments and  **returns** an output.
+4. It then performs (hidden) actions using these arguments and  **returns** an output.
 
-- Today, we will look only into `R`'s _built-in_ functions, but you will learn how to make your own functions during Workshop #5!
+5. Today, we will look only into `R`'s _built-in_ functions, but you will learn how to make your own functions during [Workshop #5 - Introduction to Programming in `R`](github.com/qcbsrworkshops/workshop05)!
 ]
-
 
 .pull.right2[
 ![:scale 20%](images/function_V2_en.png)
@@ -1910,11 +1927,14 @@ class: inverse, center, middle
 ---
 # Using functions
 
-To use (or to call) a function, the command must be structured properly, following the "grammar rules" of the `R` language: the syntax.
+To use (or to call) a function, the command must be structured following the "grammar rules" of the `R` language: the *syntax*.
 
 
 ```r
-function_name(argument1 = value, argument2 = value, ..., argument4 = value)
+function_name(argument1 = value, 
+              argument2 = value, 
+              ..., 
+              argument10 = value)
 ```
 
 ---
@@ -1942,6 +1962,10 @@ mean(soil_fertilisation_data$num_sp)
 ```
 ]
 
+???
+
+In this step, the instructor is supposed to show that R has the sum and mean built-in functions, which do their specific operations.
+
 ---
 # Challenge ![:cube]()
 
@@ -1955,7 +1979,7 @@ mean(soil_fertilisation_data$num_sp)
 ---
 # Challenge: Solution  ![:cube]()
 
-5. Are `result_add` and `result_sum` different?
+5\. Are `result_add` and `result_sum` different?
 
 ```r
 a &lt;- c(1:5)
@@ -1966,7 +1990,7 @@ result_add &lt;- a + b
 result_sum &lt;- sum(a, b)
 ```
 
-6. Add `5` to `result_sum` using the `sum()` function.
+6\. Add `5` to `result_sum` using the `sum()` function.
 
 ```r
 result_add
@@ -2009,6 +2033,7 @@ matrix(data = 1:12, nrow = 3, ncol = 4)
 ```
 
 We can also execute a function when omitting argument names, however the order of the values will matter:
+
 .pull-left[
 
 ```r
@@ -2053,7 +2078,7 @@ plot(y = b, x = a, type = "l")
 
 `plot` is a function that draws a graph of y as a function of x. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-107-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-111-1.png" width="648" style="display: block; margin: auto;" /&gt;
 
 ---
 # Challenge: Solution
@@ -2064,7 +2089,7 @@ plot(y = b, x = a, type = "l")
 plot(a, b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-109-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-113-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -2073,7 +2098,7 @@ plot(a, b, type = "l")
 plot(b, a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-111-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-115-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 The shape of the plot changes, as we did not provide the argument's names, the order is important.
@@ -2087,7 +2112,7 @@ The shape of the plot changes, as we did not provide the argument's names, the o
 plot(x = a, y = b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-113-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-117-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -2096,7 +2121,7 @@ plot(x = a, y = b, type = "l")
 plot(y = b, x = a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-115-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-119-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 Same as `plot(a, b, type = "l")`. The argument names are provided, the order is not important.
@@ -2113,7 +2138,7 @@ Packages **group functions** and/or **datasets** that share a similar **theme**,
 
 **Anyone** can develop packages and make them available to others.
 
-Many packages available through the *Comprehensive R Archive Network* ([CRAN](http://cran.r-project.org/web/packages/)) and now many more on [GitHub](https://github.com/).
+Many packages available through the *Comprehensive R Archive Network* ([CRAN](http://cran.r-project.org/web/packages/)) and now many more on [GitHub](https://github.com/), and other package repositories.
 
 &lt;br&gt;
 
@@ -2146,7 +2171,7 @@ library(package_name)
 ---
 # Installing your first `R` package: `ggplot2`
 
-Let us install a popular visualization package called `ggplot`.
+Let us install a popular visualization package called `ggplot2`:
 
 
 ```r
@@ -2155,13 +2180,24 @@ install.packages("ggplot2")
 
 
 ```r
-Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
-(as 'lib' is unspecified)
+Installing package into ‘C:/Users/phper/OneDrive/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.r-project.org/bin/windows/contrib/4.1/ggplot2_3.3.5.zip'
+Content type 'application/zip' length 4129856 bytes (3.9 MB)
+downloaded 3.9 MB
+
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
 ```
 
 
 
-Now we will use the function `qplot` from the package
+--
+
+Now we will use the function `qplot()` from the package:
+
 
 ```r
 qplot(1:10, 1:10)
@@ -2169,7 +2205,7 @@ qplot(1:10, 1:10)
 
 --
 
-Did you get this error?
+Have you obtained this error?
 
 ```r
 ## Error: could not find function "qplot"
@@ -2191,7 +2227,23 @@ Now we can draw the graph
 qplot(1:10, 1:10)
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-122-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-126-1.png" width="288" style="display: block; margin: auto;" /&gt;
+
+.comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
+
+---
+# Alternative to loading packages
+
+Since `R` version `X`, we can use `::` to access functions from installed packages without loading them.
+
+To do this, we need to write `package_name::function_name()`. For the past example, it should had been:
+
+
+```r
+ggplot2::qplot(1:10, 1:10)
+```
+
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-127-1.png" width="288" style="display: block; margin: auto;" /&gt;
 
 .comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
 
@@ -2199,15 +2251,15 @@ qplot(1:10, 1:10)
 
 # Finding functions within packages
 
-WOW! `R` is so great! So many functions to do what I want!
+*WOW! `R` is so great! So many functions to do what I want!*
 
-But... how do I find them?
+*But... how do I find them?*
 
 --
 
 To find a function that does something specific in your installed packages, you can use `??` followed by a search term.
 
-Let us say we want to create a *sequence* of odd numbers between 0 and 10 as we did earlier. We can search in our packages all the functions with the word "sequence" in them:
+Let us say we want to create a *sequence* of odd numbers between 0 and 10 as we did earlier. We can search in our packages all the functions with the word "sequence" in their names or their descriptions:
 
 
 ```r
@@ -2232,7 +2284,7 @@ Let us say we want to create a *sequence* of odd numbers between 0 and 10 as we 
 ---
 # Getting help with functions
 
-OK! So let us use the `seq` function!
+OK! So let us use the `seq()` function!
 
 But wait... how does it work? What arguments does it need?
 
@@ -2328,7 +2380,7 @@ seq(0, 10, 2)
 ]
 
 
-2. Create an unsorted vector of your favorite numbers, then sort your vector in reverse order.
+2\. Create an unsorted vector of your favorite numbers, then sort your vector in reverse order.
 
 
 ```r
@@ -2430,12 +2482,11 @@ Open it directly from **RStudio**: Help `\(\rightarrow\)` Cheatsheets
 ---
 class: inverse, center, bottom
 
-# Thank you for attending!
+# Thank you for attending our workshop!
 
 &lt;hr&gt;
 
 ![:scale 50%](images/qcbs_logo.png)
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
