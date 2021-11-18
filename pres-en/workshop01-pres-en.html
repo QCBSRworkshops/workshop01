@@ -85,8 +85,8 @@ class: inverse, center, middle
 * `R` is **free**, **open source**: built for you and for everyone;
 * `R` is **popular**: a large enganged user-base fosters the continued development and the maintainance of statistical tools;
 * `R` is **powerful**
-  - You can program complex simulations
-  - Use it on high performance clusters
+- You can program complex simulations
+- Use it on high performance clusters
 * `R` supports extensions
 * `R` runs on most operating systems
 * `R` connects with other languages: `C++`, `Java`, `Python`, `Julia`, `Stan` and more!
@@ -341,8 +341,8 @@ as.numeric(x)
 # [1]  2.0 -3.0   NA  0.0  4.0  0.2
 ```
 
-  * Cautions users about an action, but still executes the function.
-  * There might be an issue with the input and/or the output.
+* Cautions users about an action, but still executes the function.
+* There might be an issue with the input and/or the output.
 ]
 
 .pull-right[
@@ -355,8 +355,8 @@ x*10
 # Error in x * 10: non-numeric argument to binary operator
 ```
 
-  * Informs the user that there is a problem that prevents the command from running. 
-  * One needs to solve the issue in order to carry on.
+* Informs the user that there is a problem that prevents the command from running. 
+* One needs to solve the issue in order to carry on.
 
 ]
 
@@ -1193,8 +1193,8 @@ Similarly as in the case of vectors, operations with matrices work just fine:
 
 ```r
 (mat_1 &lt;- matrix(data = 1:9,
-       nrow = 3,
-       ncol = 3))
+                 nrow = 3,
+                 ncol = 3))
 #      [,1] [,2] [,3]
 # [1,]    1    4    7
 # [2,]    2    5    8
@@ -1206,8 +1206,8 @@ Similarly as in the case of vectors, operations with matrices work just fine:
 
 ```r
 (mat_2 &lt;- matrix(data = 9:1,
-       nrow = 3,
-       ncol = 3))
+                 nrow = 3,
+                 ncol = 3))
 #      [,1] [,2] [,3]
 # [1,]    9    6    3
 # [2,]    8    5    2
@@ -1235,8 +1235,8 @@ It is your time to **get your hands dirty**!
 1. Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.
 2. Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like.
 3. Create a third object with 4 rows and 2 columns: 
- - in the first column, include the numbers from 2 to 5; and,
- - in the second column, include the first name of participants in this workshop.
+- in the first column, include the numbers from 2 to 5; and,
+- in the second column, include the first name of participants in this workshop.
 4. Compare them and tell us what differences have you detected (despite their values). 
 
 &lt;br&gt;
@@ -1258,8 +1258,8 @@ It is your time to **get your hands dirty**!
 
 ```r
 (step_1 &lt;- matrix(data = 1:6,
-       nrow = 2,
-       ncol = 3))
+                  nrow = 2,
+                  ncol = 3))
 #      [,1] [,2] [,3]
 # [1,]    1    3    5
 # [2,]    2    4    6
@@ -1291,8 +1291,8 @@ It is your time to **get your hands dirty**!
 It is your time to **get your hands dirty**!
 
 3\. Create a third object with 4 rows and 2 columns: 
- - in the first column, include the numbers from 2 to 5; and,
- - in the second column, include the first name of participants in this workshop.
+- in the first column, include the numbers from 2 to 5; and,
+- in the second column, include the first name of participants in this workshop.
 
 4\. Compare them and tell us what differences have you detected (despite their values). 
 
@@ -1845,14 +1845,14 @@ In this above line, we asked `R` to extract all values within the `char_vector` 
 ---
 # Challenge ![:cube]()
 
-1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by the first four values of `num_vec`.
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by the first four values of `num_vector`.
 
 2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 ---
 # Challenge: Solution ![:cube]()
 
-1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by  the first four values of `num_vec`.
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by  the first four values of `num_vector`.
 
 
 ```r
@@ -2059,7 +2059,7 @@ matrix(1:12, 4, 3)
 ---
 # Challenge ![:cube]()
 
-`plot` is a function that draws a graph of `y` as a function of `x`. It requires two arguments names `x` and `y`. What are the differences between the following lines?
+`plot()` is a function that draws a graph of `y` as a function of `x`. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
 
 ```r
@@ -2190,7 +2190,7 @@ downloaded 3.9 MB
 package ‘ggplot2’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-	C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
+C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
 ```
 
 
@@ -2293,7 +2293,7 @@ To find information about a function in particular, use `?`
 
 
 ```r
-  ?seq
+?seq
 ```
 
 ---
@@ -2418,13 +2418,13 @@ Find the appropriate functions to perform the following operations:
 Find the appropriate functions to perform the following operations:
 
 - Square root
-  - `sqrt()`
+- `sqrt()`
 - Calculate the mean of numbers
-  - `mean()`
+- `mean()`
 - Combine two data frames by columns
-  - `cbind()`
+- `cbind()`
 - List available objects in your workspace
-  - `ls()`
+- `ls()`
 
 ---
 class: inverse, center, middle
