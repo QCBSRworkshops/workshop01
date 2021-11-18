@@ -696,7 +696,7 @@ In this above line, we asked R to extract all values within the `char_vector` ve
 ### CHALLENGE 11
 
 a) Extract the `num_sp` column from `soil_fertilisation_data` and multiply its values
-  by the first four values of the `num_vec` vector.
+  by the first four values of the `num_vector` vector.
 b) After that, write a statement that checks if the values you
    obtained are greater than 25. Refer to challenge 9 to complete this
    challenge.
@@ -704,7 +704,7 @@ b) After that, write a statement that checks if the values you
 #### Solution {-}
 
 a) Extract the `num_sp` column from `soil_fertilisation_data` and multiply its values
-  by the first four values of the `num_vec` vector.
+  by the first four values of the `num_vector` vector.
 ```{r, echo = TRUE, eval = TRUE}
 soil_fertilisation_data$num.sp * num_vector[c(1:4)]
 # or
