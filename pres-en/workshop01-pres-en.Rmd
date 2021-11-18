@@ -106,8 +106,8 @@ class: inverse, center, middle
 * `R` is **free**, **open source**: built for you and for everyone;
 * `R` is **popular**: a large enganged user-base fosters the continued development and the maintainance of statistical tools;
 * `R` is **powerful**
-  - You can program complex simulations
-  - Use it on high performance clusters
+- You can program complex simulations
+- Use it on high performance clusters
 * `R` supports extensions
 * `R` runs on most operating systems
 * `R` connects with other languages: `C++`, `Java`, `Python`, `Julia`, `Stan` and more!
@@ -129,7 +129,7 @@ class: inverse, center, middle
 <br>
 
 ```{r workflow-without-R-flow, echo = FALSE, out.width = '90%'}
-  grViz("
+grViz("
       digraph {
 
       node [shape = oval, fillcolor = PaleTurquoise]
@@ -161,10 +161,10 @@ class: inverse, center, middle
 
       }
     ") %>%
-export_svg() %>%
-charToRaw() %>%
-rsvg_svg("images/workflow-without-R-flow.svg")
-  
+  export_svg() %>%
+  charToRaw() %>%
+  rsvg_svg("images/workflow-without-R-flow.svg")
+
 knitr::include_graphics("images/workflow-without-R-flow.svg")
 ```
 ]
@@ -178,7 +178,7 @@ knitr::include_graphics("images/workflow-without-R-flow.svg")
 <br>
 
 ```{r workflow-with-R-flow, echo = FALSE, out.width = '90%'}
-  grViz("
+grViz("
       digraph {
 
       node [shape = oval, fillcolor = PaleTurquoise]
@@ -204,10 +204,10 @@ knitr::include_graphics("images/workflow-without-R-flow.svg")
       R -> Report
 
       }") %>%
-export_svg() %>%
-charToRaw() %>%
-rsvg_svg("images/workflow-with-R-flow.svg")
-  
+  export_svg() %>%
+  charToRaw() %>%
+  rsvg_svg("images/workflow-with-R-flow.svg")
+
 knitr::include_graphics("images/workflow-with-R-flow.svg")
 
 ```
@@ -231,18 +231,18 @@ library(ggplot2)
 
 # Graph 
 ggplot(pkgs, aes(as.Date(first_release), index)) +
-    geom_line(size = 2) +
-    scale_x_date(date_breaks = '1 year', date_labels = '%Y') +
-    scale_y_continuous(breaks = seq(0, 16000, 1000)) +
-    xlab('') + ylab('') + theme_bw() +
-    ggtitle('Number of R packages published on CRAN') + 
+  geom_line(size = 2) +
+  scale_x_date(date_breaks = '1 year', date_labels = '%Y') +
+  scale_y_continuous(breaks = seq(0, 16000, 1000)) +
+  xlab('') + ylab('') + theme_bw() +
+  ggtitle('Number of R packages published on CRAN') + 
   theme(axis.ticks = element_line(colour = "black"), 
-    panel.grid.minor = element_line(linetype = "blank"), 
-    plot.title = element_text(size = 25, face = "bold"),
-    axis.text = element_text(size = 18, colour = "black", vjust = 0), 
-    axis.text.x = element_text(size = 18, colour = "black", vjust = 0.5, angle = 90), 
-    axis.text.y = element_text(size = 18, vjust = 0.5, colour = "black"), 
-    panel.background = element_rect(fill = NA)) +
+        panel.grid.minor = element_line(linetype = "blank"), 
+        plot.title = element_text(size = 25, face = "bold"),
+        axis.text = element_text(size = 18, colour = "black", vjust = 0), 
+        axis.text.x = element_text(size = 18, colour = "black", vjust = 0.5, angle = 90), 
+        axis.text.y = element_text(size = 18, vjust = 0.5, colour = "black"), 
+        panel.background = element_rect(fill = NA)) +
   labs(x = NULL, y = NULL)
 ```
 
@@ -451,8 +451,8 @@ x <- c("2", -3, "end", 0, 4, 0.2)
 as.numeric(x)
 ```
 
-  * Cautions users about an action, but still executes the function.
-  * There might be an issue with the input and/or the output.
+* Cautions users about an action, but still executes the function.
+* There might be an issue with the input and/or the output.
 ]
 
 .pull-right[
@@ -463,8 +463,8 @@ as.numeric(x)
 x*10
 ```
 
-  * Informs the user that there is a problem that prevents the command from running. 
-  * One needs to solve the issue in order to carry on.
+* Informs the user that there is a problem that prevents the command from running. 
+* One needs to solve the issue in order to carry on.
 
 ]
 
@@ -1235,18 +1235,18 @@ scalar.waffle <- waffle(scalar.parts,
 vector.parts <- c('TRUE' = 4, 'FALSE' = 16)
 
 vector.waffle <- waffle(vector.parts, 
-            rows = 4, 
-            colors = c("black", "white"),
-            legend_pos = "none",
-            title = "Vector")
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Vector")
 
 matrix.parts <- c('TRUE' = 16, 'FALSE' = 4)
 
 matrix.waffle <- waffle(matrix.parts, 
-            rows = 4, 
-            colors = c("black", "white"),
-            legend_pos = "none",
-            title = "Matrix")
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Matrix")
 
 ggarrange(
   scalar.waffle, vector.waffle, matrix.waffle,  
@@ -1306,16 +1306,16 @@ Similarly as in the case of vectors, operations with matrices work just fine:
 .pull-left[
 ```{r}
 (mat_1 <- matrix(data = 1:9,
-       nrow = 3,
-       ncol = 3))
+                 nrow = 3,
+                 ncol = 3))
 ```
 ]
 
 .pull-right[
 ```{r}
 (mat_2 <- matrix(data = 9:1,
-       nrow = 3,
-       ncol = 3))
+                 nrow = 3,
+                 ncol = 3))
 ```
 ]
 
@@ -1334,8 +1334,8 @@ It is your time to **get your hands dirty**!
 1. Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.
 2. Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like.
 3. Create a third object with 4 rows and 2 columns: 
- - in the first column, include the numbers from 2 to 5; and,
- - in the second column, include the first name of participants in this workshop.
+- in the first column, include the numbers from 2 to 5; and,
+- in the second column, include the first name of participants in this workshop.
 4. Compare them and tell us what differences have you detected (despite their values). 
 
 <br>
@@ -1356,8 +1356,8 @@ It is your time to **get your hands dirty**!
 .pull-left[
 ```{r}
 (step_1 <- matrix(data = 1:6,
-       nrow = 2,
-       ncol = 3))
+                  nrow = 2,
+                  ncol = 3))
 ```
 ]
 
@@ -1382,8 +1382,8 @@ It is your time to **get your hands dirty**!
 It is your time to **get your hands dirty**!
 
 3\. Create a third object with 4 rows and 2 columns: 
- - in the first column, include the numbers from 2 to 5; and,
- - in the second column, include the first name of participants in this workshop.
+- in the first column, include the numbers from 2 to 5; and,
+- in the second column, include the first name of participants in this workshop.
 
 4\. Compare them and tell us what differences have you detected (despite their values). 
 
@@ -1439,26 +1439,26 @@ scalar.waffle <- waffle(scalar.parts,
 vector.parts <- c('TRUE' = 4, 'FALSE' = 16)
 
 vector.waffle <- waffle(vector.parts, 
-            rows = 4, 
-            colors = c("black", "white"),
-            legend_pos = "none",
-            title = "Vector")
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Vector")
 
 matrix.parts <- c('TRUE' = 16, 'FALSE' = 4)
 
 matrix.waffle <- waffle(matrix.parts, 
-            rows = 4, 
-            colors = c("black", "white"),
-            legend_pos = "none",
-            title = "Matrix")
+                        rows = 4, 
+                        colors = c("black", "white"),
+                        legend_pos = "none",
+                        title = "Matrix")
 
 data.frame.parts <- c('blue' = 4, 'red' = 4, 'purple' = 4, 'green' = 4, 'yellow' = 4)
 
 data.frame.waffle <- waffle(data.frame.parts, 
-            rows = 4, 
-            colors = c("blue", "red", "purple", "red", "blue"),
-            legend_pos = "none",
-            title = "Data frame")
+                            rows = 4, 
+                            colors = c("blue", "red", "purple", "red", "blue"),
+                            legend_pos = "none",
+                            title = "Data frame")
 
 ggarrange(
   scalar.waffle, vector.waffle, matrix.waffle, data.frame.waffle, 
@@ -1884,14 +1884,14 @@ In this above line, we asked `R` to extract all values within the `char_vector` 
 ---
 # Challenge ![:cube]()
 
-1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by the first four values of `num_vec`.
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by the first four values of `num_vector`.
 
 2. After that, write a statement that checks if the values you obtained are greater than 25.
 
 ---
 # Challenge: Solution ![:cube]()
 
-1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by  the first four values of `num_vec`.
+1. Extract the `num_sp` column from `soil_fertilisation_data` and multiply its value by  the first four values of `num_vector`.
 
 ```{r}
 soil_fertilisation_data$num_sp * num_vector[c(1:4)]
@@ -2065,7 +2065,7 @@ matrix(1:12, 4, 3)
 ---
 # Challenge ![:cube]()
 
-`plot` is a function that draws a graph of `y` as a function of `x`. It requires two arguments names `x` and `y`. What are the differences between the following lines?
+`plot()` is a function that draws a graph of `y` as a function of `x`. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
 ```{r, eval = FALSE}
 a <- 1:100
@@ -2209,7 +2209,7 @@ downloaded 3.9 MB
 package ‘ggplot2’ successfully unpacked and MD5 sums checked
 
 The downloaded binary packages are in
-	C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
+C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
 ```
 
 ```{r, eval = FALSE, echo = FALSE}
@@ -2303,7 +2303,7 @@ But wait... how does it work? What arguments does it need?
 To find information about a function in particular, use `?`
 
 ```{r, eval = FALSE}
-  ?seq
+?seq
 ```
 
 ---
@@ -2422,13 +2422,13 @@ Find the appropriate functions to perform the following operations:
 Find the appropriate functions to perform the following operations:
 
 - Square root
-  - `sqrt()`
+- `sqrt()`
 - Calculate the mean of numbers
-  - `mean()`
+- `mean()`
 - Combine two data frames by columns
-  - `cbind()`
+- `cbind()`
 - List available objects in your workspace
-  - `ls()`
+- `ls()`
 
 ---
 class: inverse, center, middle
