@@ -949,7 +949,7 @@ with the following logical operators:</p>
 <h3><span class="header-section-number">5.4.6</span> CHALLENGE 11</h3>
 <ol style="list-style-type: lower-alpha">
 <li>Extract the <code>num_sp</code> column from <code>soil_fertilisation_data</code> and multiply its values
-by the first four values of the <code>num_vec</code> vector.</li>
+by the first four values of the <code>num_vector</code> vector.</li>
 <li>After that, write a statement that checks if the values you
 obtained are greater than 25. Refer to challenge 9 to complete this
 challenge.</li>
@@ -958,7 +958,7 @@ challenge.</li>
 <h4>Solution</h4>
 <ol style="list-style-type: lower-alpha">
 <li>Extract the <code>num_sp</code> column from <code>soil_fertilisation_data</code> and multiply its values
-by the first four values of the <code>num_vec</code> vector.</li>
+by the first four values of the <code>num_vector</code> vector.</li>
 </ol>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="manipulating-objects-in-r.html#cb175-1"></a>soil_fertilisation_data<span class="op">$</span>num.sp <span class="op">*</span><span class="st"> </span>num_vector[<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)]</span></code></pre></div>
 <pre><code>## numeric(0)</code></pre>
