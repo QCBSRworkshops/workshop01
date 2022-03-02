@@ -8,7 +8,7 @@
     <script src="assets/htmlwidgets-1.5.4/htmlwidgets.js"></script>
     <script src="assets/viz-1.8.2/viz.js"></script>
     <link href="assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-    <script src="assets/grViz-binding-1.0.6.1/grViz.js"></script>
+    <script src="assets/grViz-binding-1.0.8/grViz.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
     <link rel="stylesheet" href="qcbsR.css" type="text/css" />
@@ -100,8 +100,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-9978d47f2b19824cf0eb" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9978d47f2b19824cf0eb">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fbb73e0f95401e821ea4" style="width:360px;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fbb73e0f95401e821ea4">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 .pull-right[
@@ -110,8 +110,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-177ec429544b351ccc77" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-177ec429544b351ccc77">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e70521923c0fbef9c1e4" style="width:360px;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e70521923c0fbef9c1e4">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
