@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 Manipulating objects in R | Workshop 1: Introduction to R</title>
   <meta name="description" content="Introduction to R" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 Manipulating objects in R | Workshop 1: Introduction to R" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/qcbsRworkshops/" />
   <meta property="og:image" content="https://github.com/qcbsRworkshops/assets/images/logo/csbq_logo_accueil.png" />
   <meta property="og:description" content="Introduction to R" />
   <meta name="github-repo" content="qcbsRworkshops/workshop01" />
@@ -50,8 +49,9 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -136,89 +136,89 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <link rel="icon" type="image/png" href="assets/images/favicon.ico"/>
 
 <li class="divider"></li>
-<li class="part"><span><b>QCBS R Workshop Series</b></span></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-of-conduct"><i class="fa fa-check"></i><b>0.1</b> Code of conduct</a><ul>
-<li class="chapter" data-level="0.1.1" data-path="index.html"><a href="index.html#expected-behaviour"><i class="fa fa-check"></i><b>0.1.1</b> Expected behaviour</a></li>
-<li class="chapter" data-level="0.1.2" data-path="index.html"><a href="index.html#unacceptable-behaviour"><i class="fa fa-check"></i><b>0.1.2</b> Unacceptable behaviour</a></li>
+<li class="part"><span><b>QCBS R Workshop Series<span></span></b></span></li>
+<li><a href="index.html#preface">Preface<span></span></a><ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>0.1</b> Code of conduct<span></span></a><ul>
+<li class="chapter" data-level="0.1.1" data-path="index.html"><a href="index.html#expected-behaviour"><i class="fa fa-check"></i><b>0.1.1</b> Expected behaviour<span></span></a></li>
+<li class="chapter" data-level="0.1.2" data-path="index.html"><a href="index.html#unacceptable-behaviour"><i class="fa fa-check"></i><b>0.1.2</b> Unacceptable behaviour<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i><b>0.2</b> Contributors</a></li>
-<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i><b>0.3</b> Contributing</a></li>
+<li class="chapter" data-level="0.2" data-path="index.html"><a href="index.html#contributors"><i class="fa fa-check"></i><b>0.2</b> Contributors<span></span></a></li>
+<li class="chapter" data-level="0.3" data-path="index.html"><a href="index.html#contributing"><i class="fa fa-check"></i><b>0.3</b> Contributing<span></span></a></li>
 </ul></li>
-<li class="part"><span><b>Introduction to <code>R</code></b></span></li>
-<li class="chapter" data-level="1" data-path="learning-objectives.html"><a href="learning-objectives.html"><i class="fa fa-check"></i><b>1</b> Learning objectives</a></li>
-<li class="chapter" data-level="2" data-path="preparing-for-the-workshop.html"><a href="preparing-for-the-workshop.html"><i class="fa fa-check"></i><b>2</b> Preparing for the workshop</a></li>
-<li class="chapter" data-level="3" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html"><i class="fa fa-check"></i><b>3</b> Recognizing and using R and RStudio</a><ul>
-<li class="chapter" data-level="3.1" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#what-is-r"><i class="fa fa-check"></i><b>3.1</b> What is R?</a></li>
-<li class="chapter" data-level="3.2" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#why-use-r"><i class="fa fa-check"></i><b>3.2</b> Why use R?</a></li>
-<li class="chapter" data-level="3.3" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#using-rstudio"><i class="fa fa-check"></i><b>3.3</b> Using RStudio</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#challenge-1"><i class="fa fa-check"></i><b>3.3.1</b> CHALLENGE 1</a></li>
-<li class="chapter" data-level="3.3.2" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#the-rstudio-interface"><i class="fa fa-check"></i><b>3.3.2</b> The RStudio interface</a></li>
-<li class="chapter" data-level="3.3.3" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#the-rstudio-console"><i class="fa fa-check"></i><b>3.3.3</b> The RStudio Console</a></li>
+<li class="part"><span><b>Introduction to <code>R</code><span></span></b></span></li>
+<li class="chapter" data-level="1" data-path="learning-objectives.html"><a href="learning-objectives.html"><i class="fa fa-check"></i><b>1</b> Learning objectives<span></span></a></li>
+<li class="chapter" data-level="2" data-path="preparing-for-the-workshop.html"><a href="preparing-for-the-workshop.html"><i class="fa fa-check"></i><b>2</b> Preparing for the workshop<span></span></a></li>
+<li class="chapter" data-level="3" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html"><i class="fa fa-check"></i><b>3</b> Recognizing and using R and RStudio<span></span></a><ul>
+<li class="chapter" data-level="3.1" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#what-is-r"><i class="fa fa-check"></i><b>3.1</b> What is R?<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#why-use-r"><i class="fa fa-check"></i><b>3.2</b> Why use R?<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#using-rstudio"><i class="fa fa-check"></i><b>3.3</b> Using RStudio<span></span></a><ul>
+<li class="chapter" data-level="3.3.1" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#challenge-1"><i class="fa fa-check"></i><b>3.3.1</b> CHALLENGE 1<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#the-rstudio-interface"><i class="fa fa-check"></i><b>3.3.2</b> The RStudio interface<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#the-rstudio-console"><i class="fa fa-check"></i><b>3.3.3</b> The RStudio Console<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#errors-and-warnings"><i class="fa fa-check"></i><b>3.4</b> Errors and Warnings</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#warning-messages"><i class="fa fa-check"></i><b>3.4.1</b> Warning messages</a></li>
-<li class="chapter" data-level="3.4.2" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#error-messages"><i class="fa fa-check"></i><b>3.4.2</b> Error messages</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html"><i class="fa fa-check"></i><b>4</b> Using R as a calculator</a><ul>
-<li class="chapter" data-level="4.1" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#arithmetic-operators"><i class="fa fa-check"></i><b>4.1</b> Arithmetic Operators</a><ul>
-<li class="chapter" data-level="4.1.1" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#challenge-2"><i class="fa fa-check"></i><b>4.1.1</b> CHALLENGE 2</a></li>
-<li class="chapter" data-level="4.1.2" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#challenge-3"><i class="fa fa-check"></i><b>4.1.2</b> CHALLENGE 3</a></li>
-<li class="chapter" data-level="4.1.3" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#challenge-4"><i class="fa fa-check"></i><b>4.1.3</b> CHALLENGE 4</a></li>
+<li class="chapter" data-level="3.4" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#errors-and-warnings"><i class="fa fa-check"></i><b>3.4</b> Errors and Warnings<span></span></a><ul>
+<li class="chapter" data-level="3.4.1" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#warning-messages"><i class="fa fa-check"></i><b>3.4.1</b> Warning messages<span></span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="recognizing-and-using-r-and-rstudio.html"><a href="recognizing-and-using-r-and-rstudio.html#error-messages"><i class="fa fa-check"></i><b>3.4.2</b> Error messages<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html"><i class="fa fa-check"></i><b>5</b> Manipulating objects in R</a><ul>
-<li class="chapter" data-level="5.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#objects"><i class="fa fa-check"></i><b>5.1</b> Objects</a></li>
-<li class="chapter" data-level="5.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#good-practices-in-r-code"><i class="fa fa-check"></i><b>5.2</b> Good practices in R code</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-5"><i class="fa fa-check"></i><b>5.2.1</b> CHALLENGE 5</a></li>
-<li class="chapter" data-level="5.2.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-6"><i class="fa fa-check"></i><b>5.2.2</b> CHALLENGE 6</a></li>
-<li class="chapter" data-level="5.2.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#the-rstudio-environment"><i class="fa fa-check"></i><b>5.2.3</b> The RStudio Environment</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-types-and-structure"><i class="fa fa-check"></i><b>5.3</b> Data types and structure</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#core-data-types-in-r"><i class="fa fa-check"></i><b>5.3.1</b> Core data types in R</a></li>
-<li class="chapter" data-level="5.3.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-scalars"><i class="fa fa-check"></i><b>5.3.2</b> Data structure in R: scalars</a></li>
-<li class="chapter" data-level="5.3.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-vectors"><i class="fa fa-check"></i><b>5.3.3</b> Data structure in R: vectors</a></li>
-<li class="chapter" data-level="5.3.4" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-7"><i class="fa fa-check"></i><b>5.3.4</b> CHALLENGE 7</a></li>
-<li class="chapter" data-level="5.3.5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#operations-using-vectors"><i class="fa fa-check"></i><b>5.3.5</b> Operations using vectors</a></li>
-<li class="chapter" data-level="5.3.6" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-matrices"><i class="fa fa-check"></i><b>5.3.6</b> Data structure in R: matrices</a></li>
-<li class="chapter" data-level="5.3.7" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-8"><i class="fa fa-check"></i><b>5.3.7</b> CHALLENGE 8</a></li>
-<li class="chapter" data-level="5.3.8" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-data-frames"><i class="fa fa-check"></i><b>5.3.8</b> Data structure in R: data frames</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#indexing"><i class="fa fa-check"></i><b>5.4</b> Indexing</a><ul>
-<li class="chapter" data-level="5.4.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-9"><i class="fa fa-check"></i><b>5.4.1</b> CHALLENGE 9</a></li>
-<li class="chapter" data-level="5.4.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#indexing-a-data-frame"><i class="fa fa-check"></i><b>5.4.2</b> Indexing a data frame</a></li>
-<li class="chapter" data-level="5.4.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#a-quick-note-on-logical-statements"><i class="fa fa-check"></i><b>5.4.3</b> A quick note on logical statements</a></li>
-<li class="chapter" data-level="5.4.4" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#indexing-with-logical-vectors"><i class="fa fa-check"></i><b>5.4.4</b> Indexing with logical vectors</a></li>
-<li class="chapter" data-level="5.4.5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-10"><i class="fa fa-check"></i><b>5.4.5</b> CHALLENGE 10</a></li>
-<li class="chapter" data-level="5.4.6" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-11"><i class="fa fa-check"></i><b>5.4.6</b> CHALLENGE 11</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#introduction"><i class="fa fa-check"></i><b>5.5</b> Introduction</a><ul>
-<li class="chapter" data-level="5.5.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-11-1"><i class="fa fa-check"></i><b>5.5.1</b> CHALLENGE 11</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#arguments"><i class="fa fa-check"></i><b>5.6</b> Arguments</a><ul>
-<li class="chapter" data-level="5.6.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-12"><i class="fa fa-check"></i><b>5.6.1</b> CHALLENGE 12</a></li>
+<li class="chapter" data-level="4" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html"><i class="fa fa-check"></i><b>4</b> Using R as a calculator<span></span></a><ul>
+<li class="chapter" data-level="4.1" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#arithmetic-operators"><i class="fa fa-check"></i><b>4.1</b> Arithmetic Operators<span></span></a><ul>
+<li class="chapter" data-level="4.1.1" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#challenge-2"><i class="fa fa-check"></i><b>4.1.1</b> CHALLENGE 2<span></span></a></li>
+<li class="chapter" data-level="4.1.2" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#challenge-3"><i class="fa fa-check"></i><b>4.1.2</b> CHALLENGE 3<span></span></a></li>
+<li class="chapter" data-level="4.1.3" data-path="using-r-as-a-calculator.html"><a href="using-r-as-a-calculator.html#challenge-4"><i class="fa fa-check"></i><b>4.1.3</b> CHALLENGE 4<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html"><i class="fa fa-check"></i><b>6</b> Installing and using R packages</a><ul>
-<li class="chapter" data-level="6.1" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#packages"><i class="fa fa-check"></i><b>6.1</b> Packages</a></li>
-<li class="chapter" data-level="6.2" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#getting-help"><i class="fa fa-check"></i><b>6.2</b> Getting help</a><ul>
-<li class="chapter" data-level="6.2.1" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#getting-help-with-functions"><i class="fa fa-check"></i><b>6.2.1</b> Getting help with functions</a></li>
-<li class="chapter" data-level="6.2.2" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#help-page-of-functions"><i class="fa fa-check"></i><b>6.2.2</b> Help page of functions</a></li>
-<li class="chapter" data-level="6.2.3" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#challenge-13"><i class="fa fa-check"></i><b>6.2.3</b> CHALLENGE 13</a></li>
+<li class="chapter" data-level="5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html"><i class="fa fa-check"></i><b>5</b> Manipulating objects in R<span></span></a><ul>
+<li class="chapter" data-level="5.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#objects"><i class="fa fa-check"></i><b>5.1</b> Objects<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#good-practices-in-r-code"><i class="fa fa-check"></i><b>5.2</b> Good practices in R code<span></span></a><ul>
+<li class="chapter" data-level="5.2.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-5"><i class="fa fa-check"></i><b>5.2.1</b> CHALLENGE 5<span></span></a></li>
+<li class="chapter" data-level="5.2.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-6"><i class="fa fa-check"></i><b>5.2.2</b> CHALLENGE 6<span></span></a></li>
+<li class="chapter" data-level="5.2.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#the-rstudio-environment"><i class="fa fa-check"></i><b>5.2.3</b> The RStudio Environment<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#getting-help-on-the-web"><i class="fa fa-check"></i><b>6.3</b> Getting help on the Web</a><ul>
-<li class="chapter" data-level="6.3.1" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#challenge-14"><i class="fa fa-check"></i><b>6.3.1</b> CHALLENGE 14</a></li>
+<li class="chapter" data-level="5.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-types-and-structure"><i class="fa fa-check"></i><b>5.3</b> Data types and structure<span></span></a><ul>
+<li class="chapter" data-level="5.3.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#core-data-types-in-r"><i class="fa fa-check"></i><b>5.3.1</b> Core data types in R<span></span></a></li>
+<li class="chapter" data-level="5.3.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-scalars"><i class="fa fa-check"></i><b>5.3.2</b> Data structure in R: scalars<span></span></a></li>
+<li class="chapter" data-level="5.3.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-vectors"><i class="fa fa-check"></i><b>5.3.3</b> Data structure in R: vectors<span></span></a></li>
+<li class="chapter" data-level="5.3.4" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-7"><i class="fa fa-check"></i><b>5.3.4</b> CHALLENGE 7<span></span></a></li>
+<li class="chapter" data-level="5.3.5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#operations-using-vectors"><i class="fa fa-check"></i><b>5.3.5</b> Operations using vectors<span></span></a></li>
+<li class="chapter" data-level="5.3.6" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-matrices"><i class="fa fa-check"></i><b>5.3.6</b> Data structure in R: matrices<span></span></a></li>
+<li class="chapter" data-level="5.3.7" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-8"><i class="fa fa-check"></i><b>5.3.7</b> CHALLENGE 8<span></span></a></li>
+<li class="chapter" data-level="5.3.8" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#data-structure-in-r-data-frames"><i class="fa fa-check"></i><b>5.3.8</b> Data structure in R: data frames<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#indexing"><i class="fa fa-check"></i><b>5.4</b> Indexing<span></span></a><ul>
+<li class="chapter" data-level="5.4.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-9"><i class="fa fa-check"></i><b>5.4.1</b> CHALLENGE 9<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#indexing-a-data-frame"><i class="fa fa-check"></i><b>5.4.2</b> Indexing a data frame<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#a-quick-note-on-logical-statements"><i class="fa fa-check"></i><b>5.4.3</b> A quick note on logical statements<span></span></a></li>
+<li class="chapter" data-level="5.4.4" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#indexing-with-logical-vectors"><i class="fa fa-check"></i><b>5.4.4</b> Indexing with logical vectors<span></span></a></li>
+<li class="chapter" data-level="5.4.5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-10"><i class="fa fa-check"></i><b>5.4.5</b> CHALLENGE 10<span></span></a></li>
+<li class="chapter" data-level="5.4.6" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-11"><i class="fa fa-check"></i><b>5.4.6</b> CHALLENGE 11<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#introduction"><i class="fa fa-check"></i><b>5.5</b> Introduction<span></span></a><ul>
+<li class="chapter" data-level="5.5.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-11-1"><i class="fa fa-check"></i><b>5.5.1</b> CHALLENGE 11<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#arguments"><i class="fa fa-check"></i><b>5.6</b> Arguments<span></span></a><ul>
+<li class="chapter" data-level="5.6.1" data-path="manipulating-objects-in-r.html"><a href="manipulating-objects-in-r.html#challenge-12"><i class="fa fa-check"></i><b>5.6.1</b> CHALLENGE 12<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>Final considerations</b></span></li>
-<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary</a></li>
-<li class="chapter" data-level="8" data-path="additional-resources.html"><a href="additional-resources.html"><i class="fa fa-check"></i><b>8</b> Additional resources</a><ul>
-<li class="chapter" data-level="8.1" data-path="additional-resources.html"><a href="additional-resources.html#cheat-sheets"><i class="fa fa-check"></i><b>8.1</b> Cheat Sheets</a></li>
-<li class="chapter" data-level="8.2" data-path="additional-resources.html"><a href="additional-resources.html#books"><i class="fa fa-check"></i><b>8.2</b> Books</a></li>
-<li class="chapter" data-level="8.3" data-path="additional-resources.html"><a href="additional-resources.html#useful-links"><i class="fa fa-check"></i><b>8.3</b> Useful links</a></li>
+<li class="chapter" data-level="6" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html"><i class="fa fa-check"></i><b>6</b> Installing and using R packages<span></span></a><ul>
+<li class="chapter" data-level="6.1" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#packages"><i class="fa fa-check"></i><b>6.1</b> Packages<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#getting-help"><i class="fa fa-check"></i><b>6.2</b> Getting help<span></span></a><ul>
+<li class="chapter" data-level="6.2.1" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#getting-help-with-functions"><i class="fa fa-check"></i><b>6.2.1</b> Getting help with functions<span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#help-page-of-functions"><i class="fa fa-check"></i><b>6.2.2</b> Help page of functions<span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#challenge-13"><i class="fa fa-check"></i><b>6.2.3</b> CHALLENGE 13<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
+<li class="chapter" data-level="6.3" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#getting-help-on-the-web"><i class="fa fa-check"></i><b>6.3</b> Getting help on the Web<span></span></a><ul>
+<li class="chapter" data-level="6.3.1" data-path="installing-and-using-r-packages.html"><a href="installing-and-using-r-packages.html#challenge-14"><i class="fa fa-check"></i><b>6.3.1</b> CHALLENGE 14<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Final considerations<span></span></b></span></li>
+<li class="chapter" data-level="7" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>7</b> Summary<span></span></a></li>
+<li class="chapter" data-level="8" data-path="additional-resources.html"><a href="additional-resources.html"><i class="fa fa-check"></i><b>8</b> Additional resources<span></span></a><ul>
+<li class="chapter" data-level="8.1" data-path="additional-resources.html"><a href="additional-resources.html#cheat-sheets"><i class="fa fa-check"></i><b>8.1</b> Cheat Sheets<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="additional-resources.html"><a href="additional-resources.html#books"><i class="fa fa-check"></i><b>8.2</b> Books<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="additional-resources.html"><a href="additional-resources.html#useful-links"><i class="fa fa-check"></i><b>8.3</b> Useful links<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References<span></span></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/qcbsRworkshops" target="blank">QCBS R Workshop Series</a></li>
 
@@ -254,10 +254,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
 </div>
 --!>
-<div id="manipulating-objects-in-r" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Manipulating objects in R</h1>
-<div id="objects" class="section level2">
-<h2><span class="header-section-number">5.1</span> Objects</h2>
+<div id="manipulating-objects-in-r" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Chapter 5</span> Manipulating objects in R<a href="manipulating-objects-in-r.html#manipulating-objects-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="objects" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.1</span> Objects<a href="manipulating-objects-in-r.html#objects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You have learned so far how to use R as a calculator to obtain various
 numerical values. However, it can get tiresome to always write the same
 code down in the R console, especially if you have to use some values
@@ -308,8 +308,8 @@ operator <code>&lt;-</code> and <code>=</code> follow their own order of priorit
 <pre><code>## [1] 5</code></pre>
 <hr />
 </div>
-<div id="good-practices-in-r-code" class="section level2">
-<h2><span class="header-section-number">5.2</span> Good practices in R code</h2>
+<div id="good-practices-in-r-code" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.2</span> Good practices in R code<a href="manipulating-objects-in-r.html#good-practices-in-r-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Name</strong></p>
 <ul>
 <li>Try having short and explicit names for your variables. Naming a
@@ -326,8 +326,8 @@ the code more readable.</li>
 <li>Always put a space after a comma, and never before (like in regular
 English).</li>
 </ol>
-<div id="challenge-5" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> CHALLENGE 5</h3>
+<div id="challenge-5" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.1</span> CHALLENGE 5<a href="manipulating-objects-in-r.html#challenge-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Create an object (you decide the value) with a name that starts with a
 number. What happens?
 #### Solution {-}</p>
@@ -336,12 +336,12 @@ will return the following error:
 <code>unexpected symbol in "your object name"</code>.</p>
 <hr />
 </div>
-<div id="challenge-6" class="section level3">
-<h3><span class="header-section-number">5.2.2</span> CHALLENGE 6</h3>
+<div id="challenge-6" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.2</span> CHALLENGE 6<a href="manipulating-objects-in-r.html#challenge-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Create an object with a value of 1 + 1.718282 (Euler’s number) and
 name it <code>euler_value</code></p>
-<div id="solution-3" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-3" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-3" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="manipulating-objects-in-r.html#cb35-1"></a>euler_value &lt;-<span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="fl">1.718282</span></span>
 <span id="cb35-2"><a href="manipulating-objects-in-r.html#cb35-2"></a></span>
 <span id="cb35-3"><a href="manipulating-objects-in-r.html#cb35-3"></a>euler_value</span></code></pre></div>
@@ -350,8 +350,8 @@ name it <code>euler_value</code></p>
 <hr />
 </div>
 </div>
-<div id="the-rstudio-environment" class="section level3">
-<h3><span class="header-section-number">5.2.3</span> The RStudio Environment</h3>
+<div id="the-rstudio-environment" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.2.3</span> The RStudio Environment<a href="manipulating-objects-in-r.html#the-rstudio-environment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The <strong>Environment</strong> panel shows you all the objects you have defined in your current workspace</p>
 <p><strong>R TIP</strong></p>
 <p>Using the Tab key allows auto-completion of names. It speeds up command
@@ -363,10 +363,10 @@ If more than one element appears, you can use the arrow keys and press “Return
 <hr />
 </div>
 </div>
-<div id="data-types-and-structure" class="section level2">
-<h2><span class="header-section-number">5.3</span> Data types and structure</h2>
-<div id="core-data-types-in-r" class="section level3">
-<h3><span class="header-section-number">5.3.1</span> Core data types in R</h3>
+<div id="data-types-and-structure" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.3</span> Data types and structure<a href="manipulating-objects-in-r.html#data-types-and-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="core-data-types-in-r" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.1</span> Core data types in R<a href="manipulating-objects-in-r.html#core-data-types-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Data types </strong> define how the values are stored in R.
 We can obtain the type and mode of an object using the function <code>typeof()</code>.
 The core data types are:</p>
@@ -397,8 +397,8 @@ The core data types are:</p>
 <span id="cb49-2"><a href="manipulating-objects-in-r.html#cb49-2"></a><span class="kw">typeof</span>(f)</span></code></pre></div>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
 </div>
-<div id="data-structure-in-r-scalars" class="section level3">
-<h3><span class="header-section-number">5.3.2</span> Data structure in R: scalars</h3>
+<div id="data-structure-in-r-scalars" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.2</span> Data structure in R: scalars<a href="manipulating-objects-in-r.html#data-structure-in-r-scalars" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Until this moment, we have created objects that had just <strong>one element</strong> inside them. An object that has just a single value or unit like a number or a text string is called a <strong>scalar</strong>.</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="manipulating-objects-in-r.html#cb51-1"></a><span class="co"># Examples of scalars</span></span>
 <span id="cb51-2"><a href="manipulating-objects-in-r.html#cb51-2"></a>a &lt;-<span class="st"> </span><span class="dv">100</span></span>
@@ -414,8 +414,8 @@ object, R classifies them accordingly. The following figure illustrates
 common objects found in R.</p>
 <p><img src="images/imageobjr.png" class="align-center" width="500" /></p>
 </div>
-<div id="data-structure-in-r-vectors" class="section level3">
-<h3><span class="header-section-number">5.3.3</span> Data structure in R: vectors</h3>
+<div id="data-structure-in-r-vectors" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.3</span> Data structure in R: vectors<a href="manipulating-objects-in-r.html#data-structure-in-r-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first object is a <strong>vector</strong>. It is one of the most common objects
 in R. A vector is an entity consisting of several scalars stored in a single object. All
 values in a vector must be the same mode. The main modes in R are
@@ -455,8 +455,8 @@ have a look at how to create different types of vectors.</p>
 <span id="cb52-14"><a href="manipulating-objects-in-r.html#cb52-14"></a><span class="co"># It is also possible to use abbreviations for logical</span></span>
 <span id="cb52-15"><a href="manipulating-objects-in-r.html#cb52-15"></a><span class="co"># vectors.</span></span>
 <span id="cb52-16"><a href="manipulating-objects-in-r.html#cb52-16"></a>bool_vector2 &lt;-<span class="st"> </span><span class="kw">c</span>(T, T, F)</span></code></pre></div>
-<div id="creating-vectors-of-sequential-values" class="section level4">
-<h4><span class="header-section-number">5.3.3.1</span> Creating vectors of sequential values:</h4>
+<div id="creating-vectors-of-sequential-values" class="section level4 hasAnchor">
+<h4><span class="header-section-number">5.3.3.1</span> Creating vectors of sequential values:<a href="manipulating-objects-in-r.html#creating-vectors-of-sequential-values" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The <code>a:b</code> takes two numeric scalars <code>a</code> and <code>b</code> as <em>arguments</em>, and returns a vector of numbers from the starting point <code>a</code> to the ending point <code>b</code>, in steps of <code>1</code> unit:</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="manipulating-objects-in-r.html#cb53-1"></a><span class="dv">1</span><span class="op">:</span><span class="dv">8</span></span></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5 6 7 8</code></pre>
@@ -474,11 +474,11 @@ have a look at how to create different types of vectors.</p>
 <pre><code>## [1] 1 1 1 2 2 2</code></pre>
 </div>
 </div>
-<div id="challenge-7" class="section level3">
-<h3><span class="header-section-number">5.3.4</span> CHALLENGE 7</h3>
+<div id="challenge-7" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.4</span> CHALLENGE 7<a href="manipulating-objects-in-r.html#challenge-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Create a vector containing the first five odd numbers (starting from 1) and name it odd_n.</p>
-<div id="solution-4" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-4" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-4" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="manipulating-objects-in-r.html#cb65-1"></a>odd_n &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span></code></pre></div>
 <p>OR</p>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="manipulating-objects-in-r.html#cb66-1"></a>odd_n &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">9</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span>
@@ -505,8 +505,8 @@ application in the part about data frames)!</p>
 <hr />
 </div>
 </div>
-<div id="operations-using-vectors" class="section level3">
-<h3><span class="header-section-number">5.3.5</span> Operations using vectors</h3>
+<div id="operations-using-vectors" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.5</span> Operations using vectors<a href="manipulating-objects-in-r.html#operations-using-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What you have learned previously about calculations is also valid for
 vectors: vectors can be used for calculations. The only difference is
 that when a vector has more than 1 element, the operation is applied on
@@ -527,8 +527,8 @@ all elements of the vector. The following example clarifies this.</p>
 <span id="cb76-2"><a href="manipulating-objects-in-r.html#cb76-2"></a>x <span class="op">*</span><span class="st"> </span>y</span></code></pre></div>
 <pre><code>## [1]  6 12 18 24 30</code></pre>
 </div>
-<div id="data-structure-in-r-matrices" class="section level3">
-<h3><span class="header-section-number">5.3.6</span> Data structure in R: matrices</h3>
+<div id="data-structure-in-r-matrices" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.6</span> Data structure in R: matrices<a href="manipulating-objects-in-r.html#data-structure-in-r-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We have learned that <strong>scalars</strong> contain one element, and that <strong>vectors</strong> contain more than one scalar of the same type!
 Matrices are nothing but a bunch of vectors stacked together!
 While vectors have one dimension, matrices have two dimensions, determined by <strong>rows</strong> and <strong>columns</strong>.
@@ -576,8 +576,8 @@ Finally, like <strong>vectors</strong> and <strong>scalars</strong> matrices can
 ## [2,]   16   25   16
 ## [3,]   21   24    9</code></pre>
 </div>
-<div id="challenge-8" class="section level3">
-<h3><span class="header-section-number">5.3.7</span> CHALLENGE 8</h3>
+<div id="challenge-8" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.7</span> CHALLENGE 8<a href="manipulating-objects-in-r.html#challenge-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li>Create an object containing a matrix with 2 rows and 3 columns, with values from 1 to 6, sorted per column.</li>
 <li>Create another object with a matrix with 2 rows and 3 columns, with the names of six animals you like.</li>
@@ -592,8 +592,8 @@ Finally, like <strong>vectors</strong> and <strong>scalars</strong> matrices can
 </ol>
 <p><strong>Remember</strong> that text strings must always be surrounded by quote marks (" ").
 <strong>Remember</strong> that values or arguments must be separated by commas if they are inside a function, e.g. <code>c("one", "two", "three")</code>.</p>
-<div id="solution-5" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-5" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-5" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="manipulating-objects-in-r.html#cb92-1"></a><span class="co"># Step 1:</span></span>
 <span id="cb92-2"><a href="manipulating-objects-in-r.html#cb92-2"></a>(step_<span class="dv">1</span> &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dt">data =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dt">nrow =</span> <span class="dv">2</span>, <span class="dt">ncol =</span> <span class="dv">3</span>))</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
@@ -610,8 +610,8 @@ Finally, like <strong>vectors</strong> and <strong>scalars</strong> matrices can
 <hr />
 </div>
 </div>
-<div id="data-structure-in-r-data-frames" class="section level3">
-<h3><span class="header-section-number">5.3.8</span> Data structure in R: data frames</h3>
+<div id="data-structure-in-r-data-frames" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.3.8</span> Data structure in R: data frames<a href="manipulating-objects-in-r.html#data-structure-in-r-data-frames" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Another important type of object you will use regularly is the data
 frame. A data frame is a group of vectors of the same length (<em>i.e.</em> the
 same number of elements). Columns are always variables and rows are
@@ -697,10 +697,10 @@ creation of a data frame.</p>
 ## 4   B1.02     6.0      7   No_fert</code></pre>
 </div>
 </div>
-<div id="indexing" class="section level2">
-<h2><span class="header-section-number">5.4</span> Indexing</h2>
-<div id="indexing-a-vector" class="section level4">
-<h4><span class="header-section-number">5.4.0.1</span> Indexing a vector</h4>
+<div id="indexing" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.4</span> Indexing<a href="manipulating-objects-in-r.html#indexing" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="indexing-a-vector" class="section level4 hasAnchor">
+<h4><span class="header-section-number">5.4.0.1</span> Indexing a vector<a href="manipulating-objects-in-r.html#indexing-a-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Typing an object’s name in R returns the complete object. But what if
 our object is a huge data frame with millions of entries? It can easily
 become confusing to identify specific elements of an object. R allows us
@@ -743,8 +743,8 @@ vectors.</p>
 <div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="manipulating-objects-in-r.html#cb117-1"></a><span class="co"># Note the use of the double equal sign ==.</span></span></code></pre></div>
 <hr />
 </div>
-<div id="challenge-9" class="section level3">
-<h3><span class="header-section-number">5.4.1</span> CHALLENGE 9</h3>
+<div id="challenge-9" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.4.1</span> CHALLENGE 9<a href="manipulating-objects-in-r.html#challenge-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Using the vector <code>num_vector</code> and our indexing abilities:</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>Extract the 4th value of the <code>num_vector</code> vector.</p></li>
@@ -753,8 +753,8 @@ vectors.</p>
 <li><p>Extract from the 6th to the 10th value.</p></li>
 </ol>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="manipulating-objects-in-r.html#cb118-1"></a>num_vector &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">98</span>, <span class="dv">32</span>, <span class="dv">-76</span>, <span class="dv">-4</span>)</span></code></pre></div>
-<div id="solution-6" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-6" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-6" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: lower-alpha">
 <li>Extract the 4th value</li>
 </ol>
@@ -779,8 +779,8 @@ vectors.</p>
 <hr />
 </div>
 </div>
-<div id="indexing-a-data-frame" class="section level3">
-<h3><span class="header-section-number">5.4.2</span> Indexing a data frame</h3>
+<div id="indexing-a-data-frame" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.4.2</span> Indexing a data frame<a href="manipulating-objects-in-r.html#indexing-a-data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>For data frames, the concept of indexation is similar, but we usually
 have to specify two dimensions: the row and column numbers. The R syntax
 is</p>
@@ -820,8 +820,8 @@ four operations are also valid for indexing matrices.</p>
 <span id="cb132-2"><a href="manipulating-objects-in-r.html#cb132-2"></a>soil_fertilisation_data<span class="op">$</span>site_id</span></code></pre></div>
 <pre><code>## [1] &quot;A1.01&quot; &quot;A1.02&quot; &quot;B1.01&quot; &quot;B1.02&quot;</code></pre>
 </div>
-<div id="a-quick-note-on-logical-statements" class="section level3">
-<h3><span class="header-section-number">5.4.3</span> A quick note on logical statements</h3>
+<div id="a-quick-note-on-logical-statements" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.4.3</span> A quick note on logical statements<a href="manipulating-objects-in-r.html#a-quick-note-on-logical-statements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>R gives you the possibility to test logical statements, <em>i.e.</em> to
 evaluate whether a statement is true or false. You can compare objects
 with the following logical operators:</p>
@@ -892,8 +892,8 @@ with the following logical operators:</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="manipulating-objects-in-r.html#cb142-1"></a><span class="co"># You have to write x2 twice.  If you write x2 &gt; 2 &amp; &lt; 5,</span></span>
 <span id="cb142-2"><a href="manipulating-objects-in-r.html#cb142-2"></a><span class="co"># you will get an error message.</span></span></code></pre></div>
 </div>
-<div id="indexing-with-logical-vectors" class="section level3">
-<h3><span class="header-section-number">5.4.4</span> Indexing with logical vectors</h3>
+<div id="indexing-with-logical-vectors" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.4.4</span> Indexing with logical vectors<a href="manipulating-objects-in-r.html#indexing-with-logical-vectors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We can use conditions to select values:</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="manipulating-objects-in-r.html#cb143-1"></a>odd_n[odd_n <span class="op">&gt;</span><span class="st"> </span><span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] 5 7 9</code></pre>
@@ -927,15 +927,15 @@ with the following logical operators:</p>
 <pre><code>## [1] TRUE</code></pre>
 <hr />
 </div>
-<div id="challenge-10" class="section level3">
-<h3><span class="header-section-number">5.4.5</span> CHALLENGE 10</h3>
+<div id="challenge-10" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.4.5</span> CHALLENGE 10<a href="manipulating-objects-in-r.html#challenge-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Explore the difference between these two lines of code:</p>
 <div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="manipulating-objects-in-r.html#cb167-1"></a>char_vector <span class="op">==</span><span class="st"> &quot;blue&quot;</span></span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE</code></pre>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="manipulating-objects-in-r.html#cb169-1"></a>char_vector[char_vector <span class="op">==</span><span class="st"> &quot;blue&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;blue&quot;</code></pre>
-<div id="solution-7" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-7" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-7" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="manipulating-objects-in-r.html#cb171-1"></a>char_vector <span class="op">==</span><span class="st"> &quot;blue&quot;</span></span></code></pre></div>
 <pre><code>## [1]  TRUE FALSE FALSE</code></pre>
 <p>In this line of code, you test a logical statement. For each entry in the char_vector, R checks whether the entry is equal to “blue” or not</p>
@@ -945,8 +945,8 @@ with the following logical operators:</p>
 <hr />
 </div>
 </div>
-<div id="challenge-11" class="section level3">
-<h3><span class="header-section-number">5.4.6</span> CHALLENGE 11</h3>
+<div id="challenge-11" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.4.6</span> CHALLENGE 11<a href="manipulating-objects-in-r.html#challenge-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: lower-alpha">
 <li>Extract the <code>num_sp</code> column from <code>soil_fertilisation_data</code> and multiply its values
 by the first four values of the <code>num_vector</code> vector.</li>
@@ -954,8 +954,8 @@ by the first four values of the <code>num_vector</code> vector.</li>
 obtained are greater than 25. Refer to challenge 9 to complete this
 challenge.</li>
 </ol>
-<div id="solution-8" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-8" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ol style="list-style-type: lower-alpha">
 <li>Extract the <code>num_sp</code> column from <code>soil_fertilisation_data</code> and multiply its values
 by the first four values of the <code>num_vector</code> vector.</li>
@@ -997,8 +997,8 @@ html_document: default
 </div>
 </div>
 </div>
-<div id="introduction" class="section level2">
-<h2><span class="header-section-number">5.5</span> Introduction</h2>
+<div id="introduction" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.5</span> Introduction<a href="manipulating-objects-in-r.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most of the time with R, you will need to use functions to do what you
 want.</p>
 <p>Functions are tools that are there to simplify your life. They allow you
@@ -1029,8 +1029,8 @@ Objects can be passed into functions:</p>
 function. In this case, it is the sum of <code>a</code> and <code>b</code>, 8.<br />
 </p>
 <hr />
-<div id="challenge-11-1" class="section level3">
-<h3><span class="header-section-number">5.5.1</span> CHALLENGE 11</h3>
+<div id="challenge-11-1" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.5.1</span> CHALLENGE 11<a href="manipulating-objects-in-r.html#challenge-11-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Create a vector <code>a</code> that contains all numbers from 1 to 5</p></li>
 <li><p>Create an object <code>b</code> with value of 2</p></li>
@@ -1040,8 +1040,8 @@ result in an object called <code>result_add</code></p></li>
 <li><p>Compare <code>result_add</code> and <code>result_sum</code>. Are they different?</p></li>
 <li><p>Add 5 to <code>result_sum</code> using the <code>sum</code> function.</p></li>
 </ul>
-<div id="solution-9" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-9" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-9" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <ul>
 <li>Create a vector <code>a</code> that contains all numbers from 1 to 5</li>
 </ul>
@@ -1079,8 +1079,8 @@ doing 1 + 2 + 3 + 4 + 5 + 2. The result is a <strong>number</strong>.</p>
 </div>
 </div>
 </div>
-<div id="arguments" class="section level2">
-<h2><span class="header-section-number">5.6</span> Arguments</h2>
+<div id="arguments" class="section level2 hasAnchor">
+<h2><span class="header-section-number">5.6</span> Arguments<a href="manipulating-objects-in-r.html#arguments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Arguments each have a <strong>name</strong> that can be provided during a function
 call.<br />
 </p>
@@ -1102,8 +1102,8 @@ matter.<br />
 <div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="manipulating-objects-in-r.html#cb201-1"></a><span class="kw">log</span>(<span class="dt">base =</span> <span class="dv">2</span>, <span class="dt">x =</span> <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <hr />
-<div id="challenge-12" class="section level3">
-<h3><span class="header-section-number">5.6.1</span> CHALLENGE 12</h3>
+<div id="challenge-12" class="section level3 hasAnchor">
+<h3><span class="header-section-number">5.6.1</span> CHALLENGE 12<a href="manipulating-objects-in-r.html#challenge-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>plot(x, y)</code> is a function that draws a graph of y as a function of x.
 It requires two arguments named <code>x</code> and <code>y</code>.<br />
 What are the differences between the following lines?</p>
@@ -1113,20 +1113,20 @@ What are the differences between the following lines?</p>
 <span id="cb203-4"><a href="manipulating-objects-in-r.html#cb203-4"></a><span class="kw">plot</span>(b, a)</span>
 <span id="cb203-5"><a href="manipulating-objects-in-r.html#cb203-5"></a><span class="kw">plot</span>(<span class="dt">x =</span> a, <span class="dt">y =</span> b)</span>
 <span id="cb203-6"><a href="manipulating-objects-in-r.html#cb203-6"></a><span class="kw">plot</span>(<span class="dt">y =</span> b, <span class="dt">x =</span> a)</span></code></pre></div>
-<div id="solution-10" class="section level4 unnumbered">
-<h4>Solution</h4>
+<div id="solution-10" class="section level4 unnumbered hasAnchor">
+<h4>Solution<a href="manipulating-objects-in-r.html#solution-10" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="manipulating-objects-in-r.html#cb204-1"></a><span class="kw">plot</span>(a, b)</span></code></pre></div>
-<p><img src="book-en_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p><img src="book-en_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
 <p>Plots the graph of <code>b</code> as a function of <code>a</code>.</p>
 <div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="manipulating-objects-in-r.html#cb205-1"></a><span class="kw">plot</span>(b, a)</span></code></pre></div>
-<p><img src="book-en_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<p><img src="book-en_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
 <p>Plots the graph of <code>a</code> as a function of <code>b</code>.The argument names are not
 provided, the order of the arguments matters!</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="manipulating-objects-in-r.html#cb206-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> a, <span class="dt">y =</span> b)</span></code></pre></div>
-<p><img src="book-en_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p><img src="book-en_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 <p>Plots the graph of <code>b</code> as a function of <code>a</code>, same as plot(a, b).</p>
 <div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="manipulating-objects-in-r.html#cb207-1"></a><span class="kw">plot</span>(<span class="dt">y =</span> b, <span class="dt">x =</span> a)</span></code></pre></div>
-<p><img src="book-en_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p><img src="book-en_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
 <p>Plots the graph of <code>b</code> as a function of <code>a</code>. The argument names are
 provided, the order of the arguments does not matter!</p>
 <hr />
