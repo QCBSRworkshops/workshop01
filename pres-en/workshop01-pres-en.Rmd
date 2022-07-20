@@ -56,6 +56,106 @@ lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 [![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01)
 
 ---
+
+<p style="font-size:60%">
+
+.center[
+**Contributors to the development of this workshop**
+
+by modifying and improving its content as part of the <br> *Le*arning *a*nd *D*evelopment *A*ward
+]
+
+.pull-left[
+.right[
+ **2022** - **2021** - **2020**
+
+[Victor Cameron]()
+
+[Laurie Maynard]()
+
+[Daniel Schoenig]()
+
+[Pedro Henrique P. Braga]()
+<br>
+
+**2019** - **2018** - **2017**
+
+[Willian Vieira]()
+
+[Shaun Turney]()
+
+[Marie-Hélène Brice]()
+
+[Katherine Hébert]()
+
+]
+]
+
+.pull-right[
+.left[
+
+**2016** - **2015** - **2014**
+
+[Catherine Baltazar]()
+
+[Bérenger Bourgeois]()
+
+[Zofia Taranu]()
+
+[Shaun Turney]()
+
+[Maxwell Farrell]()
+
+[Emmanuelle Chrétien]()
+
+[Vincent Fugère]()
+
+]
+]
+
+</p>
+
+---
+
+# Required material
+
+To follow this workshop, you are required to have downloaded and installed the latest [RStudio](https://rstudio.com/products/rstudio/download/#download) and [R](https://cran.rstudio.com/) versions.
+
+.pull-left3[
+You must also use these packages:
+
+
+* [dplyr](https://cran.r-project.org/package=dplyr)
+* [vegan](https://cran.r-project.org/package=vegan)
+* [e1071](https://cran.r-project.org/package=e1071)
+* [MASS](https://cran.r-project.org/package=MASS)
+* [car](https://cran.r-project.org/package=car)
+* [effects](https://cran.r-project.org/package=effects)
+
+<br>
+
+All workshop materials are found at [r.qcbs.ca/workshops/r-workshop-04/](https://r.qcbs.ca/workshops/r-workshop-04/).
+
+]
+
+.pull-right3[
+
+To install them from CRAN, run:
+
+```{r, echo = TRUE, eval = FALSE}
+install.packages(
+  c('dplyr', 
+    'vegan', 
+    'e1071', 
+    'MASS', 
+    'car', 
+    'effects')
+)
+```
+
+]
+
+---
 # Learning Objectives
 <br>
 
