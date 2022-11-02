@@ -1178,7 +1178,7 @@ plot(y = b, x = a, type = "l")
 
 `plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
 
-```{r, echo = F, fig.height=7,fig.width=9}
+```{r, echo = F, fig.height=6,fig.width=8.5}
 a <- 1:100
 b <- a^2
 par(mfrow = c(2, 2),mar=c(4, 4, 1, 1))
