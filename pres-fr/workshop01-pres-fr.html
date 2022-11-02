@@ -44,8 +44,72 @@ class: inverse, center, middle
 [![badge](https://img.shields.io/static/v1?style=flat-square&amp;label=script&amp;message=01&amp;color=2a50b8&amp;logo=r)](https://r.qcbs.ca/workshop01/book-fr/workshop01-script-fr.R)
 [![badge](https://img.shields.io/static/v1?style=flat-square&amp;label=repo&amp;message=dev&amp;color=6f42c1&amp;logo=github)](https://github.com/QCBSRworkshops/workshop01) 
 
+---
+
+&lt;p style="font-size:60%"&gt;
+
+.center[
+**Contributeurs et contributrices au développement de cet atelier**
+
+en modifiant et en améliorant son contenu dans le cadre du &lt;br&gt;_**Le**arning **a**nd **D**evelopment **A**ward_ du **CSBQ**:
+]
+
+.pull-left[
+.right[
+
+ **2022** - **2021** - **2020**
+
+Ella Martin
+
+Dominique Caron
+
+Marc-Olivier Beausoleil
+
+Kevin Cazelles
+
+Claire-Cécile Juhasz
+
+Pedro Henrique P. Braga
+
+Marie-Hélène Brice
+
+]
+]
+
+.pull-right[
+.left[
+
+**2019** - **2018** - **2017**
+
+Claire-Cécile Juhasz
+
+Marc-Olivier Beausoleil
+
+Marie-Hélène Brice
+
+Katherine Hébert
+
+&lt;br&gt;
+
+**2016** - **2015** - **2014**
+
+Sylvain Christin
+
+Cédric Frenette Dussault
+
+Dalal Hanna
+
+Marc-Olivier Beausoleil
+
+Vincent Fugère
+
+]
+]
+
+&lt;/p&gt;
 
 ---
+
 # Objectifs d'apprentissage
 
 &lt;br&gt;
@@ -106,8 +170,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-a06ae7e59e9b9be9aca9" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a06ae7e59e9b9be9aca9">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8f61d988b1e97e6d4a54" style="width:360px;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8f61d988b1e97e6d4a54">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 .pull-right[
@@ -116,8 +180,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-d394eb5cfbc6bbe7e368" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d394eb5cfbc6bbe7e368">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-bda448fb58e08e47e625" style="width:360px;height:360px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-bda448fb58e08e47e625">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -358,18 +422,6 @@ $$
 .comment[Notez que R respecte l'ordre des opérations]
 
 ---
-# Astuce sur la ligne de commande R
-
-
-Utilisez les touches fléchées `\(\uparrow\)` et `\(\downarrow\)` pour copier et reproduire les commandes précédentes.
-
-
-.center[
-![:scale 30%](images/keyboard_arrows.png)
-]
-
-
----
 # Défi 4 ![:cube]()
 
 Quel est l'aire de ce cercle dont le rayon est de `\(5\ cm\)`?
@@ -388,7 +440,7 @@ Quel est l'aire de ce cercle dont le rayon est de `\(5\ cm\)`?
 # [1] 78.54
 ```
 
-.comment[**Astuce**: Notez que `R` a des constantes intégrées, telle que &amp;pi;, vous pouvez donc écrire:]
+.comment[**Astuce**: Notez que `R` a des constantes intégrées, telle que &amp;pi;. Vous pouvez les trouver en écrivant `?` et `Constants` (comme dans `?Constants`) et l'exécuter! Quelle est la constante pour &amp;pi;?]
 
 
 ```r
@@ -396,14 +448,29 @@ pi * 5^2
 # [1] 78.53982
 ```
 
+&lt;br&gt;
+&lt;br&gt;
+
+Vous venez d'exécuter une commande débutant par `?`. _Quel est le résultat?_
+
+---
+# Astuce sur la ligne de commande R
+
+
+Utilisez les touches fléchées `\(\uparrow\)` et `\(\downarrow\)` pour copier et reproduire les commandes précédentes.
+
+
+.center[
+![:scale 30%](images/keyboard_arrows.png)
+]
+
+
 ---
 class: inverse, center, middle
 
 # 3. Manipuler les objets dans R 
 
 &lt;hr&gt;
-
-## Objet
 
 ---
 # Objet
@@ -572,7 +639,7 @@ class: inverse, center, middle
 - Toutes les valeurs d'un vecteur doivent avoir le **même mode** (ou classe).
       * `numeric`: seulement des nombres (e.g. `c(2, 3, 5, 3.1416)`)
       * `logical`: entrées True/False (e.g `c(TRUE, FALSE, TRUE)`)
-      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("QCBS", "J'adore cet atelier")`)
+      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("CSBQ", "J'adore cet atelier")`)
 
 ---
 # Vecteur
@@ -638,6 +705,17 @@ bool_vecteur
 ```r
 impair &lt;- c(1, 3, 5, 7, 9)
 ```
+
+ou 
+
+
+```r
+impair &lt;- seq(from = 1, to = 9, by = 2)
+
+impair
+# [1] 1 3 5 7 9
+```
+
 
 ---
 # Vecteur
@@ -1047,7 +1125,10 @@ Pour utiliser (appeler) une fonction, la commande doit être structurée correct
 
 
 ```r
-nom_fonction(argument1, argument2)
+nom_fonction(argument1 = valeur, 
+             argument2 = valeur, 
+             ..., 
+             argument10 = valeur)
 ```
 
 ---
@@ -1139,7 +1220,7 @@ plot(y = b, x = a, type = "l")
 
 `plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
 
-&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-52-1.png" width="360" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-53-1.png" width="612" style="display: block; margin: auto;" /&gt;
 
 ---
 # Défi 12: Solution
@@ -1150,7 +1231,7 @@ plot(y = b, x = a, type = "l")
 plot(a, b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-54-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-55-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -1159,7 +1240,7 @@ plot(a, b, type = "l")
 plot(b, a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-56-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-57-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .comment[La forme du graphe change, car nous n'avons pas spécifié le nom des arguments, alors l'ordre devient important.]
@@ -1173,7 +1254,7 @@ plot(b, a, type = "l")
 plot(x = a, y = b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-58-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-59-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -1182,7 +1263,7 @@ plot(x = a, y = b, type = "l")
 plot(y = b, x = a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-60-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-61-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .comment[Idem que `plot(a,b)`. Le nom des arguments est spécifié, l'ordre n'est pas important.]
@@ -1192,11 +1273,9 @@ class: inverse, center, middle
 
 # 5. Installer et utiliser les packages R 
 
-## Package
-
 ---
 
-# Package
+# Packages
 
 Les *packages* sont un **regroupement de fonctions** et/ou **de données** partageant un thème **similaire**, par ex. statistiques, analyse spatiale, graphique, etc.
 
@@ -1211,8 +1290,9 @@ Beaucoup de packages disponibles via le *Comprehensive R Archive Network* ou [CR
 ---
 # Combien de packages
 
-![](images/rdrr_10-03-20.png)
-*[rdrr.io](https://rdrr.io/) consulté le 20 mars 2020*
+![](images/rdrr_2022-11-02.png)
+
+*[rdrr.io](https://rdrr.io/) consulté le 2 novembre 2022*
 
 ---
 # Package
@@ -1232,6 +1312,8 @@ library(nom du package)
 ---
 # Package: exemple
 
+Installons un package populaire de visualisation des données nommé `ggplot2`:
+
 
 ```r
 install.packages("ggplot2")
@@ -1239,15 +1321,32 @@ install.packages("ggplot2")
 
 
 ```r
-Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
-(as 'lib' is unspecified)
+Installing package into ‘C:/Users/phper/OneDrive/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.r-project.org/bin/windows/contrib/4.1/ggplot2_3.3.5.zip'
+Content type 'application/zip' length 4129856 bytes (3.9 MB)
+downloaded 3.9 MB
+
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
 ```
+
+
+
+--
+
+Nous allons utiliser la fonction `qplot()` de ce package:
 
 
 ```r
 qplot(1:10, 1:10)
 ```
 
+--
+
+Avez-vous obtenu ce message d'erreur?
 
 ```r
 ## Error: could not find function "qplot"
@@ -1262,9 +1361,9 @@ library(ggplot2)
 qplot(1:10, 1:10)
 ```
 
-&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-65-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-fr_files/figure-html/unnamed-chunk-67-1.png" width="288" style="display: block; margin: auto;" /&gt;
 
-.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3) !!!]
+.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3)!]
 ---
 class: inverse, center, middle
 
@@ -1319,7 +1418,7 @@ Disons que nous voulons créer une **séquence** de nombres impairs compris entr
 ---
 # Aide pour les fonctions
 
-OK! Alors utilisons la fonction `seq` !
+OK! Alors utilisons la fonction `seq()` !
 
 Mais attendez ... comment ça marche? De quels arguments la fonction a-t-elle besoin?
 
@@ -1341,7 +1440,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ---
 # Description
 
-- `nom_fonction {nom_packa}`
+- `nom_fonction {nom_package}`
 - `Description`: une courte description de ce que peut faire la fonction.
 
 .center[
@@ -1368,7 +1467,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ---
 # Détails
 
-- Une description détaillée du fonctionnement des fonction et de leurs caractéristiques
+- Une description détaillée du fonctionnement des fonctions et de leurs caractéristiques
 
 ![](images/seq_details.png)
 
@@ -1455,13 +1554,13 @@ Recherchez les fonctions appropriées pour effectuer les opérations suivantes:
 # Défi 14: Solutions ![:cube]()
 
 - Racine carrée
-  - `sqrt`
+  - `sqrt()`
 - Moyenne de plusieurs nombres
-  - `mean`
+  - `mean()`
 - Combiner deux data frames par colonnes
-  - `cbind`
+  - `cbind()`
 - Lister des objets disponibles dans votre espace de travail
-  - `ls`
+  - `ls()`
 
 ---
 class: inverse, center, middle
@@ -1497,7 +1596,7 @@ Ouvrez-les directement depuis **Rstudio**: Help `\(\rightarrow\)` Cheatsheets
 
 
 ---
-# Quelques sites inteRnet utiles
+# Quelques sites internet utiles
 
 .pull-left[
 [![:scale 50%](http://r4ds.had.co.nz/cover.png)](http://r4ds.had.co.nz/index.html)
