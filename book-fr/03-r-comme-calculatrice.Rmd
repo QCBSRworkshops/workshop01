@@ -71,7 +71,7 @@ une erreur dans une commande. C'est également utile pour modifier
 rapidement une commande et la relancer d'une manière légèrement
 différente.
 
-![](images//arrow_keys.png){width = "100"}
+![](images//arrow_keys.png){width="300"}
 
 ### DÉFI 4
 
