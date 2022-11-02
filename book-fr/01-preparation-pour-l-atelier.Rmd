@@ -3,7 +3,7 @@
 # Objectifs d'apprentissage
 
 **Résumé :** Durant cet atelier, vous apprendrez ce qu'est le logiciel
-d'analyse statistique R et vous découvrerai plusieurs raisons pourquoi
+d'analyse statistique R et vous découvrirai plusieurs raisons pourquoi
 vous devriez l'utiliser. Vous ferez vos premiers pas dans ce logiciel:
 Vous verrez comment R peut être utilisé comme une calculatrice, vous
 apprendrez ce qu'est un « objet » dans R, et vous utiliserez des
@@ -16,6 +16,7 @@ la fin de cet atelier, vous comprendrez tous ces concepts:
 2.  Utiliser R comme une calculatrice
 3.  Manipuler les objets dans R
 4.  Installer et utiliser les packages R
+5.  Obtenir de l'aide
 
 # Préparez-vous pour cet atelier
 
