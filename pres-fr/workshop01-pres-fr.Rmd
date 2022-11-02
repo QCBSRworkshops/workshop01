@@ -1286,19 +1286,40 @@ library(nom du package)
 ---
 # Package: exemple
 
+Installons un package populaire de visualisation des données nommé `ggplot2`:
+
 ```{r, eval = FALSE}
 install.packages("ggplot2")
 ```
 
 ```{r, eval = FALSE}
-Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
-(as 'lib' is unspecified)
+Installing package into ‘C:/Users/phper/OneDrive/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.r-project.org/bin/windows/contrib/4.1/ggplot2_3.3.5.zip'
+Content type 'application/zip' length 4129856 bytes (3.9 MB)
+downloaded 3.9 MB
+
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
 ```
+
+```{r, eval = FALSE, echo = FALSE}
+library(ggplot2)
+```
+
+--
+
+Nous allons utiliser la fonction `qplot()` de ce package:
 
 ```{r, eval = FALSE}
 qplot(1:10, 1:10)
 ```
 
+--
+
+Avez-vous obtenu ce message d'erreur?
 ```{r, eval = FALSE}
 ## Error: could not find function "qplot"
 ```
@@ -1311,7 +1332,7 @@ library(ggplot2)
 qplot(1:10, 1:10)
 ```
 
-.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3) !!!]
+.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3)!]
 ---
 class: inverse, center, middle
 
