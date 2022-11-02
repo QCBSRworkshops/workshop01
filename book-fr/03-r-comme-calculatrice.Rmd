@@ -85,7 +85,7 @@ Rappel : ${Aire_{cercle} = \pi r^2}$
 3.1416 * 5^2
 ```
 
-*Astuce: Notez que R a des constantes intégrées, telle que ${\pi}$, vous pouvez donc écrire:
+*Astuce: Notez que `R` a des constantes intégrées, telle que ${\pi}$. Vous pouvez les trouver en écrivant `?` et `Constants` (comme dans `?Constants`) et l'exécuter! Quelle est la constante pour ${\pi}$?
 
 ```{r}
 pi*5^2
