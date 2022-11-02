@@ -505,8 +505,6 @@ class: inverse, center, middle
 
 <hr>
 
-## Objet
-
 ---
 # Objet
 
@@ -668,7 +666,7 @@ class: inverse, center, middle
 - Toutes les valeurs d'un vecteur doivent avoir le **même mode** (ou classe).
       * `numeric`: seulement des nombres (e.g. `c(2, 3, 5, 3.1416)`)
       * `logical`: entrées True/False (e.g `c(TRUE, FALSE, TRUE)`)
-      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("QCBS", "J'adore cet atelier")`)
+      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("CSBQ", "J'adore cet atelier")`)
 
 ---
 # Vecteur
@@ -726,6 +724,15 @@ bool_vecteur
 ```{r}
 impair <- c(1, 3, 5, 7, 9)
 ```
+
+ou 
+
+```{r}
+impair <- seq(from = 1, to = 9, by = 2)
+
+impair
+```
+
 
 ---
 # Vecteur
@@ -1084,7 +1091,10 @@ Une fonction nécessite des valeurs d'entrée appelées **arguments** (ou param�
 Pour utiliser (appeler) une fonction, la commande doit être structurée correctement, en suivant les **règles de grammaire** du langage `R`, *i.e.* la syntaxe.
 
 ```{r, eval = FALSE}
-nom_fonction(argument1, argument2)
+nom_fonction(argument1 = valeur, 
+             argument2 = valeur, 
+             ..., 
+             argument10 = valeur)
 ```
 
 ---
@@ -1168,7 +1178,7 @@ plot(y = b, x = a, type = "l")
 
 `plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
 
-```{r, echo = F}
+```{r, echo = F, fig.height=7,fig.width=9}
 a <- 1:100
 b <- a^2
 par(mfrow = c(2, 2),mar=c(4, 4, 1, 1))
