@@ -1247,11 +1247,9 @@ class: inverse, center, middle
 
 # 5. Installer et utiliser les packages R 
 
-## Package
-
 ---
 
-# Package
+# Packages
 
 Les *packages* sont un **regroupement de fonctions** et/ou **de données** partageant un thème **similaire**, par ex. statistiques, analyse spatiale, graphique, etc.
 
@@ -1266,8 +1264,9 @@ Beaucoup de packages disponibles via le *Comprehensive R Archive Network* ou [CR
 ---
 # Combien de packages
 
-![](images/rdrr_10-03-20.png)
-*[rdrr.io](https://rdrr.io/) consulté le 20 mars 2020*
+![](images/rdrr_2022-11-02.png)
+
+*[rdrr.io](https://rdrr.io/) consulté le 2 novembre 2022*
 
 ---
 # Package

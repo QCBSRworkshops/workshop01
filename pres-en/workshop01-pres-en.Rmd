@@ -2234,9 +2234,9 @@ Many packages available through the *Comprehensive R Archive Network* ([CRAN](ht
 ---
 # How many `R` packages?
 
-![](images/rdrr_10-03-20.png)
+![](images/rdrr_2022-11-02.png)
 
-*[rdrr.io](https://rdrr.io/) visited on March, 10th 2020*
+*[rdrr.io](https://rdrr.io/) visited on November, 2th 2022*
 
 ---
 # Installing `R` packages
