@@ -35,7 +35,7 @@ défi-11
 arguments
 défi-12
 installer-et-utiliser-les-librairies-r
-package
+packages
 obtenir-de-laide
 recherche-de-fonctions
 aide-pour-les-fonctions
