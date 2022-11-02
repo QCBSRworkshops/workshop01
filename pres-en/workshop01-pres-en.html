@@ -47,31 +47,27 @@ class: inverse, center, middle
 .center[
 **Contributors to the development of this workshop**
 
-by modifying and improving its content as part of the &lt;br&gt; *Le*arning *a*nd *D*evelopment *A*ward
+by modifying and improving its content as part of the &lt;br&gt; **Le**arning **a**nd **D**evelopment **A**ward
 ]
 
 .pull-left[
 .right[
+
  **2022** - **2021** - **2020**
 
-[Victor Cameron]()
+Ella Martin
 
-[Laurie Maynard]()
+Dominique Caron
 
-[Daniel Schoenig]()
+Marc-Olivier Beausoleil
 
-[Pedro Henrique P. Braga]()
-&lt;br&gt;
+Kevin Cazelles
 
-**2019** - **2018** - **2017**
+Claire-Cécile Juhasz
 
-[Willian Vieira]()
+Pedro Henrique P. Braga
 
-[Shaun Turney]()
-
-[Marie-Hélène Brice]()
-
-[Katherine Hébert]()
+Marie-Hélène Brice
 
 ]
 ]
@@ -79,21 +75,29 @@ by modifying and improving its content as part of the &lt;br&gt; *Le*arning *a*n
 .pull-right[
 .left[
 
+**2019** - **2018** - **2017**
+
+Claire-Cécile Juhasz
+
+Marc-Olivier Beausoleil
+
+Marie-Hélène Brice
+
+Katherine Hébert
+
+&lt;br&gt;
+
 **2016** - **2015** - **2014**
 
-[Catherine Baltazar]()
+Sylvain Christin
 
-[Bérenger Bourgeois]()
+Cédric Frenette Dussault
 
-[Zofia Taranu]()
+Dalal Hanna
 
-[Shaun Turney]()
+Marc-Olivier Beausoleil
 
-[Maxwell Farrell]()
-
-[Emmanuelle Chrétien]()
-
-[Vincent Fugère]()
+Vincent Fugère
 
 ]
 ]
@@ -102,46 +106,6 @@ by modifying and improving its content as part of the &lt;br&gt; *Le*arning *a*n
 
 ---
 
-# Required material
-
-To follow this workshop, you are required to have downloaded and installed the latest [RStudio](https://rstudio.com/products/rstudio/download/#download) and [R](https://cran.rstudio.com/) versions.
-
-.pull-left3[
-You must also use these packages:
-
-
-* [dplyr](https://cran.r-project.org/package=dplyr)
-* [vegan](https://cran.r-project.org/package=vegan)
-* [e1071](https://cran.r-project.org/package=e1071)
-* [MASS](https://cran.r-project.org/package=MASS)
-* [car](https://cran.r-project.org/package=car)
-* [effects](https://cran.r-project.org/package=effects)
-
-&lt;br&gt;
-
-All workshop materials are found at [r.qcbs.ca/workshops/r-workshop-04/](https://r.qcbs.ca/workshops/r-workshop-04/).
-
-]
-
-.pull-right3[
-
-To install them from CRAN, run:
-
-
-```r
-install.packages(
-  c('dplyr', 
-    'vegan', 
-    'e1071', 
-    'MASS', 
-    'car', 
-    'effects')
-)
-```
-
-]
-
----
 # Learning Objectives
 &lt;br&gt;
 
@@ -235,7 +199,7 @@ class: inverse, center, middle
 - More and more scientists use it every year!
 - As of October 2020, there are more than 16000 packages registered within the **Comprehensive R Archive Network (CRAN)** (and thousands more within Github repositories)!
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-2-1.png" width="720" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-1-1.png" width="720" style="display: block; margin: auto;" /&gt;
 
 
 &lt;!-- .center[![:scale 70%](images/Rpackages.png)] --&gt;
@@ -593,7 +557,7 @@ It would look like this in `R`:
 
 What is the area of a circle with a radius of `\(5\ cm\)`?
 .pull-left[
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-13-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-12-1.png" width="288" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right[
 &lt;br&gt; 
@@ -605,7 +569,7 @@ What is the area of a circle with a radius of `\(5\ cm\)`?
 
 What is the area of a circle with a radius of `\(5\ cm\)`?
 .pull-left[
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-14-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-13-1.png" width="288" style="display: block; margin: auto;" /&gt;
 ]
 .pull-right[
 &lt;br&gt; 
@@ -981,7 +945,7 @@ A **vector object** is just a combination of several scalars stored as a single 
 &lt;br&gt;
 Like scalars, vectors can be of `numeric`-, `logical`-, `character`-types, but **never** a mix of them!
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-32-1.png" width="360" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-31-1.png" width="360" style="display: block; margin: auto;" /&gt;
 
 ---
 # Data structure in `R`: **vectors**
@@ -1225,7 +1189,7 @@ While vectors have *one* dimension, matrices have *two* dimensions, determined b
 
 Finally, like **vectors** and **scalars** matrices can contain only one type of data: `numeric`, `character`, or `logical`.
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-49-1.png" width="360" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-48-1.png" width="360" style="display: block; margin: auto;" /&gt;
 
 ---
 # .small[Creating **matrices** using `matrix()`, `cbind()`, `rbind()`]
@@ -1455,7 +1419,7 @@ The presenter here should mention that matrices being formed by vectors or scala
 
 Differently than a matrix, a data frame can contain `numeric`, `character`, *and* `logical` columns (or vectors).
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-64-1.png" width="360" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-63-1.png" width="360" style="display: block; margin: auto;" /&gt;
 
 ---
 # Data structure in `R`: **data.frame**
@@ -2186,7 +2150,7 @@ plot(y = b, x = a, type = "l")
 
 `plot` is a function that draws a graph of y as a function of x. It requires two arguments names `x` and `y`. What are the differences between the following lines?
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-112-1.png" width="648" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-111-1.png" width="612" style="display: block; margin: auto;" /&gt;
 
 ---
 # Challenge: Solution
@@ -2197,7 +2161,7 @@ plot(y = b, x = a, type = "l")
 plot(a, b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-114-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-113-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -2206,7 +2170,7 @@ plot(a, b, type = "l")
 plot(b, a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-116-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-115-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 The shape of the plot changes, as we did not provide the argument's names, the order is important.
@@ -2220,7 +2184,7 @@ The shape of the plot changes, as we did not provide the argument's names, the o
 plot(x = a, y = b, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-118-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-117-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 .pull-right[
@@ -2229,7 +2193,7 @@ plot(x = a, y = b, type = "l")
 plot(y = b, x = a, type = "l")
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-120-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-119-1.png" width="259.2" style="display: block; margin: auto;" /&gt;
 ]
 
 Same as `plot(a, b, type = "l")`. The argument names are provided, the order is not important.
@@ -2255,9 +2219,9 @@ Many packages available through the *Comprehensive R Archive Network* ([CRAN](ht
 ---
 # How many `R` packages?
 
-![](images/rdrr_10-03-20.png)
+![](images/rdrr_2022-11-02.png)
 
-*[rdrr.io](https://rdrr.io/) visited on March, 10th 2020*
+*[rdrr.io](https://rdrr.io/) visited on November, 2th 2022*
 
 ---
 # Installing `R` packages
@@ -2335,9 +2299,9 @@ Now we can draw the graph
 qplot(1:10, 1:10)
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-127-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-126-1.png" width="288" style="display: block; margin: auto;" /&gt;
 
-.comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
+.comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3)!]
 
 ---
 # Alternative to loading packages
@@ -2351,7 +2315,7 @@ To do this, we need to write `package_name::function_name()`. For the past examp
 ggplot2::qplot(1:10, 1:10)
 ```
 
-&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-128-1.png" width="288" style="display: block; margin: auto;" /&gt;
+&lt;img src="workshop01-pres-en_files/figure-html/unnamed-chunk-127-1.png" width="288" style="display: block; margin: auto;" /&gt;
 
 .comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
 
