@@ -56,8 +56,72 @@ lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 [![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://r.qcbs.ca/workshop01/book-fr/workshop01-script-fr.R)
 [![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01) 
 
+---
+
+<p style="font-size:60%">
+
+.center[
+**Contributeurs et contributrices au développement de cet atelier**
+
+en modifiant et en améliorant son contenu dans le cadre du <br>_**Le**arning **a**nd **D**evelopment **A**ward_ du **CSBQ**:
+]
+
+.pull-left[
+.right[
+
+ **2022** - **2021** - **2020**
+
+Ella Martin
+
+Dominique Caron
+
+Marc-Olivier Beausoleil
+
+Kevin Cazelles
+
+Claire-Cécile Juhasz
+
+Pedro Henrique P. Braga
+
+Marie-Hélène Brice
+
+]
+]
+
+.pull-right[
+.left[
+
+**2019** - **2018** - **2017**
+
+Claire-Cécile Juhasz
+
+Marc-Olivier Beausoleil
+
+Marie-Hélène Brice
+
+Katherine Hébert
+
+<br>
+
+**2016** - **2015** - **2014**
+
+Sylvain Christin
+
+Cédric Frenette Dussault
+
+Dalal Hanna
+
+Marc-Olivier Beausoleil
+
+Vincent Fugère
+
+]
+]
+
+</p>
 
 ---
+
 # Objectifs d'apprentissage
 
 <br>

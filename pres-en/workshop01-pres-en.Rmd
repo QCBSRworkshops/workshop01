@@ -62,31 +62,27 @@ lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 .center[
 **Contributors to the development of this workshop**
 
-by modifying and improving its content as part of the <br> *Le*arning *a*nd *D*evelopment *A*ward
+by modifying and improving its content as part of the <br> **Le**arning **a**nd **D**evelopment **A**ward
 ]
 
 .pull-left[
 .right[
+
  **2022** - **2021** - **2020**
 
-[Victor Cameron]()
+Ella Martin
 
-[Laurie Maynard]()
+Dominique Caron
 
-[Daniel Schoenig]()
+Marc-Olivier Beausoleil
 
-[Pedro Henrique P. Braga]()
-<br>
+Kevin Cazelles
 
-**2019** - **2018** - **2017**
+Claire-Cécile Juhasz
 
-[Willian Vieira]()
+Pedro Henrique P. Braga
 
-[Shaun Turney]()
-
-[Marie-Hélène Brice]()
-
-[Katherine Hébert]()
+Marie-Hélène Brice
 
 ]
 ]
@@ -94,21 +90,29 @@ by modifying and improving its content as part of the <br> *Le*arning *a*nd *D*e
 .pull-right[
 .left[
 
+**2019** - **2018** - **2017**
+
+Claire-Cécile Juhasz
+
+Marc-Olivier Beausoleil
+
+Marie-Hélène Brice
+
+Katherine Hébert
+
+<br>
+
 **2016** - **2015** - **2014**
 
-[Catherine Baltazar]()
+Sylvain Christin
 
-[Bérenger Bourgeois]()
+Cédric Frenette Dussault
 
-[Zofia Taranu]()
+Dalal Hanna
 
-[Shaun Turney]()
+Marc-Olivier Beausoleil
 
-[Maxwell Farrell]()
-
-[Emmanuelle Chrétien]()
-
-[Vincent Fugère]()
+Vincent Fugère
 
 ]
 ]
@@ -117,45 +121,6 @@ by modifying and improving its content as part of the <br> *Le*arning *a*nd *D*e
 
 ---
 
-# Required material
-
-To follow this workshop, you are required to have downloaded and installed the latest [RStudio](https://rstudio.com/products/rstudio/download/#download) and [R](https://cran.rstudio.com/) versions.
-
-.pull-left3[
-You must also use these packages:
-
-
-* [dplyr](https://cran.r-project.org/package=dplyr)
-* [vegan](https://cran.r-project.org/package=vegan)
-* [e1071](https://cran.r-project.org/package=e1071)
-* [MASS](https://cran.r-project.org/package=MASS)
-* [car](https://cran.r-project.org/package=car)
-* [effects](https://cran.r-project.org/package=effects)
-
-<br>
-
-All workshop materials are found at [r.qcbs.ca/workshops/r-workshop-04/](https://r.qcbs.ca/workshops/r-workshop-04/).
-
-]
-
-.pull-right3[
-
-To install them from CRAN, run:
-
-```{r, echo = TRUE, eval = FALSE}
-install.packages(
-  c('dplyr', 
-    'vegan', 
-    'e1071', 
-    'MASS', 
-    'car', 
-    'effects')
-)
-```
-
-]
-
----
 # Learning Objectives
 <br>
 
