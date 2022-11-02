@@ -443,6 +443,11 @@ treatment = c("Fert", "Fert", "No_fert", "No_fert")),
 class = "data.frame", row.names = c(NA, -4L))
 ```
 
+Other types of objects arrays and lists.  An array is similar to a matrix but can have more than two dimensions. Arrays are usually used for advanced computation like
+numerical simulations and permutation tests. A list is an aggregation of
+various types of objects. For example, a list could include a vector, a
+data frame and a matrix in the same object.
+
 
 ## Indexing
 
@@ -720,11 +725,5 @@ b) After that, write a statement that checks if the values you
 (soil_fertilisation_data$num_sp * num_vector[c(1:4)]) > 25
 ```
 
------------------------------------------------------------------------
-### Other kinds of data structure: arrays and lists
-Other types of objects arrays and lists.  An array is similar to a matrix but can have more than two dimensions. Arrays are usually used for advanced computation like
-numerical simulations and permutation tests. A list is an aggregation of
-various types of objects. For example, a list could include a vector, a
-data frame and a matrix in the same object.
 
 
