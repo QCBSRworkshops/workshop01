@@ -44,6 +44,8 @@ a-quick-note-on-logical-statements
 indexing-with-logical-vectors
 challenge-10
 challenge-11
+functions
+introduction
 challenge-11-1
 arguments
 challenge-12
