@@ -2310,7 +2310,7 @@ Now we can draw the graph
 qplot(1:10, 1:10)
 ```
 
-.comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3).]
+.comment[The `ggplot2` package will be covered in Workshop #3: [**Introduction to ggplot2**](https://wiki.qcbs.ca/r_workshop3)!]
 
 ---
 # Alternative to loading packages
