@@ -452,18 +452,6 @@ $$
 .comment[Notez que R respecte l'ordre des opérations]
 
 ---
-# Astuce sur la ligne de commande R
-
-
-Utilisez les touches fléchées $\uparrow$ et $\downarrow$ pour copier et reproduire les commandes précédentes.
-
-
-.center[
-![:scale 30%](images/keyboard_arrows.png)
-]
-
-
----
 # Défi 4 ![:cube]()
 
 Quel est l'aire de ce cercle dont le rayon est de $5\ cm$?
@@ -487,11 +475,28 @@ Quel est l'aire de ce cercle dont le rayon est de $5\ cm$?
 3.1416 * 5^2
 ```
 
-.comment[**Astuce**: Notez que `R` a des constantes intégrées, telle que &pi;, vous pouvez donc écrire:]
+.comment[**Astuce**: Notez que `R` a des constantes intégrées, telle que &pi;. Vous pouvez les trouver en écrivant `?` et `Constants` (comme dans `?Constants`) et l'exécuter! Quelle est la constante pour &pi;?]
 
 ```{r}
 pi * 5^2
 ```
+
+<br>
+<br>
+
+Vous venez d'exécuter une commande débutant par `?`. _Quel est le résultat?_
+
+---
+# Astuce sur la ligne de commande R
+
+
+Utilisez les touches fléchées $\uparrow$ et $\downarrow$ pour copier et reproduire les commandes précédentes.
+
+
+.center[
+![:scale 30%](images/keyboard_arrows.png)
+]
+
 
 ---
 class: inverse, center, middle
