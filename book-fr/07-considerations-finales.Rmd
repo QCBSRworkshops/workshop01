@@ -2,7 +2,7 @@
 
 # Résumé
 
-R est un language de programmation et un environment proposant une grande variété de techniques statistiques et graphiques. Nous utilisons et enseignons R parce que c'est un programme ** *open source* **, il est **compatible** avec la majorité des systèmes d'exploitation et parce qu'il est utilisé par une **grande communauté** de scientifiques. Durant cet atelier d'introduction à R, nous avons présenté l'environment de développement **RStudio**, nous avons présenté des **opérations de bases** disponible sur R, nous avons introduit les concepts d'*objets*, de *fonctions* et de *packages* et nous avons présenté des manières et des resources permettant de **trouver de l'aide** lors de vos analyses.
+R est un language de programmation et un environment proposant une grande variété de techniques statistiques et graphiques. Nous utilisons et enseignons R parce que c'est un programme **open source**, il est **compatible** avec la majorité des systèmes d'exploitation et parce qu'il est utilisé par une **grande communauté** de scientifiques. Durant cet atelier d'introduction à R, nous avons présenté l'environment de développement **RStudio**, nous avons présenté des **opérations de bases** disponible sur R, nous avons introduit les concepts d'*objets*, de *fonctions* et de *packages* et nous avons présenté des manières et des resources permettant de **trouver de l'aide** lors de vos analyses.
 
 
 Lors du **prochain atelier**, les objectifs seront de se familiariser avec les **projets** dans R, apprendre à organiser ses codes de programmation sous forme de **script**, apprendre à **manipuler** les objets dans R, et finalement, découvrir des **packages** spécifiquement développés pour manipuler des `dataframes` .
