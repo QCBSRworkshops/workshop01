@@ -1,10 +1,10 @@
 # Installer et utiliser les librairies R
 
-### Package
+### Packages
 
 ------------------------------------------------------------------------
 
-Les *packages* (*paquets* pour être rigoureux) sont des regroupements de
+Les *packages* (*bibliothèques* pour être rigoureux) sont des regroupements de
 fonctions et de jeux de données partageant un thème similaire, *e.g.*
 statistiques, analyse spatiale, visualisation\...
 

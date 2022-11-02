@@ -71,7 +71,7 @@ une erreur dans une commande. C'est également utile pour modifier
 rapidement une commande et la relancer d'une manière légèrement
 différente.
 
-![](images//arrow_keys.png){width = "100"}
+![](images//arrow_keys.png){width="300"}
 
 ### DÉFI 4
 
@@ -85,7 +85,7 @@ Rappel : ${Aire_{cercle} = \pi r^2}$
 3.1416 * 5^2
 ```
 
-*Astuce: Notez que R a des constantes intégrées, telle que ${\pi}$, vous pouvez donc écrire:
+*Astuce: Notez que `R` a des constantes intégrées, telle que ${\pi}$. Vous pouvez les trouver en écrivant `?` et `Constants` (comme dans `?Constants`) et l'exécuter! Quelle est la constante pour ${\pi}$?
 
 ```{r}
 pi*5^2

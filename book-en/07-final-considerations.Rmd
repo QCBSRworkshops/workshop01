@@ -2,7 +2,7 @@
 
 # Summary
 
-R is a programming language and environment that provides a variety of statistical and graphical techniques. We teach and use R because it is **open-sourced**, **compatible** with most operating systems, and because it is used by a **wide and growing community of scientists**. This introduction to R workshop presented the *IDE RStudio*, presented some **basic operation** you can do with R, introduced the concepts of *objects*, *fonctions* and *packages*, and provided some useful ways and resources to **find help** with your analyses in R.
+R is a programming language and environment that provides a variety of statistical and graphical techniques. We teach and use R because it is **open-sourced**, **compatible** with most operating systems, and because it is used by a **wide and growing community of scientists**. This introduction to R workshop presented the **IDE RStudio**, presented some **basic operation** you can do with R, introduced the concepts of *objects*, *fonctions* and *packages*, and provided some useful ways and resources to **find help** with your analyses in R.
 
 In the **next workshop**, the objectives will be to get familiarize with **R projects** and structuring your code into **scripts**, **manipulating data** in R, and to introduce **packages** specifically used to manipulate `dataframes`.
 

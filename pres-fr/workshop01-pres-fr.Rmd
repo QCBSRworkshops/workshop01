@@ -56,8 +56,72 @@ lapply(list.of.packages, require, character.only = TRUE, quietly = TRUE)
 [![badge](https://img.shields.io/static/v1?style=flat-square&label=script&message=01&color=2a50b8&logo=r)](https://r.qcbs.ca/workshop01/book-fr/workshop01-script-fr.R)
 [![badge](https://img.shields.io/static/v1?style=flat-square&label=repo&message=dev&color=6f42c1&logo=github)](https://github.com/QCBSRworkshops/workshop01) 
 
+---
+
+<p style="font-size:60%">
+
+.center[
+**Contributeurs et contributrices au développement de cet atelier**
+
+en modifiant et en améliorant son contenu dans le cadre du <br>_**Le**arning **a**nd **D**evelopment **A**ward_ du **CSBQ**:
+]
+
+.pull-left[
+.right[
+
+ **2022** - **2021** - **2020**
+
+Ella Martin
+
+Dominique Caron
+
+Marc-Olivier Beausoleil
+
+Kevin Cazelles
+
+Claire-Cécile Juhasz
+
+Pedro Henrique P. Braga
+
+Marie-Hélène Brice
+
+]
+]
+
+.pull-right[
+.left[
+
+**2019** - **2018** - **2017**
+
+Claire-Cécile Juhasz
+
+Marc-Olivier Beausoleil
+
+Marie-Hélène Brice
+
+Katherine Hébert
+
+<br>
+
+**2016** - **2015** - **2014**
+
+Sylvain Christin
+
+Cédric Frenette Dussault
+
+Dalal Hanna
+
+Marc-Olivier Beausoleil
+
+Vincent Fugère
+
+]
+]
+
+</p>
 
 ---
+
 # Objectifs d'apprentissage
 
 <br>
@@ -388,18 +452,6 @@ $$
 .comment[Notez que R respecte l'ordre des opérations]
 
 ---
-# Astuce sur la ligne de commande R
-
-
-Utilisez les touches fléchées $\uparrow$ et $\downarrow$ pour copier et reproduire les commandes précédentes.
-
-
-.center[
-![:scale 30%](images/keyboard_arrows.png)
-]
-
-
----
 # Défi 4 ![:cube]()
 
 Quel est l'aire de ce cercle dont le rayon est de $5\ cm$?
@@ -423,11 +475,28 @@ Quel est l'aire de ce cercle dont le rayon est de $5\ cm$?
 3.1416 * 5^2
 ```
 
-.comment[**Astuce**: Notez que `R` a des constantes intégrées, telle que &pi;, vous pouvez donc écrire:]
+.comment[**Astuce**: Notez que `R` a des constantes intégrées, telle que &pi;. Vous pouvez les trouver en écrivant `?` et `Constants` (comme dans `?Constants`) et l'exécuter! Quelle est la constante pour &pi;?]
 
 ```{r}
 pi * 5^2
 ```
+
+<br>
+<br>
+
+Vous venez d'exécuter une commande débutant par `?`. _Quel est le résultat?_
+
+---
+# Astuce sur la ligne de commande R
+
+
+Utilisez les touches fléchées $\uparrow$ et $\downarrow$ pour copier et reproduire les commandes précédentes.
+
+
+.center[
+![:scale 30%](images/keyboard_arrows.png)
+]
+
 
 ---
 class: inverse, center, middle
@@ -435,8 +504,6 @@ class: inverse, center, middle
 # 3. Manipuler les objets dans R 
 
 <hr>
-
-## Objet
 
 ---
 # Objet
@@ -599,7 +666,7 @@ class: inverse, center, middle
 - Toutes les valeurs d'un vecteur doivent avoir le **même mode** (ou classe).
       * `numeric`: seulement des nombres (e.g. `c(2, 3, 5, 3.1416)`)
       * `logical`: entrées True/False (e.g `c(TRUE, FALSE, TRUE)`)
-      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("QCBS", "J'adore cet atelier")`)
+      * `character`: Texte, ou un mélange de texte et d'autres modes (e.g. `c("CSBQ", "J'adore cet atelier")`)
 
 ---
 # Vecteur
@@ -657,6 +724,15 @@ bool_vecteur
 ```{r}
 impair <- c(1, 3, 5, 7, 9)
 ```
+
+ou 
+
+```{r}
+impair <- seq(from = 1, to = 9, by = 2)
+
+impair
+```
+
 
 ---
 # Vecteur
@@ -1015,7 +1091,10 @@ Une fonction nécessite des valeurs d'entrée appelées **arguments** (ou param�
 Pour utiliser (appeler) une fonction, la commande doit être structurée correctement, en suivant les **règles de grammaire** du langage `R`, *i.e.* la syntaxe.
 
 ```{r, eval = FALSE}
-nom_fonction(argument1, argument2)
+nom_fonction(argument1 = valeur, 
+             argument2 = valeur, 
+             ..., 
+             argument10 = valeur)
 ```
 
 ---
@@ -1099,7 +1178,7 @@ plot(y = b, x = a, type = "l")
 
 `plot` est une fonction qui dessine un graphique de y en fonction de x. Il nécessite deux noms d'argument `x` et `y`. Quelles sont les différences entre les lignes suivantes?
 
-```{r, echo = F}
+```{r, echo = F, fig.height=6,fig.width=8.5}
 a <- 1:100
 b <- a^2
 par(mfrow = c(2, 2),mar=c(4, 4, 1, 1))
@@ -1168,11 +1247,9 @@ class: inverse, center, middle
 
 # 5. Installer et utiliser les packages R 
 
-## Package
-
 ---
 
-# Package
+# Packages
 
 Les *packages* sont un **regroupement de fonctions** et/ou **de données** partageant un thème **similaire**, par ex. statistiques, analyse spatiale, graphique, etc.
 
@@ -1187,8 +1264,9 @@ Beaucoup de packages disponibles via le *Comprehensive R Archive Network* ou [CR
 ---
 # Combien de packages
 
-![](images/rdrr_10-03-20.png)
-*[rdrr.io](https://rdrr.io/) consulté le 20 mars 2020*
+![](images/rdrr_2022-11-02.png)
+
+*[rdrr.io](https://rdrr.io/) consulté le 2 novembre 2022*
 
 ---
 # Package
@@ -1208,19 +1286,40 @@ library(nom du package)
 ---
 # Package: exemple
 
+Installons un package populaire de visualisation des données nommé `ggplot2`:
+
 ```{r, eval = FALSE}
 install.packages("ggplot2")
 ```
 
 ```{r, eval = FALSE}
-Installing package into '/home/labo/R/x86_64-redhat-linux-gnu-library/3.3'
-(as 'lib' is unspecified)
+Installing package into ‘C:/Users/phper/OneDrive/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+trying URL 'http://cran.r-project.org/bin/windows/contrib/4.1/ggplot2_3.3.5.zip'
+Content type 'application/zip' length 4129856 bytes (3.9 MB)
+downloaded 3.9 MB
+
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+C:\Users\phper\AppData\Local\Temp\RtmpMNhqZi\downloaded_packages
 ```
+
+```{r, eval = FALSE, echo = FALSE}
+library(ggplot2)
+```
+
+--
+
+Nous allons utiliser la fonction `qplot()` de ce package:
 
 ```{r, eval = FALSE}
 qplot(1:10, 1:10)
 ```
 
+--
+
+Avez-vous obtenu ce message d'erreur?
 ```{r, eval = FALSE}
 ## Error: could not find function "qplot"
 ```
@@ -1233,7 +1332,7 @@ library(ggplot2)
 qplot(1:10, 1:10)
 ```
 
-.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3) !!!]
+.comment[Pour plus de détails sur le package `ggplot2`, voir l'atelier #3 - [**Introduction à ggplot2**](https://wiki.qcbs.ca/r_atelier3)!]
 ---
 class: inverse, center, middle
 
@@ -1287,7 +1386,7 @@ Disons que nous voulons créer une **séquence** de nombres impairs compris entr
 ---
 # Aide pour les fonctions
 
-OK! Alors utilisons la fonction `seq` !
+OK! Alors utilisons la fonction `seq()` !
 
 Mais attendez ... comment ça marche? De quels arguments la fonction a-t-elle besoin?
 
@@ -1308,7 +1407,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ---
 # Description
 
-- `nom_fonction {nom_packa}`
+- `nom_fonction {nom_package}`
 - `Description`: une courte description de ce que peut faire la fonction.
 
 .center[
@@ -1335,7 +1434,7 @@ Pour trouver des informations sur une fonction en particulier, utilisez `?`
 ---
 # Détails
 
-- Une description détaillée du fonctionnement des fonction et de leurs caractéristiques
+- Une description détaillée du fonctionnement des fonctions et de leurs caractéristiques
 
 ![](images/seq_details.png)
 
@@ -1416,13 +1515,13 @@ Recherchez les fonctions appropriées pour effectuer les opérations suivantes:
 # Défi 14: Solutions ![:cube]()
 
 - Racine carrée
-  - `sqrt`
+  - `sqrt()`
 - Moyenne de plusieurs nombres
-  - `mean`
+  - `mean()`
 - Combiner deux data frames par colonnes
-  - `cbind`
+  - `cbind()`
 - Lister des objets disponibles dans votre espace de travail
-  - `ls`
+  - `ls()`
 
 ---
 class: inverse, center, middle
@@ -1458,7 +1557,7 @@ Ouvrez-les directement depuis **Rstudio**: Help $\rightarrow$ Cheatsheets
 
 
 ---
-# Quelques sites inteRnet utiles
+# Quelques sites internet utiles
 
 .pull-left[
 [![:scale 50%](http://r4ds.had.co.nz/cover.png)](http://r4ds.had.co.nz/index.html)
