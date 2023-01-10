@@ -4,8 +4,9 @@
     <title>Atelier 1: Introduction à R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Centre de la Science de la Biodiversité du Québec" />
+    <script src="assets/header-attrs-2.19/header-attrs.js"></script>
     <link href="assets/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <script src="assets/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+    <script src="assets/htmlwidgets-1.6.1/htmlwidgets.js"></script>
     <script src="assets/viz-1.8.2/viz.js"></script>
     <link href="assets/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
     <script src="assets/grViz-binding-1.0.9/grViz.js"></script>
@@ -170,8 +171,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-8f61d988b1e97e6d4a54" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8f61d988b1e97e6d4a54">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-3bcc854a4f837de565e8" style="width:360px;height:360px;"></div>
+<script type="application/json" data-for="htmlwidget-3bcc854a4f837de565e8">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      Sigmaplot; Excel; SAS\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> Sigmaplot; \"Data \n (Excel, SQL)\" -> Excel; \"Data \n (Excel, SQL)\" -> SAS; Graphs -> Word; Tables -> Word; Statistics -> Word;  Graphs -> Powerpoint; Tables -> Powerpoint; Statistics -> Powerpoint\n\n      edge [arrowhead = normal]\n      Sigmaplot -> Graphs; Excel -> Tables; SAS -> Statistics; Word -> Report; Powerpoint -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 .pull-right[
@@ -180,8 +181,8 @@ R est un langage de programmation open source conçu pour l'analyse statistique,
 
 &lt;br&gt;
 
-<div id="htmlwidget-bda448fb58e08e47e625" style="width:360px;height:360px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bda448fb58e08e47e625">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-a36cc52ab72470ed9cdb" style="width:360px;height:360px;"></div>
+<script type="application/json" data-for="htmlwidget-a36cc52ab72470ed9cdb">{"x":{"diagram":"\n      digraph {\n\n      node [shape = oval, fillcolor = PaleTurquoise]\n      \"Data \n (Excel, SQL)\"; Graphs; Tables; Statistics\n\n      node [shape = box]\n      R\n\n      ##add arrows\n      edge [arrowhead = none]\n      \"Data \n (Excel, SQL)\" -> R;\n\n      edge [arrowhead = normal]\n      R -> Graphs; R -> Tables; R -> Statistics; Graphs -> Report; Tables -> Report; Statistics -> Report; R -> Report\n\n      }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
