@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 7 Installer et utiliser les librairies R | Atelier 1: Introduction à R</title>
   <meta name="description" content="Introduction à R" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 7 Installer et utiliser les librairies R | Atelier 1: Introduction à R" />
   <meta property="og:type" content="book" />
@@ -48,25 +48,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {  background-color: #f8f8f8; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,8 +136,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="part"><span><b>Série d’ateliers R du CSBQ</b></span></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-de-conduite"><i class="fa fa-check"></i><b>0.1</b> Code de conduite</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-de-conduite"><i class="fa fa-check"></i><b>0.1</b> Code de conduite</a>
+<ul>
 <li class="chapter" data-level="0.1.1" data-path="index.html"><a href="index.html#comportement-attendu"><i class="fa fa-check"></i><b>0.1.1</b> Comportement attendu</a></li>
 <li class="chapter" data-level="0.1.2" data-path="index.html"><a href="index.html#comportements-inacceptables"><i class="fa fa-check"></i><b>0.1.2</b> Comportements inacceptables</a></li>
 </ul></li>
@@ -148,29 +149,36 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Analyses multivariées en <code>R</code></b></span></li>
 <li class="chapter" data-level="1" data-path="objectifs-dapprentissage.html"><a href="objectifs-dapprentissage.html"><i class="fa fa-check"></i><b>1</b> Objectifs d’apprentissage</a></li>
 <li class="chapter" data-level="2" data-path="préparez-vous-pour-cet-atelier.html"><a href="préparez-vous-pour-cet-atelier.html"><i class="fa fa-check"></i><b>2</b> Préparez-vous pour cet atelier</a></li>
-<li class="chapter" data-level="3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html"><i class="fa fa-check"></i><b>3</b> Comprendre ce que sont R et RStudio</a><ul>
+<li class="chapter" data-level="3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html"><i class="fa fa-check"></i><b>3</b> Comprendre ce que sont R et RStudio</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#quest-ce-que-r"><i class="fa fa-check"></i><b>3.1</b> Qu’est-ce que R?</a></li>
 <li class="chapter" data-level="3.2" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#pourquoi-utiliser-r"><i class="fa fa-check"></i><b>3.2</b> Pourquoi utiliser R?</a></li>
-<li class="chapter" data-level="3.3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#utiliser-rstudio"><i class="fa fa-check"></i><b>3.3</b> Utiliser RStudio</a><ul>
+<li class="chapter" data-level="3.3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#utiliser-rstudio"><i class="fa fa-check"></i><b>3.3</b> Utiliser RStudio</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#défi-1"><i class="fa fa-check"></i><b>3.3.1</b> DÉFI 1</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#erreur-et-avertissement"><i class="fa fa-check"></i><b>3.4</b> Erreur et avertissement</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html"><i class="fa fa-check"></i><b>4</b> Utiliser R comme une calculatrice</a><ul>
+<li class="chapter" data-level="4" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html"><i class="fa fa-check"></i><b>4</b> Utiliser R comme une calculatrice</a>
+<ul>
 <li class="chapter" data-level="4.0.1" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html#défi-2"><i class="fa fa-check"></i><b>4.0.1</b> DÉFI 2</a></li>
 <li class="chapter" data-level="4.0.2" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html#défi-3"><i class="fa fa-check"></i><b>4.0.2</b> DÉFI 3</a></li>
 <li class="chapter" data-level="4.0.3" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html#défi-4"><i class="fa fa-check"></i><b>4.0.3</b> DÉFI 4</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html"><i class="fa fa-check"></i><b>5</b> Manipuler les objets dans R</a><ul>
-<li class="chapter" data-level="5.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#objet"><i class="fa fa-check"></i><b>5.1</b> Objet</a><ul>
+<li class="chapter" data-level="5" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html"><i class="fa fa-check"></i><b>5</b> Manipuler les objets dans R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#objet"><i class="fa fa-check"></i><b>5.1</b> Objet</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#bonnes-pratiques-du-code-r"><i class="fa fa-check"></i><b>5.1.1</b> Bonnes pratiques du code R</a></li>
 <li class="chapter" data-level="5.1.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-5"><i class="fa fa-check"></i><b>5.1.2</b> DÉFI 5</a></li>
 <li class="chapter" data-level="5.1.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-6"><i class="fa fa-check"></i><b>5.1.3</b> DÉFI 6</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#types-de-structures-de-données-en-r"><i class="fa fa-check"></i><b>5.2</b> Types de structures de données en R</a><ul>
+<li class="chapter" data-level="5.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#types-de-structures-de-données-en-r"><i class="fa fa-check"></i><b>5.2</b> Types de structures de données en R</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-7"><i class="fa fa-check"></i><b>5.2.1</b> DÉFI 7</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-des-objets-dans-r"><i class="fa fa-check"></i><b>5.3</b> Indexer des objets dans R</a><ul>
+<li class="chapter" data-level="5.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-des-objets-dans-r"><i class="fa fa-check"></i><b>5.3</b> Indexer des objets dans R</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-un-vecteur"><i class="fa fa-check"></i><b>5.3.1</b> Indexer un vecteur</a></li>
 <li class="chapter" data-level="5.3.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-8"><i class="fa fa-check"></i><b>5.3.2</b> DÉFI 8</a></li>
 <li class="chapter" data-level="5.3.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-9"><i class="fa fa-check"></i><b>5.3.3</b> DÉFI 9</a></li>
@@ -179,28 +187,35 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.6" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-10"><i class="fa fa-check"></i><b>5.3.6</b> DÉFI 10</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="les-fonctions.html"><a href="les-fonctions.html"><i class="fa fa-check"></i><b>6</b> Les fonctions</a><ul>
-<li class="chapter" data-level="6.1" data-path="les-fonctions.html"><a href="les-fonctions.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a><ul>
+<li class="chapter" data-level="6" data-path="les-fonctions.html"><a href="les-fonctions.html"><i class="fa fa-check"></i><b>6</b> Les fonctions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="les-fonctions.html"><a href="les-fonctions.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="les-fonctions.html"><a href="les-fonctions.html#défi-11"><i class="fa fa-check"></i><b>6.1.1</b> DÉFI 11</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="les-fonctions.html"><a href="les-fonctions.html#arguments"><i class="fa fa-check"></i><b>6.2</b> Arguments</a><ul>
+<li class="chapter" data-level="6.2" data-path="les-fonctions.html"><a href="les-fonctions.html#arguments"><i class="fa fa-check"></i><b>6.2</b> Arguments</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="les-fonctions.html"><a href="les-fonctions.html#défi-12"><i class="fa fa-check"></i><b>6.2.1</b> DÉFI 12</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html"><i class="fa fa-check"></i><b>7</b> Installer et utiliser les librairies R</a><ul>
+<li class="chapter" data-level="7" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html"><i class="fa fa-check"></i><b>7</b> Installer et utiliser les librairies R</a>
+<ul>
 <li class="chapter" data-level="7.0.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#packages"><i class="fa fa-check"></i><b>7.0.1</b> Packages</a></li>
-<li class="chapter" data-level="7.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide"><i class="fa fa-check"></i><b>7.1</b> Obtenir de l’aide</a><ul>
+<li class="chapter" data-level="7.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide"><i class="fa fa-check"></i><b>7.1</b> Obtenir de l’aide</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#recherche-de-fonctions"><i class="fa fa-check"></i><b>7.1.1</b> Recherche de fonctions</a></li>
 <li class="chapter" data-level="7.1.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#aide-pour-les-fonctions"><i class="fa fa-check"></i><b>7.1.2</b> Aide pour les fonctions</a></li>
 <li class="chapter" data-level="7.1.3" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#défi-13"><i class="fa fa-check"></i><b>7.1.3</b> Défi 13</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide-sur-le-web"><i class="fa fa-check"></i><b>7.2</b> Obtenir de l’aide sur le web</a><ul>
+<li class="chapter" data-level="7.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide-sur-le-web"><i class="fa fa-check"></i><b>7.2</b> Obtenir de l’aide sur le web</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#défi-14"><i class="fa fa-check"></i><b>7.2.1</b> Défi 14</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Considérations finales</b></span></li>
 <li class="chapter" data-level="8" data-path="résumé.html"><a href="résumé.html"><i class="fa fa-check"></i><b>8</b> Résumé</a></li>
-<li class="chapter" data-level="9" data-path="resources-additionnels.html"><a href="resources-additionnels.html"><i class="fa fa-check"></i><b>9</b> Resources additionnels</a><ul>
+<li class="chapter" data-level="9" data-path="resources-additionnels.html"><a href="resources-additionnels.html"><i class="fa fa-check"></i><b>9</b> Resources additionnels</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="resources-additionnels.html"><a href="resources-additionnels.html#aides-mémoire-cheat-sheets"><i class="fa fa-check"></i><b>9.1</b> Aides mémoire (<em>cheat sheets</em>)</a></li>
 <li class="chapter" data-level="9.2" data-path="resources-additionnels.html"><a href="resources-additionnels.html#quelques-livres"><i class="fa fa-check"></i><b>9.2</b> Quelques livres</a></li>
 <li class="chapter" data-level="9.3" data-path="resources-additionnels.html"><a href="resources-additionnels.html#quelques-sites-internet"><i class="fa fa-check"></i><b>9.3</b> Quelques sites internet</a></li>
@@ -241,9 +256,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
 </div>
 --!>
-<div id="installer-et-utiliser-les-librairies-r" class="section level1 hasAnchor">
+<div id="installer-et-utiliser-les-librairies-r" class="section level1 hasAnchor" number="7">
 <h1><span class="header-section-number">Chapitre 7</span> Installer et utiliser les librairies R<a href="installer-et-utiliser-les-librairies-r.html#installer-et-utiliser-les-librairies-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="packages" class="section level3 hasAnchor">
+<div id="packages" class="section level3 hasAnchor" number="7.0.1">
 <h3><span class="header-section-number">7.0.1</span> Packages<a href="installer-et-utiliser-les-librairies-r.html#packages" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <hr />
 <p>Les <em>packages</em> (<em>bibliothèques</em> pour être rigoureux) sont des regroupements de
@@ -256,10 +271,9 @@ Archive Network</em> (CRAN) <a href="http://cran.r-project.org/web/packages/" cl
 <p>Actuellement, plus de 18000 packages sont disponibles librement.</p>
 <p>Pour installer des packages dans R, il suffit d’utiliser la fonction
 <code>install.packages()</code> :</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="installer-et-utiliser-les-librairies-r.html#cb144-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="installer-et-utiliser-les-librairies-r.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
 <pre><code>## Installing package into &#39;/home/runner/work/_temp/Library&#39;
 ## (as &#39;lib&#39; is unspecified)</code></pre>
-<pre><code>## also installing the dependencies &#39;colorspace&#39;, &#39;farver&#39;, &#39;labeling&#39;, &#39;munsell&#39;, &#39;RColorBrewer&#39;, &#39;viridisLite&#39;, &#39;gtable&#39;, &#39;isoband&#39;, &#39;scales&#39;</code></pre>
 <p>Il est nécessaire d’installer un package une seule fois, même si des
 mises à jours régulières sont recommandées. Cependant, pour utiliser une
 fonction se trouvant au sein d’un package, il ne suffit pas de
@@ -267,27 +281,28 @@ simplement installer le package. Il faut également utiliser la fonction
 <code>library()</code> à chaque début de session R pour “charger” le package.
 Voici un exemple qui utilise la fonction <code>qplot()</code> du package
 <strong>ggplot2</strong> que l’on vient tout juste d’installer.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="installer-et-utiliser-les-librairies-r.html#cb147-1"></a><span class="kw">qplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="installer-et-utiliser-les-librairies-r.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
 <p>Le package a été installé correctement, mais il n’a pas été chargé. Par
 conséquent, l’exécution de ce code cause l’erreur suivante :</p>
 <p><code>Error in qplot(1:10, 1:10) : could not find function "qplot"</code></p>
 <p>Pour utiliser la fonction <code>qplot()</code>, il faut charger le package
 <code>ggplot2</code> avant d’appeler cette fonction.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="installer-et-utiliser-les-librairies-r.html#cb148-1"></a><span class="kw">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb148-2"><a href="installer-et-utiliser-les-librairies-r.html#cb148-2"></a><span class="kw">qplot</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="installer-et-utiliser-les-librairies-r.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb147-2"><a href="installer-et-utiliser-les-librairies-r.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
 <p>La fonction peut maintenant être trouvée par R et l’exécution de cette
 fonction retourne le graphique suivant :</p>
+<pre><code>## Warning: `qplot()` was deprecated in ggplot2 3.4.0.</code></pre>
 <p><img src="book-fr_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <p>Il est de bon usage de décharger les packages une fois que l’on a fini
 de les utiliser car ils pourraient entrer en conflit avec d’autres
 packages. Le déchargement est effectué avec la fonction <code>detach()</code> et en
 spécifiant qu’il s’agit d’un package:</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="installer-et-utiliser-les-librairies-r.html#cb149-1"></a><span class="kw">detach</span>(package<span class="op">:</span>ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="installer-et-utiliser-les-librairies-r.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(package<span class="sc">:</span>ggplot2)</span></code></pre></div>
 </div>
-<div id="obtenir-de-laide" class="section level2 hasAnchor">
+<div id="obtenir-de-laide" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Obtenir de l’aide<a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <hr />
-<div id="recherche-de-fonctions" class="section level3 hasAnchor">
+<div id="recherche-de-fonctions" class="section level3 hasAnchor" number="7.1.1">
 <h3><span class="header-section-number">7.1.1</span> Recherche de fonctions<a href="installer-et-utiliser-les-librairies-r.html#recherche-de-fonctions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Nous avons vu jusqu’à maintenant que R est un outil très puissant et
 comporte de nombreuses fonctions. Parmi ces fonctions, il y en a
@@ -301,7 +316,7 @@ effectuer une recherche, tapez <code>??</code> suivi d’un terme relié à votr
 recherche. Par exemple, supposons que l’on souhaite créer une séquence
 de nombres pairs entre 0 et 10. On effectue une recherche avec le terme
 <strong>sequence</strong> :</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="installer-et-utiliser-les-librairies-r.html#cb150-1"></a><span class="st">`</span><span class="dt">?</span><span class="st">`</span>(<span class="st">`</span><span class="dt">?</span><span class="st">`</span>(sequence))</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="installer-et-utiliser-les-librairies-r.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(<span class="st">`</span><span class="at">?</span><span class="st">`</span>(sequence))</span></code></pre></div>
 <p>Cette commande ouvre la fenêtre suivante :</p>
 <p><img src="images/searchseq1.png" width="400" /><br />
 </p>
@@ -324,7 +339,7 @@ chargent automatiquement lorsqu’on lance R. Elles sont donc toujours
 disponibles.</p>
 <hr />
 </div>
-<div id="aide-pour-les-fonctions" class="section level3 hasAnchor">
+<div id="aide-pour-les-fonctions" class="section level3 hasAnchor" number="7.1.2">
 <h3><span class="header-section-number">7.1.2</span> Aide pour les fonctions<a href="installer-et-utiliser-les-librairies-r.html#aide-pour-les-fonctions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Utilisons la fonction <code>seq()</code> afin de générer notre séquence de nombres
 pairs. Pour l’instant, nous ne savons rien de cette fonction. Comment
@@ -333,13 +348,14 @@ fonctionne-t-elle ? Comment l’utiliser ?</p>
 cette fonction. Pour ce faire, il faut utiliser l’opérateur <code>?</code> ou la
 fonction <code>help()</code> de la manière suivante : <code>?nom_de_la_fonction</code></p>
 <p>Voici un exemple pour la fonction <code>seq()</code> :</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="installer-et-utiliser-les-librairies-r.html#cb151-1"></a><span class="st">`</span><span class="dt">?</span><span class="st">`</span>(seq)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="installer-et-utiliser-les-librairies-r.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(seq)</span></code></pre></div>
 <p>Cette commande ouvre la page suivante :</p>
 <p><img src="images/searchseq.png" class="align-center" width="600" /><br />
 </p>
 <dl>
 <dt>Une page d’aide contient généralement les sections et éléments suivants</dt>
-<dd>(<strong>Note</strong> : parfois, une même page d’aide est utilisée pour plus
+<dd>
+(<strong>Note</strong> : parfois, une même page d’aide est utilisée pour plus
 d’une fonction.)
 </dd>
 </dl>
@@ -376,7 +392,7 @@ besoins.</li>
 </ul>
 <hr />
 </div>
-<div id="défi-13" class="section level3 hasAnchor">
+<div id="défi-13" class="section level3 hasAnchor" number="7.1.3">
 <h3><span class="header-section-number">7.1.3</span> Défi 13<a href="installer-et-utiliser-les-librairies-r.html#défi-13" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction <code>seq()</code>.</p></li>
@@ -388,22 +404,22 @@ besoins.</li>
 <ul>
 <li>Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction <code>seq()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="installer-et-utiliser-les-librairies-r.html#cb152-1"></a><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">0</span>, <span class="dt">to =</span> <span class="dv">10</span>, <span class="dt">by =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="installer-et-utiliser-les-librairies-r.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1]  0  2  4  6  8 10</code></pre>
 <p>Nous aurions également pu écrire :</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="installer-et-utiliser-les-librairies-r.html#cb154-1"></a><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="installer-et-utiliser-les-librairies-r.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1]  0  2  4  6  8 10</code></pre>
 <ul>
 <li>Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l’ordre inverse.</li>
 </ul>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="installer-et-utiliser-les-librairies-r.html#cb156-1"></a>nombres &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">22</span>, <span class="dv">6</span>, <span class="dv">26</span>)</span>
-<span id="cb156-2"><a href="installer-et-utiliser-les-librairies-r.html#cb156-2"></a><span class="kw">sort</span>(nombres, <span class="dt">decreasing =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="installer-et-utiliser-les-librairies-r.html#cb156-1" aria-hidden="true" tabindex="-1"></a>nombres <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">22</span>, <span class="dv">6</span>, <span class="dv">26</span>)</span>
+<span id="cb156-2"><a href="installer-et-utiliser-les-librairies-r.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(nombres, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 26 22  6  4  2</code></pre>
 <hr />
 </div>
 </div>
 </div>
-<div id="obtenir-de-laide-sur-le-web" class="section level2 hasAnchor">
+<div id="obtenir-de-laide-sur-le-web" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> Obtenir de l’aide sur le web<a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide-sur-le-web" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Généralement, la meilleure source d’information sur R provient d’un
 moteur de recherche (Google, Bing, Yahoo, etc.).</p>
@@ -420,7 +436,7 @@ concernant R sont souvent posées comme
 <li>N’hésitez pas à faire des recherches avec des mots-clés différents!</li>
 </ul>
 <hr />
-<div id="défi-14" class="section level3 hasAnchor">
+<div id="défi-14" class="section level3 hasAnchor" number="7.2.1">
 <h3><span class="header-section-number">7.2.1</span> Défi 14<a href="installer-et-utiliser-les-librairies-r.html#défi-14" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Trouvez la fonction appropriée pour effectuer les opérations suivantes :</p>
 <ul>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 6 Les fonctions | Atelier 1: Introduction à R</title>
   <meta name="description" content="Introduction à R" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 6 Les fonctions | Atelier 1: Introduction à R" />
   <meta property="og:type" content="book" />
@@ -48,25 +48,24 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -86,7 +85,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {  background-color: #f8f8f8; }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ef2929; } /* Alert */
 code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
@@ -137,8 +136,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="part"><span><b>Série d’ateliers R du CSBQ</b></span></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a><ul>
-<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-de-conduite"><i class="fa fa-check"></i><b>0.1</b> Code de conduite</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#code-de-conduite"><i class="fa fa-check"></i><b>0.1</b> Code de conduite</a>
+<ul>
 <li class="chapter" data-level="0.1.1" data-path="index.html"><a href="index.html#comportement-attendu"><i class="fa fa-check"></i><b>0.1.1</b> Comportement attendu</a></li>
 <li class="chapter" data-level="0.1.2" data-path="index.html"><a href="index.html#comportements-inacceptables"><i class="fa fa-check"></i><b>0.1.2</b> Comportements inacceptables</a></li>
 </ul></li>
@@ -148,29 +149,36 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>Analyses multivariées en <code>R</code></b></span></li>
 <li class="chapter" data-level="1" data-path="objectifs-dapprentissage.html"><a href="objectifs-dapprentissage.html"><i class="fa fa-check"></i><b>1</b> Objectifs d’apprentissage</a></li>
 <li class="chapter" data-level="2" data-path="préparez-vous-pour-cet-atelier.html"><a href="préparez-vous-pour-cet-atelier.html"><i class="fa fa-check"></i><b>2</b> Préparez-vous pour cet atelier</a></li>
-<li class="chapter" data-level="3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html"><i class="fa fa-check"></i><b>3</b> Comprendre ce que sont R et RStudio</a><ul>
+<li class="chapter" data-level="3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html"><i class="fa fa-check"></i><b>3</b> Comprendre ce que sont R et RStudio</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#quest-ce-que-r"><i class="fa fa-check"></i><b>3.1</b> Qu’est-ce que R?</a></li>
 <li class="chapter" data-level="3.2" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#pourquoi-utiliser-r"><i class="fa fa-check"></i><b>3.2</b> Pourquoi utiliser R?</a></li>
-<li class="chapter" data-level="3.3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#utiliser-rstudio"><i class="fa fa-check"></i><b>3.3</b> Utiliser RStudio</a><ul>
+<li class="chapter" data-level="3.3" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#utiliser-rstudio"><i class="fa fa-check"></i><b>3.3</b> Utiliser RStudio</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#défi-1"><i class="fa fa-check"></i><b>3.3.1</b> DÉFI 1</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="comprendre-ce-que-sont-r-et-rstudio.html"><a href="comprendre-ce-que-sont-r-et-rstudio.html#erreur-et-avertissement"><i class="fa fa-check"></i><b>3.4</b> Erreur et avertissement</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html"><i class="fa fa-check"></i><b>4</b> Utiliser R comme une calculatrice</a><ul>
+<li class="chapter" data-level="4" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html"><i class="fa fa-check"></i><b>4</b> Utiliser R comme une calculatrice</a>
+<ul>
 <li class="chapter" data-level="4.0.1" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html#défi-2"><i class="fa fa-check"></i><b>4.0.1</b> DÉFI 2</a></li>
 <li class="chapter" data-level="4.0.2" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html#défi-3"><i class="fa fa-check"></i><b>4.0.2</b> DÉFI 3</a></li>
 <li class="chapter" data-level="4.0.3" data-path="utiliser-r-comme-une-calculatrice.html"><a href="utiliser-r-comme-une-calculatrice.html#défi-4"><i class="fa fa-check"></i><b>4.0.3</b> DÉFI 4</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html"><i class="fa fa-check"></i><b>5</b> Manipuler les objets dans R</a><ul>
-<li class="chapter" data-level="5.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#objet"><i class="fa fa-check"></i><b>5.1</b> Objet</a><ul>
+<li class="chapter" data-level="5" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html"><i class="fa fa-check"></i><b>5</b> Manipuler les objets dans R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#objet"><i class="fa fa-check"></i><b>5.1</b> Objet</a>
+<ul>
 <li class="chapter" data-level="5.1.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#bonnes-pratiques-du-code-r"><i class="fa fa-check"></i><b>5.1.1</b> Bonnes pratiques du code R</a></li>
 <li class="chapter" data-level="5.1.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-5"><i class="fa fa-check"></i><b>5.1.2</b> DÉFI 5</a></li>
 <li class="chapter" data-level="5.1.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-6"><i class="fa fa-check"></i><b>5.1.3</b> DÉFI 6</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#types-de-structures-de-données-en-r"><i class="fa fa-check"></i><b>5.2</b> Types de structures de données en R</a><ul>
+<li class="chapter" data-level="5.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#types-de-structures-de-données-en-r"><i class="fa fa-check"></i><b>5.2</b> Types de structures de données en R</a>
+<ul>
 <li class="chapter" data-level="5.2.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-7"><i class="fa fa-check"></i><b>5.2.1</b> DÉFI 7</a></li>
 </ul></li>
-<li class="chapter" data-level="5.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-des-objets-dans-r"><i class="fa fa-check"></i><b>5.3</b> Indexer des objets dans R</a><ul>
+<li class="chapter" data-level="5.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-des-objets-dans-r"><i class="fa fa-check"></i><b>5.3</b> Indexer des objets dans R</a>
+<ul>
 <li class="chapter" data-level="5.3.1" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#indexer-un-vecteur"><i class="fa fa-check"></i><b>5.3.1</b> Indexer un vecteur</a></li>
 <li class="chapter" data-level="5.3.2" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-8"><i class="fa fa-check"></i><b>5.3.2</b> DÉFI 8</a></li>
 <li class="chapter" data-level="5.3.3" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-9"><i class="fa fa-check"></i><b>5.3.3</b> DÉFI 9</a></li>
@@ -179,28 +187,35 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.3.6" data-path="manipuler-les-objets-dans-r.html"><a href="manipuler-les-objets-dans-r.html#défi-10"><i class="fa fa-check"></i><b>5.3.6</b> DÉFI 10</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="les-fonctions.html"><a href="les-fonctions.html"><i class="fa fa-check"></i><b>6</b> Les fonctions</a><ul>
-<li class="chapter" data-level="6.1" data-path="les-fonctions.html"><a href="les-fonctions.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a><ul>
+<li class="chapter" data-level="6" data-path="les-fonctions.html"><a href="les-fonctions.html"><i class="fa fa-check"></i><b>6</b> Les fonctions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="les-fonctions.html"><a href="les-fonctions.html#introduction"><i class="fa fa-check"></i><b>6.1</b> Introduction</a>
+<ul>
 <li class="chapter" data-level="6.1.1" data-path="les-fonctions.html"><a href="les-fonctions.html#défi-11"><i class="fa fa-check"></i><b>6.1.1</b> DÉFI 11</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="les-fonctions.html"><a href="les-fonctions.html#arguments"><i class="fa fa-check"></i><b>6.2</b> Arguments</a><ul>
+<li class="chapter" data-level="6.2" data-path="les-fonctions.html"><a href="les-fonctions.html#arguments"><i class="fa fa-check"></i><b>6.2</b> Arguments</a>
+<ul>
 <li class="chapter" data-level="6.2.1" data-path="les-fonctions.html"><a href="les-fonctions.html#défi-12"><i class="fa fa-check"></i><b>6.2.1</b> DÉFI 12</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html"><i class="fa fa-check"></i><b>7</b> Installer et utiliser les librairies R</a><ul>
+<li class="chapter" data-level="7" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html"><i class="fa fa-check"></i><b>7</b> Installer et utiliser les librairies R</a>
+<ul>
 <li class="chapter" data-level="7.0.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#packages"><i class="fa fa-check"></i><b>7.0.1</b> Packages</a></li>
-<li class="chapter" data-level="7.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide"><i class="fa fa-check"></i><b>7.1</b> Obtenir de l’aide</a><ul>
+<li class="chapter" data-level="7.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide"><i class="fa fa-check"></i><b>7.1</b> Obtenir de l’aide</a>
+<ul>
 <li class="chapter" data-level="7.1.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#recherche-de-fonctions"><i class="fa fa-check"></i><b>7.1.1</b> Recherche de fonctions</a></li>
 <li class="chapter" data-level="7.1.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#aide-pour-les-fonctions"><i class="fa fa-check"></i><b>7.1.2</b> Aide pour les fonctions</a></li>
 <li class="chapter" data-level="7.1.3" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#défi-13"><i class="fa fa-check"></i><b>7.1.3</b> Défi 13</a></li>
 </ul></li>
-<li class="chapter" data-level="7.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide-sur-le-web"><i class="fa fa-check"></i><b>7.2</b> Obtenir de l’aide sur le web</a><ul>
+<li class="chapter" data-level="7.2" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide-sur-le-web"><i class="fa fa-check"></i><b>7.2</b> Obtenir de l’aide sur le web</a>
+<ul>
 <li class="chapter" data-level="7.2.1" data-path="installer-et-utiliser-les-librairies-r.html"><a href="installer-et-utiliser-les-librairies-r.html#défi-14"><i class="fa fa-check"></i><b>7.2.1</b> Défi 14</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Considérations finales</b></span></li>
 <li class="chapter" data-level="8" data-path="résumé.html"><a href="résumé.html"><i class="fa fa-check"></i><b>8</b> Résumé</a></li>
-<li class="chapter" data-level="9" data-path="resources-additionnels.html"><a href="resources-additionnels.html"><i class="fa fa-check"></i><b>9</b> Resources additionnels</a><ul>
+<li class="chapter" data-level="9" data-path="resources-additionnels.html"><a href="resources-additionnels.html"><i class="fa fa-check"></i><b>9</b> Resources additionnels</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="resources-additionnels.html"><a href="resources-additionnels.html#aides-mémoire-cheat-sheets"><i class="fa fa-check"></i><b>9.1</b> Aides mémoire (<em>cheat sheets</em>)</a></li>
 <li class="chapter" data-level="9.2" data-path="resources-additionnels.html"><a href="resources-additionnels.html#quelques-livres"><i class="fa fa-check"></i><b>9.2</b> Quelques livres</a></li>
 <li class="chapter" data-level="9.3" data-path="resources-additionnels.html"><a href="resources-additionnels.html#quelques-sites-internet"><i class="fa fa-check"></i><b>9.3</b> Quelques sites internet</a></li>
@@ -241,9 +256,9 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
   <img class= "hero-image" src="assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash_hero_image.jpg">
 </div>
 --!>
-<div id="les-fonctions" class="section level1 hasAnchor">
+<div id="les-fonctions" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Chapitre 6</span> Les fonctions<a href="les-fonctions.html#les-fonctions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="introduction" class="section level2 hasAnchor">
+<div id="introduction" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Introduction<a href="les-fonctions.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La plupart du temps, vous devrez utiliser des fonctions dans R pour
 effectuer les tâches voulues.</p>
@@ -266,20 +281,20 @@ des virgules à l’intérieur des parenthèses :</p>
 <p><code>nom_de_la_fonction(arg1, arg2, ...)</code></p>
 <p>Voyons l’exemple de la fonction <code>sum</code> qui permet de faire la somme de
 deux ou plusieurs nombres.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="les-fonctions.html#cb116-1"></a><span class="kw">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="les-fonctions.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code></pre></div>
 <p>Les arguments sont des <strong>valeurs</strong> utilisées comme instructions pour que
 la fonction puisse retourner un résultat. Les objets peuvent être
 utilisés comme arguments :</p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="les-fonctions.html#cb117-1"></a>a &lt;-<span class="st"> </span><span class="dv">3</span></span>
-<span id="cb117-2"><a href="les-fonctions.html#cb117-2"></a>b &lt;-<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb117-3"><a href="les-fonctions.html#cb117-3"></a><span class="kw">sum</span>(a, b)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="les-fonctions.html#cb117-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb117-2"><a href="les-fonctions.html#cb117-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb117-3"><a href="les-fonctions.html#cb117-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(a, b)</span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p>La sortie, qui apparaît sur la dernière ligne, est la <strong>valeur de
 retour</strong> de la fonction. Dans ce cas-ci, c’est la somme de <code>a</code> et <code>b</code>,
 soit 8.<br />
 </p>
 <hr />
-<div id="défi-11" class="section level3 hasAnchor">
+<div id="défi-11" class="section level3 hasAnchor" number="6.1.1">
 <h3><span class="header-section-number">6.1.1</span> DÉFI 11<a href="les-fonctions.html#défi-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>Créez un vecteur nommé <code>a</code> contenant tous les nombres de 1 à 5<br />
@@ -299,31 +314,31 @@ soit 8.<br />
 <li>Créez un vecteur nommé <code>a</code> contenant tous les nombres de 1 à 5<br />
 </li>
 </ul>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="les-fonctions.html#cb119-1"></a>a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="les-fonctions.html#cb119-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span></code></pre></div>
 <ul>
 <li>Créez un objet nommé <code>b</code> avec une valeur de 2<br />
 </li>
 </ul>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="les-fonctions.html#cb120-1"></a>b &lt;-<span class="st"> </span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="les-fonctions.html#cb120-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">2</span></span></code></pre></div>
 <ul>
 <li>Ajoutez a à b en utilisant l’opérateur <code>+</code> et enregistrez le résultat dans un objet appelé <code>resultat_add</code><br />
 </li>
 </ul>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="les-fonctions.html#cb121-1"></a>resultat_add &lt;-<span class="st"> </span>a <span class="op">+</span><span class="st"> </span>b</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="les-fonctions.html#cb121-1" aria-hidden="true" tabindex="-1"></a>resultat_add <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span></code></pre></div>
 <ul>
 <li>Ajoutez a à b en utilisant la fonction <code>sum()</code> et enregistrez le résultat dans un objet appelé <code>resultat_sum</code><br />
 </li>
 </ul>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="les-fonctions.html#cb122-1"></a>resultat_sum &lt;-<span class="st"> </span><span class="kw">sum</span>(a, b)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="les-fonctions.html#cb122-1" aria-hidden="true" tabindex="-1"></a>resultat_sum <span class="ot">&lt;-</span> <span class="fu">sum</span>(a, b)</span></code></pre></div>
 <ul>
 <li>Comparez les objets resultat_add et resultat_sum. Sont-ils différents?</li>
 </ul>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="les-fonctions.html#cb123-1"></a>resultat_add</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="les-fonctions.html#cb123-1" aria-hidden="true" tabindex="-1"></a>resultat_add</span></code></pre></div>
 <pre><code>## [1] 3 4 5 6 7</code></pre>
 <p>L’opération sur le vecteur ajoute deux à chaque élément. Le résultat
 est un <strong>vecteur</strong>.<br />
 </p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="les-fonctions.html#cb125-1"></a>resultat_sum</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="les-fonctions.html#cb125-1" aria-hidden="true" tabindex="-1"></a>resultat_sum</span></code></pre></div>
 <pre><code>## [1] 17</code></pre>
 <p>La fonction <code>sum()</code> additionne toutes les valeurs de <code>a</code> et <code>b</code>. C’est
 équivalent à 1 + 2 + 3 + 4 + 5 + 2. Le résultat est un <strong>nombre</strong>.<br />
@@ -331,13 +346,13 @@ est un <strong>vecteur</strong>.<br />
 <ul>
 <li>Ajoutez 5 à <code>resultat_sum</code> en utilisant la fonction <code>sum()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="les-fonctions.html#cb127-1"></a><span class="kw">sum</span>(resultat_sum, <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="les-fonctions.html#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(resultat_sum, <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] 22</code></pre>
 <hr />
 </div>
 </div>
 </div>
-<div id="arguments" class="section level2 hasAnchor">
+<div id="arguments" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Arguments<a href="les-fonctions.html#arguments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Tous les arguments ont un <strong>nom</strong> qui peut être indiqué lorsqu’on
 appelle une fonction.<br />
@@ -345,46 +360,46 @@ appelle une fonction.<br />
 <p>Pour indiquer le nom d’un argument lors d’un appel de fonction, il
 suffit simplement de l’écrire de la façon suivante :
 <code>nom_argument=valeur</code>:</p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="les-fonctions.html#cb129-1"></a><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">8</span>, <span class="dt">base =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="les-fonctions.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">8</span>, <span class="at">base =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p>Si le nom n’est pas indiqué, l’ordre des arguments est
 primordial.<br />
 </p>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="les-fonctions.html#cb130-1"></a><span class="kw">log</span>(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="les-fonctions.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">8</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="les-fonctions.html#cb132-1"></a><span class="kw">log</span>(<span class="dv">2</span>, <span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="les-fonctions.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="dv">2</span>, <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3333333</code></pre>
 <p>Si le nom est indiqué, l’ordre des arguments n’a pas
 d’importance.</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="les-fonctions.html#cb134-1"></a><span class="kw">log</span>(<span class="dt">x =</span> <span class="dv">8</span>, <span class="dt">base =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="les-fonctions.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">x =</span> <span class="dv">8</span>, <span class="at">base =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="les-fonctions.html#cb136-1"></a><span class="kw">log</span>(<span class="dt">base =</span> <span class="dv">2</span>, <span class="dt">x =</span> <span class="dv">8</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="les-fonctions.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="at">base =</span> <span class="dv">2</span>, <span class="at">x =</span> <span class="dv">8</span>)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <hr />
-<div id="défi-12" class="section level3 hasAnchor">
+<div id="défi-12" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> DÉFI 12<a href="les-fonctions.html#défi-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>plot(x, y)</code> est une fonction qui crée un graphique de y en fonction
 de x. Cette fonction nécessite deux arguments nommés <code>x</code> et <code>y</code>.</p>
 <p>Quelles sont les différences entre les lignes de codes suivantes ?</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="les-fonctions.html#cb138-1"></a>a &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">100</span></span>
-<span id="cb138-2"><a href="les-fonctions.html#cb138-2"></a>b &lt;-<span class="st"> </span>a<span class="op">^</span><span class="dv">2</span></span>
-<span id="cb138-3"><a href="les-fonctions.html#cb138-3"></a><span class="kw">plot</span>(a, b)</span>
-<span id="cb138-4"><a href="les-fonctions.html#cb138-4"></a><span class="kw">plot</span>(b, a)</span>
-<span id="cb138-5"><a href="les-fonctions.html#cb138-5"></a><span class="kw">plot</span>(<span class="dt">x =</span> a, <span class="dt">y =</span> b)</span>
-<span id="cb138-6"><a href="les-fonctions.html#cb138-6"></a><span class="kw">plot</span>(<span class="dt">y =</span> b, <span class="dt">x =</span> a)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="les-fonctions.html#cb138-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span></span>
+<span id="cb138-2"><a href="les-fonctions.html#cb138-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb138-3"><a href="les-fonctions.html#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(a, b)</span>
+<span id="cb138-4"><a href="les-fonctions.html#cb138-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(b, a)</span>
+<span id="cb138-5"><a href="les-fonctions.html#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> a, <span class="at">y =</span> b)</span>
+<span id="cb138-6"><a href="les-fonctions.html#cb138-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y =</span> b, <span class="at">x =</span> a)</span></code></pre></div>
 <div id="solutions-1" class="section level4 unnumbered hasAnchor">
 <h4>Solutions<a href="les-fonctions.html#solutions-1" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="les-fonctions.html#cb139-1"></a><span class="kw">plot</span>(a, b)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="les-fonctions.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(a, b)</span></code></pre></div>
 <p><img src="book-fr_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 <p>Créer un graphique de <code>b</code> en fonction de <code>a</code>.</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="les-fonctions.html#cb140-1"></a><span class="kw">plot</span>(b, a)</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="les-fonctions.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(b, a)</span></code></pre></div>
 <p><img src="book-fr_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 <p>Créer un graphique de <code>a</code> en fonction de <code>b</code>. Les noms d’arguments ne
 sont pas indiqués, donc l’ordre des arguments est primordial!</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="les-fonctions.html#cb141-1"></a><span class="kw">plot</span>(<span class="dt">x =</span> a, <span class="dt">y =</span> b)</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="les-fonctions.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">x =</span> a, <span class="at">y =</span> b)</span></code></pre></div>
 <p><img src="book-fr_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <p>Créer un graphique de <code>b</code> en fonction de <code>a</code>. C’est le même graphique
 que <code>plot(a, b)</code>.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="les-fonctions.html#cb142-1"></a><span class="kw">plot</span>(<span class="dt">y =</span> b, <span class="dt">x =</span> a)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="les-fonctions.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="at">y =</span> b, <span class="at">x =</span> a)</span></code></pre></div>
 <p><img src="book-fr_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 <p>Créer un graphique de <code>b</code> en fonction de <code>a</code>. Les noms d’arguments sont
 indiqués, donc l’ordre des arguments n’a pas d’importance.</p>
