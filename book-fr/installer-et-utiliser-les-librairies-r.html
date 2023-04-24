@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapitre 7 Installer et utiliser les librairies R | Atelier 1: Introduction à R</title>
   <meta name="description" content="Introduction à R" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.33 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapitre 7 Installer et utiliser les librairies R | Atelier 1: Introduction à R" />
   <meta property="og:type" content="book" />
@@ -274,6 +274,7 @@ Archive Network</em> (CRAN) <a href="http://cran.r-project.org/web/packages/" cl
 <div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="installer-et-utiliser-les-librairies-r.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
 <pre><code>## Installing package into &#39;/home/runner/work/_temp/Library&#39;
 ## (as &#39;lib&#39; is unspecified)</code></pre>
+<pre><code>## also installing the dependencies &#39;colorspace&#39;, &#39;farver&#39;, &#39;labeling&#39;, &#39;munsell&#39;, &#39;RColorBrewer&#39;, &#39;viridisLite&#39;, &#39;gtable&#39;, &#39;isoband&#39;, &#39;scales&#39;</code></pre>
 <p>Il est nécessaire d’installer un package une seule fois, même si des
 mises à jours régulières sont recommandées. Cependant, pour utiliser une
 fonction se trouvant au sein d’un package, il ne suffit pas de
@@ -281,23 +282,26 @@ simplement installer le package. Il faut également utiliser la fonction
 <code>library()</code> à chaque début de session R pour “charger” le package.
 Voici un exemple qui utilise la fonction <code>qplot()</code> du package
 <strong>ggplot2</strong> que l’on vient tout juste d’installer.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="installer-et-utiliser-les-librairies-r.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="installer-et-utiliser-les-librairies-r.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
 <p>Le package a été installé correctement, mais il n’a pas été chargé. Par
 conséquent, l’exécution de ce code cause l’erreur suivante :</p>
 <p><code>Error in qplot(1:10, 1:10) : could not find function "qplot"</code></p>
 <p>Pour utiliser la fonction <code>qplot()</code>, il faut charger le package
 <code>ggplot2</code> avant d’appeler cette fonction.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="installer-et-utiliser-les-librairies-r.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
-<span id="cb147-2"><a href="installer-et-utiliser-les-librairies-r.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="installer-et-utiliser-les-librairies-r.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">&quot;ggplot2&quot;</span>)</span>
+<span id="cb148-2"><a href="installer-et-utiliser-les-librairies-r.html#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span></code></pre></div>
 <p>La fonction peut maintenant être trouvée par R et l’exécution de cette
 fonction retourne le graphique suivant :</p>
-<pre><code>## Warning: `qplot()` was deprecated in ggplot2 3.4.0.</code></pre>
+<pre><code>## Warning: `qplot()` was deprecated in ggplot2 3.4.0.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
 <p><img src="book-fr_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 <p>Il est de bon usage de décharger les packages une fois que l’on a fini
 de les utiliser car ils pourraient entrer en conflit avec d’autres
 packages. Le déchargement est effectué avec la fonction <code>detach()</code> et en
 spécifiant qu’il s’agit d’un package:</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="installer-et-utiliser-les-librairies-r.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(package<span class="sc">:</span>ggplot2)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="installer-et-utiliser-les-librairies-r.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">detach</span>(package<span class="sc">:</span>ggplot2)</span></code></pre></div>
 </div>
 <div id="obtenir-de-laide" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Obtenir de l’aide<a href="installer-et-utiliser-les-librairies-r.html#obtenir-de-laide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -316,7 +320,7 @@ effectuer une recherche, tapez <code>??</code> suivi d’un terme relié à votr
 recherche. Par exemple, supposons que l’on souhaite créer une séquence
 de nombres pairs entre 0 et 10. On effectue une recherche avec le terme
 <strong>sequence</strong> :</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="installer-et-utiliser-les-librairies-r.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(<span class="st">`</span><span class="at">?</span><span class="st">`</span>(sequence))</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="installer-et-utiliser-les-librairies-r.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(<span class="st">`</span><span class="at">?</span><span class="st">`</span>(sequence))</span></code></pre></div>
 <p>Cette commande ouvre la fenêtre suivante :</p>
 <p><img src="images/searchseq1.png" width="400" /><br />
 </p>
@@ -348,7 +352,7 @@ fonctionne-t-elle ? Comment l’utiliser ?</p>
 cette fonction. Pour ce faire, il faut utiliser l’opérateur <code>?</code> ou la
 fonction <code>help()</code> de la manière suivante : <code>?nom_de_la_fonction</code></p>
 <p>Voici un exemple pour la fonction <code>seq()</code> :</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="installer-et-utiliser-les-librairies-r.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(seq)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="installer-et-utiliser-les-librairies-r.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">?</span><span class="st">`</span>(seq)</span></code></pre></div>
 <p>Cette commande ouvre la page suivante :</p>
 <p><img src="images/searchseq.png" class="align-center" width="600" /><br />
 </p>
@@ -404,16 +408,16 @@ besoins.</li>
 <ul>
 <li>Créez une séquence de nombres pairs de 0 à 10 en utilisant la fonction <code>seq()</code>.</li>
 </ul>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="installer-et-utiliser-les-librairies-r.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="installer-et-utiliser-les-librairies-r.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">10</span>, <span class="at">by =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1]  0  2  4  6  8 10</code></pre>
 <p>Nous aurions également pu écrire :</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="installer-et-utiliser-les-librairies-r.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="installer-et-utiliser-les-librairies-r.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1]  0  2  4  6  8 10</code></pre>
 <ul>
 <li>Créez un vecteur non ordonné de vos nombres favoris, puis triez votre vecteur dans l’ordre inverse.</li>
 </ul>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="installer-et-utiliser-les-librairies-r.html#cb156-1" aria-hidden="true" tabindex="-1"></a>nombres <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">22</span>, <span class="dv">6</span>, <span class="dv">26</span>)</span>
-<span id="cb156-2"><a href="installer-et-utiliser-les-librairies-r.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(nombres, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="installer-et-utiliser-les-librairies-r.html#cb157-1" aria-hidden="true" tabindex="-1"></a>nombres <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">22</span>, <span class="dv">6</span>, <span class="dv">26</span>)</span>
+<span id="cb157-2"><a href="installer-et-utiliser-les-librairies-r.html#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(nombres, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 26 22  6  4  2</code></pre>
 <hr />
 </div>
